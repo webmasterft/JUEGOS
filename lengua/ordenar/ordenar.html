@@ -6,13 +6,66 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  
   <style>
   #sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
   #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
   </style>
   <script>
   $(function() {
+    var items = [
+      {
+        "id": "1",
+        "dibujo" : "corazon.jpg",
+      }, 
+    
+      {
+        "id": "2",
+        "dibujo" : "leodn.jpg",
+      }, 
+      
+      {
+       "id": "3",
+        "dibujo" : "pelodta.jpg",
+      }, 
+{
+        "id": "4",
+        "dibujo" : "coraszon.jpg",
+      }, 
+    
+      {
+        "id": "5",
+        "dibujo" : "leosn.jpg",
+      }, 
+      
+      {
+       "id": "6",
+        "dibujo" : "pelqota.jpg",
+      }, 
+    ];
+
+    //var dibujos = ['1','2', '3', '4' , '5', '6','7','8','9','10', '11', '12', '13','14', '15'];
+
+
+
+  var newItems = [];
+    for(var i = 0; i < 3; i++) {
+        var idx = Math.floor(Math.random() * items.length);
+        newItems.push(items[idx]);
+        items.splice(idx, 1);
+  }
+
+  console.log(newItems);
+
+    var $ul = $('#sortable');
+    
+
+
+    $('li', $ul).sort(function(){
+      return (Math.round( Math.random() ) - 0.5 )
+    }).appendTo($ul);
+
+
     $( "#sortable" ).sortable();
     $( "#sortable" ).disableSelection();
   });
@@ -29,10 +82,6 @@
   <li class="ui-state-default">6</li>
   <li class="ui-state-default">7</li>
   <li class="ui-state-default">8</li>
-  <li class="ui-state-default">9</li>
-  <li class="ui-state-default">10</li>
-  <li class="ui-state-default">11</li>
-  <li class="ui-state-default">12</li>
 </ul>
  
  
