@@ -16,72 +16,84 @@
     var items = [
       {
         "id": "1",
-        "dibujo" : "corazon.jpg",
+        "dibujo" : "corazon",
       }, 
     
       {
         "id": "2",
-        "dibujo" : "leodn.jpg",
+        "dibujo" : "leon",
       }, 
       
       {
        "id": "3",
-        "dibujo" : "pelodta.jpg",
+        "dibujo" : "pelota",
       }, 
-{
+      {
         "id": "4",
-        "dibujo" : "coraszon.jpg",
+        "dibujo" : "corazon",
       }, 
     
       {
         "id": "5",
-        "dibujo" : "leosn.jpg",
+        "dibujo" : "leon",
       }, 
       
       {
        "id": "6",
-        "dibujo" : "pelqota.jpg",
+        "dibujo" : "pelota",
       }, 
     ];
 
     //var dibujos = ['1','2', '3', '4' , '5', '6','7','8','9','10', '11', '12', '13','14', '15'];
 
+    var dibujos2 = [
+      "pelota",
+      "corazon",
+      "leon"
+    ] 
+
 
 
   var newItems = [];
+  var $ul = $('#sortable');
     for(var i = 0; i < 3; i++) {
         var idx = Math.floor(Math.random() * items.length);
         newItems.push(items[idx]);
         items.splice(idx, 1);
-  }
+    }
 
-  console.log(newItems);
+  
+  $.each(newItems, function(index, val) {
+    $ul.append('<li class="ui-state-default" id='+ newItems[index].dibujo + '><img src="img/'+ newItems[index].dibujo + '.jpg" width="100" height="90"></li>');
+  });
 
-    var $ul = $('#sortable');
+  
+ 
+  var respuestaOK = newItems.sort(function(a, b){
+      var a1= a.dibujo, b1= b.dibujo;
+      if(a1== b1) return 0;
+      return a1> b1? 1: -1;
+  });
+
+  
+    var respuesta = [];
+    $("#sortable").sortable({
+
+        stop : function(event, ui){
+          console.log($(this).sortable('serialize'));
+        }
+
+    }).disableSelection();
+
     
-
-
-    $('li', $ul).sort(function(){
-      return (Math.round( Math.random() ) - 0.5 )
-    }).appendTo($ul);
-
-
-    $( "#sortable" ).sortable();
-    $( "#sortable" ).disableSelection();
+    
   });
   </script>
 </head>
 <body>
  
 <ul id="sortable">
-  <li class="ui-state-default">1</li>
-  <li class="ui-state-default">2</li>
-  <li class="ui-state-default">3</li>
-  <li class="ui-state-default">4</li>
-  <li class="ui-state-default">5</li>
-  <li class="ui-state-default">6</li>
-  <li class="ui-state-default">7</li>
-  <li class="ui-state-default">8</li>
+  
 </ul>
  
  
