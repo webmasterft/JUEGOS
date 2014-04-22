@@ -75,17 +75,16 @@
       return a1> b1? 1: -1;
   });
 
-  
+  console.log(respuestaOK);
+    
     var respuesta = [];
     $("#sortable").sortable({
 
-        stop : function(event, ui){
-          console.log($(this).sortable('serialize'));
-        }
-
+        update: function(event, ui) {
+          var result = $(this).sortable('toArray');
+          alert(result);
+        },
     }).disableSelection();
-
-    
     
   });
   </script>
