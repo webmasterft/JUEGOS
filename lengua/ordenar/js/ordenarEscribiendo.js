@@ -34,29 +34,32 @@
 
    $('form button').on('click', function(e){
       e.preventDefault();
+      result = [];
+      var input;
       $("form#respuestas input[type=text]").each(function(index, val){
-        var input = $(this).val(); // This is the jquery object of the input, do what you will
+        input = $(this).val(); // This is the jquery object of the input, do what you will
+        input = omitirAcentos($(this).val().toLowerCase());
         console.log(input);
-        if(input ===""){
-          error = '<p>Rellena todos los campos</p>';
-        }else{
+        //nombre = omitirAcentos(nombre[1]);
+        
+        if(input ==="")
+          mensaje = '<p>Rellena todos los campos</p>';
+        else{
           result.push(input);
+          if($.compare(respuestaOK, result)){
+            mensaje = "todo bien";
+            //Stopwatch.stop();
+          }else{
+            mensaje = "Intenta otra vez";
+          }
+          
         }
-      });//form each
-      console.log(result);
-      $('div#error').html(error);
-   }); 
 
-  /*$("#sortable").sortable({
-    update: function(event, ui) {
-      var result = $(this).sortable('toArray');
-      if($.compare(respuestaOK, result)){
-        $('body').append('<p>Felicitaciones</p>');
-        Stopwatch.stop();
-      }
-    },
-  }).disableSelection();*/
-    
+      });//form each
+      
+      $('div#mensaje').html(mensaje);
+   })//click; 
+
   $.extend({
       compare: function (arrayA, arrayB) {
           if (arrayA.length != arrayB.length) { return false; }
@@ -82,5 +85,12 @@
   });//function ready
   
 
-
+  function omitirAcentos(text) {
+      var acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
+      var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
+      for (var i=0; i<acentos.length; i++) {
+          text = text.replace(acentos.charAt(i), original.charAt(i));
+      }
+      return text;
+  }
 
