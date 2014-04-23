@@ -2,50 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>jQuery UI Sortable - Display as grid</title>
+  <title>Juego</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="css/main.css">
   
+<<<<<<< HEAD
   <style>
   #sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
   #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
   </style>
   <script>
   $(function() {
-   /* var items = [
-      {
-        "id": "1",
-        "dibujo" : "corazon",
-      }, 
-    
-      {
-        "id": "2",
-        "dibujo" : "leon",
-      }, 
-      
-      {
-       "id": "3",
-        "dibujo" : "pelota",
-      }, 
-      {
-        "id": "4",
-        "dibujo" : "corazon",
-      }, 
-    
-      {
-        "id": "5",
-        "dibujo" : "leon",
-      }, 
-      
-      {
-       "id": "6",
-        "dibujo" : "pelota",
-      }, 
-    ];
-*/
-    //var dibujos = ['1','2', '3', '4' , '5', '6','7','8','9','10', '11', '12', '13','14', '15'];
-
     var items = [
       "pelota",
       "corazon",
@@ -53,73 +20,75 @@
       "pelota"
     ] 
 
-
-
-  var newItems = [];
-  var $ul = $('#sortable');
-    for(var i = 0; i < 4; i++) {
-        var idx = Math.floor(Math.random() * items.length);
-        newItems.push(items[idx]);
-        items.splice(idx, 1);
-    }
+    var newItems = [];
+    var $ul = $('#sortable');
+      for(var i = 0; i < 4; i++) {
+          var idx = Math.floor(Math.random() * items.length);
+          newItems.push(items[idx]);
+          items.splice(idx, 1);
+      }
 
 
 
-  $.each(newItems, function(index, val) {
-    $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/'+ newItems[index] + '.jpg" width="100" height="90"></li>');
-  });
-
-  
- 
-  var respuestaOK = newItems.sort(function(a, b){
-      var a1= a, b1= b;
-      if(a1== b1) return 0;
-      return a1> b1? 1: -1;
-  });
+    $.each(newItems, function(index, val) {
+      $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/'+ newItems[index] + '.jpg" width="100" height="90"></li>');
+    });
 
     
+   
+    var respuestaOK = newItems.sort(function(a, b){
+        var a1= a, b1= b;
+        if(a1== b1) return 0;
+        return a1> b1? 1: -1;
+    });
 
-  $("#sortable").sortable({
-    update: function(event, ui) {
-      var result = $(this).sortable('toArray');
-      console.log(respuestaOK, result);
-      if($.compare(respuestaOK, result)){
-        $('body').append('<p>Felicitaciones</p>');
-      }
-    },
-  }).disableSelection();
-    
-  $.extend({
-      compare: function (arrayA, arrayB) {
-          if (arrayA.length != arrayB.length) { return false; }
-          // sort modifies original array
-          // (which are passed by reference to our method!)
-          // so clone the arrays before sorting
-          var a = $.extend(true, [], arrayA);
-          var b = $.extend(true, [], arrayB);
-          //a.sort(); 
-          //b.sort();
-          for (var i = 0, l = a.length; i < l; i++) {
-              if (a[i] !== b[i]) { 
-                  return false;
-              }
-          }
-          return true;
-      }
-  });
+      
+
+    $("#sortable").sortable({
+      update: function(event, ui) {
+        var result = $(this).sortable('toArray');
+        console.log(respuestaOK, result);
+        if($.compare(respuestaOK, result)){
+          $('body').append('<p>Felicitaciones</p>');
+        }
+      },
+    }).disableSelection();
+      
+    $.extend({
+        compare: function (arrayA, arrayB) {
+            if (arrayA.length != arrayB.length) { return false; }
+            // sort modifies original array
+            // (which are passed by reference to our method!)
+            // so clone the arrays before sorting
+            var a = $.extend(true, [], arrayA);
+            var b = $.extend(true, [], arrayB);
+            //a.sort(); 
+            //b.sort();
+            for (var i = 0, l = a.length; i < l; i++) {
+                if (a[i] !== b[i]) { 
+                    return false;
+                }
+            }
+            return true;
+        }
+    });
 
 
 
 
   });//function ready
   </script>
+=======
+>>>>>>> d34c177af66876c3668db5dbd55b9685846d4e73
 </head>
 <body>
+    <ul id="sortable">
+    </ul>
  
-<ul id="sortable">
-  
-</ul>
- 
- 
+ <div class="basic stopwatch"></div>
 </body>
 </html>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<script src="js/jquery.timer.js"></script>
+<script src="js/main.js"></script>

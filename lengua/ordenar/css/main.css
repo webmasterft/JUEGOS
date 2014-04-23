@@ -1,0 +1,19 @@
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 450px; }
+#sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 100px; height: 90px; font-size: 4em; text-align: center; }
+  
+
+  .stopwatch {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+  }
+  .stopwatch span {
+    font-weight: bold;
+    display: block;
+  }
+  .stopwatch a {
+    padding-right: 5px;
+    text-decoration: none;
+  }
