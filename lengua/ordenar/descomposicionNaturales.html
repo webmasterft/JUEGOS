@@ -7,6 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/numerosNaturales.css">
 <style type="text/css" media="screen">
+  #numero{
+    background: #474747;
+    font: 50px Tahoma, Helvetica, Arial, Sans-Serif;
+    text-align: center;
+    color: #222;
+    padding:20px;
+    display: inline-block;
+    text-shadow: 0px 2px 3px #555;
+  }
+
+
+
   button {
     margin: .7em;
     padding: 1em;
@@ -191,11 +203,13 @@
         menuButtons = $('#menu button'),
         min = 0,
         max = 0;
+        $('#numero').hide();
        
     
 
     menuButtons.click(function(){
       menuId = $(this).data('id');
+      $('#numero').hide();
       if (menuId==0){
         $('#numero, #submenu,  #cardPile , #cardSlots').html('');
         var menu = [
@@ -216,6 +230,7 @@
           submenu.html(template(menu)).hide().fadeIn();
           
           submenu.find('button').live('click', function(){
+            
             submenuId = $(this).data('id');
             switch (submenuId){
               case 1:
@@ -241,13 +256,14 @@
 
 
         }else{
+         
           submenu.html('');
           min = 0;
           max = 999999;
           words = ['CM','DM','UM','C','D', 'U'];
           init(min,max, words);
         }//if
-      }); menuButtons.click
+      }); //menuButtons.click
       // Hide the success message
         $('#successMessage , #cardPile , #cardSlots').hide();
         $('#successMessage').css( {
@@ -261,7 +277,7 @@
 
 
 function init(min,max, words) {
-  
+  $('#numero').fadeIn();  
 
   // Reset the game
   correctCards = 0;
