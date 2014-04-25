@@ -33,7 +33,7 @@ function init() {
   $('#cardSlots').html( '' );
 
   var min = 0;
-  var max = 99;
+  var max = 999;
   // and the formula is:
   var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
   $('#numero').html("Número: " + numbers);
@@ -53,13 +53,9 @@ function init() {
   }
 
   // Create the card slots
-  var words = [ 'decenas', 'unidades'];
+  var words = ['miles','decenas', 'unidades'];
   //var j = 0;
   for ( var i=1; i<=tempNum.length; i++ ) {
-    //j = j + 1;
-    //j += 1
-    //console.log(j);
-    //console.log(tempNum[i]);
     $('<div>' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
@@ -72,11 +68,6 @@ function init() {
 function handleCardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
   var cardNumber = ui.draggable.data( 'number' );
-
-
-  console.log(slotNumber , cardNumber);
-
-
   // If the card was dropped to the correct slot,
   // change the card colour, position it directly
   // on top of the slot, and prevent it being dragged
@@ -94,7 +85,7 @@ function handleCardDrop( event, ui ) {
   // If all the cards have been placed correctly then display a message
   // and reset the cards for another go
 
-  if ( correctCards == 10 ) {
+  if ( correctCards == tempNum.length ) {
     $('#successMessage').show();
     $('#successMessage').animate( {
       left: '380px',
@@ -121,8 +112,8 @@ function handleCardDrop( event, ui ) {
   <div id="cardSlots"> </div>
 
   <div id="successMessage">
-    <h2>You did it!</h2>
-    <button onclick="init()">Play Again</button>
+    <h2>Bien Hecho!</h2>
+    <button onclick="init()">Jugar otra vez</button>
   </div>
 
 </div>
