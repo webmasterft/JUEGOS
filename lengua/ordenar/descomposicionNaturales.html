@@ -37,12 +37,14 @@ function init() {
   // and the formula is:
   var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
   $('#numero').html("Número: " + numbers);
-  numbers = numbers.split('');
-  shuffle(numbers);
+  tempNum = numbers;
+  numbers = shuffle(numbers.split(''));
+  //console.log(tempNum[0]);
 
 
   for ( var i=0; i<numbers.length; i++ ) {
-    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+    console.log(tempNum[i]);
+    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
       cursor: 'move',
@@ -52,8 +54,13 @@ function init() {
 
   // Create the card slots
   var words = [ 'decenas', 'unidades'];
-  for ( var i=1; i<=numbers.length; i++ ) {
-    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#cardSlots' ).droppable( {
+  //var j = 0;
+  for ( var i=1; i<=tempNum.length; i++ ) {
+    //j = j + 1;
+    //j += 1
+    //console.log(j);
+    //console.log(tempNum[i]);
+    $('<div>' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
       hoverClass: 'hovered',
       drop: handleCardDrop
@@ -65,6 +72,10 @@ function init() {
 function handleCardDrop( event, ui ) {
   var slotNumber = $(this).data( 'number' );
   var cardNumber = ui.draggable.data( 'number' );
+
+
+  console.log(slotNumber , cardNumber);
+
 
   // If the card was dropped to the correct slot,
   // change the card colour, position it directly
