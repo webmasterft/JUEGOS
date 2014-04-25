@@ -6,11 +6,15 @@
 <title></title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/numerosNaturales.css">
+<style type="text/css" media="screen">
+  #submenu{
+  }  
+</style>
 </head>
 <body>
   <div id="menu">
-    <button data-menu="0">2Do, 3ro y 4to</button>
-    <button data-meun="1">5to, 6to y 7mo</button>
+    <button data-id="0">2Do, 3ro y 4to</button>
+    <button data-id="1">5to, 6to y 7mo</button>
   </div>
   <div id="submenu">
   </div>
@@ -24,7 +28,7 @@
 
   <div id="successMessage">
     <h2>Bien Hecho!</h2>
-    <button onclick="init()">Jugar otra vez</button>
+    <button onclick="start()">Jugar otra vez</button>
   </div>
 
 </div>
@@ -39,61 +43,98 @@
 
 
   <script id="submenuTemplate" type="text/x-handlebars-template">
-    {{#each this}}
-      <button>{{id}}</button>
+      {{#each this}}
+      <button data-id="{{id}}">{{texto}}</button>
     {{/each}}
   </script>
 
 <script type="text/javascript">
-var correctCards = 0;
-$( init );
+  $(start);
+  
+  function start(){
+    var correctCards = 0,
+    //$( init );
+        submenuTemplate = $('#submenuTemplate'),
+        submenu = $('#submenu'),
+        menuButtons = $('#menu button'),
+        min = 0,
+        max = 0;
+       
+    
 
-function init() {
+    menuButtons.click(function(){
+      menuId = $(this).data('id');
+      if (menuId==0){
+        $('#numero, #submenu,  #cardPile , #cardSlots').html('');
+        var menu = [
+            { 
+              texto: '0-99',
+              id: '1'
+            },   
+            { 
+              texto: '99-999',
+              id:'2'
+            },
+            { 
+              texto: '999-9999',
+              id:'3'
+            }
+          ];// var menu
+          template = Handlebars.compile(submenuTemplate.html());
+          submenu.html(template(menu)).hide().fadeIn();
+          
+          submenu.find('button').live('click', function(){
+            submenuId = $(this).data('id');
+            switch (submenuId){
+              case 1:
+                min = 0;
+                max = 99;
+                words = ['decenas', 'unidades'];
+              break;
+              
+              case 2:
+                min = 99;
+                max = 999;
+                words = ['centenas','decenas', 'unidades'];
+              break;
 
-var menu = [
-                { 
-                  id: '0-99'
-                },   
-                { 
-                  
-                  id:'99-999'
-                },
-                { 
-                  id:'999-9999'
-                }
-            ];
+              case 3:
+                min = 99;
+                max = 9999;
+                words = ['miles','centenas','decenas', 'unidades'];
+              break;
+            }//swtich
+            init(min,max, words);
+          });//submenu find buttons
 
 
-  //var menu = ['0-99', '99-999', '999-9999'],
-      submenuTemplate = $('#submenuTemplate'),
-      submenu = $('#submenu');
+        }else{
+          submenu.html('');
+          min = 0;
+          max = 999999;
+          words = ['CM','DM','UM','C','D', 'U'];
+          init(min,max, words);
+        }//if
+      }); menuButtons.click
+      // Hide the success message
+        $('#successMessage , #cardPile , #cardSlots').hide();
+        $('#successMessage').css( {
+          left: '580px',
+          top: '250px',
+          width: 0,
+          height: 0
+        });
 
-  template = Handlebars.compile(submenuTemplate.html());
-  console.log(template);
-  submenu.html(template(menu));
+  }//init
 
 
-
-  // Hide the success message
-  $('#successMessage').hide();
-  $('#successMessage').css( {
-    left: '580px',
-    top: '250px',
-    width: 0,
-    height: 0
-  } );
+function init(min,max, words) {
+  
 
   // Reset the game
   correctCards = 0;
-  $('#cardPile').html( '' );
-  $('#cardSlots').html( '' );
-
-
-
+  $('#cardPile , #cardSlots').html( '' ).fadeIn();
   
-
-  var min = 0;
-  var max = 999;
   // and the formula is:
   var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
   $('#numero').html("Número: " + numbers);
@@ -101,7 +142,7 @@ var menu = [
   numbers = shuffle(numbers.split(''));
 
   for ( var i=0; i<numbers.length; i++ ) {
-    console.log(tempNum[i]);
+    
     $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
@@ -111,7 +152,7 @@ var menu = [
   }
 
   // Create the card slots
-  var words = ['miles','decenas', 'unidades'];
+  
   for ( var i=1; i<=tempNum.length; i++ ) {
     $('<div>' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
@@ -154,5 +195,6 @@ function handleCardDrop( event, ui ) {
   }
 
 }
+
 
 </script>
