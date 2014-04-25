@@ -6,17 +6,73 @@
 <title></title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <link rel="stylesheet" type="text/css" href="css/numerosNaturales.css">
+</head>
+<body>
+  <div id="menu">
+    <button data-menu="0">2Do, 3ro y 4to</button>
+    <button data-meun="1">5to, 6to y 7mo</button>
+  </div>
+  <div id="submenu">
+  </div>
+
+
+<div id="numero"></div>
+<div id="content">
+
+  <div id="cardPile"> </div>
+  <div id="cardSlots"> </div>
+
+  <div id="successMessage">
+    <h2>Bien Hecho!</h2>
+    <button onclick="init()">Jugar otra vez</button>
+  </div>
+
+</div>
+
+</body>
+</html>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.2/handlebars.min.js"></script>
 <script type="text/javascript" src="js/jquery.shuffle.js"></script>
 
-<script type="text/javascript">
 
+  <script id="submenuTemplate" type="text/x-handlebars-template">
+    {{#each this}}
+      <button>{{id}}</button>
+    {{/each}}
+  </script>
+
+<script type="text/javascript">
 var correctCards = 0;
 $( init );
 
 function init() {
+
+var menu = [
+                { 
+                  id: '0-99'
+                },   
+                { 
+                  
+                  id:'99-999'
+                },
+                { 
+                  id:'999-9999'
+                }
+            ];
+
+
+  //var menu = ['0-99', '99-999', '999-9999'],
+      submenuTemplate = $('#submenuTemplate'),
+      submenu = $('#submenu');
+
+  template = Handlebars.compile(submenuTemplate.html());
+  console.log(template);
+  submenu.html(template(menu));
+
+
 
   // Hide the success message
   $('#successMessage').hide();
@@ -32,6 +88,10 @@ function init() {
   $('#cardPile').html( '' );
   $('#cardSlots').html( '' );
 
+
+
+  
+
   var min = 0;
   var max = 999;
   // and the formula is:
@@ -39,8 +99,6 @@ function init() {
   $('#numero').html("Número: " + numbers);
   tempNum = numbers;
   numbers = shuffle(numbers.split(''));
-  //console.log(tempNum[0]);
-
 
   for ( var i=0; i<numbers.length; i++ ) {
     console.log(tempNum[i]);
@@ -54,7 +112,6 @@ function init() {
 
   // Create the card slots
   var words = ['miles','decenas', 'unidades'];
-  //var j = 0;
   for ( var i=1; i<=tempNum.length; i++ ) {
     $('<div>' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
@@ -99,25 +156,3 @@ function handleCardDrop( event, ui ) {
 }
 
 </script>
-
-</head>
-<body>
-
-<div id="numero"></div>
-
-
-<div id="content">
-
-  <div id="cardPile"> </div>
-  <div id="cardSlots"> </div>
-
-  <div id="successMessage">
-    <h2>Bien Hecho!</h2>
-    <button onclick="init()">Jugar otra vez</button>
-  </div>
-
-</div>
-
-</body>
-</html>
-
