@@ -1,163 +1,54 @@
+<html>
 <script>
-  /*************************************************************/
-// NumeroALetras
-// @author   Rodolfo Carmona
-/*************************************************************/
-
-console.log(Unidades(1240));
-
-function Unidades(num){
-
-  switch(num)
+var o=new Array("diez", "once", "doce", "trece", "catorce", "quince", "dieciséis", "diecisiete", "dieciocho", "diecinueve", "veinte", "veintiuno", "veintidós", "veintitrés", "veinticuatro", "veinticinco", "veintiséis", "veintisiete", "veintiocho", "veintinueve");
+var u=new Array("cero", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve");
+var d=new Array("", "", "", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa");
+var c=new Array("", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos");
+ 
+function nn(n)
+{
+  var n=parseFloat(n).toFixed(2); /*se limita a dos decimales, no sabía que existía toFixed() :)*/
+  var p=n.toString().substring(n.toString().indexOf(".")+1); /*decimales*/
+  var m=n.toString().substring(0,n.toString().indexOf(".")); /*número sin decimales*/
+  var m=parseFloat(m).toString().split("").reverse(); /*tampoco que reverse() existía :D*/
+  var t="";
+ 
+  /*Se analiza cada 3 dígitos*/
+  for (var i=0; i<m.length; i+=3)
   {
-    case 1: return "UN";
-    case 2: return "DOS";
-    case 3: return "TRES";
-    case 4: return "CUATRO";
-    case 5: return "CINCO";
-    case 6: return "SEIS";
-    case 7: return "SIETE";
-    case 8: return "OCHO";
-    case 9: return "NUEVE";
+    var x=t;
+    /*formamos un número de 2 dígitos*/
+    var b=m[i+1]!=undefined?parseFloat(m[i+1].toString()+m[i].toString()):parseFloat(m[i].toString());
+    /*analizamos el 3 dígito*/
+    t=m[i+2]!=undefined?(c[m[i+2]]+" "):"";
+    t+=b<10?u[b]:(b<30?o[b-10]:(d[m[i+1]]+(m[i]=='0'?"":(" y "+u[m[i]]))));
+    t=t=="ciento cero"?"cien":t;
+    if (2<i&&i<6)
+      t=t=="uno"?"mil ":(t.replace("uno","un")+" mil ");
+    if (5<i&&i<9)
+      t=t=="uno"?"un millón ":(t.replace("uno","un")+" millones ");
+    t+=x;
+    //t=i<3?t:(i<6?((t=="uno"?"mil ":(t+" mil "))+x):((t=="uno"?"un millón ":(t+" millones "))+x));
   }
-
-  return "";
+ 
+  t+=" con "+p+"/100";
+  /*correcciones*/
+  t=t.replace("  "," ");
+  t=t.replace(" cero","");
+  //t=t.replace("ciento y","cien y");
+  //alert("Numero: "+n+"\nNº Dígitos: "+m.length+"\nDígitos: "+m+"\nDecimales: "+p+"\nt: "+t);
+  //document.getElementById("esc").value=t;
+  return t;
 }
-
-function Decenas(num){
-
-  decena = Math.floor(num/10);
-  unidad = num - (decena * 10);
-
-  switch(decena)
-  {
-    case 1:   
-      switch(unidad)
-      {
-        case 0: return "DIEZ";
-        case 1: return "ONCE";
-        case 2: return "DOCE";
-        case 3: return "TRECE";
-        case 4: return "CATORCE";
-        case 5: return "QUINCE";
-        default: return "DIECI" + Unidades(unidad);
-      }
-    case 2:
-      switch(unidad)
-      {
-        case 0: return "VEINTE";
-        default: return "VEINTI" + Unidades(unidad);
-      }
-    case 3: return DecenasY("TREINTA", unidad);
-    case 4: return DecenasY("CUARENTA", unidad);
-    case 5: return DecenasY("CINCUENTA", unidad);
-    case 6: return DecenasY("SESENTA", unidad);
-    case 7: return DecenasY("SETENTA", unidad);
-    case 8: return DecenasY("OCHENTA", unidad);
-    case 9: return DecenasY("NOVENTA", unidad);
-    case 0: return Unidades(unidad);
-  }
-}//Unidades()
-
-function DecenasY(strSin, numUnidades){
-  if (numUnidades > 0)
-    return strSin + " Y " + Unidades(numUnidades)
-
-  return strSin;
-}//DecenasY()
-
-function Centenas(num){
-
-  centenas = Math.floor(num / 100);
-  decenas = num - (centenas * 100);
-
-  switch(centenas)
-  {
-    case 1:
-      if (decenas > 0)
-        return "CIENTO " + Decenas(decenas);
-      return "CIEN";
-    case 2: return "DOSCIENTOS " + Decenas(decenas);
-    case 3: return "TRESCIENTOS " + Decenas(decenas);
-    case 4: return "CUATROCIENTOS " + Decenas(decenas);
-    case 5: return "QUINIENTOS " + Decenas(decenas);
-    case 6: return "SEISCIENTOS " + Decenas(decenas);
-    case 7: return "SETECIENTOS " + Decenas(decenas);
-    case 8: return "OCHOCIENTOS " + Decenas(decenas);
-    case 9: return "NOVECIENTOS " + Decenas(decenas);
-  }
-
-  return Decenas(decenas);
-}//Centenas()
-
-function Seccion(num, divisor, strSingular, strPlural){
-  cientos = Math.floor(num / divisor)
-  resto = num - (cientos * divisor)
-
-  letras = "";
-
-  if (cientos > 0)
-    if (cientos > 1)
-      letras = Centenas(cientos) + " " + strPlural;
-    else
-      letras = strSingular;
-
-  if (resto > 0)
-    letras += "";
-
-  return letras;
-}//Seccion()
-
-function Miles(num){
-  divisor = 1000;
-  cientos = Math.floor(num / divisor)
-  resto = num - (cientos * divisor)
-
-  strMiles = Seccion(num, divisor, "UN MIL", "MIL");
-  strCentenas = Centenas(resto);
-
-  if(strMiles == "")
-    return strCentenas;
-
-  return strMiles + " " + strCentenas;
-
-  //return Seccion(num, divisor, "UN MIL", "MIL") + " " + Centenas(resto);
-}//Miles()
-
-function Millones(num){
-  divisor = 1000000;
-  cientos = Math.floor(num / divisor)
-  resto = num - (cientos * divisor)
-
-  strMillones = Seccion(num, divisor, "UN MILLON", "MILLONES");
-  strMiles = Miles(resto);
-
-  if(strMillones == "")
-    return strMiles;
-
-  return strMillones + " " + strMiles;
-
-  //return Seccion(num, divisor, "UN MILLON", "MILLONES") + " " + Miles(resto);
-}//Millones()
-
-function NumeroALetras(num){
-  var data = {
-    numero: num,
-    enteros: Math.floor(num),
-    centavos: (((Math.round(num * 100)) - (Math.floor(num) * 100))),
-    letrasCentavos: "",
-    letrasMonedaPlural: "CORDOBAS",
-    letrasMonedaSingular: "CORDOBA"
-  };
-
-  if (data.centavos > 0)
-    data.letrasCentavos = "CON " + data.centavos + "/100";
-
-  if(data.enteros == 0)
-    return "CERO " + data.letrasMonedaPlural + " " + data.letrasCentavos;
-  if (data.enteros == 1)
-    return Millones(data.enteros) + " " + data.letrasMonedaSingular + " " + data.letrasCentavos;
-  else
-    return Millones(data.enteros) + " " + data.letrasMonedaPlural + " " + data.letrasCentavos;
-}//NumeroALetras()
+ 
+function st()
+{
+  t=nn(1245);
+  document.getElementById('out').innerHTML=t;
+}
+window.onload=st;
 </script>
+<body>
+<div id="out"></div>
+</body>
+</html>

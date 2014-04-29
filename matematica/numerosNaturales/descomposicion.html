@@ -65,6 +65,7 @@
     <script src="js/vendor/jquery-1.8.9.ui.min.js"></script>
     <script src="js/vendor/handlebars.min.js"></script>
     <script src="js/vendor/jquery.shuffle.js"></script>
+    <script src="js/vendor/numerosLetras.js"></script>
     
     </body>
 </html>
@@ -226,21 +227,36 @@ function handleCardDrop( event, ui ) {
       width: '400px',
       height: '250px',
       opacity: 1
-    } );
+    });
   }//correct
 
 }//handleCardDrop
 
 
 function escribir(){
-    var contenedor =  $('#var');
+    var contenedor =  $('#var')
+        numbers = localStorage.getItem('numbers');
+    
     contenedor.html('');
-    $('#successMessage').hide();
+    $('#successMessage').fadeOut();
 
-    var value = localStorage.getItem('numbers');
-    $('#var').append('<input type="text" name="">');
+    $('#var').append('<input type="text" name="resp" id="resp"/><input type="button" name="sr1" value="Click Here" id="btnSubmit" /><div id="container" class="word"></div>');
 
-}
+    $('#btnSubmit').live('click', function(){
+        var respuesta = $('#resp').val(),
+            respuestaOK = nn(numbers);
+        if(respuesta==respuestaOK){
+            $('#successMessage').html('<h2>Bien Hecho! <br/> Presiona el boton y luego uno de los del submenu</h2><button onclick="escribirs()">Jugar otra vez</button>').show();
+        }else{
+            
+        }    
+        
+    });
+    
+
+}//escribir
+
+
 
 
 </script>
