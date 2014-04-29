@@ -12,11 +12,12 @@
       result=[];
   
   var $ul = $('#sortable');
-    for(var i = 0; i < 4; i++) {
-        var idx = Math.floor(Math.random() * items.length);
-        newItems.push(items[idx]);
-        items.splice(idx, 1);
-    }
+
+  for(var i = 0; i < 4; i++) {
+    var idx = Math.floor(Math.random() * items.length);
+    newItems.push(items[idx]);
+    items.splice(idx, 1);
+  }
 
 
 

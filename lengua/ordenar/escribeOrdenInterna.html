@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <div class="wrapper" id="descomposicion">
+        
+        
+
+
+
+         <ul id="sortable"></ul>
+         
+         <!--<div class="basic stopwatch"></div>-->
+
+
+
+
+
+         <form action="#" id="respuestas">
+            <input type="text" required name="uno">
+            <input type="text" required name="dos">
+            <input type="text" required name="tres">
+            <input type="text" required name="cuatro">
+            <!--<input type="text" required name="cinco">
+            <input type="text" required name="seis">
+            <input type="text" required name="siete">
+            <input type="text" required name="ocho">-->
+            <button type="submit">Revisar</button>
+          </form>
+
+        
+
+         <div id="nav">
+            <button id="instrucciones" class="pulse">Instrucciones</button>
+            <button id="regresar" class="pulse">Regresar</button>
+         </div><!--nav-->
+         <img id="titulo" src="img/escribeOrden.png" width="202" height="94">
+         <img id="avatar" src="img/muneco2.png" width="120" height="126">
+      
+      <div id="successMessage"></div>
+      
+      </div><!-- contenedor -->
+
+
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
+    <script src="../../libs/js/jquery.timer.js"></script>
+    <script src="../../libs/js/compararArrays.js"></script>
+    
+    </body>
+</html>
+
+<script type="text/javascript">
+
+ $(start);
+
+  function start(){
+ 
+    var items = [
+      "barco", "gato", "lentes", "pato", "pelota", "perro", "raton", "zapato" 
+      ],
+      newItems = [],
+      result=[],
+      mensaje = $('#successMessage');
+      $ul = $('#sortable');
+
+      $ul.html('');
+      mensaje.hide();
+
+      for(var i = 0; i < 4; i++) {
+          var idx = Math.floor(Math.random() * items.length);
+          newItems.push(items[idx]);
+          items.splice(idx, 1);
+      }
+
+
+
+  $.each(newItems, function(index, val) {
+      $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ newItems[index] + '.jpg" width="100" height="100"></li>');
+  });
+
+  
+ 
+  var respuestaOK = newItems.sort(function(a, b){
+      var a1= a, b1= b;
+      if(a1== b1) return 0;
+      return a1> b1? 1: -1;
+  });
+
+   $('form button').on('click', function(e){
+      e.preventDefault();
+      result = [];
+      var input;
+      $("form#respuestas input[type=text]").each(function(index, val){
+        input = $(this).val(); // This is the jquery object of the input, do what you will
+        input = omitirAcentos($(this).val().toLowerCase());
+        console.log(input);
+        //nombre = omitirAcentos(nombre[1]);
+        
+        if(input ==="")
+          mensaje = '<p>Rellena todos los campos</p>';
+        else{
+          result.push(input);
+          if($.compare(respuestaOK, result)){
+             mensaje.html('<h2>Bien Hecho! <br/> Presiona el boton y luego uno de los del submenu</h2><button onclick="start()">Jugar otra vez</button>').show()
+              .animate({
+                  left: '380px',
+                  top: '200px',
+                  width: '400px',
+                  height: '250px',
+                  opacity: 1
+            });//mensaje
+            //Stopwatch.stop();
+          }else{
+            mensaje = "Intenta otra vez";
+          }
+          
+        }
+
+      });//form each
+      
+      $('div#mensaje').html(mensaje);
+   })//click; 
+
+  
+
+
+  function omitirAcentos(text) {
+      var acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
+      var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
+      for (var i=0; i<acentos.length; i++) {
+          text = text.replace(acentos.charAt(i), original.charAt(i));
+      }
+      return text;
+  }
+      
+  }//start
+
+
+  
+  
+</script>
