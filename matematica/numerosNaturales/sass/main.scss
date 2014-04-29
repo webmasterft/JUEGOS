@@ -1,0 +1,354 @@
+@import "vars.scss";
+@import "normalize.scss";
+@import "normal.scss";
+@import "hover.scss";
+@import "compass/css3/";
+
+
+
+body{
+    font-size: $baseFontSize;
+    font-family: $bodyFontFamily;
+    color:$color-negro;
+    background:$color-blanco;
+    line-height: $baseLineHeight;
+}
+
+.clear{
+  clear:both;
+}
+
+
+.wrapper{
+  width: $wrapper;
+  margin: 0 auto;
+  height: 600px;
+  position:relative;
+}
+
+#home{
+  background: url(../img/home.jpg) no-repeat;
+  
+  #logos{
+    float: left;
+    margin:90px 0 0 90px;
+    img{
+      float: left;
+    }
+
+  }//img
+
+  #iniciar{
+    @include border-radius(20px, 20px);
+    background: $color-azulBoton;
+    color:$color-blanco;
+    font-size: $baseFontSize + 23;
+    font-weight: bold;
+    padding:10px;
+    border: 4px solid $color-blanco;
+    display:inline-block;
+    position:absolute;
+    top: 122px;
+    right: 64px;
+    a{
+      text-decoration: none;
+      color:#fff;
+    }
+  }//iniciar
+
+  #titulo{
+    position:absolute;
+    top: 217px;
+    left: 30px;
+  }
+
+  #avatarhome{
+    position:absolute;
+    bottom: 75px;
+    right: 28px;
+  }
+
+  #intrucciones{
+    position:absolute;
+    bottom:58px;
+    left: 136px;
+    color: $color-blanco;
+    width: 480px;
+    p{
+      font-size: $baseFontSize + 23;
+      line-height: $baseFontSize + 44;
+    }
+    ol{
+      list-style-type: decimal;
+      list-style-position: inside;
+      li{
+        padding-bottom:3px;
+      }
+    }//ol
+  }//
+
+}//home
+
+  .button{
+    @include border-radius(20px, 20px);
+    background: $color-azulBoton;
+    color:$color-blanco;
+    font-weight: bold;
+    padding:10px;
+    border: 4px solid $color-blanco;
+  }//iniciar
+
+  .verde{
+    background: $color-verdeBack;
+  }
+
+
+#descomposicion{
+  background: url(../img/fondo2.jpg) no-repeat;
+  #titulo{
+    position:absolute;
+    bottom:20px;
+    left:6px;
+  }
+  #avatar{
+    position: absolute;
+    bottom:0px;
+    right: 10px;
+  }
+
+  #nav{
+    position: absolute;
+    bottom:10px;
+    left: 230px;
+    button{
+      padding: 10px;
+      margin-right: 20px;
+      color:$color-blanco;
+      border:2px solid $color-blanco;
+      background:transparent;
+      text-transform: uppercase;
+    }
+  }//nav
+  
+  #logos{
+    position:absolute;
+    bottom:67px;
+    right: 164px;
+    img.edinum{
+      margin-right: 60px;
+    }
+  }//logos
+
+  #menu{
+    width: 200px;
+    padding: 60px 60px 0 50px;
+    float: left;
+    p{
+      font-size: $baseFontSize + 27;
+      line-height: $baseFontSize + 37;
+      text-align: center;
+      text-transform: uppercase;
+      color:$color-azulBoton;
+    }
+
+    ul{
+      background: $color-azulBoton;
+      @include border-radius(10px, 10px);
+      border: 5px solid $color-blanco;
+      padding:10px;
+      li{
+        color:$color-blanco;
+        font-size: $baseFontSize + 2;
+        padding:5px 0;
+        width: 100%;
+        font-weight: bold;
+        cursor:pointer;
+      }
+
+
+    }//ul
+
+  }//menu
+
+  
+
+#numero{
+  
+  background:url('../img/numero.png')no-repeat top center;
+  width: 300px;
+  height: 126px;
+  overflow: hidden;
+  margin:10px 0;
+  p{
+    color:$color-blanco;
+    text-align: left;
+    font-weight: bold;
+    font-size: $baseFontSize + 7;
+    padding: 13px 0 0 20px;
+  }
+  
+  p#num{
+    text-align:right;
+    font-size: $baseFontSize + 47;
+    text-indent: 0; 
+    padding:0 10px 0 0;
+  }
+
+}//numero
+
+#content{
+  float: left;
+  //width: 300px;
+
+
+
+    /* Slots for final card positions */
+
+    #cardSlots {
+      margin: 15px auto 0 auto;
+      background: $color-rojo;
+    }
+
+    /* The initial pile of unsorted cards */
+
+    #cardPile {
+      margin: 0 auto;
+      background: $color-verdeOscuro;
+    }
+
+
+    
+    #cardSlots, #cardPile {
+      width: 910px;
+      height: 100px;
+      padding: 10px;
+      border: 2px solid #333;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+      -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+      box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+    }
+
+    &.d1{
+      #cardSlots, #cardPile {
+        width: 147px;
+      }
+    }//d1
+
+    &.d2{
+      #cardSlots, #cardPile {
+        width: 217px;
+      }
+    }//d1
+
+
+    &.d3{
+      #cardSlots, #cardPile {
+        width: 290px;
+      }
+    }//d1
+
+    &.d4{
+      #cardSlots, #cardPile {
+        width: 427px;
+      }
+    }//d1
+
+
+
+
+    /* Individual cards and slots */
+
+    #cardSlots div, #cardPile div {
+      float: left;
+      width: 58px;
+      height: 90px;
+      line-height: 90px;
+      border: 2px solid #333;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+      margin: 0 5px;
+      
+    }
+
+    #cardSlots div:first-child, #cardPile div:first-child {
+      margin-left: 0;
+    }
+
+    #cardSlots div.hovered {
+      background: #aaa;
+    }
+
+    #cardSlots div {
+      border-style: dashed;
+    }
+
+    #cardPile div {
+      background: $color-rojo;
+      color: $color-blanco;
+      font-size: 50px;
+      text-shadow: 0 0 3px #000;
+    }
+
+    #cardPile div.ui-draggable-dragging {
+      -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+      -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+      box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    }
+
+    /* Individually coloured cards */
+
+    #card1.correct { background: red; }
+    #card2.correct { background: brown; }
+    #card3.correct { background: orange; }
+    #card4.correct { background: yellow; }
+    #card5.correct { background: green; }
+    #card6.correct { background: cyan; }
+    #card7.correct { background: blue; }
+    #card8.correct { background: indigo; }
+    #card9.correct { background: purple; }
+    #card10.correct { background: violet; }
+
+
+    /* "You did it!" message */
+    #successMessage {
+      position: absolute;
+      left: 580px;
+      top: 250px;
+      width: 0;
+      height: 0;
+      z-index: 100;
+      background: #dfd;
+      border: 2px solid #333;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+      -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+      box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+      padding: 20px;
+    }
+
+
+}//content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}//#descomposicion
