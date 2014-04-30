@@ -17,17 +17,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
       <div class="wrapper" id="descomposicion">
-        
-        
-
-
 
          <ul id="sortable"></ul>
          
          <!--<div class="basic stopwatch"></div>-->
-
-
-
 
 
          <div id="logos">
@@ -51,9 +44,7 @@
 
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
     <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
-    <script src="../../libs/js/jquery.timer.js"></script>
-    <script src="../../libs/js/compararArrays.js"></script>
-    
+    <script src="../../libs/js/funciones.js"></script>    
     </body>
 </html>
 
@@ -62,26 +53,17 @@
  $(start);
 
   function start(){
-    var items = [
-      "barco", "gato", "lentes", "pato", "pelota", "perro", "raton", "zapato" 
-      ],
-      newItems = [];
-      $ul = $('#sortable'),
-      mensaje = $('#successMessage');
+      //newItems = [];
+      $ul = $('#sortable');
       
       $ul.html('');
       mensaje.hide();
       
-      for(var i = 0; i < 8; i++) {
-          var idx = Math.floor(Math.random() * items.length);
-          newItems.push(items[idx]);
-          items.splice(idx, 1);
-      }
-
+      newItems = numeroFiguras(3);      
 
 
     $.each(newItems, function(index, val) {
-      $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ newItems[index] + '.jpg" width="100" height="100"></li>');
+      $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100"></li>');
     });
 
     
@@ -97,17 +79,8 @@
     $("#sortable").sortable({
       update: function(event, ui) {
         var result = $(this).sortable('toArray');
-        
         if($.compare(respuestaOK, result)){
-          mensaje.html('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Jugar otra vez</button>').show()
-            .animate({
-                left: '250px',
-                top: '150px',
-                width: '360px',
-                height: '200px',
-                opacity: 1
-          });
-
+          mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Jugar otra vez</button>').show()
         }//if
       },
     }).disableSelection();

@@ -18,22 +18,11 @@
         <![endif]-->
       <div class="wrapper" id="descomposicion">
         
-        
-
-
-
          <ul id="sortable"></ul>
-         
+
          <div class="clear"></div>
-         <!--<div class="basic stopwatch"></div>-->
 
-
-
-
-
-         <form action="#" id="respuestas">
-            
-          </form>
+         <form action="#" id="respuestas"> </form>
 
         
 
@@ -51,8 +40,7 @@
 
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
     <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
-    <script src="../../libs/js/jquery.timer.js"></script>
-    <script src="../../libs/js/compararArrays.js"></script>
+    <script src="../../libs/js/funciones.js"></script>
     
     </body>
 </html>
@@ -60,14 +48,10 @@
 <script type="text/javascript">
 
  $(start);
-  mensaje = $('#successMessage');
+  
   function start(){
- 
-    var items = [
-      "barco", "gato", "lentes", "pato", "pelota", "perro", "raton", "zapato" 
-      ],
-      newItems = [],
-      result=[],
+      
+      var result=[],
       formResp = $('form#respuestas'),
       $ul = $('#sortable');
 
@@ -75,93 +59,41 @@
       mensaje.hide();
       formResp.html('');
 
-      for(var i = 0; i < 8; i++) {
-          var idx = Math.floor(Math.random() * items.length);
-          newItems.push(items[idx]);
-          items.splice(idx, 1);
-      }
+      newItems = numeroFiguras(3);
 
 
 
-  $.each(newItems, function(index, val) {
-      $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ newItems[index] + '.jpg" width="100" height="100"></li>');
-      formResp.append('<input type="text" required="" name="' + index + '">');
-  });
+    $.each(newItems, function(index, val) {
+        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100"></li>');
+        formResp.append('<input type="text" required="" name="' + index + '">');
+    });
 
-  formResp.append('<button type="submit" class="button pulse">Revisar</button>');
- 
-  var respuestaOK = newItems.sort(function(a, b){
-      var a1= a, b1= b;
-      if(a1== b1) return 0;
-      return a1> b1? 1: -1;
-  });
+    formResp.append('<button type="submit" class="button pulse">Revisar</button>');
+   
+    var respuestaOK = newItems.sort(function(a, b){
+        var a1= a, b1= b;
+        if(a1== b1) return 0;
+        return a1> b1? 1: -1;
+    });
 
    $('form button').on('click', function(e){
       e.preventDefault();
       result = [];
       var input;
       $("form#respuestas input[type=text]").each(function(index, val){
-        input = $(this).val(); // This is the jquery object of the input, do what you will
-        input = omitirAcentos($(this).val().toLowerCase());
-        console.log(input);
-        //nombre = omitirAcentos(nombre[1]);
-        
+        input = $.trim($(this).val().toLowerCase());
         if(input === ""){
-          mensaje.html('<h2>Rellena todos los campos!</h2><button class="button pulse" onclick="cerrar()">Cerrar</button>')
-            .show()
-            .animate({
-                left: '250px',
-                top: '150px',
-                width: '360px',
-                height: '200px',
-                opacity: 1
-          });//mensaje
-        
+          mostrarMensaje('<h2>Rellena todos los campos!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
         }else{
           result.push(input);
           if($.compare(respuestaOK, result)){
-            mensaje.html('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Jugar otra vez</button>').show()
-              .animate({
-                  left: '250px',
-                  top: '150px',
-                  width: '360px',
-                  height: '200px',
-                  opacity: 1
-            });//mensaje
-            
+            mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start(), cerrarMensaje()">Jugar otra vez</button>');
           }else{
-            mensaje.html('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrar()">Cerrar</button>').show()
-              .animate({
-                  left: '250px',
-                  top: '150px',
-                  width: '360px',
-                  height: '200px',
-                  opacity: 1
-            });//mensaje
-          }
-          
+            mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
+          }//if compare
         }//if input
-
       });//form each
-      
-      $('div#mensaje').html(mensaje);
-      
    })//click; 
-    
   }//start
-
-function cerrar(){
-    mensaje.fadeOut();
-  }
-  
-  function omitirAcentos(text) {
-      var acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
-      var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
-      for (var i=0; i<acentos.length; i++) {
-          text = text.replace(acentos.charAt(i), original.charAt(i));
-      }
-      return text;
-  }
-  
   
 </script>
