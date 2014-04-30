@@ -24,6 +24,7 @@
 
          <ul id="sortable"></ul>
          
+         <div class="clear"></div>
          <!--<div class="basic stopwatch"></div>-->
 
 
@@ -31,15 +32,7 @@
 
 
          <form action="#" id="respuestas">
-            <input type="text" required name="uno">
-            <input type="text" required name="dos">
-            <input type="text" required name="tres">
-            <input type="text" required name="cuatro">
-            <!--<input type="text" required name="cinco">
-            <input type="text" required name="seis">
-            <input type="text" required name="siete">
-            <input type="text" required name="ocho">-->
-            <button type="submit">Revisar</button>
+            
           </form>
 
         
@@ -67,7 +60,7 @@
 <script type="text/javascript">
 
  $(start);
-
+  mensaje = $('#successMessage');
   function start(){
  
     var items = [
@@ -75,13 +68,14 @@
       ],
       newItems = [],
       result=[],
-      mensaje = $('#successMessage');
+      formResp = $('form#respuestas'),
       $ul = $('#sortable');
 
       $ul.html('');
       mensaje.hide();
+      formResp.html('');
 
-      for(var i = 0; i < 4; i++) {
+      for(var i = 0; i < 8; i++) {
           var idx = Math.floor(Math.random() * items.length);
           newItems.push(items[idx]);
           items.splice(idx, 1);
@@ -91,9 +85,10 @@
 
   $.each(newItems, function(index, val) {
       $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ newItems[index] + '.jpg" width="100" height="100"></li>');
+      formResp.append('<input type="text" required="" name="' + index + '">');
   });
 
-  
+  formResp.append('<button type="submit" class="button pulse">Revisar</button>');
  
   var respuestaOK = newItems.sort(function(a, b){
       var a1= a, b1= b;
@@ -111,34 +106,54 @@
         console.log(input);
         //nombre = omitirAcentos(nombre[1]);
         
-        if(input ==="")
-          mensaje = '<p>Rellena todos los campos</p>';
-        else{
+        if(input === ""){
+          mensaje.html('<h2>Rellena todos los campos!</h2><button class="button pulse" onclick="cerrar()">Cerrar</button>')
+            .show()
+            .animate({
+                left: '250px',
+                top: '150px',
+                width: '360px',
+                height: '200px',
+                opacity: 1
+          });//mensaje
+        
+        }else{
           result.push(input);
           if($.compare(respuestaOK, result)){
-             mensaje.html('<h2>Bien Hecho! <br/> Presiona el boton y luego uno de los del submenu</h2><button onclick="start()">Jugar otra vez</button>').show()
+            mensaje.html('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Jugar otra vez</button>').show()
               .animate({
-                  left: '380px',
-                  top: '200px',
-                  width: '400px',
-                  height: '250px',
+                  left: '250px',
+                  top: '150px',
+                  width: '360px',
+                  height: '200px',
                   opacity: 1
             });//mensaje
-            //Stopwatch.stop();
+            
           }else{
-            mensaje = "Intenta otra vez";
+            mensaje.html('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrar()">Cerrar</button>').show()
+              .animate({
+                  left: '250px',
+                  top: '150px',
+                  width: '360px',
+                  height: '200px',
+                  opacity: 1
+            });//mensaje
           }
           
-        }
+        }//if input
 
       });//form each
       
       $('div#mensaje').html(mensaje);
+      
    })//click; 
+    
+  }//start
 
+function cerrar(){
+    mensaje.fadeOut();
+  }
   
-
-
   function omitirAcentos(text) {
       var acentos = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
       var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
@@ -147,10 +162,6 @@
       }
       return text;
   }
-      
-  }//start
-
-
   
   
 </script>

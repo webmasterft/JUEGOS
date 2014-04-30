@@ -72,7 +72,7 @@
       $ul.html('');
       mensaje.hide();
       
-      for(var i = 0; i < 3; i++) {
+      for(var i = 0; i < 8; i++) {
           var idx = Math.floor(Math.random() * items.length);
           newItems.push(items[idx]);
           items.splice(idx, 1);
@@ -99,12 +99,12 @@
         var result = $(this).sortable('toArray');
         
         if($.compare(respuestaOK, result)){
-          mensaje.html('<h2>Bien Hecho! <br/> Presiona el boton y luego uno de los del submenu</h2><button onclick="start()">Jugar otra vez</button>').show()
+          mensaje.html('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Jugar otra vez</button>').show()
             .animate({
-                left: '380px',
-                top: '200px',
-                width: '400px',
-                height: '250px',
+                left: '250px',
+                top: '150px',
+                width: '360px',
+                height: '200px',
                 opacity: 1
           });
 
@@ -115,6 +115,4 @@
   }//start
 
 
-  
-  
 </script>

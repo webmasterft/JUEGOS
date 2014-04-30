@@ -71,7 +71,7 @@ body{
 
   #intrucciones{
     position:absolute;
-    bottom:58px;
+    bottom:92px;
     left: 136px;
     color: $color-blanco;
     width: 480px;
@@ -87,6 +87,9 @@ body{
       }
     }//ol
   }//
+
+
+
 
 }//home
 
@@ -140,40 +143,30 @@ body{
     }
   }//logos
 
-  
-
-  
-
-
-
-#content{
-  float: left;
- 
-    /* "You did it!" message */
-    #successMessage {
-      position: absolute;
-      left: 580px;
-      top: 250px;
-      width: 0;
-      height: 0;
-      z-index: 100;
-      background: #dfd;
-      border: 2px solid #333;
-      -moz-border-radius: 10px;
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-      -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      padding: 20px;
+  form#respuestas{
+    width: 857px;
+    margin:0 auto;
+    input[type="text"]{
+      background: url(../img/success.jpg) top center;
+      float:left;
+      display: inline-block;
+      width: 93px;
+      border: 1px solid #7E7C7C;
+      color:$color-blanco;
+      text-align: center;
+      margin:3px;
+      @include border-radius(5px, 5px);
+      padding:5px 3px;
     }
+  }
+  
 
 
-}//content
+
 }//#descomposicion
 
 
-#sortable { list-style-type: none; margin: 0 auto; padding: 50px 0; width: 750px; }
+#sortable { list-style-type: none; margin: 0 auto; padding: 50px 0; width: 857px; }
 #sortable li { 
   margin: 3px 3px 3px 0; 
   padding: 1px; 
@@ -182,6 +175,7 @@ body{
   height: 100px; 
   font-size: 4em; 
   text-align: center; 
+  @include border-radius(5px, 5px);
 }
   
 
@@ -206,19 +200,24 @@ body{
 /* "You did it!" message */
     #successMessage {
       position: absolute;
-      left: 580px;
-      top: 250px;
-      width: 0;
-      height: 0;
+      left: 250px;
+      top: 150px;
+      width: 0px;
+      height: 0px;
       z-index: 100;
-      background: #dfd;
-      border: 2px solid #333;
-      -moz-border-radius: 10px;
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-      -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+      background: url(../img/success.jpg) top center;
+      border: 7px solid $color-blanco;
+      @include border-radius(10px, 10px);
+      @include single-box-shadow;
       padding: 20px;
-      
-    }
+      color:$color-blanco;
+      text-align: center;
+
+      h2{
+        font-size: $baseFontSize + 18;
+        line-height: $baseFontSize + 20;
+        margin:40px;
+      }
+
+
+    }//successMessage
