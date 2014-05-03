@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
-        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+                <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 9]>
@@ -20,7 +20,10 @@
 
          <ul id="sortable"></ul>
          
-         <!--<div class="basic stopwatch"></div>-->
+         
+          <button class='btn btn-success start-timer-btn'>Track</button>
+          <button class='btn btn-danger pause-timer-btn hidden'>Pause</button>
+          <div id="t" class="badge">00:00</div>
 
 
          <div id="logos">
@@ -54,7 +57,8 @@
 
   function start(){
       //newItems = [];
-      $ul = $('#sortable');
+      $ul = $('#sortable'),
+      $reloj = $('#t');
       
       $ul.html('');
       mensaje.hide();
@@ -66,24 +70,53 @@
       $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100"></li>');
     });
 
-    
+
    
-    var respuestaOK = newItems.sort(function(a, b){
+   var respuestaOK = newItems.sort(function(a, b){
         var a1= a, b1= b;
         if(a1== b1) return 0;
         return a1> b1? 1: -1;
     });
 
-      
+    var contador = 1;
 
     $("#sortable").sortable({
+      start: function( event, ui ) {
+        $reloj.timer('start');
+      },
+
       update: function(event, ui) {
         var result = $(this).sortable('toArray');
         if($.compare(respuestaOK, result)){
-          mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Jugar otra vez</button>').show()
+          $reloj.timer('pause');
+        mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
         }//if
       },
     }).disableSelection();
+
+ // /*
+ //                Init timer start
+ //            */
+ //            $('.start-timer-btn').on('click', function(){
+ //                $('#t').timer('start');
+ //                $(this).addClass('hidden');
+ //                $('.pause-timer-btn').removeClass('hidden');
+ //            });
+
+
+
+ //            /*
+ //                Init timer stop
+ //            */
+ //            $('.pause-timer-btn').on('click', function(){
+ //                $('#t').timer('pause');
+ //                $(this).addClass('hidden');
+ //                $('.start-timer-btn').removeClass('hidden');
+ //            });
+
+
+
+
       
   }//start
 
