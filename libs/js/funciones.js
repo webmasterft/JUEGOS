@@ -3,7 +3,7 @@
     itemsOrdenar = [
       "barco", "gato", "lentes", "pato", "pelota", "perro", "raton", "zapato" 
     ],
-
+    
 /* GLOBALES */
 
 
@@ -86,12 +86,16 @@ function toLetters(n)
 
 /* NUMEROS DE FIGURAS A MOSTRAR*/
     function numeroFiguras(numero){
-        var newItems = [];
+
+        newItems = [];
+
         for(var i = 0; i < numero; i++) {
               var idx = Math.floor(Math.random() * itemsOrdenar.length);
               newItems.push(itemsOrdenar[idx]);
-              itemsOrdenar.splice(idx, 1);
+              itemsOrdenar.splice(idx, -1);
+              
         }
+        console.log(newItems);
         return newItems;
     }
 /* NUMEROS DE FIGURAS A MOSTRAR*/    
