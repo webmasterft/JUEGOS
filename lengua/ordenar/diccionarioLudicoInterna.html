@@ -16,16 +16,14 @@
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper" id="descomposicion">
+      <div class="wrapper lengua" id="descomposicion">
+        
+       
+
 
          <ul id="sortable"></ul>
-         
-         
-          <button class='btn btn-success start-timer-btn'>Track</button>
-          <button class='btn btn-danger pause-timer-btn hidden'>Pause</button>
-          <div id="t" class="badge">00:00</div>
-
-
+         <div class="clear"></div>
+         <div id="reloj"><div id="t" class="badge">00:00</div></div>
          <div id="logos">
           <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
           <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
@@ -40,7 +38,14 @@
          <img id="titulo" src="img/diccionarioLudico.png" width="202" height="94">
          <img id="avatar" src="img/muneco2.png" width="120" height="126">
       
-      <div id="successMessage"></div>
+         <div id="successMessage"></div>
+         <div id="instrucciones">
+            <ol>
+              <li>Observa detenidamente cada figura </li>
+              <li>Ordénalas alfabéticamente</li>
+              <li>Arrastra cada figura a su lugar respectivo.</li>
+            </ol>
+         </div>
       
       </div><!-- contenedor -->
 
@@ -58,12 +63,10 @@
   function start(){
       //newItems = [];
       $ul = $('#sortable'),
-      $reloj = $('#t');
-      
       $ul.html('');
       mensaje.hide();
       
-      newItems = numeroFiguras(3);      
+      newItems = numeroFiguras(8);      
 
 
     $.each(newItems, function(index, val) {
@@ -78,7 +81,7 @@
         return a1> b1? 1: -1;
     });
 
-    var contador = 1;
+       
 
     $("#sortable").sortable({
       start: function( event, ui ) {
@@ -88,36 +91,12 @@
       update: function(event, ui) {
         var result = $(this).sortable('toArray');
         if($.compare(respuestaOK, result)){
-          $reloj.timer('pause');
+          $reloj.timer('stop');
         mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
         }//if
       },
     }).disableSelection();
-
- // /*
- //                Init timer start
- //            */
- //            $('.start-timer-btn').on('click', function(){
- //                $('#t').timer('start');
- //                $(this).addClass('hidden');
- //                $('.pause-timer-btn').removeClass('hidden');
- //            });
-
-
-
- //            /*
- //                Init timer stop
- //            */
- //            $('.pause-timer-btn').on('click', function(){
- //                $('#t').timer('pause');
- //                $(this).addClass('hidden');
- //                $('.start-timer-btn').removeClass('hidden');
- //            });
-
-
-
-
-      
+     
   }//start
 
 

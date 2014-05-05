@@ -1,17 +1,26 @@
 /* GLOBALES */
     mensaje = $('#successMessage');
     itemsOrdenar = [
-      "barco", "gato", "lentes", "pato", "pelota", "perro", "raton", "zapato" 
-    ],
+      "barco" , "bus", "calavera", "cama", "campana", "coco", "conejo", "culebra",
+      "doctor", "flores", "gato", "helado", "joyas", "lampara", "lapiz", "leon",
+      "mono", "mosquito", "pan", "pastel", "pelota", "perro", "piquero", "pito",
+      "policia", "raqueta", "raton", "reloj", "tambor", "toro", "tren", "zapato"
+    ];
     
+    $reloj = $('#t');    
 /* GLOBALES */
 
 
+    // INSTRUCCIONES //
+    $('button#instrucciones').on('click', function(){
+        $('div#instrucciones').fadeToggle();
+    });
+    // INSTRUCCIONES //
 
 
-
-
-
+    $('button#regresar').on('click', function(){
+        location.reload();
+    });
 
 
 /* COMPARAR ARRAYS*/
@@ -95,7 +104,6 @@ function toLetters(n)
               itemsOrdenar.splice(idx, -1);
               
         }
-        console.log(newItems);
         return newItems;
     }
 /* NUMEROS DE FIGURAS A MOSTRAR*/    
@@ -146,7 +154,6 @@ function toLetters(n)
 
 
 
-
 /* RELOJ */
 /*
  * =======================
@@ -164,6 +171,7 @@ function toLetters(n)
  (function($){
 
   var jQueryTimer = function(element, options) {
+
     var defaults = {
       action: 'start',
       editable: true   //this will let users make changes to the time
@@ -204,9 +212,6 @@ function toLetters(n)
     }
     
     this.elType = this.$el.prop('tagName').toLowerCase();
-
-    if(this.options.editable) this.initEditable();
-
   };
 
   jQueryTimer.prototype.start = function () {
@@ -214,8 +219,17 @@ function toLetters(n)
       this.updateTimerDisplay();
       this.incrementTime(); //to avoid the 1 second gap that gets created if the seconds are not incremented
       this.startTimerInterval();
+      this.$el.prop('className', 'badge activo');
     }
   }
+
+  jQueryTimer.prototype.stop = function () {
+    clearInterval(this.timerId);
+    this.updateTimerDisplay();
+    this.init();
+    this.$el.prop('className', 'badge detenido');
+  }
+
 
   jQueryTimer.prototype.pause = function () {
     clearInterval(this.timerId);
@@ -235,73 +249,6 @@ function toLetters(n)
     this.isTimerRunning = true;
   }
 
-  /*
-    Allow users to click and edit the timer value by typing in
-  */
-  jQueryTimer.prototype.initEditable = function () {
-    var self = this;
-    this.$el.on('focus', function(){
-      self.pause();
-    });
-
-    this.$el.on('blur', function(){
-      //get the value and update the number of seconds if necessary
-      var timerDisplayStr;
-
-      //remove any spaces while getting the string
-      if(self.elType == 'input' || self.elType == 'textarea') timerDisplayStr = $(this).val().replace(/\s+/, '');
-      else timerDisplayStr = $(this).html().replace(/\s+/, '');
-
-      //check for seconds
-      //check for minutes
-      //check for hours
-
-      var matchSeconds  = /\d+sec/,
-          matchMinutes  = /\d+\:\d+min/,
-          matchHours    = /\d+\:\d+\:\d+/;
-
-      if(timerDisplayStr.match(matchSeconds)) {
-        //extract the seconds from this
-        self.secsNum = parseInt(timerDisplayStr.replace(/sec/, ''), 10) + 1;
-        if (self.secsNum > 59) {
-          self.secsNum = 00;
-          self.minsNum++;
-        }
-      } else if(timerDisplayStr.match(matchMinutes)) {
-        timerDisplayStr = timerDisplayStr.replace(/min/, '');
-        var timerDisplayArr = timerDisplayStr.split(':');
-        self.minsNum = parseInt(timerDisplayArr[0], 10);
-        self.secsNum = parseInt(timerDisplayArr[1], 10) + 1;
-
-        if (self.secsNum > 59) {
-          self.secsNum = 00;
-          self.minsNum++;
-        }
-
-        if (self.minsNum > 59) {
-          self.minsNum = 00;
-          self.hrsNum++;
-        }
-
-      } else if(timerDisplayStr.match(matchHours)) {
-        var timerDisplayArr = timerDisplayStr.split(':');
-        self.hrsNum = parseInt(timerDisplayArr[0], 10);
-        self.minsNum = parseInt(timerDisplayArr[1], 10);
-        self.secsNum = parseInt(timerDisplayArr[2], 10) + 1;
-
-        if (self.secsNum > 59) {
-          self.secsNum = 00;
-          self.minsNum++;
-        }
-
-        if (self.minsNum > 59) {
-          self.minsNum = 00;
-          self.hrsNum++;
-        }
-      }
-      self.resume();
-    });
-  }
   
   jQueryTimer.prototype.updateTimerDisplay = function () {
     //if(this.hrsNum > 0) this.options.showHours = true;

@@ -16,7 +16,7 @@
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper" id="descomposicion">
+      <div class="wrapper lengua" id="descomposicion" >
         
          <ul id="sortable"></ul>
 
@@ -24,7 +24,8 @@
 
          <form action="#" id="respuestas"> </form>
 
-        
+         <div class="clear"></div>
+         <div id="reloj"><div id="t" class="badge">00:00</div></div>        
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
@@ -34,6 +35,12 @@
          <img id="avatar" src="img/muneco2.png" width="120" height="126">
       
       <div id="successMessage"></div>
+        <div id="instrucciones">
+          <ol>
+           <li>Observa detenidamente cada figura</li>
+            <li>Escribe su nombre según el orden alfabético</li>
+          </ol>
+        </div><!-- instrucciones -->  
       
       </div><!-- contenedor -->
 
@@ -48,6 +55,9 @@
 <script type="text/javascript">
 
  $(start);
+
+
+ 
   
   function start(){
       
@@ -59,22 +69,24 @@
       mensaje.hide();
       formResp.html('');
 
-      newItems = numeroFiguras(3);
+      newItems = numeroFiguras(8);
 
 
 
     $.each(newItems, function(index, val) {
-        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100"></li>');
+        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" alt="' + newItems[index] + '"></li>');
         formResp.append('<input type="text" required="" name="' + index + '">');
     });
 
-    formResp.append('<button type="submit" class="button pulse">Revisar</button>');
+    formResp.append('<div class="clear"></div><button type="submit" class="button pulse">Revisar</button>');
    
     var respuestaOK = newItems.sort(function(a, b){
         var a1= a, b1= b;
         if(a1== b1) return 0;
         return a1> b1? 1: -1;
     });
+
+   
 
    $('form button').on('click', function(e){
       e.preventDefault();
@@ -88,12 +100,26 @@
           result.push(input);
           if($.compare(respuestaOK, result)){
             mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start(), cerrarMensaje()">Jugar otra vez</button>');
+              $reloj.timer('stop');
+
           }else{
             mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
           }//if compare
         }//if input
       });//form each
-   })//click; 
+   })//click;
+
+   var bandera = 0;
+   //INICIAR EL RELOJ//
+    $("input[type=text]").on('change',function() {
+      if(bandera === 0){
+        $reloj.timer('start');
+        bandera = 1;
+      }  
+    });
+    //INICIAR EL RELOJ//
+
+
   }//start
   
 </script>

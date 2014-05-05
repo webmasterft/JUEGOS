@@ -167,17 +167,27 @@ body{
 }//#descomposicion
 
 
-#sortable { list-style-type: none; margin: 0 auto; padding: 50px 0; width: 857px; }
-#sortable li { 
-  margin: 3px 3px 3px 0; 
-  padding: 1px; 
-  float: left; 
-  width: 100px; 
-  height: 100px; 
-  font-size: 4em; 
-  text-align: center; 
-  @include border-radius(5px, 5px);
-}
+#sortable { 
+  list-style-type: none; 
+  margin: 0 auto; 
+  padding: 50px 0; 
+  width: 857px; 
+  
+  li { 
+    margin: 3px 3px 3px 0; 
+    padding: 1px; 
+    float: left; 
+    width: 100px; 
+    height: 100px; 
+    font-size: 4em; 
+    text-align: center; 
+    @include border-radius(5px, 5px);
+    cursor: pointer;
+      &.ui-sortable-helper{
+        cursor: move;
+      }
+  }//li
+}//sortable
   
 
   .stopwatch {
@@ -196,7 +206,7 @@ body{
     text-decoration: none;
   }
 
-
+  
 
 /* "You did it!" message */
     #successMessage {
@@ -217,8 +227,74 @@ body{
       h2{
         font-size: $baseFontSize + 18;
         line-height: $baseFontSize + 20;
-        margin:40px;
+        margin:40px 0 20px 0;
       }
 
+      p{
+        font-size: $baseFontSize + 8;
+        line-height: $baseFontSize + 12;
+        margin-bottom: 10px;
+      }
 
     }//successMessage
+
+  .lengua{
+    #successMessage{
+      background:$color-naranjaSuccess;
+      button{
+        background:$color-verdefosf;
+        color:$color-txtBoton;
+      }
+    }//#successMessage
+  }//lengua
+
+  div#instrucciones{
+    @extend #successMessage;
+    text-align: left;
+    position: absolute;
+    left:223px;
+    top:400px;
+    width: auto;
+    height: auto;
+    display:none;
+  }
+
+
+#reloj{
+  background: url('../../../libs/img/reloj.png') no-repeat;
+  width: 105px;
+  height: 149px;
+  position:relative;
+  position: absolute;
+  top: 228px;
+  right: 50px;
+
+
+  .badge {
+    @include border-radius( 5px , 5px);
+    display: inline-block;
+    padding: 10px;
+    font-size: $baseFontSize - 2;
+    font-weight: bold;
+    line-height: $baseFontSize + 3;
+    color: $color-blanco;
+    vertical-align: baseline;
+    white-space: nowrap;
+    background: #999999;
+    text-align: center;
+    color:$color-blanco;
+    width: 44px;
+    height: 17px;
+    margin: 78px 0 0 21px;
+    border: 1px solid #808080;
+
+      &.activo{
+        background:$color-verdeBack;
+
+      }
+      &.detenido{
+        background:$color-rojo;    
+      }
+
+    }//badge
+}//reloj    
