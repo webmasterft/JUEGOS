@@ -6,6 +6,7 @@
 
 
 
+
 body{
     font-size: $baseFontSize;
     font-family: $bodyFontFamily;
@@ -314,41 +315,60 @@ body{
     #card9.correct { background: purple; }
     #card10.correct { background: violet; }
 
-
-    /* "You did it!" message */
-    #successMessage {
-      position: absolute;
-      left: 580px;
-      top: 250px;
-      width: 0;
-      height: 0;
-      z-index: 100;
-      background: #dfd;
-      border: 2px solid #333;
-      -moz-border-radius: 10px;
-      -webkit-border-radius: 10px;
-      border-radius: 10px;
-      -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-      padding: 20px;
-    }
-
-
 }//content
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }//#descomposicion
+
+
+
+
+/* "You did it!" message */
+    #successMessage {
+      position: absolute;
+      left: 50%;
+      top: 150px;
+      width: 0px;
+      height: 0px;
+      z-index: 100;
+      background: $color-verdefosf;
+      border: 7px solid $color-blanco;
+      @include border-radius(10px, 10px);
+      @include single-box-shadow;
+      padding: 20px;
+      color:$color-negro;
+      text-align: center;
+
+      h2{
+        font-size: $baseFontSize + 18;
+        line-height: $baseFontSize + 20;
+        margin:40px 0 20px 0;
+      }
+
+      p{
+        font-size: $baseFontSize + 8;
+        line-height: $baseFontSize + 12;
+        margin-bottom: 10px;
+      }
+
+    }//successMessage
+
+  .lengua{
+    #successMessage{
+      background:$color-naranjaSuccess;
+      button{
+        background:$color-verdefosf;
+        color:$color-txtBoton;
+      }
+    }//#successMessage
+  }//lengua
+
+  div#instrucciones{
+    @extend #successMessage;
+    text-align: left;
+    position: absolute;
+    left:223px;
+    top:400px;
+    width: auto;
+    height: auto;
+    display:none;
+  }

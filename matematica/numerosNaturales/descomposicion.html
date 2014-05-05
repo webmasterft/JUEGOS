@@ -51,6 +51,15 @@
           <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
         </div><!--logos -->
 
+         <div id="instrucciones">
+            <ol>
+            <li>Elige la actividad que deseas realizar</li>
+            <li>Realiza la actividad</li>
+            <li>Haz clic sostenido para arrastrar las tarjetas hasta el recuadro de descomposición y representar el número planteado.</li>
+            <li>Si su respuesta es correcta haz clic el el botón ESCRIBE EL NÚMERO</li>
+            <li>Si su respuesta es correcta haz clic el el botón GRAFICA EL NÚMERO</li>
+            </ol>
+         </div>
         
 
          <div id="nav">
@@ -61,11 +70,11 @@
          <img id="avatar" src="img/muneco2.png" width="170" height="187">
 
       </div><!-- contenedor -->
-    <script src="js/vendor/jquery-1.5.min.js"></script>
-    <script src="js/vendor/jquery-1.8.9.ui.min.js"></script>
-    <script src="js/vendor/handlebars.min.js"></script>
-    <script src="js/vendor/jquery.shuffle.js"></script>
-    <script src="js/vendor/numerosLetras.js"></script>
+    <script src="../../libs/js/jquery-1.5.min.js"></script>
+    <script src="../../libs/js/jquery-1.8.9.ui.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
+
     
     </body>
 </html>
@@ -79,6 +88,7 @@
   </script>
 
 <script type="text/javascript">
+
   $(start);
   
   function start(){
@@ -219,17 +229,8 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == tempNum.length ) {
-    $('#successMessage').html('<h2>Bien Hecho! <br/> Presiona el boton y luego uno de los del submenu</h2><button onclick="escribir()">Jugar otra vez</button>')
-    .show();
-    
-    $('#successMessage').animate({
-      left: '380px',
-      top: '200px',
-      width: '400px',
-      height: '250px',
-      opacity: 1
-    });
-  }//correct
+    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
+  }//if correct
 
 }//handleCardDrop
 
@@ -245,12 +246,12 @@ function escribir(){
 
     $('#btnSubmit').live('click', function(){
         var respuesta = $('#resp').val(),
-            respuestaOK = nn(numbers);
+            respuestaOK = toLetters(numbers);
         
         if(respuesta==respuestaOK){
-            $('#successMessage').html('<h2>Bien Hecho! <br/> Presiona el boton y luego uno de los del submenu</h2><button onclick="escribirs()">Jugar otra vez</button>').show();
+          mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
         }else{
-            $('#successMessage').html('<button onclick="escribir()">Intenta otra vez</button>').show();
+            mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
         }    
         
     });

@@ -1,10 +1,9 @@
-@import "vars.scss";
-@import "normalize.scss";
-@import "normal.scss";
-@import "hover.scss";
+@import "../../../libs/sass/vars.scss";
+@import "../../../libs/sass/normalize.scss";
+@import "../../../libs/sass/normal.scss";
+@import "../../../libs/sass/hover.scss";
+@import "../../../libs/sass/jquery-ui.css";
 @import "compass/css3/";
-@import "../../../libs/css/jquery-ui.css";
-
 
 
 
@@ -148,7 +147,7 @@ body{
     width: 857px;
     margin:0 auto;
     input[type="text"]{
-      background: url(../../../libs/img/success.jpg) top center;
+      background: url(../img/success.jpg) top center;
       float:left;
       display: inline-block;
       width: 93px;

@@ -55,8 +55,6 @@
 <script type="text/javascript">
 
  $(start);
-
-
  
   
   function start(){
@@ -74,7 +72,7 @@
 
 
     $.each(newItems, function(index, val) {
-        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" alt="' + newItems[index] + '"></li>');
+        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="' + newItems[index] + '"></li>');
         formResp.append('<input type="text" required="" name="' + index + '">');
     });
 
