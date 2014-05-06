@@ -1,3 +1,6 @@
 Reloj - http://www.jqueryscript.net/demo/Minimal-Stopwatch-Timer-Plugin-For-jQuery/
 
 http://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
+
+
+http://www.desarrolloweb.com/articulos/ejemplo-drag-drop-jquery.html
