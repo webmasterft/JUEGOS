@@ -374,12 +374,10 @@ function cargarNumeros(min,max, words, id) {
 
   // Reset the game
   correctCards = 0;
-  
-  
-  
 
   // and the formula is:
   var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
+  
   localStorage.setItem("numbers", numbers);
 
   $('#numero').html('<p>Forma el número:</p><p id="num">' + numbers + '</p>');
@@ -387,7 +385,6 @@ function cargarNumeros(min,max, words, id) {
   numbers = shuffle(numbers.split(''));
 
   for ( var i=0; i<numbers.length; i++ ) {
-    
     $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
       containment: '#content',
       stack: '#cardPile div',
@@ -397,7 +394,6 @@ function cargarNumeros(min,max, words, id) {
   }
 
   // Create the card slots
-  
   for ( var i=1; i<=tempNum.length; i++ ) {
     $('<div>' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
       accept: '#cardPile div',
@@ -405,7 +401,6 @@ function cargarNumeros(min,max, words, id) {
       drop: handleCardDrop
     } );
   }
-
 }//cargarNumeros
 
 
@@ -423,7 +418,7 @@ function handleCardDrop( event, ui ) {
     ui.draggable.addClass( 'correct' );
     ui.draggable.draggable( 'disable' );
     $(this).droppable( 'disable' );
-    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' } );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' });
     ui.draggable.draggable( 'option', 'revert', false );
     correctCards++;
   } 
@@ -450,5 +445,11 @@ function grafica(){
       numbers = localStorage.getItem('numbers');
       cerrarMensaje();
       contenedor.html('');
+      for ( var i=0; i<numbers.length; i++ ) {
+         /* iterate through array or object */
+         console.log(i);
+      };
+
+
 }//escribir
 

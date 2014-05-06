@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 9]>
@@ -69,8 +69,8 @@
          <img id="avatar" src="img/muneco2.png" width="170" height="187">
 
       </div><!-- contenedor -->
-    <script src="../../libs/js/jquery-1.5.min.js"></script>
-    <script src="../../libs/js/jquery-1.8.9.ui.min.js"></script>
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
     <script src="../../libs/js/handlebars.min.js"></script>
     <script src="../../libs/js/funciones.js"></script> 
 
@@ -124,7 +124,7 @@
      
   
 
-    menu.find('ul > li').live('click', function(){
+    menu.find('ul > li').on('click', function(){
       var id = $(this).data('id');
       //$('#numero').hide();
       //$('#numero, #cardPile , #cardSlots').html('');
@@ -165,8 +165,8 @@
 
 
 
-
-$('#btnSubmit').live('click', function(){
+  
+  $(document).on('click', '#btnSubmit' , function(){
         var respuesta = $.trim($('#resp').val().toLowerCase()),
             respuestaOK = toLetters(numbers);
                 
@@ -176,9 +176,8 @@ $('#btnSubmit').live('click', function(){
             mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
         }    
         
-    });
-
-
+  });// click '#btnSubmit'
+  
 
 
 </script>
