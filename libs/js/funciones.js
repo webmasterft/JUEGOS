@@ -446,10 +446,58 @@ function grafica(){
       cerrarMensaje();
       contenedor.html('');
       for ( var i=0; i<numbers.length; i++ ) {
-         /* iterate through array or object */
-         console.log(i);
+         contenedor.append('<button class="creaelemento ' + words[i]  +'">' + words[i]  +'</button><div id="' + words[i]  +'" class="suelta">Suelta aquí las ' + words[i]  +'</div>');
       };
 
 
 }//escribir
 
+
+
+function aleatorio(inferior,superior){ 
+      numPosibilidades = superior - inferior 
+      aleat = Math.random() * numPosibilidades 
+      aleat = Math.floor(aleat) 
+      return parseInt(inferior) + aleat 
+    } 
+    
+    
+      //defino los elementos que se pueden arrastrar
+      $(".arrastrable").draggable();
+      $(".arrastrable").data("soltado", false);
+      
+      //voy a crear una variable para contar los elementos que estoy soltando
+      $(".suelta").data("numsoltar", 0);
+      //defino elementos donde se puede soltar
+      $(".suelta").droppable({
+        drop: function( event, ui ) {
+          if (!ui.draggable.data("soltado")){
+            ui.draggable.data("soltado", true);
+            var elem = $(this);
+            elem.data("numsoltar", elem.data("numsoltar") + 1)
+            elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
+          }
+        },
+        out: function( event, ui ) {
+          if (ui.draggable.data("soltado")){
+            ui.draggable.data("soltado", false);
+            var elem = $(this);
+            elem.data("numsoltar", elem.data("numsoltar") - 1);
+            elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
+          }
+        }
+      });
+      
+      //soltar solo elementos rojos
+      $("#D").droppable("option", "accept", "#D");
+      //soltar solo elementos azules
+      $("#U").droppable("option", "accept", "#U");
+      
+      //enlaces para crear nuevos elementos rojos y azules
+      $(document).on('click', 'button.creaelemento' , function(){
+        var posx = aleatorio(10, 500);
+        var posy = aleatorio(80, 200);
+        var nuevoElemento = $('<div class="arrastrable ' + $(this).attr("class") + '" style="top: ' + posy + 'px; left: ' + posx + 'px;"></div>');
+        nuevoElemento.draggable();
+        $(contenedor).append(nuevoElemento);
+      })

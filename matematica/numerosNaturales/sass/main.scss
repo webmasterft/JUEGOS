@@ -408,3 +408,45 @@ body{
     padding: 5px 3px;
     @include border-radius(7px, 7px);
   }
+
+
+
+
+
+  .creaelemento{
+      width: 25px;
+      height: 20px;
+      //position: absolute;
+      margin:5px;
+      &.D{
+        background-color: #33c;
+
+      }
+  
+      &.U{
+        background-color: #c33;
+      }
+  }
+  
+  
+  
+  .suelta{
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+    float: right;
+    text-align: center;
+    margin: 10px;
+  }
+  #U{
+    background-color: #f99;
+  }
+  #D{
+    background-color: #99f;
+    clear: both;
+  }
+
+
+
+
+
