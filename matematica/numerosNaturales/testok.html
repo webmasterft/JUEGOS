@@ -19,33 +19,7 @@
 		height: 600px;
 		border: 1px solid #ccc;
 	}
-	.U, .D{
-		width: 25px;
-		height: 20px;
-		position: absolute;
-	}
-	.U{
-		background-color: #33c;
-	}
-	.D{
-		background-color: #c33;
-	}
-	.suelta{
-		padding: 10px;
-		border: 1px solid #ddd;
-		width: 200px;
-		float: right;
-		text-align: center;
-		margin: 10px;
-		display: none;
-	}
-	#sueltaD{
-		background-color: #f99;
-	}
-	#sueltaU{
-		background-color: #99f;
-		clear: both;
-	}
+	
 	</style>
 	<script type="text/javascript">
 
@@ -65,7 +39,7 @@
 
 
 for ( var i=0; i<numbers.length; i++ ) {
-	$('body').append('<button id="' + words[i]  +'" class="creaelemento">Crea un elemento ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show();
+	$('body').append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show();
  };
 
 
@@ -128,14 +102,14 @@ for ( var i=0; i<numbers.length; i++ ) {
 	<div class="D arrastrable" style="top: 98px; left: 100px;"></div>
 	<div class="D arrastrable" style="top: 120px; left: 180px;"></div>
 	<div class="U arrastrable" style="top: 120px; left: 90px;"></div>-->
-	
+	<div id="cuadros">
 	<div id="sueltaD" class="suelta">
 		Suelta aquí elementos Ds
 	</div>
 	<div id="sueltaU" class="suelta">
 		Suelta aquí elementos Ues
 	</div>
-	
+	</div>
 
 
 </body>

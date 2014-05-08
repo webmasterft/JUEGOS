@@ -447,7 +447,7 @@ function grafica(){
       contenedor.html('');
       
       for ( var i=0; i<numbers.length; i++ ) {
-        contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea un elemento ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show();
+        contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show();
       };
       //defino los elementos que se pueden arrastrar
       $(".arrastrable").draggable();

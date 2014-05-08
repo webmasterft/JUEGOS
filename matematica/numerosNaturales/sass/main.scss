@@ -353,13 +353,7 @@ body{
       }
 
      button{
-      background: $color-verdefosf;
-      color: $color-txtBoton;
-      border: 4px solid $color-blanco;
-      padding: 10px;
-      font-weight: bold;
-      @include border-radius(20px, 20px);
-      margin-top: 15px;
+      @extend .boton;
     }
 
     }//successMessage
@@ -410,45 +404,95 @@ body{
   }
 
 
+#cuadros{
+  float: right;
+  width: auto;
+}
 
+  .creaelemento{
+    @extend .boton;
+    padding: 5px !important;
+    margin:3px;
 
+  }
 
-  .U, .D{
+  .arrastrable{
     width: 25px;
-    height: 20px;
+    height: 25px;
     position: absolute;
+    @include border-radius(50%, 50%);
   }
   
   .U{
-    background-color: #33c;
+     background: $color-U;
   }
   
   .D{
-    background-color: #c33;
+    background: $color-D;
+  }
+  .C{
+     background: $color-C;
   }
   
+  .UM{
+     background: $color-UM;
+  }
+  
+  .DM{
+    background: $color-DM;
+  }
+ .CM{
+     background: $color-CM;
+  }
+  
+ 
   .suelta{
     padding: 10px;
     border: 1px solid #ddd;
-    width: 200px;
-    height: 200;
+    width: 100px;
+    height: 100px;
     float: left;
     @include border-radius(10px, 10px);
     text-align: center;
-    margin: 10px;
+    margin: 5px;
     display: none;
   }
   
-  #sueltaD{
-    background-color: #f99;
-  }
+  
   
   #sueltaU{
-    background-color: #99f;
-    clear: both;
+    border:3px solid $color-U;
+  }
+
+  #sueltaD{
+    border:3px solid $color-D;
+  }
+
+
+  #sueltaC{
+    border:3px solid $color-C;
+  }
+
+  #sueltaUM{
+    border:3px solid $color-UM;
+  }
+
+  #sueltaDM{
+    border:3px solid $color-DM;
+  }
+
+  #sueltaCM{
+    border:3px solid $color-CM;
   }
 
 
 
-
-
+  .boton{
+    background: $color-verdefosf;
+     color: $color-txtBoton;
+      border: 4px solid $color-blanco;
+      padding: 10px;
+      font-weight: bold;
+      @include border-radius(20px, 20px);
+      margin-top: 15px;
+  }
