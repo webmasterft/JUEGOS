@@ -413,35 +413,37 @@ body{
 
 
 
-  .creaelemento{
-      width: 25px;
-      height: 20px;
-      //position: absolute;
-      margin:5px;
-      &.D{
-        background-color: #33c;
-
-      }
-  
-      &.U{
-        background-color: #c33;
-      }
+  .U, .D{
+    width: 25px;
+    height: 20px;
+    position: absolute;
   }
   
+  .U{
+    background-color: #33c;
+  }
   
+  .D{
+    background-color: #c33;
+  }
   
   .suelta{
     padding: 10px;
     border: 1px solid #ddd;
     width: 200px;
-    float: right;
+    height: 200;
+    float: left;
+    @include border-radius(10px, 10px);
     text-align: center;
     margin: 10px;
+    display: none;
   }
-  #U{
+  
+  #sueltaD{
     background-color: #f99;
   }
-  #D{
+  
+  #sueltaU{
     background-color: #99f;
     clear: both;
   }

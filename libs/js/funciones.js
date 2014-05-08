@@ -445,23 +445,10 @@ function grafica(){
       numbers = localStorage.getItem('numbers');
       cerrarMensaje();
       contenedor.html('');
+      
       for ( var i=0; i<numbers.length; i++ ) {
-         contenedor.append('<button class="creaelemento ' + words[i]  +'">' + words[i]  +'</button><div id="' + words[i]  +'" class="suelta">Suelta aquí las ' + words[i]  +'</div>');
+        contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea un elemento ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show();
       };
-
-
-}//escribir
-
-
-
-function aleatorio(inferior,superior){ 
-      numPosibilidades = superior - inferior 
-      aleat = Math.random() * numPosibilidades 
-      aleat = Math.floor(aleat) 
-      return parseInt(inferior) + aleat 
-    } 
-    
-    
       //defino los elementos que se pueden arrastrar
       $(".arrastrable").draggable();
       $(".arrastrable").data("soltado", false);
@@ -482,22 +469,37 @@ function aleatorio(inferior,superior){
           if (ui.draggable.data("soltado")){
             ui.draggable.data("soltado", false);
             var elem = $(this);
+            console.log(elem);
             elem.data("numsoltar", elem.data("numsoltar") - 1);
             elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
           }
         }
       });
       
-      //soltar solo elementos rojos
-      $("#D").droppable("option", "accept", "#D");
-      //soltar solo elementos azules
-      $("#U").droppable("option", "accept", "#U");
+      //soltar solo elementos Ds
+      $("#sueltaD").droppable("option", "accept", ".D");
+      //soltar solo elementos Ues
+      $("#sueltaU").droppable("option", "accept", ".U");
       
-      //enlaces para crear nuevos elementos rojos y azules
-      $(document).on('click', 'button.creaelemento' , function(){
-        var posx = aleatorio(10, 500);
-        var posy = aleatorio(80, 200);
-        var nuevoElemento = $('<div class="arrastrable ' + $(this).attr("class") + '" style="top: ' + posy + 'px; left: ' + posx + 'px;"></div>');
+      //enlaces para crear nuevos elementos Ds y Ues
+     $(document).on('click', 'button.creaelemento' , function(){
+        var posx = aleatorio(10, 80);
+        var posy = aleatorio(10, 80);
+        var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable" style="top:0px; left:0px;"></div>');
         nuevoElemento.draggable();
-        $(contenedor).append(nuevoElemento);
+        contenedor.append(nuevoElemento);
       })
+
+
+}//escribir
+
+
+
+function aleatorio(inferior,superior){ 
+      numPosibilidades = superior - inferior 
+      aleat = Math.random() * numPosibilidades 
+      aleat = Math.floor(aleat) 
+      return parseInt(inferior) + aleat 
+    } 
+    
+    
