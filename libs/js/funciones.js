@@ -447,7 +447,7 @@ function grafica(){
       contenedor.html('');
       
       for ( var i=0; i<numbers.length; i++ ) {
-        contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show();
+        contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
       };
       //defino los elementos que se pueden arrastrar
       $(".arrastrable").draggable();
@@ -458,18 +458,35 @@ function grafica(){
       //defino elementos donde se puede soltar
       $(".suelta").droppable({
         drop: function( event, ui ) {
-          if (!ui.draggable.data("soltado")){
-            ui.draggable.data("soltado", true);
             var elem = $(this);
-            elem.data("numsoltar", elem.data("numsoltar") + 1)
-            elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
-          }
+            cuenta = elem.data("numsoltar");
+            cuentaCajon = elem.data('cuenta');
+            id = elem.attr('id').split('suelta');
+            console.log(id[1]);
+
+            if(cuenta != cuentaCajon){  
+              if (!ui.draggable.data("soltado")){
+                ui.draggable.data("soltado", true);
+                elem.data("numsoltar", elem.data("numsoltar") + 1)
+                elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
+
+              }
+            }else{
+              elementos = $('.arrastrable');
+                elementos.draggable({
+                  cursor: 'move',
+                    revert: true
+                });
+                console.log($('button#'+id[1]));
+                $('button#'+id[1]).attr("disabled", "disabled").css({
+                  opacity: '0.5',
+                });
+            }//if 
         },
         out: function( event, ui ) {
           if (ui.draggable.data("soltado")){
             ui.draggable.data("soltado", false);
             var elem = $(this);
-            console.log(elem);
             elem.data("numsoltar", elem.data("numsoltar") - 1);
             elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
           }
@@ -483,9 +500,7 @@ function grafica(){
       
       //enlaces para crear nuevos elementos Ds y Ues
      $(document).on('click', 'button.creaelemento' , function(){
-        var posx = aleatorio(10, 80);
-        var posy = aleatorio(10, 80);
-        var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable" style="top:0px; left:0px;"></div>');
+        var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable" style="top: 5px; left:5px;"></div>');
         nuevoElemento.draggable();
         contenedor.append(nuevoElemento);
       })
