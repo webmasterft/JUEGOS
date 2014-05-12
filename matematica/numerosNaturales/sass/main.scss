@@ -409,10 +409,16 @@ body{
   width: auto;
 }
 
+#crear{
+  position:relative;
+}
+
+
   .creaelemento{
     @extend .boton;
     padding: 5px !important;
     margin:3px;
+    color:$color-blanco !important;
 
   }
 
@@ -425,29 +431,6 @@ body{
     z-index: 999;
   }
   
-  .U{
-     background: $color-U;
-  }
-  
-  .D{
-    background: $color-D;
-  }
-  .C{
-     background: $color-C;
-  }
-  
-  .UM{
-     background: $color-UM;
-  }
-  
-  .DM{
-    background: $color-DM;
-  }
- .CM{
-     background: $color-CM;
-  }
-  
- 
   .suelta{
     padding: 10px;
     border: 1px solid #ddd;
@@ -460,8 +443,37 @@ body{
     display: none;
   }
   
+  .ui-droppable{
+    color:$color-blanco;
+    font-weight: bold;
+  }
+
+
+  .U, #U{
+    background: $color-U !important;
+  }
+
+  .D, #D{
+    background: $color-D !important;
+  }
+
+  .C, #C{
+    background: $color-C !important;
+  }
+
+  .UM, #UM{
+    background: $color-U !important;
+  }
+
+  .DM, #DM{
+    background: $color-D !important;
+  }
+
+  .CM, #CM{
+    background: $color-C !important;
+  }
   
-  
+
   #sueltaU{
     border:3px solid $color-U;
   }
@@ -476,15 +488,15 @@ body{
   }
 
   #sueltaUM{
-    border:3px solid $color-UM;
+    border:3px solid $color-U;
   }
 
   #sueltaDM{
-    border:3px solid $color-DM;
+    border:3px solid $color-D;
   }
 
   #sueltaCM{
-    border:3px solid $color-CM;
+    border:3px solid $color-C;
   }
 
 

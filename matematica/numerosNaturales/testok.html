@@ -39,8 +39,9 @@
  cuentaBotones = 0;
 
 for ( var i=0; i<numbers.length; i++ ) {
-	$('body').append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
- };
+	$('#botonesCrear').append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button>');
+	$('#soltarCubos').append('<div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
+}
 
 	
 			//defino los elementos que se pueden arrastrar
@@ -107,8 +108,8 @@ for ( var i=0; i<numbers.length; i++ ) {
 				//var posx = aleatorio(10, 30);
 				//var posy = aleatorio(20, 50);
 				var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable" style="top: 5px; left:5px;"></div>');
+				$('#crear').append(nuevoElemento);
 				nuevoElemento.draggable();
-				$(document.body).append(nuevoElemento);
 			})
 
 				
@@ -136,6 +137,12 @@ for ( var i=0; i<numbers.length; i++ ) {
 		Suelta aquí elementos Ues
 	</div>
 	</div>
+
+	<div id="botonesCrear"></div>
+	<div id="soltarCubos"></div>
+
+	<div id="crear"></div>
+
 
 
 </body>
