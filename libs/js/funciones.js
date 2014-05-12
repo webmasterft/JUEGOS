@@ -8,9 +8,8 @@
     ];
     
     $reloj = $('#t');
-    contenedor =  $('#var'),
-    botonesCrear = $('#botonesCrear'),
-    soltarCubos = $('#soltarCubos');
+    contenedor =  $('#var');
+   
 
         
 /* GLOBALES */
@@ -441,16 +440,16 @@ function handleCardDrop( event, ui ) {
 function escribir(){
       numbers = localStorage.getItem('numbers');
       cerrarMensaje();
-      contenedor.html('');
-      contenedor.append('<input type="text" size="50" name="resp" id="resp"/><div class="clear"></div><button id="btnSubmit">Verificar</button><div id="container" class="word"></div>');
+      contenedor.html('<input type="text" size="50" name="resp" id="resp"/><div class="clear"></div><button id="btnSubmit">Verificar</button><div id="container" class="word"></div>');
 }//escribir
 
 
 function grafica(){
       numbers = localStorage.getItem('numbers');
       cerrarMensaje();
-      contenedor.html('<div id="botonesCrear"></div><div id="soltarCubos"></div>');
-      console.log('sifff')
+      contenedor.html('<div id="botonesCrear"></div><div id="soltarCubos"></div><div id="crear"></div>');
+      botonesCrear = $('#botonesCrear'),
+      soltarCubos = $('#soltarCubos');
       
       // for ( var i=0; i<numbers.length; i++ ) {
       //   contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
