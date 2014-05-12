@@ -411,6 +411,9 @@ body{
 
 #crear{
   position:relative;
+  display: inline-block;
+  width: 600px;
+  margin: 0 auto;
 }
 
 
@@ -425,10 +428,11 @@ body{
   .arrastrable{
     width: 25px;
     height: 25px;
-    position: absolute;
+    position: relative !important;
     @include border-radius(50%, 50%);
     border:2px solid #999;
     z-index: 999;
+    float:left;
   }
   
   .suelta{
