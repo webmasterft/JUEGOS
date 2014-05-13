@@ -511,14 +511,15 @@ function grafica(){
       $("#sueltaU").droppable("option", "accept", ".U");
       
       //enlaces para crear nuevos elementos Ds y Ues
-     $(document).on('click', 'button.creaelemento' , function(){
-        var id = $(this).attr('id'),        
-        cubos = $('#crear div.' + id).length;
-        var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable"></div>');
-        
+     $('button.creaelemento').on('click', function(){
+        var id = $(this).attr('id'),
+            cubos = 0;        
+            cubos = $('#crear div.' + id).length;
+            
         if(cubos<9){  
-          nuevoElemento.draggable();
+          nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable"></div>');
           contenedor.find('#crear').append(nuevoElemento);
+          nuevoElemento.draggable();
         }else{
           $('button#'+id)
             .attr("disabled", "disabled")
@@ -528,19 +529,16 @@ function grafica(){
         }//if
       })//click crear elemento
 
-      $(document).on('click', '#btnGraficar' , function(){
+      $('button#btnGraficar').on('click', function(){
             var cuentaCubosSoltados = $('.ui-droppable'),
               cuenta = 0,
               numbersTemp = 0;
-            console.log(cuenta);
             $.each(cuentaCubosSoltados, function(index, val) {
                 cuenta += $(this).html().toString();
             });
             cuenta = parseInt(cuenta);
             numbersTemp = parseInt(numbers);
-            
-            //console.log(cuenta , numbersTemp);
-            
+            console.log(cuenta);
             if(cuenta===numbersTemp){
               mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Ahora grafica el número</button>');
             }else{

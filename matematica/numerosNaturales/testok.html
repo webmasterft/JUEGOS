@@ -118,16 +118,11 @@ for ( var i=0; i<numbers.length; i++ ) {
 	    		cuenta = 0,
 	    		numbersTemp = 0;
 	    	
-	    	//cuenta += cuentaCubosSoltados.html().toString();
-	    	//console.log(cuenta);
-				/*$(cuentaCubosSoltados).each( function( index, element ){
-				    console.log( $( this ).text() );
-				});*/
 
 
 	    	$.each(cuentaCubosSoltados, function(index, val) {
 	    		cuenta += $(this).html().toString();
-	    		console.log(cuenta);
+
                	
 	    	});
 	    	cuenta = parseInt(cuenta);
