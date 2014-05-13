@@ -486,7 +486,7 @@ function grafica(){
 
               }
             }else{
-              elementos = $('.arrastrable');
+                elementos = $('.' + id[1]);
                 elementos.draggable({
                   cursor: 'move',
                     revert: true
@@ -495,16 +495,9 @@ function grafica(){
                   opacity: '0.5',
                 });
             }//if 
-        },
-        out: function( event, ui ) {
-          if (ui.draggable.data("soltado")){
-            ui.draggable.data("soltado", false);
-            var elem = $(this);
-            elem.data("numsoltar", elem.data("numsoltar") - 1);
-            elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
-          }
-        }
-      });
+        }//drop
+        
+      });//suelta
       
       //soltar solo elementos Ds
       $("#sueltaD").droppable("option", "accept", ".D");
@@ -513,10 +506,23 @@ function grafica(){
       
       //enlaces para crear nuevos elementos Ds y Ues
      $(document).on('click', 'button.creaelemento' , function(){
-        var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable" style="top: 5px; left:5px;"></div>');
-        nuevoElemento.draggable();
-        contenedor.find('#crear').append(nuevoElemento);
-      })
+        var id = $(this).attr('id'),        
+          cubos = $('#crear div.' + id).length;
+
+        if(cubos<9){  
+          var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable"></div>');
+          nuevoElemento.draggable();
+          contenedor.find('#crear').append(nuevoElemento);
+        }else{
+          $('button#'+id)
+            .attr("disabled", "disabled")
+            .css({
+                opacity: '0.5',
+            });
+        }//if
+
+
+      })//click crear elemento
 
 
 }//escribir

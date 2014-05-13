@@ -425,15 +425,6 @@ body{
 
   }
 
-  .arrastrable{
-    width: 25px;
-    height: 25px;
-    position: relative !important;
-    @include border-radius(50%, 50%);
-    border:2px solid #999;
-    z-index: 999;
-    float:left;
-  }
   
   .suelta{
     padding: 10px;
@@ -477,6 +468,45 @@ body{
     background: $color-C !important;
   }
   
+  #crear{
+    .arrastrable{
+      width: 25px;
+      height: 25px;
+      position: relative !important;
+      //@include border-radius(50%, 50%);
+      z-index: 999;
+      float:left;
+      margin: 2px;
+    }
+  
+    
+    .U{
+      background: url('../img/unidades.png') top left no-repeat !important;
+    }
+
+    .D{
+      background: url('../img/decenas.png') top left no-repeat !important;
+    }
+
+    .C{
+      background: url('../img/centenas.png') top left no-repeat !important;
+    }
+
+    .UM{
+      @extend .U;
+    }
+
+    .DM{
+      @extend .DM; 
+    }
+
+    .CM{
+      @extend .CM;
+    }
+    
+
+  }//crear
+
 
   #sueltaU{
     border:3px solid $color-U;
