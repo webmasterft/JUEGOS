@@ -8,8 +8,7 @@
     ];
     
     $reloj = $('#t');
-    contenedor =  $('#var');
-   
+    contenedor =  $('#var'),
 
         
 /* GLOBALES */
@@ -372,39 +371,41 @@ function shuffle(array) {
 
 //cargarNumeros
 function cargarNumeros(min,max, words, id) {
-  //$('#numero').fadeIn();
-  $('#cardPile , #cardSlots , #numero').html( '' ).fadeIn();
-  $('#content').removeClass().addClass('d'+ id);  
 
-  // Reset the game
-  correctCards = 0;
-
-  // and the formula is:
-  var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
   
-  localStorage.setItem("numbers", numbers);
+   $('#cardPile , #cardSlots , #numero').html( '' ).fadeIn();
+   $('#content').removeClass().addClass('d'+ id);  
 
-  $('#numero').html('<p>Forma el número:</p><p id="num">' + numbers + '</p>');
-  tempNum = numbers;
-  numbers = shuffle(numbers.split(''));
+   // Reset the game
+   correctCards = 0;
 
-  for ( var i=0; i<numbers.length; i++ ) {
-    $('<div class="'+ words[i] +'">' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
-      containment: '#content',
-      stack: '#cardPile div',
-      cursor: 'move',
-      revert: true
-    } );
-  }
+   // and the formula is:
+   var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
+  
+   localStorage.setItem("numbers", numbers);
 
-  // Create the card slots
-  for ( var i=1; i<=tempNum.length; i++ ) {
-    $('<div id="'+ words[i - 1] +'">' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
-      accept: '#cardPile div',
-      hoverClass: 'hovered',
-      drop: handleCardDrop
-    } );
-  }
+   $('#numero').html('<p>Forma el número:</p><p id="num">' + numbers + '</p>');
+   grafica();
+  // tempNum = numbers;
+  // numbers = shuffle(numbers.split(''));
+
+  // for ( var i=0; i<numbers.length; i++ ) {
+  //   $('<div class="'+ words[i] +'">' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
+  //     containment: '#content',
+  //     stack: '#cardPile div',
+  //     cursor: 'move',
+  //     revert: true
+  //   } );
+  // }
+
+  // // Create the card slots
+  // for ( var i=1; i<=tempNum.length; i++ ) {
+  //   $('<div id="'+ words[i - 1] +'">' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
+  //     accept: '#cardPile div',
+  //     hoverClass: 'hovered',
+  //     drop: handleCardDrop
+  //   } );
+  // }
 }//cargarNumeros
 
 
@@ -431,7 +432,7 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == tempNum.length ) {
-    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
+    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora escribe el número</button>');
   }//if correct
 
 }//handleCardDrop
@@ -440,7 +441,18 @@ function handleCardDrop( event, ui ) {
 function escribir(){
       numbers = localStorage.getItem('numbers');
       cerrarMensaje();
-      contenedor.html('<input type="text" size="50" name="resp" id="resp"/><div class="clear"></div><button id="btnSubmit">Verificar</button><div id="container" class="word"></div>');
+      contenedor.html('<input type="text" size="50" name="resp" id="resp"/><div class="clear"></div><button class="verificar" id="btnSubmit">Verificar</button><div id="container" class="word"></div>');
+
+      $(document).on('click', '#btnSubmit' , function(){
+            var respuesta = $.trim($('#resp').val().toLowerCase()),
+                respuestaOK = toLetters(numbers);
+                    
+            if(respuesta == respuestaOK){
+              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora grafica el número</button>');
+            }else{
+                mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
+            }    
+      });// click '#btnSubmit'      
 }//escribir
 
 
@@ -450,17 +462,14 @@ function grafica(){
       contenedor.html('<div id="botonesCrear"></div><div id="soltarCubos"></div><div id="crear"></div>');
       botonesCrear = $('#botonesCrear'),
       soltarCubos = $('#soltarCubos');
-      
-      // for ( var i=0; i<numbers.length; i++ ) {
-      //   contenedor.append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button><div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
-      // };
-      
+
+
       for ( var i=0; i<numbers.length; i++ ) {
         botonesCrear.append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button>');
         soltarCubos.append('<div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
       }
 
-      
+      contenedor.append('<button class="verificar" id="btnGraficar">Verificar</button>');
 
 
       //defino los elementos que se pueden arrastrar
@@ -476,14 +485,11 @@ function grafica(){
             cuenta = elem.data("numsoltar");
             cuentaCajon = elem.data('cuenta');
             id = elem.attr('id').split('suelta');
-            console.log(id[1]);
-
             if(cuenta != cuentaCajon){  
               if (!ui.draggable.data("soltado")){
                 ui.draggable.data("soltado", true);
                 elem.data("numsoltar", elem.data("numsoltar") + 1)
-                elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
-
+                elem.html(elem.data("numsoltar"));
               }
             }else{
                 elementos = $('.' + id[1]);
@@ -507,10 +513,10 @@ function grafica(){
       //enlaces para crear nuevos elementos Ds y Ues
      $(document).on('click', 'button.creaelemento' , function(){
         var id = $(this).attr('id'),        
-          cubos = $('#crear div.' + id).length;
-
+        cubos = $('#crear div.' + id).length;
+        var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable"></div>');
+        
         if(cubos<9){  
-          var nuevoElemento = $('<div class="' + $(this).attr("id") + ' arrastrable"></div>');
           nuevoElemento.draggable();
           contenedor.find('#crear').append(nuevoElemento);
         }else{
@@ -520,12 +526,28 @@ function grafica(){
                 opacity: '0.5',
             });
         }//if
-
-
       })//click crear elemento
 
-
-}//escribir
+      $(document).on('click', '#btnGraficar' , function(){
+            var cuentaCubosSoltados = $('.ui-droppable'),
+              cuenta = 0,
+              numbersTemp = 0;
+            console.log(cuenta);
+            $.each(cuentaCubosSoltados, function(index, val) {
+                cuenta += $(this).html().toString();
+            });
+            cuenta = parseInt(cuenta);
+            numbersTemp = parseInt(numbers);
+            
+            //console.log(cuenta , numbersTemp);
+            
+            if(cuenta===numbersTemp){
+              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Ahora grafica el número</button>');
+            }else{
+              mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="grafica()">Jugar otra vez</button>');
+            }
+      });//click '#btnSubmit'      
+}//grafica
 
 
 

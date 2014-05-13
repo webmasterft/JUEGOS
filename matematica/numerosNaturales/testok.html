@@ -34,14 +34,17 @@
 
  //words = ['D', 'U'],
  words = ['D', 'U'],
- numbers = '22',
+ numbers = '23',
  contenedor = $('body');
  cuentaBotones = 0;
+ 
 
 for ( var i=0; i<numbers.length; i++ ) {
 	$('#botonesCrear').append('<button id="' + words[i]  +'" class="creaelemento">Crea ' + words[i]  +'</button>');
 	$('#soltarCubos').append('<div id="suelta' + words[i]  +'" class="suelta"></div>').find('#suelta'+ words[i]).show().attr('data-cuenta' , numbers[i]);
 }
+
+ contenedor.append('<button id="btnSubmit">Verificar</button>');
 
 	
 			//defino los elementos que se pueden arrastrar
@@ -57,11 +60,13 @@ for ( var i=0; i<numbers.length; i++ ) {
 						cuenta = elem.data("numsoltar");
 						cuentaCajon = elem.data('cuenta');
 						id = elem.attr('id').split('suelta');
+
+						
 						if(cuenta != cuentaCajon){	
 							if (!ui.draggable.data("soltado")){
 								ui.draggable.data("soltado", true);
 								elem.data("numsoltar", elem.data("numsoltar") + 1)
-								elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
+								elem.html(elem.data("numsoltar"));
 
 							}
 						}else{
@@ -70,6 +75,7 @@ for ( var i=0; i<numbers.length; i++ ) {
 						    	cursor: 'move',
       							revert: true
 						    });
+						    ui.draggable.draggable( 'disable' );
 						    $('button#'+id[1]).attr("disabled", "disabled").css({
 						    	opacity: '0.5',
 						    });
@@ -77,12 +83,8 @@ for ( var i=0; i<numbers.length; i++ ) {
 							if($('.creaelemento').is(":disabled")){
 								cuentaBotones + 1;
 							}
-
-							if(cuentaBotones==$('.creaelemento').length){
-								console.log('sadasd');
-							}
-
 						}//if	
+
 				}
 			});
 			
@@ -111,7 +113,33 @@ for ( var i=0; i<numbers.length; i++ ) {
 				}//if
 			});
 
-				
+	    $(document).on('click', '#btnSubmit' , function(){
+	    	var cuentaCubosSoltados = $('.ui-droppable'),
+	    		cuenta = 0,
+	    		numbersTemp = 0;
+	    	
+	    	//cuenta += cuentaCubosSoltados.html().toString();
+	    	//console.log(cuenta);
+				/*$(cuentaCubosSoltados).each( function( index, element ){
+				    console.log( $( this ).text() );
+				});*/
+
+
+	    	$.each(cuentaCubosSoltados, function(index, val) {
+	    		cuenta += $(this).html().toString();
+	    		console.log(cuenta);
+               	
+	    	});
+	    	cuenta = parseInt(cuenta);
+			numbersTemp = parseInt(numbers);
+
+	    	if(cuenta===numbersTemp){
+	    		console.log('Muy Bien')
+	    	}else{
+	    		console.log('Mal')
+	    	}
+      	});//click '#btnSubmit'      
+			
 
 
 		})
@@ -129,13 +157,7 @@ for ( var i=0; i<numbers.length; i++ ) {
 	<div class="D arrastrable" style="top: 120px; left: 180px;"></div>
 	<div class="U arrastrable" style="top: 120px; left: 90px;"></div>-->
 	<div id="cuadros">
-	<div id="sueltaD" class="suelta">
-		Suelta aquí elementos Ds
-	</div>
-	<div id="sueltaU" class="suelta">
-		Suelta aquí elementos Ues
-	</div>
-	</div>
+	
 
 	<div id="botonesCrear"></div>
 	<div id="soltarCubos"></div>

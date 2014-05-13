@@ -84,6 +84,7 @@
   $(start);
   
   function start(){
+    cerrarMensaje();
     var correctCards = 0,
         menuTemplate = $('#menuTemplate'),
         menu = $('#menu'),
@@ -159,16 +160,7 @@
 
 
   
-  $(document).on('click', '#btnSubmit' , function(){
-        var respuesta = $.trim($('#resp').val().toLowerCase()),
-            respuestaOK = toLetters(numbers);
-                
-        if(respuesta == respuestaOK){
-          mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora grafica el número</button>');
-        }else{
-            mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
-        }    
-  });// click '#btnSubmit'
+
   
 
 

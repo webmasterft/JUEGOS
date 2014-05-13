@@ -200,21 +200,20 @@ body{
 
 #content{
   float: left;
-  //width: 300px;
+  width: 630px;
 
 
 
     /* Slots for final card positions */
 
     #cardSlots {
-      margin: 15px auto 0 auto;
+      margin: 15px 0;
       background: $color-rojo;
     }
 
     /* The initial pile of unsorted cards */
 
     #cardPile {
-      margin: 0 auto;
       background: $color-verdeOscuro;
     }
 
@@ -380,7 +379,7 @@ body{
     background:$color-verdefosf;
     color:$color-txtBoton;
   }
-  #btnSubmit{
+  .verificar{
     background: $color-verdefosf;
       color: $color-txtBoton;
       border: 4px solid $color-blanco;
