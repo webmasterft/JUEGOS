@@ -444,7 +444,7 @@ function escribir(){
       cerrarMensaje();
       contenedor.html('<input type="text" size="50" name="resp" id="resp"/><div class="clear"></div><button class="verificar" id="btnSubmit">Verificar</button><div id="container" class="word"></div>');
 
-      $(document).on('click', '#btnSubmit' , function(){
+      $('#btnSubmit').on('click', function(){
             var respuesta = $.trim($('#resp').val().toLowerCase()),
                 respuestaOK = toLetters(numbers);
                     
@@ -452,6 +452,7 @@ function escribir(){
               mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora grafica el número</button>');
             }else{
                 mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
+                contenedor.append('<div id="pista">'+ respuestaOK +'</div>')
             }    
       });// click '#btnSubmit'      
 }//escribir
