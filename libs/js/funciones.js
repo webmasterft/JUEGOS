@@ -381,31 +381,32 @@ function cargarNumeros(min,max, words, id) {
 
    // and the formula is:
    var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
+   
   
    localStorage.setItem("numbers", numbers);
 
    $('#numero').html('<p>Forma el número:</p><p id="num">' + numbers + '</p>');
-   grafica();
-  // tempNum = numbers;
-  // numbers = shuffle(numbers.split(''));
+   
+  tempNum = numbers;
+  numbers = shuffle(numbers.split(''));
 
-  // for ( var i=0; i<numbers.length; i++ ) {
-  //   $('<div class="'+ words[i] +'">' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
-  //     containment: '#content',
-  //     stack: '#cardPile div',
-  //     cursor: 'move',
-  //     revert: true
-  //   } );
-  // }
+  for ( var i=0; i<numbers.length; i++ ) {
+    $('<div class="'+ words[i] +'">' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+  }
 
-  // // Create the card slots
-  // for ( var i=1; i<=tempNum.length; i++ ) {
-  //   $('<div id="'+ words[i - 1] +'">' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
-  //     accept: '#cardPile div',
-  //     hoverClass: 'hovered',
-  //     drop: handleCardDrop
-  //   } );
-  // }
+  // Create the card slots
+  for ( var i=1; i<=tempNum.length; i++ ) {
+    $('<div id="'+ words[i - 1] +'">' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+  }
 }//cargarNumeros
 
 
@@ -432,7 +433,7 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == tempNum.length ) {
-    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora escribe el número</button>');
+    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
   }//if correct
 
 }//handleCardDrop
@@ -457,7 +458,9 @@ function escribir(){
 
 
 function grafica(){
+
       numbers = localStorage.getItem('numbers');
+      
       cerrarMensaje();
       contenedor.html('<div id="botonesCrear"></div><div id="soltarCubos"></div><div id="crear"></div>');
       botonesCrear = $('#botonesCrear'),
@@ -483,6 +486,7 @@ function grafica(){
         drop: function( event, ui ) {
             var elem = $(this);
             cuenta = elem.data("numsoltar");
+            elem.html(elem.data("numsoltar"));
             cuentaCajon = elem.data('cuenta');
             id = elem.attr('id').split('suelta');
             if(cuenta != cuentaCajon){  
@@ -534,13 +538,13 @@ function grafica(){
               cuenta = 0,
               numbersTemp = 0;
             $.each(cuentaCubosSoltados, function(index, val) {
-                cuenta += $(this).html().toString();
+              cuenta += $(this).html().toString();
             });
             cuenta = parseInt(cuenta);
             numbersTemp = parseInt(numbers);
             console.log(cuenta);
             if(cuenta===numbersTemp){
-              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Ahora grafica el número</button>');
+              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Ahora repite las actividades</button>');
             }else{
               mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="grafica()">Jugar otra vez</button>');
             }
