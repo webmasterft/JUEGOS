@@ -145,8 +145,8 @@ body{
   }//logos
 
   form#respuestas{
-    width: 857px;
-    margin:0 auto;
+    width: 101px;
+    margin:10px auto;
     input[type="text"]{
       background: url(../../../libs/img/success.jpg) top center;
       float:left;
@@ -298,3 +298,15 @@ body{
 
     }//badge
 }//reloj    
+
+
+#pista{
+    position:absolute;
+    top:10px;
+    right: 10px;
+    background:$color-blanco;
+    color:$color-negro;
+    padding:10px;
+    border: 4px solid $color-negro;
+    @include border-radius(20px, 20px);
+  }

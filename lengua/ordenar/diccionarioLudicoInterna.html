@@ -65,8 +65,9 @@
       $ul = $('#sortable'),
       $ul.html('');
       mensaje.hide();
-      
-      newItems = numeroFiguras(8);      
+      cerrarMensaje();
+      $('#pista').remove();
+      newItems = numeroFiguras(3);      
 
 
     $.each(newItems, function(index, val) {
@@ -93,6 +94,9 @@
         if($.compare(respuestaOK, result)){
           $reloj.timer('stop');
         mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
+         $('#pista').remove();
+         $('.wrapper').append('<div id="pista">'+ newItems +'</div>')
+
         }//if
       },
     }).disableSelection();

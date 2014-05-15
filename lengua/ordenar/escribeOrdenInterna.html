@@ -67,12 +67,14 @@
       mensaje.hide();
       formResp.html('');
 
-      newItems = numeroFiguras(8);
+      newItems = numeroFiguras(3);
+      cerrarMensaje();
+      $('#pista').remove();
 
 
 
     $.each(newItems, function(index, val) {
-        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="' + newItems[index] + '"></li>');
+        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="' + omitirAcentos(newItems[index].toLowerCase()) + '"></li>');
         formResp.append('<input type="text" required="" name="' + index + '">');
     });
 
@@ -88,23 +90,23 @@
 
    $('form button').on('click', function(e){
       e.preventDefault();
-      result = [];
-      var input;
+      var result = [];
+      //var input = [];
       $("form#respuestas input[type=text]").each(function(index, val){
-        input = $.trim($(this).val().toLowerCase());
-        if(input === ""){
-          mostrarMensaje('<h2>Rellena todos los campos!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
-        }else{
-          result.push(input);
-          if($.compare(respuestaOK, result)){
-            mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start(), cerrarMensaje()">Jugar otra vez</button>');
-              $reloj.timer('stop');
-
-          }else{
-            mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
-          }//if compare
-        }//if input
+        result.push($.trim($(this).val().toLowerCase()));
       });//form each
+
+      if($.compare(respuestaOK, result)){
+        mostrarMensaje('<h2>Bien Hecho!!!</h2><p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
+          $reloj.timer('stop');
+
+      }else{
+        mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
+         $('#pista').remove();
+         $('.wrapper').append('<div id="pista">'+ newItems +'</div>')
+      }//if compare
+    //}//if input
+
    })//click;
 
    var bandera = 0;

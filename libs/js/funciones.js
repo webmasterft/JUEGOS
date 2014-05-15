@@ -2,9 +2,9 @@
     mensaje = $('#successMessage');
     itemsOrdenar = [
       "barco" , "bus", "calavera", "cama", "campana", "coco", "conejo", "culebra",
-      "doctor", "flores", "gato", "helado", "joyas", "lampara", "lapiz", "leon",
+      "doctor", "flores", "gato", "helado", "joyas", "lámpara", "lápiz", "león",
       "mono", "mosquito", "pan", "pastel", "pelota", "perro", "piquero", "pito",
-      "policia", "raqueta", "raton", "reloj", "tambor", "toro", "tren", "zapato"
+      "policía", "raqueta", "ratón", "reloj", "tambor", "toro", "tren", "zapato"
     ];
     
     $reloj = $('#t');
