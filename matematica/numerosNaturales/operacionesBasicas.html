@@ -165,29 +165,35 @@
         
         respuestaOK = eval(number1 + operacion + number2);
         //contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="correcto"></div>');
-        contenedor.html('<div class="rojo correcto arrastrable"></div><div class="rojo arrastrable"></div><div class="azul arrastrable"></div><div id="sueltarojo" class="suelta2">Suelta aquí elementos rojos</div>')
-         
+        contenedor.html('<div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto">Suelta aquí elementos pesos</div>')
+      
+        for (var i = 0; i < 2; i++) {
+          $('#pesos').append('<div class="peso arrastrable">'+ aleatorio(100,999) + '</div>');
+        }
+        
+        $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK +'</div>');
+
+
       $(".arrastrable").draggable();
       $(".arrastrable").data("soltado", false);
       
       //voy a crear una variable para contar los elementos que estoy soltando
-      $(".suelta2").data("numsoltar", 0);
+      $(".contCorrecto").data("numsoltar", 0);
       
       //defino elementos donde se puede soltar
-      $(".suelta2").droppable({
+      $(".contCorrecto").droppable({
         drop: function( event, ui ) {
           if (!ui.draggable.data("soltado")){
             ui.draggable.data("soltado", true);
             var elem = $(this);
-            elem.data("numsoltar", elem.data("numsoltar") + 1)
-            elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
+            elem.html("Correto");
           }
         }
         
       });
       
-      //soltar solo elementos rojos
-      $("#sueltarojo").droppable("option", "accept", ".correcto");
+      //soltar solo elementos pesos
+      $("#contCorrecto").droppable("option", "accept", ".correcto");
       //soltar solo elementos azules
 
 
