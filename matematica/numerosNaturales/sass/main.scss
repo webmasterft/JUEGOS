@@ -569,3 +569,44 @@ body{
     @include border-radius(20px, 20px);
   }
 
+
+  #operacion{
+    position:absolute;
+    right:50px;
+    top:50px;
+  }
+
+  #balanza{
+    position:absolute;
+    left:350px;
+    top:150px;
+    border:1px solid #ccc;
+    width: 200px;
+    height: 200px;
+  }
+
+  #pesos{
+    width: 200px;
+    height: 200px;
+    position:absolute;
+    right: 50px;
+    bottom:150px;
+    border:1px solid #ccc;
+  }
+
+  #correcto{
+    @extend #pesos;
+    left:300px;
+    top:150px;
+    width: 200px;
+  }
+
+
+
+
+  .peso{
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    background-color: #c33;
+  }

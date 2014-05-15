@@ -23,7 +23,7 @@
 
          <ul id="sortable"></ul>
          <div class="clear"></div>
-         <div id="reloj"><div id="t" class="badge">00:00</div></div>
+         <div id="crono"><div id="t" class="badge">00:00</div></div>
          <div id="logos">
           <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
           <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
@@ -46,9 +46,9 @@
               <li>Arrastra cada figura a su lugar respectivo.</li>
             </ol>
          </div>
-      
+       <button id="btnPista" class="button pulse" >Dame pistas</button> 
       </div><!-- contenedor -->
-
+      
 
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
     <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
@@ -67,15 +67,13 @@
       mensaje.hide();
       cerrarMensaje();
       $('#pista').remove();
-      newItems = numeroFiguras(3);      
+      newItems = numeroFiguras(8);      
 
 
     $.each(newItems, function(index, val) {
       $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="'+ newItems[index] + '"></li>');
     });
 
-
-   
    var respuestaOK = newItems.sort(function(a, b){
         var a1= a, b1= b;
         if(a1== b1) return 0;
@@ -94,13 +92,15 @@
         if($.compare(respuestaOK, result)){
           $reloj.timer('stop');
         mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
-         $('#pista').remove();
-         $('.wrapper').append('<div id="pista">'+ newItems +'</div>')
-
         }//if
       },
     }).disableSelection();
      
+      $('#btnPista').on('click', function(){
+        $('.wrapper').append('<div id="pista">'+ newItems +'</div>');
+      });
+
+
   }//start
 
 

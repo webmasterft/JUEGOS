@@ -380,8 +380,7 @@ function cargarNumeros(min,max, words, id) {
    correctCards = 0;
 
    // and the formula is:
-   var numbers = (Math.floor(Math.random() * (max - min + 1)) + min).toString();
-   
+   var numbers = aleatorio(min, max).toString();
   
    localStorage.setItem("numbers", numbers);
 
@@ -559,6 +558,73 @@ function aleatorio(inferior,superior){
       aleat = Math.random() * numPosibilidades 
       aleat = Math.floor(aleat) 
       return parseInt(inferior) + aleat 
-    } 
+} 
     
     
+//cargarNumeros
+function balanza(number1, number2) {
+
+  
+   //$('#cardPile , #cardSlots , #numero').html( '' ).fadeIn();
+   //$('#content').removeClass().addClass('d'+ id);  
+
+   // Reset the game
+   correctCards = 0;
+
+   // and the formula is:
+   //var numbers = aleatorio(min, max).toString();
+  
+   //localStorage.setItem("numbers", numbers);
+
+  
+   
+//   tempNum = numbers;
+//   numbers = shuffle(numbers.split(''));
+
+//   for ( var i=0; i<numbers.length; i++ ) {
+//     $('<div class="'+ words[i] +'">' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+tempNum[i] ).appendTo( '#cardPile' ).draggable( {
+//       containment: '#content',
+//       stack: '#cardPile div',
+//       cursor: 'move',
+//       revert: true
+//     } );
+//   }
+
+//   // Create the card slots
+//   for ( var i=1; i<=tempNum.length; i++ ) {
+//     $('<div id="'+ words[i - 1] +'">' + words[i - 1] + '</div>').data( 'number', tempNum[i - 1] ).appendTo( '#cardSlots' ).droppable( {
+//       accept: '#cardPile div',
+//       hoverClass: 'hovered',
+//       drop: handleCardDropBalanza
+//     } );
+//   }
+ }//cargarNumeros
+
+
+
+
+function handleCardDropBalanza( event, ui ) {
+  var slotNumber = $(this).data( 'number' );
+  var cardNumber = ui.draggable.data( 'number' );
+  // If the card was dropped to the correct slot,
+  // change the card colour, position it directly
+  // on top of the slot, and prevent it being dragged
+  // again
+
+  if ( slotNumber == cardNumber ) {
+    ui.draggable.addClass( 'correct' );
+    ui.draggable.draggable( 'disable' );
+    $(this).droppable( 'disable' );
+    ui.draggable.position( { of: $(this), my: 'left top', at: 'left top' });
+    ui.draggable.draggable( 'option', 'revert', false );
+    correctCards++;
+  } 
+  
+  // If all the cards have been placed correctly then display a message
+  // and reset the cards for another go
+
+  if ( correctCards == tempNum.length ) {
+    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
+  }//if correct
+
+}//handleCardDrop

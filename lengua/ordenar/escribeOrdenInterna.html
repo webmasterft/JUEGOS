@@ -67,7 +67,7 @@
       mensaje.hide();
       formResp.html('');
 
-      newItems = numeroFiguras(3);
+      newItems = numeroFiguras(8);
       cerrarMensaje();
       $('#pista').remove();
 
@@ -103,7 +103,7 @@
       }else{
         mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
          $('#pista').remove();
-         $('.wrapper').append('<div id="pista">'+ newItems +'</div>')
+         $('.wrapper').append('<div id="pista">'+ newItems +'</div>');
       }//if compare
     //}//if input
 
