@@ -164,20 +164,17 @@
         }//swtich
         
         respuestaOK = eval(number1 + operacion + number2);
-        contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="correcto"></div>');
-        
-        for (var i = 0; i <3; i++) {
-          $('#pesos').append('<div class="peso" style="top: 98px; left: 100px;"></div>')
-        };
-        
+        //contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="correcto"></div>');
+        contenedor.html('<div class="rojo correcto arrastrable"></div><div class="rojo arrastrable"></div><div class="azul arrastrable"></div><div id="sueltarojo" class="suelta2">Suelta aquí elementos rojos</div>')
          
-      $(".peso").draggable();
-      $(".peso").data("soltado", false);
+      $(".arrastrable").draggable();
+      $(".arrastrable").data("soltado", false);
       
       //voy a crear una variable para contar los elementos que estoy soltando
-      $(".peso").data("numsoltar", 0);
+      $(".suelta2").data("numsoltar", 0);
+      
       //defino elementos donde se puede soltar
-      $(".peso").droppable({
+      $(".suelta2").droppable({
         drop: function( event, ui ) {
           if (!ui.draggable.data("soltado")){
             ui.draggable.data("soltado", true);
@@ -185,22 +182,13 @@
             elem.data("numsoltar", elem.data("numsoltar") + 1)
             elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
           }
-        },
-        out: function( event, ui ) {
-          if (ui.draggable.data("soltado")){
-            ui.draggable.data("soltado", false);
-            var elem = $(this);
-            elem.data("numsoltar", elem.data("numsoltar") - 1);
-            elem.html("Llevo " + elem.data("numsoltar") + " elementos soltados");
-          }
         }
+        
       });
       
       //soltar solo elementos rojos
-      $("#correcto").droppable("option", "accept", ".rojo");
-      
-    
-
+      $("#sueltarojo").droppable("option", "accept", ".correcto");
+      //soltar solo elementos azules
 
 
               //balanza(number1, number2);

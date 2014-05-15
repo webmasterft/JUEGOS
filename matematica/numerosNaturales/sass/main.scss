@@ -586,7 +586,7 @@ body{
   }
 
   #pesos{
-    width: 200px;
+    width: 500px;
     height: 200px;
     position:absolute;
     right: 50px;
@@ -594,19 +594,30 @@ body{
     border:1px solid #ccc;
   }
 
-  #correcto{
-    @extend #pesos;
-    left:300px;
-    top:150px;
-    width: 200px;
-  }
+  
 
 
 
 
-  .peso{
+  
+  
+  .rojo{
+    background-color: #c33;
     width: 25px;
     height: 20px;
     position: absolute;
-    background-color: #c33;
   }
+  .suelta2{
+    padding: 10px;
+    border: 1px solid #ddd;
+    width: 200px;
+    float: right;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  #sueltarojo{
+    background-color: #f99;
+
+  }
+  
