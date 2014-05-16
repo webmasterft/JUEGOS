@@ -8,7 +8,8 @@
     ];
     
     $reloj = $('#t');
-    contenedor =  $('#var'),
+    contenedor =  $('#var');
+    crono = $('#crono');
 
         
 /* GLOBALES */
@@ -553,11 +554,17 @@ function grafica(){
 
 
 
-function aleatorio(inferior,superior){ 
+function aleatorio(inferior,superior,decimales){ 
       numPosibilidades = superior - inferior 
-      aleat = Math.random() * numPosibilidades 
-      aleat = Math.floor(aleat) 
-      return parseInt(inferior) + aleat 
+      aleat = Math.random() * numPosibilidades
+      if(decimales == undefined) {
+        aleat = Math.floor(aleat) 
+        aleat = parseInt(inferior) + aleat 
+      }else{
+        aleat = aleat.toFixed(decimales);
+      }
+      
+      return aleat;
 } 
     
     

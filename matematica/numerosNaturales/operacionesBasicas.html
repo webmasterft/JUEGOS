@@ -32,11 +32,11 @@
                   
 
 
-
+              
               </div><!-- var-->
               <div id="successMessage">           
               </div>
-
+              <div id="crono"><div id="t" class="badge">00:00</div></div>
             </div><!-- content -->
         </div><!-- main -->
 
@@ -85,7 +85,9 @@
   
   function start(){
     cerrarMensaje();
-    $('#var').html('');
+    contenedor.html('');
+    crono.hide();
+
     var correctCards = 0,
         menuTemplate = $('#menuTemplate'),
         menu = $('#menu'),
@@ -126,10 +128,10 @@
 
     menu.find('ul > li').on('click', function(){
       var id = $(this).data('id');
-      //$('#numero').hide();
-      //$('#numero, #cardPile , #cardSlots').html('');
       cerrarMensaje();
-      
+      $reloj.timer('stop');
+      crono.fadeIn();
+      $reloj.timer('start');
 
       switch (id){
           case 1:
@@ -159,16 +161,29 @@
           break;
 
           case 4:
-            var number1 = aleatorio(100,999),
-                number2 = aleatorio(10,99),
+            var number1 = aleatorio(1000,9999,1),
+                number2 = aleatorio(1,9,1),
+                operacion = "*";
+          break;
+
+          case 5:
+            var number1 = aleatorio(1000,9999,1),
+                number2 = aleatorio(1,9,1),
                 operacion = "/";
-         
           break;  
+  
         }//swtich
         
-        respuestaOK = eval(number1 + operacion + number2);
+        if(id > 3){
+          respuestaOK = eval(number1 + operacion + number2).toFixed(2);
+        
+        }else{
+          respuestaOK = eval(number1 + operacion + number2);
+        }
+        
+
         //contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="correcto"></div>');
-        contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>')
+        contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>');
       
         for (var i = 0; i < 3; i++) {
           $('#pesos').append('<div class="peso arrastrable">'+ aleatorio(100,999) + '</div>');
@@ -189,22 +204,17 @@
           if (!ui.draggable.data("soltado")){
             ui.draggable.data("soltado", true);
             ui.draggable.draggable( 'option', 'revert', false );
-            // var elem = $(this);
-            // elem.html("Correto");
-            mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Haz clic aquí para empezar de nuevo</button>');
+            $reloj.timer('stop');
+            mostrarMensaje('<h2>Bien Hecho!!!</h2><p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Haz clic aquí para empezar de nuevo</button>');
           }
         }
         
       });
       
-      //soltar solo elementos pesos
+      
       $("#contCorrecto").droppable("option", "accept", ".correcto");
-      //soltar solo elementos azules
+      
 
-
-              //balanza(number1, number2);
-
-        //cargarNumeros(min,max, words, id);
         
       }); //menuButtons.click
   }//start

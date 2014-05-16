@@ -571,9 +571,9 @@ body{
 
 
   #operacion{
-    left: 405px;
+    left: 401px;
     top: 53px;
-    width: 77px;
+    width: 83px;
     z-index: 999;
     position: absolute;
     border-bottom: 2px solid #000;
@@ -601,7 +601,9 @@ body{
     bottom: 225px;
   }
   
-  
+
+
+
   .peso{
     background:url('../img/pesa.png') no-repeat;
     margin: 5px;
@@ -628,3 +630,41 @@ body{
   
   
 
+#crono{
+  background: url('../../../libs/img/reloj.png') no-repeat;
+  width: 105px;
+  height: 149px;
+  position:relative;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+
+
+  .badge {
+    @include border-radius( 5px , 5px);
+    display: inline-block;
+    padding: 10px;
+    font-size: $baseFontSize - 2;
+    font-weight: bold;
+    line-height: $baseFontSize + 3;
+    color: $color-blanco;
+    vertical-align: baseline;
+    white-space: nowrap;
+    background: #999999;
+    text-align: center;
+    color:$color-blanco;
+    width: 44px;
+    height: 17px;
+    margin: 78px 0 0 21px;
+    border: 1px solid #808080;
+
+      &.activo{
+        background:$color-verdeBack;
+
+      }
+      &.detenido{
+        background:$color-rojo;    
+      }
+
+    }//badge
+}//reloj    
