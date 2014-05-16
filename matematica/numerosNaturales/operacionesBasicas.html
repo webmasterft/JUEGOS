@@ -21,7 +21,7 @@
         <div id="main">
 
             <div id="menu">
-                <p>nivel:</p>
+                
             </div>
             
 
@@ -49,18 +49,16 @@
             <ol>
             <li>Elige la actividad que deseas realizar</li>
             <li>Realiza la actividad</li>
-            <li>Haz clic sostenido para arrastrar las tarjetas hasta el recuadro de descomposición y representar el número planteado.</li>
-            <li>Si su respuesta es correcta haz clic el el botón ESCRIBE EL NÚMERO</li>
-            <li>Si su respuesta es correcta haz clic el el botón GRAFICA EL NÚMERO</li>
+            <li>Haz clic sostenido en la respuesta que crees que es la correcta, y arrástralo hasta el plato vacío.</li>
+            <li>Si su respuesta es correcta, podrás repetir la actividad</li>
             </ol>
          </div>
-        
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
             <button id="regresar" class="pulse">Regresar</button>
          </div><!--nav-->
-         <img id="titulo" src="img/numerosNaturales.png" width="202" height="94">
+         <img id="titulo" src="img/operacionesBasicas.png" width="202" height="94">
          <img id="avatar" src="img/muneco2.png" width="170" height="187">
 
       </div><!-- contenedor -->
@@ -73,7 +71,7 @@
     </body>
 </html>
 <script id="menuTemplate" type="text/x-handlebars-template">
-    <p>nivel:</p>
+    
     <ul> 
         {{#each this}}
             <li class="pulse" data-id="{{id}}">{{texto}}</li>
@@ -95,21 +93,26 @@
         max = 0,     
         menuItems = [
             { 
-              texto: 'Suma',
+              texto: 'Sumar',
               id: '1'
             },   
             { 
-              texto: 'Resta',
+              texto: 'Restar',
               id:'2'
             },
             { 
-              texto: 'Multiplicación',
+              texto: 'Multiplicar',
               id:'3'
             },
             { 
-              texto: 'División',
+              texto: 'Multiplicar con decimales',
               id:'4'
+            },
+            { 
+              texto: 'Dividir con decimales',
+              id:'5'
             }
+
           ];// var menu
       
       template = Handlebars.compile(menuTemplate.html());
@@ -165,28 +168,30 @@
         
         respuestaOK = eval(number1 + operacion + number2);
         //contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="correcto"></div>');
-        contenedor.html('<div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto">Suelta aquí elementos pesos</div>')
+        contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>')
       
-        for (var i = 0; i < 2; i++) {
+        for (var i = 0; i < 3; i++) {
           $('#pesos').append('<div class="peso arrastrable">'+ aleatorio(100,999) + '</div>');
         }
         
         $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK +'</div>');
 
 
-      $(".arrastrable").draggable();
+      $(".arrastrable").draggable({
+          cursor: 'move',
+          revert: true
+      });
       $(".arrastrable").data("soltado", false);
-      
-      //voy a crear una variable para contar los elementos que estoy soltando
-      $(".contCorrecto").data("numsoltar", 0);
       
       //defino elementos donde se puede soltar
       $(".contCorrecto").droppable({
         drop: function( event, ui ) {
           if (!ui.draggable.data("soltado")){
             ui.draggable.data("soltado", true);
-            var elem = $(this);
-            elem.html("Correto");
+            ui.draggable.draggable( 'option', 'revert', false );
+            // var elem = $(this);
+            // elem.html("Correto");
+            mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Haz clic aquí para empezar de nuevo</button>');
           }
         }
         
