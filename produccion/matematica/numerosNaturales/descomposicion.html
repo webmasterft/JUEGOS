@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <div class="wrapper" id="descomposicion">
+        
+        <div id="main">
+
+            <div id="menu">
+                <p>nivel:</p>
+            </div>
+            
+
+            <div id="content">
+              <div id="numero"></div>
+              <div class="clear"></div>
+              <div id="var">
+
+
+              </div><!-- var-->
+              <div id="successMessage">           
+              </div>
+
+            </div><!-- content -->
+        </div><!-- main -->
+
+         <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
+        </div><!--logos -->
+
+         <div id="instrucciones">
+            <ol>
+            <li>Elige la actividad que deseas realizar</li>
+            <li>Realiza la actividad</li>
+            <li>Haz clic sostenido para arrastrar las tarjetas hasta el recuadro de descomposición y representar el número planteado.</li>
+            <li>Si su respuesta es correcta haz clic el el botón ESCRIBE EL NÚMERO</li>
+            <li>Si su respuesta es correcta haz clic el el botón GRAFICA EL NÚMERO</li>
+            </ol>
+         </div>
+        
+
+         <div id="nav">
+            <button id="instrucciones" class="pulse">Instrucciones</button>
+            <button id="regresar" class="pulse">Regresar</button>
+         </div><!--nav-->
+         <img id="titulo" src="img/numerosNaturales.png" width="202" height="94">
+         <img id="avatar" src="img/muneco2.png" width="170" height="187">
+
+      </div><!-- contenedor -->
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
+
+    
+    </body>
+</html>
+<script id="menuTemplate" type="text/x-handlebars-template">
+    <p>nivel:</p>
+    <ul> 
+        {{#each this}}
+            <li class="pulse" data-id="{{id}}">{{texto}}</li>
+        {{/each}}
+    </ul>    
+  </script>
+
+<script type="text/javascript">
+
+  $(start);
+  
+  function start(){
+    cerrarMensaje();
+    $('#var').html('');
+    var correctCards = 0,
+        menuTemplate = $('#menuTemplate'),
+        menu = $('#menu'),
+        min = 0,
+        max = 0,     
+        menuItems = [
+            { 
+              texto: 'Dos dígitos',
+              id: '1'
+            },   
+            { 
+              texto: 'Tres dígitos',
+              id:'2'
+            },
+            { 
+              texto: 'Cuatro dígitos',
+              id:'3'
+            },
+            { 
+              texto: 'Más de cuatro dígitos',
+              id:'4'
+            }
+          ];// var menu
+      
+      template = Handlebars.compile(menuTemplate.html());
+      menu.html(template(menuItems)).hide().fadeIn();
+
+        
+      // Hide the success message
+      $('#numero').hide();
+     
+  
+
+    menu.find('ul > li').on('click', function(){
+      var id = $(this).data('id');
+      //$('#numero').hide();
+      //$('#numero, #cardPile , #cardSlots').html('');
+      cerrarMensaje();
+      contenedor.html('<div id="cardPile"></div><div id="cardSlots"></div>');
+
+      switch (id){
+          case 1:
+          min = 10;
+          max = 99;
+          words = ['D', 'U'];
+          break;
+
+          case 2:
+          min = 99;
+          max = 999;
+          words = ['C','D', 'U'];
+          break;
+
+          case 3:
+          min = 99;
+          max = 9999;
+          words = ['UM','C','D', 'U'];
+          break;
+
+          case 4:
+          min = 99999;
+          max = 999999;
+          words = ['CM','DM','UM','C','D', 'U'];
+          break;  
+        }//swtich
+        
+        cargarNumeros(min,max, words, id);
+        
+      }); //menuButtons.click
+  }//start
+
+
+
+
+  
+
+  
+
+
+</script>
