@@ -47,116 +47,20 @@
                 <li><img src="img/figuras/doctor.jpg" width="30" height="30"></li>
               </ul>
 
-              <div id="var" class="plano">
-                <div class="p1-1"></div>
-                <div class="p1-2"></div>
-                <div class="p1-3"></div>
-                <div class="p1-4"></div>
-                <div class="p1-5"></div>
-                <div class="p1-6"></div>
-                <div class="p1-7"></div>
-                <div class="p1-8"></div>
-                <div class="p1-9"></div>
-                
-                <div class="p2-1"></div>
-                <div class="p2-2"></div>
-                <div class="p2-3"></div>
-                <div class="p2-4"></div>
-                <div class="p2-5"></div>
-                <div class="p2-6"></div>
-                <div class="p2-7"></div>
-                <div class="p2-8"></div>
-                <div class="p2-9"></div>
-
-                <div class="p3-1"></div>
-                <div class="p3-2"></div>
-                <div class="p3-3"></div>
-                <div class="p3-4"></div>
-                <div class="p3-5"></div>
-                <div class="p3-6"></div>
-                <div class="p3-7"></div>
-                <div class="p3-8"></div>
-                <div class="p3-9"></div>
-
-                <div class="p4-1"></div>
-                <div class="p4-2"></div>
-                <div class="p4-3"></div>
-                <div class="p4-4"></div>
-                <div class="p4-5"></div>
-                <div class="p4-6"></div>
-                <div class="p4-7"></div>
-                <div class="p4-8"></div>
-                <div class="p4-9"></div>
-
-                <div class="p5-1"></div>
-                <div class="p5-2"></div>
-                <div class="p5-3"></div>
-                <div class="p5-4"></div>
-                <div class="p5-5"></div>
-                <div class="p5-6"></div>
-                <div class="p5-7"></div>
-                <div class="p5-8"></div>
-                <div class="p5-9"></div>
-
-
-                <div class="p6-1"></div>
-                <div class="p6-2"></div>
-                <div class="p6-3"></div>
-                <div class="p6-4"></div>
-                <div class="p6-5"></div>
-                <div class="p6-6"></div>
-                <div class="p6-7"></div>
-                <div class="p6-8"></div>
-                <div class="p6-9"></div>
-
-
-                <div class="p7-1"></div>
-                <div class="p7-2"></div>
-                <div class="p7-3"></div>
-                <div class="p7-4"></div>
-                <div class="p7-5"></div>
-                <div class="p7-6"></div>
-                <div class="p7-7"></div>
-                <div class="p7-8"></div>
-                <div class="p7-9"></div>
-
-
-                <div class="p8-1"></div>
-                <div class="p8-2"></div>
-                <div class="p8-3"></div>
-                <div class="p8-4"></div>
-                <div class="p8-5"></div>
-                <div class="p8-6"></div>
-                <div class="p8-7"></div>
-                <div class="p8-8"></div>
-                <div class="p8-9"></div>
-
-
-                <div class="p9-1"></div>
-                <div class="p9-2"></div>
-                <div class="p9-3"></div>
-                <div class="p9-4"></div>
-                <div class="p9-5"></div>
-                <div class="p9-6"></div>
-                <div class="p9-7"></div>
-                <div class="p9-8"></div>
-                <div class="p9-9"></div>
-
-
-              </div><!-- var-->
+              <div id="var" class="plano"></div><!-- var-->
               
               <div class="clear"></div>
 
               <ul id="x">
-                <li><img src="img/figuras/bus.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/coco.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/conejo.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/mono.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pelota.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/leon.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pito.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/piquero.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/doctor.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/calavera.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/pan.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/pastel.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/pato.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/toro.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/campana.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/tambor.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/queso.jpg" width="30" height="30"></li>
+                <li><img src="img/figuras/cama.jpg" width="30" height="30"></li>
               </ul>
 
               <div id="successMessage">           
@@ -211,6 +115,16 @@
   $(start);
   
   function start(){
+    var plano = $('div.plano'),
+        puntos = ''
+    for(var i=1; i<=9; i++){
+        for(var j=1; j<=9; j++){
+          puntos +='<div class="p'+ i + '-' + j + '"></div>'
+        }
+    }
+
+    plano.html(puntos);
+
     //cerrarMensaje();
     //$('#var').html('');
     /*var correctCards = 0,
@@ -241,7 +155,7 @@
       menu.html(template(menuItems)).hide().fadeIn();*/
 
       contador = 0;
-      $('div.plano div').on('click', function(){
+      plano.find('div').on('click', function(){
           pares = $(this).attr('class').slice(1);
           paresOk = $('#paresOrdenados li').eq(contador).data('pares');
           console.log(pares,paresOk);
