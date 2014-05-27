@@ -669,3 +669,571 @@ body{
 
     }//badge
 }//reloj    
+
+
+
+/* Plano Cartesiano*/
+#descomposicion.cartesiano{
+
+    #menu{
+      border:5px solid $color-azulBorde;
+      padding:0;
+      margin:10px 0 0 20px;
+      @include border-radius( 5px , 5px);
+      width: 250px;
+      p{
+        background: $color-rojo;
+        padding:10px;
+        text-transform: uppercase;
+        color:$color-blanco;
+        font-size: $baseFontSize + 6;
+        line-height: $baseFontSize + 8;
+      } 
+
+      ul{
+        background:none;
+        border:none;
+        li{
+          color:$color-azulBorde;
+        }
+      }//ul
+
+    }//menu
+
+
+    .p1-1{
+      @extend .puntos;
+      top: 301px;
+      left: 36px;
+    }
+
+    .p1-2{
+      @extend .p1-1;
+      top: 262px;
+    }
+
+    .p1-3{
+      @extend .p1-1;
+      top: 228px;
+    }
+
+    .p1-4{
+      @extend .p1-1;
+      top: 190px;
+    }
+
+    .p1-5{
+      @extend .p1-1;
+      top: 156px;
+    }
+
+    .p1-6{
+      @extend .p1-1;
+      top: 120px;
+    }
+
+    .p1-7{
+      @extend .p1-1;
+      top: 85px;
+    }
+
+
+    .p1-8{
+      @extend .p1-1;
+      top: 46px;
+    }
+
+
+    .p1-9{
+      @extend .p1-1;
+      top: 11px;
+    }
+
+
+
+    /* columna 2*/
+    .p2-1{
+      @extend .puntos;
+      top: 301px;
+      left: 78px;
+    }
+
+    .p2-2{
+      @extend .p2-1;
+      top: 262px;
+    }
+
+    .p2-3{
+      @extend .p2-1;
+      top: 228px;
+    }
+
+    .p2-4{
+      @extend .p2-1;
+      top: 190px;
+    }
+
+    .p2-5{
+      @extend .p2-1;
+      top: 156px;
+    }
+
+    .p2-6{
+      @extend .p2-1;
+      top: 120px;
+    }
+
+    .p2-7{
+      @extend .p2-1;
+      top: 85px;
+    }
+
+
+    .p2-8{
+      @extend .p2-1;
+      top: 46px;
+    }
+
+
+    .p2-9{
+      @extend .p2-1;
+      top: 11px;
+    }
+
+    /* columna 2*/
+
+
+
+
+    /* columna 3*/
+    .p3-1{
+      @extend .puntos;
+      top: 301px;
+      left: 117px;
+    }
+
+    .p3-2{
+      @extend .p3-1;
+      top: 262px;
+    }
+
+    .p3-3{
+      @extend .p3-1;
+      top: 228px;
+    }
+
+    .p3-4{
+      @extend .p3-1;
+      top: 190px;
+    }
+
+    .p3-5{
+      @extend .p3-1;
+      top: 156px;
+    }
+
+    .p3-6{
+      @extend .p3-1;
+      top: 120px;
+    }
+
+    .p3-7{
+      @extend .p3-1;
+      top: 85px;
+    }
+
+
+    .p3-8{
+      @extend .p3-1;
+      top: 46px;
+    }
+
+
+    .p3-9{
+      @extend .p3-1;
+      top: 11px;
+    }
+
+    /* columna 3*/
+
+
+
+
+
+    /* columna 4*/
+    .p4-1{
+      @extend .puntos;
+      top: 301px;
+      left: 154px;
+    }
+
+    .p4-2{
+      @extend .p4-1;
+      top: 262px;
+    }
+
+    .p4-3{
+      @extend .p4-1;
+      top: 228px;
+    }
+
+    .p4-4{
+      @extend .p4-1;
+      top: 190px;
+    }
+
+    .p4-5{
+      @extend .p4-1;
+      top: 156px;
+    }
+
+    .p4-6{
+      @extend .p4-1;
+      top: 120px;
+    }
+
+    .p4-7{
+      @extend .p4-1;
+      top: 85px;
+    }
+
+
+    .p4-8{
+      @extend .p4-1;
+      top: 46px;
+    }
+
+
+    .p4-9{
+      @extend .p4-1;
+      top: 11px;
+    }
+
+    /* columna 4*/
+
+
+    /* columna 5*/
+    .p5-1{
+      @extend .puntos;
+      top: 301px;
+      left: 198px;
+    }
+
+    .p5-2{
+      @extend .p5-1;
+      top: 262px;
+    }
+
+    .p5-3{
+      @extend .p5-1;
+      top: 228px;
+    }
+
+    .p5-4{
+      @extend .p5-1;
+      top: 190px;
+    }
+
+    .p5-5{
+      @extend .p5-1;
+      top: 156px;
+    }
+
+    .p5-6{
+      @extend .p5-1;
+      top: 120px;
+    }
+
+    .p5-7{
+      @extend .p5-1;
+      top: 85px;
+    }
+
+
+    .p5-8{
+      @extend .p5-1;
+      top: 46px;
+    }
+
+
+    .p5-9{
+      @extend .p5-1;
+      top: 11px;
+    }
+
+    /* columna 5*/
+
+
+
+
+    /* columna 6*/
+    .p6-1{
+      @extend .puntos;
+      top: 301px;
+      left: 236px;
+    }
+
+    .p6-2{
+      @extend .p6-1;
+      top: 262px;
+    }
+
+    .p6-3{
+      @extend .p6-1;
+      top: 228px;
+    }
+
+    .p6-4{
+      @extend .p6-1;
+      top: 190px;
+    }
+
+    .p6-5{
+      @extend .p6-1;
+      top: 156px;
+    }
+
+    .p6-6{
+      @extend .p6-1;
+      top: 120px;
+    }
+
+    .p6-7{
+      @extend .p6-1;
+      top: 85px;
+    }
+
+
+    .p6-8{
+      @extend .p6-1;
+      top: 46px;
+    }
+
+
+    .p6-9{
+      @extend .p6-1;
+      top: 11px;
+    }
+
+    /* columna 6*/
+
+
+    /* columna 7*/
+    .p7-1{
+      @extend .puntos;
+      top: 301px;
+      left: 273px;
+    }
+
+    .p7-2{
+      @extend .p7-1;
+      top: 262px;
+    }
+
+    .p7-3{
+      @extend .p7-1;
+      top: 228px;
+    }
+
+    .p7-4{
+      @extend .p7-1;
+      top: 190px;
+    }
+
+    .p7-5{
+      @extend .p7-1;
+      top: 156px;
+    }
+
+    .p7-6{
+      @extend .p7-1;
+      top: 120px;
+    }
+
+    .p7-7{
+      @extend .p7-1;
+      top: 85px;
+    }
+
+
+    .p7-8{
+      @extend .p7-1;
+      top: 46px;
+    }
+
+
+    .p7-9{
+      @extend .p7-1;
+      top: 11px;
+    }
+
+    /* columna 7*/
+
+
+
+
+    /* columna 8*/
+    .p8-1{
+      @extend .puntos;
+      top: 301px;
+      left: 316px;
+    }
+
+    .p8-2{
+      @extend .p8-1;
+      top: 262px;
+    }
+
+    .p8-3{
+      @extend .p8-1;
+      top: 228px;
+    }
+
+    .p8-4{
+      @extend .p8-1;
+      top: 190px;
+    }
+
+    .p8-5{
+      @extend .p8-1;
+      top: 156px;
+    }
+
+    .p8-6{
+      @extend .p8-1;
+      top: 120px;
+    }
+
+    .p8-7{
+      @extend .p8-1;
+      top: 85px;
+    }
+
+
+    .p8-8{
+      @extend .p8-1;
+      top: 46px;
+    }
+
+
+    .p8-9{
+      @extend .p8-1;
+      top: 11px;
+    }
+
+    /* columna 8*/
+
+
+
+
+    /* columna 9*/
+    .p9-1{
+      @extend .puntos;
+      top: 301px;
+      left: 363px;
+    }
+
+    .p9-2{
+      @extend .p9-1;
+      top: 262px;
+    }
+
+    .p9-3{
+      @extend .p9-1;
+      top: 228px;
+    }
+
+    .p9-4{
+      @extend .p9-1;
+      top: 190px;
+    }
+
+    .p9-5{
+      @extend .p9-1;
+      top: 156px;
+    }
+
+    .p9-6{
+      @extend .p9-1;
+      top: 120px;
+    }
+
+    .p9-7{
+      @extend .p9-1;
+      top: 85px;
+    }
+
+
+    .p9-8{
+      @extend .p9-1;
+      top: 46px;
+    }
+
+
+    .p9-9{
+      @extend .p9-1;
+      top: 11px;
+    }
+
+    .plano{
+      background: url('../img/plano.jpg') no-repeat top left;
+      position:relative;
+      width:396px;
+      height: 347px;
+      top:20px;
+      left:30px;
+      float: left;
+    }
+
+    .puntos{
+      width: 13px;
+      height: 13px;
+      @include border-radius( 50% , 50%);
+      background:$color-azulBoton;
+      position: absolute;
+      border: 1px solid #333;
+      cursor: pointer;
+      @extend .animation;
+    }
+
+    ul#y{
+      float: left;
+      margin: 22px 0 0 27px;
+      display: inline-block;
+      li{
+        width: 20px;
+        height: 20px;
+        background:#ccc;
+        margin: 5px 0 16px 0;
+      }
+    }//ul
+
+    ul#x{
+      @extend ul#y;
+      float: none;
+      margin:20px 0 0 113px;
+      li{
+        float: left;
+        margin: 0 20px 0 0;
+      }
+    }//ul
+
+    /* columna 9*/
+    .ordenadoOk{
+      @extend .animation;
+      width: 30px;
+      height: 30px;
+      //top: 183px;
+      //left: 109px;
+      text-align:center;
+      color:$color-blanco;
+      line-height: 30px;
+      background:$color-rojo;
+      font-weight: bold;
+      font-size: $baseFontSize + 7;
+    }
+
+}
+/* Plano Cartesiano*/
+
+
