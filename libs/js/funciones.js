@@ -594,3 +594,6 @@ function handleCardDropBalanza( event, ui ) {
   }//if correct
 
 }//handleCardDrop
+
+
+
