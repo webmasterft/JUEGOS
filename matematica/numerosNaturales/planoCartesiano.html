@@ -31,36 +31,14 @@
             <div id="content">
               
 
-              <ul id="y">
-                <li><img src="img/figuras/bus.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/coco.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/conejo.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/mono.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pelota.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/leon.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pito.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/piquero.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/doctor.jpg" width="30" height="30"></li>
-              </ul>
+              <ul id="y"></ul>
 
               <div id="var" class="plano"></div><!-- var-->
               
               <div class="clear"></div>
 
-              <ul id="x">
-                <li><img src="img/figuras/calavera.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pan.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pastel.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/pato.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/toro.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/campana.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/tambor.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/queso.jpg" width="30" height="30"></li>
-                <li><img src="img/figuras/cama.jpg" width="30" height="30"></li>
-              </ul>
-
-              <div id="successMessage">           
-              </div>
+              <ul id="x"></ul>
+              <div id="successMessage"></div>
 
             </div><!-- content -->
         </div><!-- main -->
@@ -112,67 +90,63 @@
   
   function start(){
     var plano = $('div.plano'),
-        puntos = '';
+        listaX = $('ul#x'),
+        listaY = $('ul#y'),
+        listaPares = $('ul#paresOrdenados')
+        puntos = '',
+        ejeX = ['conejo','mono','perro','raton','pie','manos','gato','mano','toro'],
+        ejeY = ['zanahoria','banana','hueso','queso','zapato','guantes','estambre','reloj','capa'],
+        itemsX = [],
+        itemsY = [],
+        paresOrdenados = '';
+        contAux = 0,
+        contador = 0;
+    
     for(var i=1; i<=9; i++){
         for(var j=1; j<=9; j++){
           puntos +='<div class="p'+ i + '-' + j + '"></div>'
         }
     }
 
-    plano.html(puntos);
-    contador = 0;
-    
-    var context = {
-      items: [
-        {x: "calavera", y: "doctor" , par: '1-1' },
-        {x: "calavera", y: "piquero" , par: '1-2' },
-        {x: "calavera", y: "pito" , par: '1-3' }
-      ]
-    };
+    for(i=0;i<9;i++){
+      console.log(ejeX, ejeY[i]);
+      paresOrdenados += '<li>( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
+    }
 
-    //console.log();
+    plano.html(puntos);
+    ejeXrandom = shuffle(ejeX);
+    ejeYrandom = shuffle(ejeY);
+
+    for(i=0; i<9; i++){
+      itemsX += '<li><img src="img/figuras/'+ ejeXrandom[i] +'.jpg" width="30" height="30"></li>';
+      itemsY += '<li><img src="img/figuras/'+ ejeYrandom[i] +'.jpg" width="30" height="30"></li>';
+    }
+
+    listaPares.html(paresOrdenados);
+    listaX.html(itemsX);
+    listaY.html(itemsY);
+
+
 
     //$('ul#paresOrdenados').html('<li data-orden="'+ 1 + '" data-pares="' + context.items[0].par +'">( <img src="img/'+ context.items[0].x + '.jpg> - '+ context.items[0].y +' )</li>');
-contAux = 0;
-insertarPar(0);
-
-
-
-
-    //cerrarMensaje();
-    //$('#var').html('');
-    /*var correctCards = 0,
-        menuTemplate = $('#menuTemplate'),
-        menu = $('#menu'),
-        min = 0,
-        max = 0,     
-        menuItems = [
-            { 
-              texto: 'Dos dígitos',
-              id: '1'
-            },   
-            { 
-              texto: 'Tres dígitos',
-              id:'2'
-            },
-            { 
-              texto: 'Cuatro dígitos',
-              id:'3'
-            },
-            { 
-              texto: 'Más de cuatro dígitos',
-              id:'4'
-            }
-          ];// var menu
-      
-      template = Handlebars.compile(menuTemplate.html());
-      menu.html(template(menuItems)).hide().fadeIn();*/
-
+    
+      //insertarPar(0);
       
       plano.find('div').on('click', function(){
           pares = $(this).attr('class').slice(1);
-          paresOk = $('#paresOrdenados li').eq(contador).data('pares');
-          console.log(pares,paresOk);
+          pares = pares.split('-');
+          
+          imgX = listaX.find('li').eq(pares[0]-1).find('img').attr('src');
+          imgX = imgX.split('/');
+          imgX = imgX[2].slice(0 , -4);
+         
+          
+          imgY = listaY.find('li').eq(9-pares[1]).find('img').attr('src');
+          imgY = imgY.split('/');
+          imgY = imgY[2].slice(0 , -4);
+          console.log(imgX , imgY);
+
+
           if(pares === paresOk){
             contador ++ ;
             $(this).animate({
@@ -180,16 +154,16 @@ insertarPar(0);
               left: "-=7px"
             },
             function(){
-              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="cerrarMensaje(); insertarPar(contAux++);">Siguiente par</button>');
+             // mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="cerrarMensaje(); insertarPar(contAux++);">Siguiente par</button>');
             }).addClass('ordenadoOk').html(contador);
           }else{
-            mostrarMensaje('<h2>Inténtalo otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
+            //mostrarMensaje('<h2>Inténtalo otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
           }
       });
 
-function insertarPar(contAux){
+/*function insertarPar(contAux){
   $('ul#paresOrdenados').append('<li data-pares="' + context.items[contAux].par +'" data-orden="1">( <img src="img/figuras/' + context.items[contAux].x +'.jpg" witdh="60" height="60"> - <img src="img/figuras/' + context.items[contAux].y + '.jpg" witdh="60" height="60"> ) </li>');
-}
+}*/
 
 
   }//start
