@@ -110,8 +110,7 @@
     }
 
     for(i=0;i<9;i++){
-      console.log(ejeX, ejeY[i]);
-      paresOrdenados += '<li>( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
+      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
     }
 
     plano.html(puntos);
@@ -145,10 +144,20 @@
           imgY = listaY.find('li').eq(9-pares[1]).find('img').attr('src');
           imgY = imgY.split('/');
           imgY = imgY[2].slice(0 , -4);
-          console.log(imgX , imgY);
+          
+          //console.log(imgYtemp, imgXtemp);
+
+          paresOK = imgX + '-' + imgY;
+          
+          $.each(listaPares.find('li'), function(index, val) {
+              if($(this).data('pares') == paresOK){
+                paresOK = 'correcto'
+              }
+          });
 
 
-          if(pares === paresOk){
+          if( paresOk == 'correcto'){
+            alert('adsasd');
             contador ++ ;
             $(this).animate({
               top: "-=7px",
