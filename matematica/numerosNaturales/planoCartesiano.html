@@ -101,6 +101,7 @@
         paresOrdenados = '',
         paresOk='',
         contAux = 0,
+        respuesta = 0,
         contador = 0;
     
     for(var i=1; i<=9; i++){
@@ -133,6 +134,7 @@
       //insertarPar(0);
       
       plano.find('div').on('click', function(){
+          respuesta = 0;
           pares = $(this).attr('class').slice(1);
           pares = pares.split('-');
           
@@ -149,15 +151,13 @@
 
           paresOK = imgX + '-' + imgY;
           
-          $.each(listaPares.find('li'), function(index, val) {
+          $.each(listaPares.find('li'), function() {
               if($(this).data('pares') == paresOK){
-                paresOK = 'correcto'
+                respuesta = 1;
               }
           });
 
-
-          if( paresOk == 'correcto'){
-            alert('adsasd');
+          if(respuesta == 1){
             contador ++ ;
             $(this).animate({
               top: "-=7px",
