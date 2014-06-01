@@ -157,7 +157,7 @@ body{
       background: $color-azulBoton;
       @include border-radius(10px, 10px);
       border: 5px solid $color-blanco;
-      padding:10px;
+      padding: 10px 32px;
       li{
         color:$color-blanco;
         font-size: $baseFontSize + 2;
@@ -693,10 +693,13 @@ body{
       ul{
         background:none;
         border:none;
+
         li{
           color:$color-azulBorde;
           padding:0;
-          margin:2px 0;
+          //margin:2px 0;
+          font-size: $baseFontSize + 10;
+          vertical-align: top;
         }
       }//ul
 
@@ -1221,7 +1224,7 @@ body{
     }//ul
 
     /* columna 9*/
-    .ordenadoOk{
+    div.ordenadoOk{
       @extend .animation;
       width: 30px;
       height: 30px;
@@ -1234,7 +1237,14 @@ body{
       font-weight: bold;
       font-size: $baseFontSize + 7;
     }
-
+    span.ordenadoOk{
+      @extend div.ordenadoOk;
+      @include border-radius( 50% , 50%);
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px 10px;
+      border: 1px solid #333;
+    }
 }
 /* Plano Cartesiano*/
 

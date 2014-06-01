@@ -50,11 +50,9 @@
 
          <div id="instrucciones">
             <ol>
-            <li>Elige la actividad que deseas realizar</li>
-            <li>Realiza la actividad</li>
-            <li>Haz clic sostenido para arrastrar las tarjetas hasta el recuadro de descomposición y representar el número planteado.</li>
-            <li>Si su respuesta es correcta haz clic el el botón ESCRIBE EL NÚMERO</li>
-            <li>Si su respuesta es correcta haz clic el el botón GRAFICA EL NÚMERO</li>
+            <li>Haz click en las coordenas del plano que corresponda a los pares indicados.</li>
+            <li>Continúa con las demás coordenadas.</li>
+            <li>Al final podrás repetir el juego.</li>
             </ol>
          </div>
         
@@ -75,15 +73,6 @@
     
     </body>
 </html>
-<script id="menuTemplate" type="text/x-handlebars-template">
-    <p>nivel:</p>
-    <ul> 
-        {{#each this}}
-            <li class="pulse" data-id="{{id}}">{{texto}}</li>
-        {{/each}}
-    </ul>    
-  </script>
-
 <script type="text/javascript">
 
   $(start);
@@ -127,12 +116,6 @@
     listaX.html(itemsX);
     listaY.html(itemsY);
 
-
-
-    //$('ul#paresOrdenados').html('<li data-orden="'+ 1 + '" data-pares="' + context.items[0].par +'">( <img src="img/'+ context.items[0].x + '.jpg> - '+ context.items[0].y +' )</li>');
-    
-      //insertarPar(0);
-      
       plano.find('div').on('click', function(){
           respuesta = 0;
           pares = $(this).attr('class').slice(1);
@@ -146,14 +129,14 @@
           imgY = listaY.find('li').eq(9-pares[1]).find('img').attr('src');
           imgY = imgY.split('/');
           imgY = imgY[2].slice(0 , -4);
-          
-          //console.log(imgYtemp, imgXtemp);
 
           paresOK = imgX + '-' + imgY;
           
           $.each(listaPares.find('li'), function() {
               if($(this).data('pares') == paresOK){
                 respuesta = 1;
+                cuenta = contador + 1;
+                $(this).append('<span class="ordenadoOk">'+ cuenta +'</span>')
               }
           });
 
@@ -162,20 +145,16 @@
             $(this).animate({
               top: "-=7px",
               left: "-=7px"
-            },
-            function(){
-             // mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="cerrarMensaje(); insertarPar(contAux++);">Siguiente par</button>');
             }).addClass('ordenadoOk').html(contador);
-          }else{
-            //mostrarMensaje('<h2>Inténtalo otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
-          }
+            if(contador == 9){
+              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+
+              }else{
+              //mostrarMensaje('<h2>Inténtalo otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
+            }  
+
+          }//if respuesta
       });
-
-/*function insertarPar(contAux){
-  $('ul#paresOrdenados').append('<li data-pares="' + context.items[contAux].par +'" data-orden="1">( <img src="img/figuras/' + context.items[contAux].x +'.jpg" witdh="60" height="60"> - <img src="img/figuras/' + context.items[contAux].y + '.jpg" witdh="60" height="60"> ) </li>');
-}*/
-
-
   }//start
 
 
