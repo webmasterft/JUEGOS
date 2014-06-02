@@ -673,7 +673,7 @@ body{
 
 
 /* Plano Cartesiano*/
-#descomposicion.cartesiano{
+#descomposicion.cartesiano1{
 
     #menu{
       border:5px solid $color-azulBorde;
@@ -704,6 +704,10 @@ body{
       }//ul
 
     }//menu
+
+    #crono{
+      display: block;
+    }
 
 
     .p1-1{
