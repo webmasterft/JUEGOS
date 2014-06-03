@@ -1289,10 +1289,12 @@ body{
   }
 
   input{
-    width: 20px;
+    width: 50px;
     margin: 3px;
     padding: 0px 3px;
     border: 3px solid $color-blanco;
+    font-weight: normal;
+    font-size: $baseFontSize + 8;
   }
 
 }
