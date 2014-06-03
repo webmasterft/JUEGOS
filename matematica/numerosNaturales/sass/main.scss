@@ -1253,3 +1253,47 @@ body{
 /* Plano Cartesiano*/
 
 
+#descomposicion.cartesiano2{
+  @extend .cartesiano1;
+  
+  ul#x{
+    background:none;
+    margin: 24px 0 0 119px !important;
+    li{
+      line-height: 20px;
+      background: $color-rojo;
+      font-size: $baseFontSize;
+      color:$color-blanco;
+      text-align:center;
+      @include border-radius( 50% , 50%);
+      
+    }
+  }//
+  
+  ul#y{
+   background:none;
+    margin: 24px 0 0 35px;
+    li{
+      line-height: 20px;
+      background: $color-rojo;
+      font-size: $baseFontSize;
+      color:$color-blanco;
+      text-align:center;
+      @include border-radius( 50% , 50%);
+    }//
+  }
+
+  .plano div{
+    @extend .ordenadoOk;
+    background:$color-azulBoton;
+  }
+
+  input{
+    width: 20px;
+    margin: 3px;
+    padding: 0px 3px;
+    border: 3px solid $color-blanco;
+  }
+
+}
+/* Plano Cartesiano2*/

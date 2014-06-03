@@ -16,7 +16,7 @@
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper cartesiano1" id="descomposicion">
+      <div class="wrapper cartesiano2" id="descomposicion">
         
         <div id="main">
 
@@ -87,33 +87,50 @@
         listaY = $('ul#y'),
         listaPares = $('ul#paresOrdenados')
         puntos = '',
-        ejeX = ['conejo','mono','perro','raton','pie','manos','gato','mano','toro'],
-        ejeY = ['zanahoria','banana','hueso','queso','zapato','guantes','estambre','reloj','capa'],
+        ejeX = ['1','2','3','4','5','6','7','8','9'],
+        ejeY = ['1','2','3','4','5','6','7','8','9'],
+        itemsPlano = ['A','B','C','D','E','F','G','H','I'] 
         itemsX = [],
         itemsY = [],
+        coordenadas = [],
         paresOrdenados = '',
         paresOk='',
         contAux = 0,
         respuesta = 0,
         contador = 0;
     
+        ejeY = ejeY.reverse();
+
     for(var i=1; i<=9; i++){
         for(var j=1; j<=9; j++){
-          puntos +='<div class="p'+ i + '-' + j + '"></div>'
+          coordenadas.push(i + '-' + j);
         }
     }
 
-    for(i=0;i<9;i++){
-      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
-    }
+    for (i = 0; i < 9; i++) {
+      var num = aleatorio(0, 81);
+      puntos +='<div class="p'+ coordenadas[num] + '">'+ itemsPlano[i] +'</div>';
+      paresOrdenados += '<li>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'"> - <input type="text" name="'+ itemsPlano[i] +'"> ) </li>';
+    };
+
+
+
 
     plano.html(puntos);
-    ejeXrandom = shuffle(ejeX);
-    ejeYrandom = shuffle(ejeY);
+    //ejeXrandom = shuffle(ejeX);
+    //ejeYrandom = shuffle(ejeY);
+
+    $.each(plano.find('div'), function(index, val) {
+       /* iterate through array or object */
+       $(this).animate({
+              top: "-=7px",
+              left: "-=7px"
+        });
+    });
 
     for(i=0; i<9; i++){
-      itemsX += '<li><img src="img/figuras/'+ ejeXrandom[i] +'.jpg" width="30" height="30"></li>';
-      itemsY += '<li><img src="img/figuras/'+ ejeYrandom[i] +'.jpg" width="30" height="30"></li>';
+      itemsX += '<li>'+ ejeX[i] + '</li>';
+      itemsY += '<li>'+ ejeY[i] + '</li>';
     }
 
     listaPares.html(paresOrdenados);
