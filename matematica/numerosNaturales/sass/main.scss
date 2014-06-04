@@ -1284,9 +1284,20 @@ body{
   }
 
   .plano div{
-    @extend .ordenadoOk;
+    //@extend .ordenadoOk;
+    width: 30px;
+    height: 30px;
+    text-align:center;
+    color:$color-blanco;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: $baseFontSize + 7;
     background:$color-azulBoton;
+    &.ordenadoOk{
+    background:$color-rojo;
+    }
   }
+
 
   input{
     width: 50px;
@@ -1297,5 +1308,7 @@ body{
     font-size: $baseFontSize + 8;
   }
 
+  
+  
 }
 /* Plano Cartesiano2*/

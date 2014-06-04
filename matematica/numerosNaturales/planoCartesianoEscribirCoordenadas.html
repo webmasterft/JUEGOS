@@ -26,7 +26,8 @@
                   
                 </ul>
             </div>
-            <button id="verificar">Verificar</button>
+            
+            <button id="verificar"></button>
 
             <div id="content">
               
@@ -93,9 +94,6 @@
         itemsX = itemsY = [],
         coordenadas = respuestas = [],
         contAux = contador = 0;
-        
-        
-    
         ejeY = ejeY.reverse();
 
     for(var i=1; i<=9; i++){
@@ -110,12 +108,7 @@
       paresOrdenados += '<li data-id=' + itemsPlano[i] +'>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'" placeholder="x-y" maxlength="3" size="3">) </li>';
     };
 
- 
-
-
     plano.html(puntos);
-    //ejeXrandom = shuffle(ejeX);
-    //ejeYrandom = shuffle(ejeY);
 
     $.each(plano.find('div'), function(index, val) {
        /* iterate through array or object */
@@ -134,26 +127,35 @@
     listaX.html(itemsX);
     listaY.html(itemsY);
 
-    //$('#verificar').on('click', function(){
-          //$reloj.timer('start');
-          
+    listaPares.find('li input').on('change keyup', function(event) {
+      var ordenadoOk = $('.ordenadoOk');
+      $reloj.timer('start');
+      if(event.type === "keyup"){
+        name = $(this).attr('name');
+        respuesta = $(this).val();
+        punto = plano.find('div:contains('+ name +')');
 
-        //  $.each(listaPares.find('li input'), function(index, val) {
-             /* iterate through array or object */
-            listaPares.find('li input').on('change', function(event) {
-               /* Act on the event */
-                 //respuestas.push($(this).val());
-                 
-                 name = $(this).attr('name');
-                 respuesta = $(this).val();
-                 console.log(respuesta);
-            });
-          //});
+        if(respuesta == punto.attr('class').slice(1)){
+          punto.addClass('ordenadoOk');
+        }
+        console.log(ordenadoOk.length);        
+        if(ordenadoOk.length == 9){
+          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          $reloj.timer('stop');
+        }
+      }//keyup
+    });
+
+    $('#verificar').on('click', function(){
+        if(ordenadoOk.length == 9){
+          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          $reloj.timer('stop');
+        }else{
+          mostrarMensaje('<h2>Sigue jugando que el tiempo corre!!!</h2> <button class="button pulse" onclick="cerrarMensaje();">Juega otra vez</button>');
+        }
+      });
 
 
-
-          
-      //});
   }//start
 
 
