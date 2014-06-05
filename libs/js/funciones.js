@@ -570,7 +570,6 @@ function aleatorio(inferior,superior,decimales){
       }else{
         aleat = aleat.toFixed(decimales);
       }
-      
       return aleat;
 } 
     

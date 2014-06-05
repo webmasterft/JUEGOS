@@ -381,12 +381,12 @@ body{
   }
   .verificar{
     background: $color-verdefosf;
-      color: $color-txtBoton;
-      border: 4px solid $color-blanco;
-      padding: 10px;
-      font-weight: bold;
-      @include border-radius(20px, 20px);
-      margin-top: 15px;
+    color: $color-txtBoton;
+    border: 4px solid $color-blanco;
+    padding: 10px;
+    font-weight: bold;
+    @include border-radius(20px, 20px);
+    margin-top: 15px;
   }
   
   
@@ -713,6 +713,7 @@ body{
           font-size: $baseFontSize + 10;
           vertical-align: top;
           i{
+            @extend .animation;
             &.fa-check-circle{
               color:$color-verdeBack;
             }
@@ -1333,7 +1334,10 @@ body{
     font-size: $baseFontSize + 8;
   }
 
-  
+  #verificar{
+    position:absolute;
+    
+  }
   
 }
 /* Plano Cartesiano2*/

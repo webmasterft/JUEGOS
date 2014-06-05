@@ -28,7 +28,7 @@
                 </ul>
             </div>
             
-            <button id="verificar"></button>
+           
 
             <div id="content">
               
@@ -36,15 +36,16 @@
               <ul id="y"></ul>
 
               <div id="var" class="plano"></div><!-- var-->
-              
+               
+
               <div class="clear"></div>
 
               <ul id="x"></ul>
               <div id="successMessage"></div>
 
 
-             <div id="crono"><div id="t" class="badge">00:00</div></div>             
-
+             <div id="crono"><div id="t" class="badge">00:00</div></div>
+             <div class="clear"></div>             
 
             </div><!-- content -->
         </div><!-- main -->
@@ -84,10 +85,11 @@
   $(start);
   
   function start(){
+    //$reloj.timer('stop');
     var plano = $('div.plano'),
         listaX = $('ul#x'),
         listaY = $('ul#y'),
-        listaPares = $('ul#paresOrdenados')
+        listaPares = $('ul#paresOrdenados'),
         puntos = paresOrdenados = paresOk = '',
         ejeX = ['1','2','3','4','5','6','7','8','9'],
         ejeY = ['1','2','3','4','5','6','7','8','9'],
@@ -107,65 +109,46 @@
       var num = aleatorio(0, 81);
       puntos +='<div class="p'+ coordenadas[num] + '">'+ itemsPlano[i] +'</div>';
       paresOrdenados += '<li data-id=' + itemsPlano[i] +'>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'" placeholder="x-y" maxlength="3" size="3">) <i class="fa"></i></li>';
+      itemsX += '<li>'+ ejeX[i] + '</li>';
+      itemsY += '<li>'+ ejeY[i] + '</li>';
     };
 
     plano.html(puntos);
+    listaPares.html(paresOrdenados);
+    listaX.html(itemsX);
+    listaY.html(itemsY);
 
-    $.each(plano.find('div'), function(index, val) {
-       /* iterate through array or object */
+    $.each(plano.find('div'), function() {
        $(this).animate({
               top: "-=7px",
               left: "-=7px"
         });
     });
 
-    for(i=0; i<9; i++){
-      itemsX += '<li>'+ ejeX[i] + '</li>';
-      itemsY += '<li>'+ ejeY[i] + '</li>';
-    }
-
-    listaPares.html(paresOrdenados);
-    listaX.html(itemsX);
-    listaY.html(itemsY);
-
-    listaPares.find('li input').on('change keyup', function(event) {
-      var ordenadoOk = $('.ordenadoOk');
+    listaPares.find('li input').on('keyup', function(event) {
       $reloj.timer('start');
       if(event.type === "keyup"){
-        name = $(this).attr('name');
-        respuesta = $(this).val();
+        var name = $(this).attr('name'),
+            respuesta = $(this).val(),
+            punto = plano.find('div:contains('+ name +')'),
+            ordenadoOk = $('.ordenadoOk');
 
-        punto = plano.find('div:contains('+ name +')');
+        if(respuesta.length == listaPares.find('li input').attr('size')){
+          if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
+            punto.addClass('ordenadoOk');
+            $(this).prop('disabled', true).css({ opacity: 0.7})
+            .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
+          }else{
+            $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
+          }
 
-        if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
-          punto.addClass('ordenadoOk');
-          $(this).prop('disabled', true).css({ opacity: 0.7})
-          .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
-        }else{
-          $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
-        }
-        
-        console.log(ordenadoOk.length);        
-        
-        if(ordenadoOk.length == 9){
-          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
-          $reloj.timer('stop');
-        }
+          if(ordenadoOk.length + 1 == listaPares.find('li input').length){
+            $reloj.timer('stop');
+            mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          }
+        }//si el numero de caracteres es igual al size del input
       }//keyup
     });
-
-    
-
-    $('#verificar').on('click', function(){
-        if(ordenadoOk.length == 9){
-          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
-          $reloj.timer('stop');
-        }else{
-          mostrarMensaje('<h2>Sigue jugando que el tiempo corre!!!</h2> <button class="button pulse" onclick="cerrarMensaje();">Juega otra vez</button>');
-        }
-      });
-
-
   }//start
 
 
