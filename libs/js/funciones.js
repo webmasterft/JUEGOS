@@ -17,7 +17,14 @@
 
     // INSTRUCCIONES //
     $('button#instrucciones').click(function(){
-        $('div#instrucciones').fadeToggle();
+        $('div#instrucciones').fadeToggle(function(){
+          if($(this).find('button').length < 1){
+            $(this).append('<button class="button pulse">Cerrar</button>');
+          }
+          $(this).find('button').on('click', function(){
+            $('div#instrucciones').fadeOut();
+          });
+        });
     });
     // INSTRUCCIONES //
 
@@ -555,11 +562,11 @@ function grafica(){
 
 
 function aleatorio(inferior,superior,decimales){ 
-      numPosibilidades = superior - inferior 
-      aleat = Math.random() * numPosibilidades
+      numPosibilidades = superior - inferior; 
+      aleat = Math.random() * numPosibilidades;
       if(decimales == undefined) {
-        aleat = Math.floor(aleat) 
-        aleat = parseInt(inferior) + aleat 
+        aleat = Math.floor(aleat); 
+        aleat = parseInt(inferior) + aleat; 
       }else{
         aleat = aleat.toFixed(decimales);
       }

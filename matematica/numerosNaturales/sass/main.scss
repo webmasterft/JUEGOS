@@ -670,6 +670,18 @@ body{
     }//badge
 }//reloj    
 
+  .resp{
+      @extend .animation;
+      width: 30px;
+      height: 30px;
+      //top: 183px;
+      //left: 109px;
+      text-align:center;
+      color:$color-blanco;
+      line-height: 30px;
+      font-weight: bold;
+      font-size: $baseFontSize + 7;
+  }
 
 
 /* Plano Cartesiano*/
@@ -700,6 +712,15 @@ body{
           //margin:2px 0;
           font-size: $baseFontSize + 10;
           vertical-align: top;
+          i{
+            &.fa-check-circle{
+              color:$color-verdeBack;
+            }
+            &.fa-exclamation-triangle{
+              color:$color-rojo;
+            }
+          }//i
+
         }
       }//ul
 
@@ -1228,22 +1249,24 @@ body{
     }//ul
 
     /* columna 9*/
-    div.ordenadoOk{
-      @extend .animation;
-      width: 30px;
-      height: 30px;
-      //top: 183px;
-      //left: 109px;
-      text-align:center;
-      color:$color-blanco;
-      line-height: 30px;
-      background:$color-rojo;
-      font-weight: bold;
-      font-size: $baseFontSize + 7;
-    }
+    .plano div{
+      &.ordenadoOk{
+        @extend .animation;
+        @extend .resp;
+        background:$color-verdeBack;
+      }
+
+      &.wrong{
+        @extend .resp;
+        background:$color-rojo;
+      }
+
+    }//plano  
+    
     span.ordenadoOk{
-      @extend div.ordenadoOk;
+      background:$color-verdeBack;
       @include border-radius( 50% , 50%);
+      @extend .resp;
       display: inline-block;
       vertical-align: top;
       margin: 5px 10px;
@@ -1251,6 +1274,10 @@ body{
     }
 }
 /* Plano Cartesiano*/
+
+
+
+
 
 
 #descomposicion.cartesiano2{
@@ -1266,7 +1293,7 @@ body{
       color:$color-blanco;
       text-align:center;
       @include border-radius( 50% , 50%);
-      
+
     }
   }//
   
@@ -1284,20 +1311,9 @@ body{
   }
 
   .plano div{
-    //@extend .ordenadoOk;
-    width: 30px;
-    height: 30px;
-    text-align:center;
-    color:$color-blanco;
-    line-height: 30px;
-    font-weight: bold;
-    font-size: $baseFontSize + 7;
+    @extend .resp;
     background:$color-azulBoton;
-    &.ordenadoOk{
-    background:$color-rojo;
-    }
   }
-
 
   input{
     width: 50px;

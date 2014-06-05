@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -105,7 +106,7 @@
     for (i = 0; i < 9; i++) {
       var num = aleatorio(0, 81);
       puntos +='<div class="p'+ coordenadas[num] + '">'+ itemsPlano[i] +'</div>';
-      paresOrdenados += '<li data-id=' + itemsPlano[i] +'>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'" placeholder="x-y" maxlength="3" size="3">) </li>';
+      paresOrdenados += '<li data-id=' + itemsPlano[i] +'>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'" placeholder="x-y" maxlength="3" size="3">) <i class="fa"></i></li>';
     };
 
     plano.html(puntos);
@@ -133,18 +134,26 @@
       if(event.type === "keyup"){
         name = $(this).attr('name');
         respuesta = $(this).val();
+
         punto = plano.find('div:contains('+ name +')');
 
-        if(respuesta == punto.attr('class').slice(1)){
+        if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
           punto.addClass('ordenadoOk');
+          $(this).prop('disabled', true).siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
+        }else{
+          $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
         }
+        
         console.log(ordenadoOk.length);        
+        
         if(ordenadoOk.length == 9){
           mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
           $reloj.timer('stop');
         }
       }//keyup
     });
+
+    
 
     $('#verificar').on('click', function(){
         if(ordenadoOk.length == 9){
