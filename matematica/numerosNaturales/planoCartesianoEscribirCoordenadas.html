@@ -139,7 +139,8 @@
 
         if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
           punto.addClass('ordenadoOk');
-          $(this).prop('disabled', true).siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
+          $(this).prop('disabled', true).css({ opacity: 0.7})
+          .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
         }else{
           $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
         }

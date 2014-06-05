@@ -1233,16 +1233,17 @@ body{
       li{
         width: 35px;
         height: 35px;
-        background:#ccc;
         margin: 0 0 2px 0;
       }
     }//ul
 
     ul#x{
-      @extend ul#y;
+      display: inline-block;
       float: none;
       margin:20px 0 0 107px;
       li{
+        width: 35px;
+        height: 35px;
         float: left;
         margin: 0 5px 0 0;
       }
@@ -1285,22 +1286,30 @@ body{
   
   ul#x{
     background:none;
-    margin: 24px 0 0 119px !important;
+    margin: 24px 0 0 108px;
+
     li{
+      width: 20px;
+      height: 20px;
+      margin: 0 21px 0 0;
       line-height: 20px;
       background: $color-rojo;
       font-size: $baseFontSize;
       color:$color-blanco;
       text-align:center;
       @include border-radius( 50% , 50%);
+      
 
     }
   }//
   
   ul#y{
    background:none;
-    margin: 24px 0 0 35px;
+    margin: 31px 0 0 35px;
     li{
+      width: 20px;
+      height: 20px;
+      margin: 0 0 16px 0;
       line-height: 20px;
       background: $color-rojo;
       font-size: $baseFontSize;
