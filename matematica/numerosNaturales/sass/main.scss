@@ -2,7 +2,7 @@
 @import "normalize.scss";
 @import "normal.scss";
 @import "hover.scss";
-@import "compass/css3/";
+@import "compass/css3";
 //@import "../../../libs/css/jquery-ui.css";
 
 
@@ -378,6 +378,7 @@ body{
     display:none;
     background:$color-verdefosf;
     color:$color-txtBoton;
+    z-index:9999;
   }
   .verificar{
     background: $color-verdefosf;
@@ -1341,3 +1342,27 @@ body{
   
 }
 /* Plano Cartesiano2*/
+
+
+/* plano arrastrar*/
+  div.cartesianoArrastra{
+    .suelta{
+      display:block;
+    }
+
+    img.arrastrable.ui-draggable {
+      z-index: 999;
+    }
+
+
+    .ui-state-disabled{
+      @include border-radius(50%,50%);
+      width: 32px;
+      height: 32px;
+      border: 1px solid #333;
+    }
+
+  }
+
+
+/* plano arrastrar*/

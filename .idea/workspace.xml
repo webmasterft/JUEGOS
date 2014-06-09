@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="planoCartesianoEscribirCoordenadas.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="planoCartesianoEscribirCoordenadas.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="4" selection-start="2773" selection-end="2773" vertical-scroll-proportion="0.6337522" vertical-offset="922" max-vertical-offset="2822">
+            <state line="144" column="185" selection-start="5156" selection-end="5329" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="2822">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,16 @@
       <file leaf-file-name="planoCartesianoArrastrar.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="43.153847" vertical-offset="1122" max-vertical-offset="2856">
+            <state line="156" column="46" selection-start="5412" selection-end="5412" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="3383">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="389" column="21" selection-start="7177" selection-end="7177" vertical-scroll-proportion="0.7526316" vertical-offset="6184" max-vertical-offset="23341">
               <folding />
             </state>
           </provider>
@@ -44,18 +53,7 @@
       <file leaf-file-name="funciones.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="10387">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="planoCartesiano.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2717" selection-end="2717" vertical-scroll-proportion="-10.461538" vertical-offset="969" max-vertical-offset="3111">
+            <state line="17" column="12" selection-start="520" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="10387">
               <folding />
             </state>
           </provider>
@@ -77,9 +75,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/index.html" />
-        <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html" />
+        <option value="$PROJECT_DIR$/libs/js/funciones.js" />
+        <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html" />
+        <option value="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" />
       </list>
     </option>
   </component>
@@ -175,6 +175,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="matematica" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="numerosNaturales" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sass" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JUEGOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JUEGOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -209,13 +231,37 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="157" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="831" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="160" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="149" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="835" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/matematica/numerosNaturales" />
+    <property name="SearchEverywhereHistory" value="" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\GitHub\JUEGOS\matematica\numerosNaturales" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.planoCartesianoArrastrar.html">
+    <configuration default="false" name="planoCartesianoArrastrar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/JUEGOS/matematica/numerosNaturales/planoCartesianoArrastrar.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -229,7 +275,14 @@
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.planoCartesianoArrastrar.html" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.planoCartesianoArrastrar.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -267,19 +320,22 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16541353" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.rb" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USERS">
@@ -300,6 +356,34 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="185" selection-start="5156" selection-end="5329" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="2822">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="46" selection-start="5412" selection-end="5412" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="3383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="380" column="17" selection-start="6956" selection-end="6956" vertical-scroll-proportion="0.0" vertical-offset="6184" max-vertical-offset="23341">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="12" selection-start="520" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="10387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="137" column="41" selection-start="4870" selection-end="4870" vertical-scroll-proportion="0.0" vertical-offset="1993" max-vertical-offset="2856">
           <folding />
         </state>
@@ -310,45 +394,69 @@
         <state line="35" column="30" selection-start="1609" selection-end="1609" vertical-scroll-proportion="1.0682226" vertical-offset="0" max-vertical-offset="1003" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="0" selection-start="2717" selection-end="2717" vertical-scroll-proportion="0.48833033" vertical-offset="969" max-vertical-offset="3111" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/config.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="15" selection-start="117" selection-end="117" vertical-scroll-proportion="0.13043478" vertical-offset="0" max-vertical-offset="527" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="320" column="0" selection-start="5556" selection-end="5556" vertical-scroll-proportion="0.8210526" vertical-offset="4972" max-vertical-offset="5542" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/descomposicion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="2533" selection-end="2661" vertical-scroll-proportion="0.34470376" vertical-offset="896" max-vertical-offset="2958">
-          <folding>
-            <marker date="1400208104096" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
+        <state line="64" column="0" selection-start="2533" selection-end="2661" vertical-scroll-proportion="1.8617594" vertical-offset="51" max-vertical-offset="2958" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="185" selection-start="5156" selection-end="5329" vertical-scroll-proportion="0.0" vertical-offset="2128" max-vertical-offset="2822">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="43.153847" vertical-offset="1122" max-vertical-offset="2856">
+        <state line="156" column="46" selection-start="5412" selection-end="5412" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="3383">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="10387">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2717" selection-end="2717" vertical-scroll-proportion="-10.461538" vertical-offset="969" max-vertical-offset="3111">
+        <state line="17" column="12" selection-start="520" selection-end="525" vertical-scroll-proportion="0.0" vertical-offset="113" max-vertical-offset="10387">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html">
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="4" selection-start="2773" selection-end="2773" vertical-scroll-proportion="0.6337522" vertical-offset="922" max-vertical-offset="2822">
+        <state line="389" column="21" selection-start="7177" selection-end="7177" vertical-scroll-proportion="0.7526316" vertical-offset="6184" max-vertical-offset="23341">
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

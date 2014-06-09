@@ -12,26 +12,25 @@
         <link rel="stylesheet" href="css/main.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
     </head>
     <body>
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper cartesiano2" id="descomposicion">
-        
-        <div id="main">
 
+
+
+        <div class="wrapper cartesiano2 cartesianoArrastra" id="descomposicion">
+        <div id="main">
             <div id="menu">
                 <p>Pares Ordenados</p>
                 <ul id="paresOrdenados">
                   
                 </ul>
             </div>
-            
-           
 
             <div id="content">
-              
 
               <ul id="y"></ul>
 
@@ -74,10 +73,9 @@
       </div><!-- contenedor -->
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
     <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
-    <script src="../../libs/js/handlebars.min.js"></script>
-    <script src="../../libs/js/funciones.js"></script> 
+    <script src="../../libs/js/funciones.js"></script>
 
-    
+
     </body>
 </html>
 <script type="text/javascript">
@@ -107,11 +105,15 @@
 
     for (i = 0; i < 9; i++) {
       var num = aleatorio(0, 81);
-      puntos +='<div class="p'+ coordenadas[num] + '">'+ itemsPlano[i] +'</div>';
-      paresOrdenados += '<li data-id=' + itemsPlano[i] +'>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'" placeholder="x-y" maxlength="3" size="3">) <i class="fa"></i></li>';
+
+      puntos +='<div id="' + itemsPlano[i] +'" data-img="' + itemsPlano[i] +'" class="receptor p'+ coordenadas[num] + '"></div>';
+      paresOrdenados += '<li><img id="' + itemsPlano[i] +'" class="' + itemsPlano[i] +' arrastrable" src="img/figuras/' + itemsPlano[i] +'.jpg" width="35" height="35">  ( '+ coordenadas[num] + ' ) <i class="fa"></i></li>';
       itemsX += '<li>'+ ejeX[i] + '</li>';
       itemsY += '<li>'+ ejeY[i] + '</li>';
+
     };
+
+
 
     plano.html(puntos);
     listaPares.html(paresOrdenados);
@@ -125,30 +127,59 @@
         });
     });
 
-    listaPares.find('li input').on('keyup', function(event) {
-      $reloj.timer('start');
-      if(event.type === "keyup"){
-        var name = $(this).attr('name'),
-            respuesta = $(this).val(),
-            punto = plano.find('div:contains('+ name +')'),
-            ordenadoOk = $('.ordenadoOk');
 
-        if(respuesta.length == listaPares.find('li input').attr('size')){
-          if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
-            punto.addClass('ordenadoOk');
-            $(this).prop('disabled', true).css({ opacity: 0.7})
-            .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
-          }else{
-            $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
-          }
 
-          if(ordenadoOk.length + 1 == listaPares.find('li input').length){
-            $reloj.timer('stop');
-            mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+
+      //defino los elementos que se pueden arrastrar
+      $(".arrastrable").draggable({
+          cursor: 'move',
+          drag: function(){
+              $reloj.timer('start');
           }
-        }//si el numero de caracteres es igual al size del input
-      }//keyup
-    });
+          //revert: true
+      });
+
+
+
+      //defino elementos donde se puede soltar
+      $(".receptor").droppable({
+          drop: function( event, ui ){
+              var imgArrastrada = ui.draggable;
+                  var elem = $(this),
+                      correctos = $('.fa-check-circle');
+                  if (imgArrastrada.attr('id') == elem.data("img")) {
+                      imgArrastrada.siblings('i').addClass('fa-check-circle')
+                      imgArrastrada.draggable({
+                          disabled: true,
+                          revert: false,
+                          containment: 'parent',
+                      }).detach().css({top: 0,left: 0}).appendTo(this);
+                      if(correctos.length == 8){
+                          $reloj.timer('stop');
+                          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+                      }
+
+
+                  } else {
+                      imgArrastrada.draggable({
+                          revert: true
+                      });
+                  }
+
+
+
+          }
+      });
+
+
+
+
+
+
+
+
+
+
   }//start
 
 

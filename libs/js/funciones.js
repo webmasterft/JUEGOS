@@ -146,7 +146,7 @@ function toLetters(n)
                 width: '360px',
                 height: '200px',
                 opacity: 1,
-                zIndex : '999'
+                zIndex : '9999'
           });//mensaje
     }
 /* ABRIR EL MENSAJE DE SUCCESS */  
