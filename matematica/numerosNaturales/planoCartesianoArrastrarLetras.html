@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+
+
+        <div class="wrapper cartesiano2 cartesianoArrastra" id="descomposicion">
+        <div id="main">
+            <div id="menu">
+                <p>Pares Ordenados</p>
+                <ul id="paresOrdenados">
+                  
+                </ul>
+            </div>
+
+            <div id="content">
+
+              <ul id="y"></ul>
+
+              <div id="var" class="plano"></div><!-- var-->
+               
+
+              <div class="clear"></div>
+
+              <ul id="x"></ul>
+              <div id="successMessage"></div>
+
+
+             <div id="crono"><div id="t" class="badge">00:00</div></div>
+             <div class="clear"></div>             
+
+            </div><!-- content -->
+        </div><!-- main -->
+
+         <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
+        </div><!--logos -->
+
+         <div id="instrucciones">
+            <ol>
+            <li>Haz click en las coordenas del plano que corresponda a los pares indicados.</li>
+            <li>Continúa con las demás coordenadas.</li>
+            <li>Al final podrás repetir el juego.</li>
+            </ol>
+         </div>
+        
+
+         <div id="nav">
+            <button id="instrucciones" class="pulse">Instrucciones</button>
+            <button id="regresar" class="pulse">Regresar</button>
+         </div><!--nav-->
+         <img id="titulo" src="img/numerosNaturales.png" width="202" height="94">
+         <img id="avatar" src="img/muneco2.png" width="170" height="187">
+
+      </div><!-- contenedor -->
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script>
+
+
+    </body>
+</html>
+<script type="text/javascript">
+
+  $(start);
+  
+  function start(){
+    //$reloj.timer('stop');
+    var plano = $('div.plano'),
+        listaX = $('ul#x'),
+        listaY = $('ul#y'),
+        listaPares = $('ul#paresOrdenados'),
+        puntos = paresOrdenados = paresOk = '',
+        ejeX = ['1','2','3','4','5','6','7','8','9'],
+        ejeY = ['1','2','3','4','5','6','7','8','9'],
+        itemsPlano = ['A','B','C','D','E','F','G','H','I'],
+        itemsX = itemsY = [],
+        coordenadas = respuestas = [],
+        contAux = contador = 0;
+        ejeY = ejeY.reverse();
+
+    for(var i=1; i<=9; i++){
+        for(var j=1; j<=9; j++){
+          coordenadas.push(i + '-' + j);
+        }
+    }
+
+    for (i = 0; i < 9; i++) {
+      var num = aleatorio(0, 81);
+
+      puntos +='<div id="p' + itemsPlano[i] +'" data-img="' + itemsPlano[i] +'" class="receptor p'+ coordenadas[num] + '"></div>';
+      paresOrdenados += '<li><span id="p' + itemsPlano[i] +'" class="p' + itemsPlano[i] +' arrastrable"> ' + itemsPlano[i] +'  </span>  ( '+ coordenadas[num] + ' ) <i class="fa"></i></li>';
+      itemsX += '<li>'+ ejeX[i] + '</li>';
+      itemsY += '<li>'+ ejeY[i] + '</li>';
+
+    };
+
+
+
+    plano.html(puntos);
+    listaPares.html(paresOrdenados);
+    listaX.html(itemsX);
+    listaY.html(itemsY);
+
+    $.each(plano.find('div'), function() {
+       $(this).animate({
+              top: "-=7px",
+              left: "-=7px"
+        });
+    });
+
+
+
+
+      //defino los elementos que se pueden arrastrar
+      $(".arrastrable").draggable({
+          cursor: 'move',
+          drag: function(){
+              $reloj.timer('start');
+          }
+          //revert: true
+      });
+
+
+
+      //defino elementos donde se puede soltar
+      $(".receptor").droppable({
+          drop: function( event, ui ){
+              var imgArrastrada = ui.draggable;
+                  var elem = $(this),
+                      correctos = $('.fa-check-circle');
+                  if (imgArrastrada.attr('id') == elem.data("img")) {
+                      imgArrastrada.siblings('i').addClass('fa-check-circle')
+                      imgArrastrada.draggable({
+                          disabled: true,
+                          revert: false,
+                          containment: 'parent',
+                      }).detach().css({top: 0,left: 0}).appendTo(this);
+                      if(correctos.length == 8){
+                          $reloj.timer('stop');
+                          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+                      }
+
+
+                  } else {
+                      imgArrastrada.draggable({
+                          revert: true
+                      });
+                  }
+
+
+
+          }
+      });
+
+
+
+
+
+
+
+
+
+
+  }//start
+
+
+
+
+  
+
+  
+
+
+</script>

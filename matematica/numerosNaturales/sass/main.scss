@@ -1363,6 +1363,26 @@ body{
     }
 
   }
-
-
 /* plano arrastrar*/
+
+
+/* plano arrastrarLetras*/
+  div.cartesianoArrastra{
+    .suelta{
+      display:block;
+    }
+
+    img.arrastrable.ui-draggable {
+      z-index: 999;
+    }
+
+
+    .ui-state-disabled{
+      @include border-radius(50%,50%);
+      width: 32px;
+      height: 32px;
+      border: 1px solid #333;
+    }
+
+  }
+/* plano arrastrarLetras*/
