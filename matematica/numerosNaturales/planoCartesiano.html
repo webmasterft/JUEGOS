@@ -102,15 +102,13 @@
         }
     }
 
-    for(i=0;i<9;i++){
-      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
-    }
 
     plano.html(puntos);
     ejeXrandom = shuffle(ejeX);
     ejeYrandom = shuffle(ejeY);
 
     for(i=0; i<9; i++){
+      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
       itemsX += '<li><img src="img/figuras/'+ ejeXrandom[i] +'.jpg" width="35" height="35"></li>';
       itemsY += '<li><img src="img/figuras/'+ ejeYrandom[i] +'.jpg" width="35" height="35"></li>';
     }

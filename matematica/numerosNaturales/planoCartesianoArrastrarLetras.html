@@ -21,7 +21,7 @@
 
 
 
-        <div class="wrapper cartesiano2 cartesianoArrastra" id="descomposicion">
+        <div class="wrapper cartesiano2 cartesianoArrastraLetras" id="descomposicion">
         <div id="main">
             <div id="menu">
                 <p>Pares Ordenados</p>
@@ -106,7 +106,7 @@
     for (i = 0; i < 9; i++) {
       var num = aleatorio(0, 81);
 
-      puntos +='<div id="p' + itemsPlano[i] +'" data-img="' + itemsPlano[i] +'" class="receptor p'+ coordenadas[num] + '"></div>';
+      puntos +='<div id="p' + itemsPlano[i] +'" data-img="p' + itemsPlano[i] +'" class="receptor p'+ coordenadas[num] + '"></div>';
       paresOrdenados += '<li><span id="p' + itemsPlano[i] +'" class="p' + itemsPlano[i] +' arrastrable"> ' + itemsPlano[i] +'  </span>  ( '+ coordenadas[num] + ' ) <i class="fa"></i></li>';
       itemsX += '<li>'+ ejeX[i] + '</li>';
       itemsY += '<li>'+ ejeY[i] + '</li>';

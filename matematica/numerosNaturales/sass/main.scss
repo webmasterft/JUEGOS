@@ -1386,3 +1386,30 @@ body{
 
   }
 /* plano arrastrarLetras*/
+
+
+div.cartesianoArrastraLetras{
+  ul{
+    li{
+      margin: 5px 0;
+    }
+  }  
+      span{
+        @include border-radius(50%,50%);
+        width: 32px;
+        height: 32px;
+        border: 1px solid #333;
+        display: inline-block;
+        line-height: 32px;
+        text-align: center;
+        background:$color-azulBoton;
+        color:$color-blanco;
+        z-index: 9999;
+      }//span
+      
+      .ui-state-disabled{
+        @extend span;
+        background: $color-verdeBack;
+      }
+      
+}//.cartesianoArrastraLetras
