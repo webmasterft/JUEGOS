@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/animalesLocos.html" afterPath="$PROJECT_DIR$/lengua/ordenar/animalesLocos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JUEGOS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,7 +28,7 @@
       <file leaf-file-name="animalesLocos.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/animalesLocos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="44" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.48114902" vertical-offset="310" max-vertical-offset="1411">
+            <state line="61" column="0" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.7613636" vertical-offset="769" max-vertical-offset="1411">
               <folding />
             </state>
           </provider>
@@ -274,13 +273,19 @@
       <created>1402112622164</created>
       <updated>1402112622164</updated>
     </task>
+    <task id="LOCAL-00001" summary="quitado console">
+      <created>1402462359221</created>
+      <updated>1402462359221</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="728" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -316,6 +321,8 @@
       <TodoPanelSettings />
     </option>
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <MESSAGE value="quitado console" />
+    <option name="LAST_COMMIT_MESSAGE" value="quitado console" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -483,7 +490,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/animalesLocos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="44" selection-start="1807" selection-end="1807" vertical-scroll-proportion="0.48114902" vertical-offset="310" max-vertical-offset="1411">
+        <state line="61" column="0" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.7613636" vertical-offset="769" max-vertical-offset="1411">
           <folding />
         </state>
       </provider>
