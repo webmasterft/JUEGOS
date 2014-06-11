@@ -16,31 +16,29 @@
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper lengua" id="descomposicion" >
-        
-         <ul id="sortable"></ul>
+      <div class="wrapper lengua animalesLocos" id="descomposicion" >
 
-         <div class="clear"></div>
+          <div id="cambiar">
+              <button data-id="extremidades" class="button pulse">Cambiar Extremidades</button>
+              <button data-id="tronco" class="button pulse">Cambiar Tronco</button>
+              <button data-id="cabeza" class="button pulse">Cambiar Cabeza</button>
+          </div>
 
-         <form action="#" id="respuestas"> </form>
+          <img id="extremidades" src="img/animalesLocos/extremidades/1.jpg" width="298" height="500" />
+          <img id="tronco" src="img/animalesLocos/tronco/1.jpg" width="298" height="500"/>
+          <img id="cabeza" src="img/animalesLocos/cabeza/1.jpg" width="298" height="500" />
 
-         <div class="clear"></div>
-         <div id="reloj"><div id="t" class="badge">00:00</div></div>        
 
-         <div id="nav">
-            <button id="instrucciones" class="pulse">Instrucciones</button>
-            <button id="regresar" class="pulse">Regresar</button>
-         </div><!--nav-->
          <img id="titulo" src="img/escribeOrden.png" width="202" height="94">
          <img id="avatar" src="img/muneco2.png" width="120" height="126">
-      
-      <div id="successMessage"></div>
+
+      <!--<div id="successMessage"></div>-->
         <div id="instrucciones">
           <ol>
            <li>Observa detenidamente cada figura</li>
             <li>Escribe su nombre según el orden alfabético</li>
           </ol>
-        </div><!-- instrucciones -->  
+        </div><!-- instrucciones -->
       
       </div><!-- contenedor -->
 
@@ -54,72 +52,26 @@
 
 <script type="text/javascript">
 
- $(start);
- 
-  
-  function start(){
-      
-      var result=[],
-      formResp = $('form#respuestas'),
-      $ul = $('#sortable');
+$(function(){
 
-      $ul.html('');
-      mensaje.hide();
-      formResp.html('');
-
-      newItems = numeroFiguras(8);
-      cerrarMensaje();
-      $('#pista').remove();
+    $('button').on('click', function(){
+        numero = aleatorio(1,10);
 
 
+        id = $(this).data('id');
+        console.log(id);
+        if(id=='extremidades'){
+            console.log('sss');
+            $('img#'+ id).attr('src','img/animalesLocos/extremidades/'+ numero +'.jpg');
+        }else if(id=='tronco'){
+            $('img#'+ id).attr('src','img/animalesLocos/tronco/'+ numero +'.jpg');
+        }else{
+            $('img#'+ id).attr('src','img/animalesLocos/cabeza/'+ numero +'.jpg');
+        }
 
-    $.each(newItems, function(index, val) {
-        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="' + omitirAcentos(newItems[index].toLowerCase()) + '"></li>');
-        formResp.append('<input type="text" required="" name="' + index + '">');
     });
 
-    formResp.append('<div class="clear"></div><button type="submit" class="button pulse">Revisar</button>');
-   
-    var respuestaOK = newItems.sort(function(a, b){
-        var a1= a, b1= b;
-        if(a1== b1) return 0;
-        return a1> b1? 1: -1;
-    });
 
-   
-
-   $('form button').on('click', function(e){
-      e.preventDefault();
-      var result = [];
-      //var input = [];
-      $("form#respuestas input[type=text]").each(function(index, val){
-        result.push($.trim($(this).val().toLowerCase()));
-      });//form each
-
-      if($.compare(respuestaOK, result)){
-        mostrarMensaje('<h2>Bien Hecho!!!</h2><p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
-          $reloj.timer('stop');
-
-      }else{
-        mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
-         $('#pista').remove();
-         $('.wrapper').append('<div id="pista">'+ newItems +'</div>');
-      }//if compare
-    //}//if input
-
-   })//click;
-
-   var bandera = 0;
-   //INICIAR EL RELOJ//
-    $("input[type=text]").on('change',function() {
-      if(bandera === 0){
-        $reloj.timer('start');
-        bandera = 1;
-      }  
-    });
-    //INICIAR EL RELOJ//
-
-
-  }//start
+});
   
 </script>
