@@ -94,6 +94,40 @@ body{
 
 }//home
 
+
+
+  #menu{
+    width: 200px;
+    padding: 60px 60px 0 50px;
+    float: left;
+    p{
+      font-size: $baseFontSize + 27;
+      line-height: $baseFontSize + 37;
+      text-align: center;
+      text-transform: uppercase;
+      color:$color-azulBoton;
+    }
+
+    ul{
+      background: $color-azulBoton;
+      @include border-radius(10px, 10px);
+      border: 5px solid $color-blanco;
+      padding: 10px 32px;
+      li{
+        color:$color-blanco;
+        font-size: $baseFontSize + 2;
+        padding:5px 0;
+        width: 100%;
+        font-weight: bold;
+        cursor:pointer;
+      }
+
+
+    }//ul
+
+  }//menu
+
+
   .button{
     @include border-radius(20px, 20px);
     background: $color-azulBoton;
@@ -321,3 +355,37 @@ body{
 div.animalesLocos{
 
 }
+
+
+
+div.memoria{
+
+  #menu {
+    width: 150px;
+    padding: 60px 20px;
+  }
+  
+  #content{
+    width: 730px;
+    float: left;
+    #var{
+      margin-top: 30px;
+      
+      div.cartas {
+        width: 96px;
+        height: 153px;
+        float: left;
+        background: #ccc;
+        margin:5px 2px;
+        border: 1px solid #A8A5A5;
+        @include border-radius(20px, 20px);
+
+      }//cartas
+    }//var
+  }//content
+}//memoria
+
+
+
+
+
