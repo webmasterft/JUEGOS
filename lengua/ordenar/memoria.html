@@ -170,11 +170,17 @@
             var textos = [];
             $.each($('p.mostrado'), function(){
                 textos.push($(this).text());
-                if(textos[0]==textos[1]){
-                    console.log('si');
-                }else{
-
-                }
+                console.log(textos.length);
+                if(textos.length == 2){
+                  if(textos[0]==textos[1]){
+                    $('p.mostrado').removeClass('mostrado').parent('.cartas').addClass('correcto');
+                  }else{
+                    $('p.mostrado').delay(2000).fadeOut(function(){
+                        $(this).removeClass('mostrado');
+                    });
+                  }
+                }//textos length
+                  
             });
         });
 
