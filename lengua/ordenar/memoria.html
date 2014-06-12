@@ -82,21 +82,39 @@
     </ul>    
   </script>
 
+
+<script id="cartasTemplate" type="text/x-handlebars-template">
+    <div class="hover panel flip">
+        <div class="front">
+            <div class="pad">
+                <h2>Mouse Over Me!</h2>
+                <p>
+                    The effect on this box can be done using 100% CSS.<br><br>
+                    The other boxes all require some Javascript, but the animation is driven by CSS3.
+                </p>
+            </div>
+        </div>
+        <div class="back">
+            <div class="pad">
+                <h2>check you on the flip side</h2>
+            </div>
+        </div>
+    </div>
+</script>
+
+
 <script type="text/javascript">
 
   $(start);
   
   function start(){
     cerrarMensaje();
-    
-    var contenedor = $('#var');
-        contenedor.html('');
-    var correctCards = 0,
+
+    var contenedor = $('#var'),
+        correctCards = 0,
         cartas = '',
         menuTemplate = $('#menuTemplate'),
         menu = $('#menu'),
-        min = 0,
-        max = 0,     
         menuItems = [
             { 
               texto: 'Nivel 1',
@@ -107,7 +125,7 @@
               id:'2'
             },
           ];// var menu
-      
+
       template = Handlebars.compile(menuTemplate.html());
       menu.html(template(menuItems)).hide().fadeIn();
 
@@ -118,28 +136,54 @@
   
 
     menu.find('ul > li').on('click', function(){
-      var id = $(this).data('id');
-      cartas ="",
-      clase = ""
-
-      //numero = ( id == 1 ) ? 8 clase = 'ocho': 14 clase = 'catorce';
+      var id = $(this).data('id'),
+          cartas ="",
+          clase = "";
 
       if(id==1){
         numero = 8;
         clase = 'ocho';
+        simbolos = ['corazón' , 'pelota' , 'manzana', 'melón'];
       }else{
         numero = 14;
         clase = 'catorce';
+        simbolos = ['corazón' , 'pelota' , 'manzana', 'melón' , 'pera', 'banana', 'sandia'];
       }
 
 
-      for( var i=0; i < numero ; i++ ){
-         cartas +='<div class="cartas"></div>';
+      for(var i=0; i<2; i++){
+          simbolos = shuffle(simbolos);
+          for( var j=0; j < numero / 2 ; j++ ){
+              cartas +='<div class="cartas"><p>' + simbolos[j] + '</p></div>';
+
+          }
       }
 
-      contenedor.addClass(clase).html(cartas);
+        contenedor.removeClass().addClass(clase).html(cartas);
+
+        var cartas = $('div.cartas');
+
+        cartas.on('click', function(){
+            if($('p.mostrado').length < 2){
+                $(this).find('p').fadeIn().addClass('mostrado');
+            }
+            var textos = [];
+            $.each($('p.mostrado'), function(){
+                textos.push($(this).text());
+                if(textos[0]==textos[1]){
+                    console.log('si');
+                }else{
+
+                }
+            });
+        });
+
+
       
       }); //menuButtons.click
+
+
+
   }//start
 
 </script>

@@ -370,6 +370,11 @@ div.memoria{
     float: left;
     #var{
       margin-top: 30px;
+
+      &.ocho{
+        width: 432px;
+        margin: 0 auto;
+      }
       
       div.cartas {
         width: 96px;
@@ -379,6 +384,11 @@ div.memoria{
         margin:5px 2px;
         border: 1px solid #A8A5A5;
         @include border-radius(20px, 20px);
+        cursor: pointer;
+        p{
+          display: none;
+        }
+
 
       }//cartas
     }//var
