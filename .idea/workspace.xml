@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="avanzado cartas&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/memoria.html" afterPath="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
+    <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JUEGOS.iws" />
@@ -32,7 +28,7 @@
       <file leaf-file-name="memoria.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.2" vertical-offset="1852" max-vertical-offset="3349">
+            <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="3315">
               <folding>
                 <marker date="1402548476448" expanded="true" signature="2867:2981" placeholder="..." />
                 <marker date="1402548476448" expanded="true" signature="3097:3605" placeholder="..." />
@@ -50,7 +46,7 @@
       <file leaf-file-name="funciones.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="-3.2" vertical-offset="5825" max-vertical-offset="10387">
+            <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10387">
               <folding />
             </state>
           </provider>
@@ -59,7 +55,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="388" column="24" selection-start="6696" selection-end="6696" vertical-scroll-proportion="-12.115385" vertical-offset="6281" max-vertical-offset="6919">
+            <state line="388" column="24" selection-start="6696" selection-end="6696" vertical-scroll-proportion="0.0" vertical-offset="6281" max-vertical-offset="6919">
               <folding />
             </state>
           </provider>
@@ -125,7 +121,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="1" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -281,120 +277,6 @@
       <recent name="D:\xampp\htdocs\GitHub\JUEGOS\matematica\numerosNaturales" />
     </key>
   </component>
-  <component name="RestoreUpdateTree">
-    <UpdateInfo date="Moments ago" ActionInfo="_Update">
-      <UpdatedFiles>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated from server" />
-          <option name="myStatusName" value="Changed on server" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CHANGED_ON_SERVER" />
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Updated" />
-            <option name="myStatusName" value="Changed" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="UPDATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/lengua/ordenar/css/main.css</PATH>
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/lengua/ordenar/sass/main.scss</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Created" />
-            <option name="myStatusName" value="Created" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="CREATED" />
-            <PATH vcs="Git" revision="">$PROJECT_DIR$/lengua/ordenar/memoria.html</PATH>
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Deleted" />
-            <option name="myStatusName" value="Deleted" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="true" />
-            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" value="Restored" />
-            <option name="myStatusName" value="Will be restored" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" value="RESTORED" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Modified" />
-          <option name="myStatusName" value="Modified" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MODIFIED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Skipped" />
-          <option name="myStatusName" value="Skipped" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SKIPPED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with conflicts" />
-          <option name="myStatusName" value="Will be merged with conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with tree conflicts" />
-          <option name="myStatusName" value="Merged with tree conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged with property conflicts" />
-          <option name="myStatusName" value="Will be merged with property conflicts" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Merged" />
-          <option name="myStatusName" value="Will be merged" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="MERGED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Not in repository" />
-          <option name="myStatusName" value="Not in repository" />
-          <option name="mySupportsDeletion" value="true" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UNKNOWN" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally added" />
-          <option name="myStatusName" value="Locally added" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_ADDED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Locally removed" />
-          <option name="myStatusName" value="Locally removed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="LOCALLY_REMOVED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Switched" />
-          <option name="myStatusName" value="Switched" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="SWITCHED" />
-        </FILE-GROUP>
-      </UpdatedFiles>
-    </UpdateInfo>
-  </component>
   <component name="RunManager" selected="JavaScript Debug.planoCartesianoArrastrar.html">
     <configuration default="false" name="planoCartesianoArrastrar.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/JUEGOS/matematica/numerosNaturales/planoCartesianoArrastrar.html">
       <RunnerSettings RunnerId="JavascriptDebugRunner" />
@@ -455,32 +337,36 @@
       <created>1402462780071</created>
       <updated>1402462780071</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="avanzado cartas&#10;">
+      <created>1402548571908</created>
+      <updated>1402548571908</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="728" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23022152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23022152" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39871383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -508,18 +394,44 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/animalesLocos.html">
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0" vertical-offset="769" max-vertical-offset="1411">
+        <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="3315">
+          <folding>
+            <marker date="1402548476448" expanded="true" signature="2867:2981" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3097:3605" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3125:3451" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3155:3436" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3215:3417" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3478:3594" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3508:3579" placeholder="..." />
+            <marker date="1402548476448" expanded="true" signature="3615:5476" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10387">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2227">
+        <state line="388" column="24" selection-start="6696" selection-end="6696" vertical-scroll-proportion="0.0" vertical-offset="6281" max-vertical-offset="6919">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/animalesLocos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0" vertical-offset="769" max-vertical-offset="1411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2227" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
@@ -531,9 +443,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/animalesLocos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="4" selection-start="2079" selection-end="2079" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2227">
-          <folding />
-        </state>
+        <state line="50" column="4" selection-start="2079" selection-end="2079" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2227" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
@@ -670,35 +580,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/animalesLocos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2436" selection-end="2436" vertical-scroll-proportion="-10.307693" vertical-offset="769" max-vertical-offset="1411">
-          <folding />
-        </state>
+        <state line="61" column="0" selection-start="2436" selection-end="2436" vertical-scroll-proportion="-10.307693" vertical-offset="769" max-vertical-offset="1411" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="-3.2" vertical-offset="5825" max-vertical-offset="10387">
+        <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10387">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="388" column="24" selection-start="6696" selection-end="6696" vertical-scroll-proportion="-12.115385" vertical-offset="6281" max-vertical-offset="6919">
+        <state line="388" column="24" selection-start="6696" selection-end="6696" vertical-scroll-proportion="0.0" vertical-offset="6281" max-vertical-offset="6919">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="46.576923" vertical-offset="1211" max-vertical-offset="2227">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="46.576923" vertical-offset="1211" max-vertical-offset="2227" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.2" vertical-offset="1852" max-vertical-offset="3349">
+        <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="3315">
           <folding>
             <marker date="1402548476448" expanded="true" signature="2867:2981" placeholder="..." />
             <marker date="1402548476448" expanded="true" signature="3097:3605" placeholder="..." />
