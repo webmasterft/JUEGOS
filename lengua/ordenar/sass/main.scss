@@ -396,6 +396,54 @@ div.memoria{
 }//memoria
 
 
+div.preguntas{
+  #menu {
+    width: 150px;
+    padding: 60px 20px;
+  }
 
+  #content{
+    width: 730px;
+    float: left;
+  }
+
+  #contPreguntas{
+    margin-top: 30px;
+    & > div{
+      width: 95%;
+      height:50px;
+      display: inline-block;
+      padding:10px;
+      display: none;
+      &:nth-child(even){
+        background:rgba(0, 158, 25, 0.33);
+      }
+
+      div.izq{
+        width:50%;
+        float: left;
+      }
+      
+      div.der{
+        width:50%;
+        float: left;
+      }//der
+
+      p{
+        float: left;
+        margin-right: 30px;
+        cursor: pointer;
+        padding:5px;
+
+        &.pregunta{
+          width:40%;
+          cursor: default;
+          //float: left;
+        }
+      }//p
+    }//div
+
+  }//#contentpreguntas
+}//preuntas
 
 
