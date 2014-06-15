@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/JUEGOS.iml" afterPath="$PROJECT_DIR$/.idea/JUEGOS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" afterPath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JUEGOS.iws" />
@@ -350,7 +346,11 @@
       <created>1402871116977</created>
       <updated>1402871116977</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Preguntas 50%&#10;">
+      <created>1402874855437</created>
+      <updated>1402874855437</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -397,7 +397,8 @@
     <MESSAGE value="quitado console" />
     <MESSAGE value="quitado console&#10;" />
     <MESSAGE value="avanzado cartas&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="avanzado cartas&#10;" />
+    <MESSAGE value="Preguntas 50%&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Preguntas 50%&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
