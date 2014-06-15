@@ -195,25 +195,21 @@
       contenedor.html(template(items)).hide().fadeIn();
 
         
-      var temp = [],
-          numero = 0;
+      //var temp = [],
+        var  numero = 0;
       
-      for(var i=0; i < items.length ;i++){
+      while(temp.length < 5){
         numero = aleatorio(0,items.length);
         if($.inArray(numero, temp)== -1){
           temp.push(numero);
         }else{
           numero = aleatorio(0,items.length);
         }
-        
-        //$('#contPreguntas > div:nth-child(' + numero +')').show();
-        //console.log(numero);
-        //$("#daddy > div:nth-child(" + position + ")").animate({
-      }
+     }
 
       $.each(temp, function(index, val) {
         console.log(val);
-        $('#contPreguntas > div:nth-child(' + temp[val] +')').show();
+        $('#contPreguntas > div').eq(temp[val]).show();
       });  
 
     menu.find('ul > li').on('click', function(){
