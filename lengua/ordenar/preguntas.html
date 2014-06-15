@@ -19,20 +19,9 @@
       <div class="wrapper preguntas" id="descomposicion">
         
         <div id="main">
-
-            <div id="menu">
-               
-            </div>
-            
-
             <div id="content">
               <div class="clear"></div>
               <div id="var">
-                
-
-
-
-
 
               </div><!-- var-->
               <div id="successMessage">           
@@ -66,21 +55,12 @@
 
       </div><!-- contenedor -->
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
-    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
     <script src="../../libs/js/handlebars.min.js"></script>
     <script src="../../libs/js/funciones.js"></script> 
 
     
     </body>
 </html>
-<script id="menuTemplate" type="text/x-handlebars-template">
-    <p>nivel:</p>
-    <ul> 
-        {{#each this}}
-            <li class="pulse" data-id="{{id}}">{{texto}}</li>
-        {{/each}}
-    </ul>    
-  </script>
 
 <script id="preguntasTemplate" type="text/x-handlebars-template">
     <div id="contPreguntas"> 
@@ -164,40 +144,22 @@
             respuesta3 : 'María Rodríguez',
             respuestaOk : 'Camila Rosero'
           }
-
-          
-
     ]//items
 
-    console.log(items.length);
+
 
     var contenedor = $('#var'),
         correctCards = 0,
-        cartas = '',
-        menuTemplate = $('#menuTemplate'),
-        menu = $('#menu'),
-        menuItems = [
-            { 
-              texto: 'Nivel 1',
-              id: '1'
-            },   
-            { 
-              texto: 'Nivel 2',
-              id:'2'
-            },
-          ];// var menu
-
-      template = Handlebars.compile(menuTemplate.html());
-      menu.html(template(menuItems)).hide().fadeIn();
+        cartas = '';
 
 
       template = Handlebars.compile($('#preguntasTemplate').html());
       contenedor.html(template(items)).hide().fadeIn();
 
         
-      //var temp = [],
-        var  numero = 0;
-      
+        var temp = [],
+            numero = 0;
+
       while(temp.length < 5){
         numero = aleatorio(0,items.length);
         if($.inArray(numero, temp)== -1){
@@ -207,9 +169,8 @@
         }
      }
 
-      $.each(temp, function(index, val) {
-        console.log(val);
-        $('#contPreguntas > div').eq(temp[val]).show();
+      $.each(temp, function(index) {
+        $('#contPreguntas > div').eq(temp[index]).show();
       });  
 
     menu.find('ul > li').on('click', function(){
