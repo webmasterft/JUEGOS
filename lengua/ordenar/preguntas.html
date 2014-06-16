@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
@@ -20,14 +21,16 @@
         
         <div id="main">
             <div id="content">
-              <div class="clear"></div>
+
               <div id="var">
 
               </div><!-- var-->
+                <div class="clear"></div>
               <div id="successMessage">           
               </div>
 
             </div><!-- content -->
+            <div class="clear"></div>
         </div><!-- main -->
 
          <div id="logos">
@@ -37,11 +40,8 @@
 
          <div id="instrucciones">
             <ol>
-            <li>Elige la actividad que deseas realizar</li>
-            <li>Realiza la actividad</li>
-            <li>Haz clic sostenido para arrastrar las tarjetas hasta el recuadro de descomposición y representar el número planteado.</li>
-            <li>Si su respuesta es correcta haz clic el el botón ESCRIBE EL NÚMERO</li>
-            <li>Si su respuesta es correcta haz clic el el botón GRAFICA EL NÚMERO</li>
+            <li>Elecciona la respuesta correcta.</li>
+            <li>LLega al final y vuelve a intentarlo.</li>
             </ol>
          </div>
         
@@ -52,6 +52,14 @@
          </div><!--nav-->
          <img id="titulo" src="img/diccionarioLudico.png" width="202" height="94">
          <img id="avatar" src="img/muneco2.png" width="170" height="187">
+
+          <audio id="audio" controls>
+              <source src="audio/horse.ogg" type="audio/ogg">
+              <source src="audio/horse.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+          </audio>
+
+
 
       </div><!-- contenedor -->
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
@@ -65,7 +73,7 @@
 <script id="preguntasTemplate" type="text/x-handlebars-template">
     <div id="contPreguntas"> 
         {{#each this}}
-          <div>
+          <div class="contPregunta">
             <div class="izq">
               <p class="pregunta">{{pregunta}}</p>
             </div>  
@@ -74,7 +82,10 @@
               <p class="respuesta">{{respuesta2}}</p>
               <p class="respuesta">{{respuesta3}}</p>
               <p class="respuestaOk">{{respuestaOk}}</p>
-            </div>  
+            </div>
+
+                <i class="fa"></i>
+
           </div>
         {{/each}}
     </div>    
@@ -143,13 +154,182 @@
             respuesta2 : 'Juliana Rosenfeld',
             respuesta3 : 'María Rodríguez',
             respuestaOk : 'Camila Rosero'
-          }
+          },
+
+        {
+            pregunta : '¿Qué letra va antes de “l”?',
+            respuesta1 : 'm',
+            respuesta2 : 'j',
+            respuesta3 : 'n',
+            respuestaOk : 'k'
+        },
+
+        {
+            pregunta : '¿Qué ciudad debe ir al final?',
+            respuesta1 : 'Cúcuta',
+            respuesta2 : 'Curitiba',
+            respuesta3 : 'Cuenca',
+            respuestaOk : 'Cuzco'
+        },
+
+        {
+            pregunta : '¿Qué letra está después de “f”?',
+            respuesta1 : 'e',
+            respuesta2 : 'd',
+            respuesta3 : 'h',
+            respuestaOk : 'g'
+        },
+
+        {
+            pregunta : '¿Entre qué letras está la “r””?',
+            respuesta1 : 'q-t',
+            respuesta2 : 't-p',
+            respuesta3 : 'q-p',
+            respuestaOk : 'q-s'
+        },
+
+        {
+            pregunta : '¿Qué país va primero?',
+            respuesta1 : 'Argentina',
+            respuesta2 : 'Argelia',
+            respuesta3 : 'Aruba',
+            respuestaOk : 'Arabia Saudita'
+        },
+
+        {
+            pregunta : '¿Qué fruta va al final?',
+            respuesta1 : 'mamey',
+            respuesta2 : 'mandarina',
+            respuesta3 : 'mango',
+            respuestaOk : 'manzana'
+        },
+
+        {
+            pregunta : '¿Qué letra va antes de la “s”?',
+            respuesta1 : 't',
+            respuesta2 : 'q',
+            respuesta3 : 'u',
+            respuestaOk : 'r'
+        },
+
+        {
+            pregunta : '¿Qué letra está después de “u”?',
+            respuesta1 : 's',
+            respuesta2 : 't',
+            respuesta3 : 'w',
+            respuestaOk : 'v'
+        },
+
+        {
+            pregunta : '¿Entre qué letras está la “e”?',
+            respuesta1 : 'd-g',
+            respuesta2 : 'd-h',
+            respuesta3 : 'c-d',
+            respuestaOk : 'd-f'
+        },
+
+        {
+            pregunta : '¿Qué gentilicio va primero?',
+            respuesta1 : 'burkinés',
+            respuesta2 : 'butanés',
+            respuesta3 : 'burundés',
+            respuestaOk : 'búlgaro'
+        },
+
+        {
+            pregunta : '¿Qué objeto va al final?',
+            respuesta1 : 'caballete',
+            respuesta2 : 'cabello',
+            respuesta3 : 'cabina',
+            respuestaOk : 'cabo'
+        },
+
+        {
+            pregunta : '¿Qué letra va antes de “p”?',
+            respuesta1 : 'n',
+            respuesta2 : 'o',
+            respuesta3 : 'q',
+            respuestaOk : 'ñ'
+        },
+
+        {
+            pregunta : '¿Qué pez debe ir al final?',
+            respuesta1 : 'bagre',
+            respuesta2 : 'bacalao',
+            respuesta3 : 'banderita',
+            respuestaOk : 'barracuda'
+        },
+
+        {
+            pregunta : '¿Qué letra está después de “g”?',
+            respuesta1 : 'e',
+            respuesta2 : 'f',
+            respuesta3 : 'i',
+            respuestaOk : 'h'
+        },
+
+        {
+            pregunta : '¿Entre qué letras está la “v”?',
+            respuesta1 : 'w',
+            respuesta2 : 'x',
+            respuesta3 : 't',
+            respuestaOk : 'u'
+        },
+
+        {
+            pregunta : '¿Qué objeto va primero?',
+            respuesta1 : 'hueso',
+            respuesta2 : 'huerto',
+            respuesta3 : 'huevo',
+            respuestaOk : 'hueco'
+        },
+
+        {
+            pregunta : '¿Qué idioma va al final?',
+            respuesta1 : 'eslovaco',
+            respuesta2 : 'español',
+            respuesta3 : 'escocés',
+            respuestaOk : 'esperanto'
+        },
+
+        {
+            pregunta : '¿Qué letra está después de “o”?',
+            respuesta1 : 'n',
+            respuesta2 : 'ñ',
+            respuesta3 : 'q',
+            respuestaOk : 'p'
+        },
+
+        {
+            pregunta : '¿Entre qué letras está la “k”?',
+            respuesta1 : 'j-m',
+            respuesta2 : 'l-m',
+            respuesta3 : 'i-l',
+            respuestaOk : 'j-l'
+        },
+
+
+
+
+        {
+            pregunta : '¿Qué nombre va primero?',
+            respuesta1 : 'Benito',
+            respuesta2 : 'Belén',
+            respuesta3 : 'Ben',
+            respuestaOk : 'Beatriz'
+        }
+
+
+
+
     ]//items
 
 
 
     var contenedor = $('#var'),
         correctCards = 0,
+        color = '',
+        audio = $("#audio")[0];
         cartas = '';
 
 
@@ -169,14 +349,30 @@
         }
      }
 
-      $.each(temp, function(index) {
+      $.each(temp, function(index){
+        if(!index%2){
+           color = 'odd';
+        }else{
+           color = 'even';
+        }
         $('#contPreguntas > div').eq(temp[index]).show();
-      });  
+      });
 
-    menu.find('ul > li').on('click', function(){
-      
+      $('#contPreguntas > div').find('div.der p').on('click', function(){
+          if($(this).hasClass('respuestaOk')){
+              $(this).addClass('ok').parents('.contPregunta').find('i').addClass('fa-check-circle');
+          }else{
+              audio.pause();
+              audio.load();
+              audio.play();
 
-      
+          }
+
+
+          if($('.fa-check-circle').length == 5 ){
+             mostrarMensaje('<h2>Bien Hecho!!!</h2> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          }
+
       }); //menuButtons.click
 
 

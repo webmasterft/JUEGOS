@@ -19,6 +19,7 @@ $color-rojo:#E1431F;
 $color-naranjaSuccess:#E66325;
 $color-verdefosf:#D1DF56;
 $color-txtBoton:#58595B;
+$color-amarillo:#FFFF00;
 
 .ieBack{
   background:rgb(255,0,0);
@@ -67,6 +68,11 @@ $color-txtBoton:#58595B;
   }
 }
 
+.animation {
+  -webkit-transition: all 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
 
 .spinner {
   margin: 100px auto;
@@ -91,6 +97,8 @@ $color-txtBoton:#58595B;
   -webkit-animation-delay: -0.9s;
   animation-delay: -0.9s;
 }
+
+
 
 @-webkit-keyframes cubemove {
   25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }

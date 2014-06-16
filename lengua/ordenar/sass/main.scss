@@ -240,7 +240,15 @@ body{
     text-decoration: none;
   }
 
-  
+  .boton{
+    background: $color-verdefosf;
+    color: $color-txtBoton;
+    border: 4px solid $color-blanco;
+    padding: 10px;
+    font-weight: bold;
+    @include border-radius(20px, 20px);
+    margin-top: 15px;
+  }
 
 /* "You did it!" message */
     #successMessage {
@@ -250,7 +258,7 @@ body{
       width: 0px;
       height: 0px;
       z-index: 100;
-      background: url(../img/success.jpg) top center;
+      background: url(../../../libs/img/success.jpg) top center;
       border: 7px solid $color-blanco;
       @include border-radius(10px, 10px);
       @include single-box-shadow;
@@ -269,6 +277,10 @@ body{
         line-height: $baseFontSize + 12;
         margin-bottom: 10px;
       }
+      button{
+        @extend .boton;
+      }
+
 
     }//successMessage
 
@@ -403,24 +415,24 @@ div.preguntas{
   }
 
   #content{
-    width: 730px;
-    float: left;
+    width: 800px;
+    margin: 0 auto;
+
   }
 
   #contPreguntas{
-    margin-top: 30px;
+    padding-top: 30px;
     & > div{
-      width: 95%;
+      width: 100%;
       height:50px;
-      display: inline-block;
       padding:10px;
       display: none;
-      &:nth-child(even){
+     &.odd{
         background:rgba(0, 158, 25, 0.33);
       }
 
       div.izq{
-        width:50%;
+        width:40%;
         float: left;
       }
       
@@ -434,16 +446,32 @@ div.preguntas{
         margin-right: 30px;
         cursor: pointer;
         padding:5px;
-
-        &.pregunta{
-          width:40%;
-          cursor: default;
-          //float: left;
+        &.ok{
+          background: $color-amarillo;
         }
       }//p
+      i{
+        width: 10%;
+        float: right;
+        font-size:$baseFontSize + 14;
+
+          @extend .animation;
+          &.fa-check-circle{
+            color:$color-verdeBack;
+          }
+          &.fa-exclamation-triangle{
+            color:$color-rojo;
+          }
+      }//i
+
+
+
     }//div
 
   }//#contentpreguntas
 }//preuntas
 
 
+#audio{
+  display: none;
+}
