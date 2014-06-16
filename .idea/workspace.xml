@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/.sass-cache/925dce9a951a887b78cba03bc5f6395091ed658b/main.scssc" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/.sass-cache/925dce9a951a887b78cba03bc5f6395091ed658b/main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/vars.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/vars.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" afterPath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/vars.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/vars.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/vars.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/vars.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JUEGOS.iws" />
     <ignored path=".idea/workspace.xml" />
