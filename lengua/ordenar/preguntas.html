@@ -350,13 +350,11 @@
      }
 
       $.each(temp, function(index){
-        if(!index%2){
-           color = 'odd';
-        }else{
-           color = 'even';
-        }
         $('#contPreguntas > div').eq(temp[index]).show();
       });
+
+      $("#contPreguntas > div:hidden").remove();
+
 
       $('#contPreguntas > div').find('div.der p').on('click', function(){
           if($(this).hasClass('respuestaOk')){

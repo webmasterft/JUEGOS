@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/.sass-cache/925dce9a951a887b78cba03bc5f6395091ed658b/main.scssc" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/.sass-cache/925dce9a951a887b78cba03bc5f6395091ed658b/main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" afterPath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
     </list>
     <ignored path="JUEGOS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,15 +28,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="preguntas.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="preguntas.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/preguntas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="365" column="24" selection-start="10203" selection-end="10203" vertical-scroll-proportion="-3.0229886" vertical-offset="7037" max-vertical-offset="7760">
+            <state line="352" column="0" selection-start="9742" selection-end="9742" vertical-scroll-proportion="1.0966058" vertical-offset="6620" max-vertical-offset="7720">
               <folding>
-                <marker date="1402886754441" expanded="true" signature="2806:3320" placeholder="..." />
-                <marker date="1402886754441" expanded="true" signature="2867:3291" placeholder="..." />
-                <marker date="1402886754441" expanded="true" signature="2897:2967" placeholder="..." />
-                <marker date="1402886754441" expanded="true" signature="2999:3237" placeholder="..." />
+                <marker date="1402890617837" expanded="true" signature="2806:3320" placeholder="..." />
+                <marker date="1402890617837" expanded="true" signature="2867:3291" placeholder="..." />
+                <marker date="1402890617837" expanded="true" signature="2897:2967" placeholder="..." />
+                <marker date="1402890617837" expanded="true" signature="2999:3237" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -58,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.scss" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="475" column="1" selection-start="8025" selection-end="8025" vertical-scroll-proportion="0.81400436" vertical-offset="7703" max-vertical-offset="8194">
+            <state line="429" column="21" selection-start="7316" selection-end="7316" vertical-scroll-proportion="-5.8076925" vertical-offset="7142" max-vertical-offset="8194">
               <folding />
             </state>
           </provider>
@@ -93,8 +95,8 @@
         <option value="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/sass/vars.scss" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" />
-        <option value="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
+        <option value="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
       </list>
     </option>
   </component>
@@ -463,10 +465,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="122" column="31" selection-start="4049" selection-end="4049" vertical-scroll-proportion="0.0" vertical-offset="2074" max-vertical-offset="3995">
           <folding>
-            <marker date="1402886754441" expanded="true" signature="2806:3320" placeholder="..." />
-            <marker date="1402886754441" expanded="true" signature="2867:3291" placeholder="..." />
-            <marker date="1402886754441" expanded="true" signature="2897:2967" placeholder="..." />
-            <marker date="1402886754441" expanded="true" signature="2999:3237" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2806:3320" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2867:3291" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2897:2967" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2999:3237" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -781,22 +783,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/preguntas.html">
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="24" selection-start="10203" selection-end="10203" vertical-scroll-proportion="-3.0229886" vertical-offset="7037" max-vertical-offset="7760">
-          <folding>
-            <marker date="1402886754441" expanded="true" signature="2806:3320" placeholder="..." />
-            <marker date="1402886754441" expanded="true" signature="2867:3291" placeholder="..." />
-            <marker date="1402886754441" expanded="true" signature="2897:2967" placeholder="..." />
-            <marker date="1402886754441" expanded="true" signature="2999:3237" placeholder="..." />
-          </folding>
+        <state line="429" column="21" selection-start="7316" selection-end="7316" vertical-scroll-proportion="-5.8076925" vertical-offset="7142" max-vertical-offset="8194">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/preguntas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="475" column="1" selection-start="8025" selection-end="8025" vertical-scroll-proportion="0.81400436" vertical-offset="7703" max-vertical-offset="8194">
-          <folding />
+        <state line="352" column="0" selection-start="9742" selection-end="9742" vertical-scroll-proportion="1.0966058" vertical-offset="6620" max-vertical-offset="7720">
+          <folding>
+            <marker date="1402890617837" expanded="true" signature="2806:3320" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2867:3291" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2897:2967" placeholder="..." />
+            <marker date="1402890617837" expanded="true" signature="2999:3237" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -427,7 +427,7 @@ div.preguntas{
       height:50px;
       padding:10px;
       display: none;
-     &.odd{
+     &:nth-child(odd){
         background:rgba(0, 158, 25, 0.33);
       }
 
