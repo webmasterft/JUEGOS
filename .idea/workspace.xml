@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\GitHub\JUEGOS\matematica\numerosNaturales\index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/animalesLocos.html" afterPath="$PROJECT_DIR$/lengua/ordenar/animalesLocos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/diccionarioLudicoInterna.html" afterPath="$PROJECT_DIR$/lengua/ordenar/diccionarioLudicoInterna.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html" afterPath="$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/js/funciones.js" afterPath="$PROJECT_DIR$/libs/js/funciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/operacionesBasicas.html" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/operacionesBasicas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrarLetras.html" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrarLetras.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html" afterPath="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" afterPath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="" />
     <ignored path="JUEGOS.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -374,8 +358,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
