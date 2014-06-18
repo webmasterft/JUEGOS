@@ -135,14 +135,14 @@
 
       switch (id){
           case 1:
-            var number1 = aleatorio(100,999),
-                number2 = aleatorio(100,999),
+            var number1 = aleatorio(100,999,1),
+                number2 = aleatorio(100,999,1),
                 operacion = "+";
           break;
 
           case 2:
-            var number1 = aleatorio(100,999),
-                number2 = aleatorio(100,999),
+            var number1 = aleatorio(100,999,1),
+                number2 = aleatorio(100,999,1),
                 operacion = "-";
                 
                 if(number1 < number2){
@@ -154,21 +154,21 @@
           break;
 
           case 3:
-            var number1 = aleatorio(100,999),
-                number2 = aleatorio(10,99),
+            var number1 = aleatorio(100,999,1),
+                number2 = aleatorio(10,99,1),
                 operacion = "*";
                  
           break;
 
           case 4:
-            var number1 = aleatorio(1000,9999,1),
-                number2 = aleatorio(1,9,1),
+            var number1 = aleatorio(1000,9999,1,1),
+                number2 = aleatorio(1,9,1,1),
                 operacion = "*";
           break;
 
           case 5:
-            var number1 = aleatorio(1000,9999,1),
-                number2 = aleatorio(1,9,1),
+            var number1 = aleatorio(1000,9999,1,1),
+                number2 = aleatorio(1,9,1,1),
                 operacion = "/";
           break;  
   
@@ -180,13 +180,11 @@
         }else{
           respuestaOK = eval(number1 + operacion + number2);
         }
-        
 
-        //contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + ' ' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="correcto"></div>');
         contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>');
       
         for (var i = 0; i < 3; i++) {
-          $('#pesos').append('<div class="peso arrastrable">'+ aleatorio(100,999) + '</div>');
+          $('#pesos').append('<div class="peso arrastrable">'+ aleatorio(100,999,1) + '</div>');
         }
         
         $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK +'</div>');

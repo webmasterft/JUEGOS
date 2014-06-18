@@ -104,18 +104,24 @@ function toLetters(n)
 
 
 
-/* NUMEROS DE FIGURAS A MOSTRAR*/
+/* NUMEROS DE FIGURAS A MOSTRAR
     function numeroFiguras(numero){
 
         newItems = [];
 
-        for(var i = 0; i < numero; i++) {
+        /*for(var i = 0; i < numero; i++) {
               var idx = Math.floor(Math.random() * itemsOrdenar.length);
               newItems.push(itemsOrdenar[idx]);
               itemsOrdenar.splice(idx, -1);
               
         }
-        return newItems;
+
+        newItems = aleatorio(1,numero,numero);
+        //aleatorio(0, items.length,5);
+
+
+
+        //return newItems;
     }
 /* NUMEROS DE FIGURAS A MOSTRAR*/    
 
@@ -388,7 +394,7 @@ function cargarNumeros(min,max, words, id) {
    correctCards = 0;
 
    // and the formula is:
-   var numbers = aleatorio(min, max).toString();
+   var numbers = aleatorio(min , max, 1).toString();
   
    localStorage.setItem("numbers", numbers);
 
@@ -561,16 +567,38 @@ function grafica(){
 
 
 
-function aleatorio(inferior,superior,decimales){ 
-      numPosibilidades = superior - inferior; 
+function aleatorio(inferior,superior, cantidad , decimales){
+      /*numPosibilidades = superior - inferior;
       aleat = Math.random() * numPosibilidades;
       if(decimales == undefined) {
         aleat = Math.floor(aleat); 
         aleat = parseInt(inferior) + aleat; 
       }else{
         aleat = aleat.toFixed(decimales);
-      }
-      return aleat;
+      }*/
+
+    var temp = [];
+
+
+    while(temp.length < cantidad){
+        numPosibilidades = superior - inferior;
+        //numero = aleatorio(0,items.length);
+        aleat = Math.random() * numPosibilidades;
+        if(decimales == undefined) {
+            aleat = Math.floor(aleat);
+            aleat = parseInt(inferior) + aleat;
+        }else{
+            aleat = aleat.toFixed(decimales);
+        }
+
+        if($.inArray(aleat, temp)== -1){
+            temp.push(aleat);
+        }else{
+            aleat = Math.random() * numPosibilidades;
+        }
+    }
+
+    return temp;
 } 
     
     

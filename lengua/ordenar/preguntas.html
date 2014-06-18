@@ -336,25 +336,15 @@
       template = Handlebars.compile($('#preguntasTemplate').html());
       contenedor.html(template(items)).hide().fadeIn();
 
-        
-        var temp = [],
-            numero = 0;
+      var temp = [];
 
-      while(temp.length < 5){
-        numero = aleatorio(0,items.length);
-        if($.inArray(numero, temp)== -1){
-          temp.push(numero);
-        }else{
-          numero = aleatorio(0,items.length);
-        }
-     }
+      temp = aleatorio(0, items.length,5);
 
       $.each(temp, function(index){
         $('#contPreguntas > div').eq(temp[index]).show();
       });
 
       $("#contPreguntas > div:hidden").remove();
-
 
       $('#contPreguntas > div').find('div.der p').on('click', function(){
           if($(this).hasClass('respuestaOk')){
@@ -363,18 +353,11 @@
               audio.pause();
               audio.load();
               audio.play();
-
           }
-
-
           if($('.fa-check-circle').length == 5 ){
              mostrarMensaje('<h2>Bien Hecho!!!</h2> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
           }
-
       }); //menuButtons.click
-
-
-
   }//start
 
 </script>

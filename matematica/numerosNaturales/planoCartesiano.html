@@ -71,7 +71,9 @@
 
       </div><!-- contenedor -->
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
-    <script src="../../libs/js/funciones.js"></script>
+    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
 
     
     </body>
@@ -102,13 +104,15 @@
         }
     }
 
+    for(i=0;i<9;i++){
+      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
+    }
 
     plano.html(puntos);
     ejeXrandom = shuffle(ejeX);
     ejeYrandom = shuffle(ejeY);
 
     for(i=0; i<9; i++){
-      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
       itemsX += '<li><img src="img/figuras/'+ ejeXrandom[i] +'.jpg" width="35" height="35"></li>';
       itemsY += '<li><img src="img/figuras/'+ ejeYrandom[i] +'.jpg" width="35" height="35"></li>';
     }

@@ -28,7 +28,7 @@
                 </ul>
             </div>
             
-           
+            <button id="verificar"></button>
 
             <div id="content">
               
@@ -36,16 +36,15 @@
               <ul id="y"></ul>
 
               <div id="var" class="plano"></div><!-- var-->
-               
-
+              
               <div class="clear"></div>
 
               <ul id="x"></ul>
               <div id="successMessage"></div>
 
 
-             <div id="crono"><div id="t" class="badge">00:00</div></div>
-             <div class="clear"></div>             
+             <div id="crono"><div id="t" class="badge">00:00</div></div>             
+
 
             </div><!-- content -->
         </div><!-- main -->
@@ -73,7 +72,9 @@
 
       </div><!-- contenedor -->
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
-    <script src="../../libs/js/funciones.js"></script>
+    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
 
     
     </body>
@@ -83,11 +84,10 @@
   $(start);
   
   function start(){
-    //$reloj.timer('stop');
     var plano = $('div.plano'),
         listaX = $('ul#x'),
         listaY = $('ul#y'),
-        listaPares = $('ul#paresOrdenados'),
+        listaPares = $('ul#paresOrdenados')
         puntos = paresOrdenados = paresOk = '',
         ejeX = ['1','2','3','4','5','6','7','8','9'],
         ejeY = ['1','2','3','4','5','6','7','8','9'],
@@ -103,50 +103,75 @@
         }
     }
 
-    for (i = 0; i < 9; i++) {
-      var num = aleatorio(0, 81);
-      puntos +='<div class="p'+ coordenadas[num] + '">'+ itemsPlano[i] +'</div>';
-      paresOrdenados += '<li data-id=' + itemsPlano[i] +'>' + itemsPlano[i] +'  ( <input type="text" name="'+ itemsPlano[i] +'" placeholder="x-y" maxlength="3" size="3">) <i class="fa"></i></li>';
-      itemsX += '<li>'+ ejeX[i] + '</li>';
-      itemsY += '<li>'+ ejeY[i] + '</li>';
-    };
+          var num = aleatorio(0, 81,9);
+      //img = aleatorio(0, 18,9);
+
+      $.each(num, function(index, val){
+          puntos +='<div class="p'+ coordenadas[val] + '">'+ itemsPlano[index] +'</div>';
+          paresOrdenados += '<li data-id=' + itemsPlano[index] +'>' + itemsPlano[index] +'  ( <input type="text" name="'+ itemsPlano[index] +'" placeholder="x-y" maxlength="3" size="3">) <i class="fa"></i></li>';
+      });
+
+
+
 
     plano.html(puntos);
-    listaPares.html(paresOrdenados);
-    listaX.html(itemsX);
-    listaY.html(itemsY);
 
-    $.each(plano.find('div'), function() {
+    $.each(plano.find('div'), function(index, val) {
+       /* iterate through array or object */
        $(this).animate({
               top: "-=7px",
               left: "-=7px"
         });
     });
 
-    listaPares.find('li input').on('keyup', function(event) {
+
+    $.each(ejeX, function(index, val){
+      itemsX += '<li>'+ ejeX[index] + '</li>';
+      itemsY += '<li>'+ ejeY[index] + '</li>';
+    });
+
+    listaPares.html(paresOrdenados);
+    listaX.html(itemsX);
+    listaY.html(itemsY);
+
+    listaPares.find('li input').on('change keyup', function(event) {
+      var ordenadoOk = $('.ordenadoOk');
       $reloj.timer('start');
       if(event.type === "keyup"){
-        var name = $(this).attr('name'),
-            respuesta = $(this).val(),
-            punto = plano.find('div:contains('+ name +')'),
-            ordenadoOk = $('.ordenadoOk');
+        name = $(this).attr('name');
+        respuesta = $(this).val();
 
-        if(respuesta.length == listaPares.find('li input').attr('size')){
-          if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
-            punto.addClass('ordenadoOk');
-            $(this).prop('disabled', true).css({ opacity: 0.7})
-            .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
-          }else{
-            $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
-          }
+        punto = plano.find('div:contains('+ name +')');
 
-          if(ordenadoOk.length + 1 == listaPares.find('li input').length){
-            $reloj.timer('stop');
-            mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
-          }
-        }//si el numero de caracteres es igual al size del input
+        if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
+          punto.addClass('ordenadoOk');
+          $(this).prop('disabled', true).css({ opacity: 0.7})
+          .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
+        }else{
+          $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
+        }
+        
+
+        
+        if(ordenadoOk.length == 9){
+          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          $reloj.timer('stop');
+        }
       }//keyup
     });
+
+    
+
+    $('#verificar').on('click', function(){
+        if(ordenadoOk.length == 9){
+          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          $reloj.timer('stop');
+        }else{
+          mostrarMensaje('<h2>Sigue jugando que el tiempo corre!!!</h2> <button class="button pulse" onclick="cerrarMensaje();">Juega otra vez</button>');
+        }
+      });
+
+
   }//start
 
 

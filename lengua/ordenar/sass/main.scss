@@ -457,7 +457,7 @@ div.preguntas{
 
           @extend .animation;
           &.fa-check-circle{
-            color:$color-verdeBack;
+            color:$color-rojo;
           }
           &.fa-exclamation-triangle{
             color:$color-rojo;

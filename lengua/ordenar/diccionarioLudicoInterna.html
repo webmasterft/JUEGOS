@@ -61,24 +61,28 @@
  $(start);
 
   function start(){
-      //newItems = [];
-      $ul = $('#sortable'),
+      var newItems = [];
+          $ul = $('#sortable'),
+          numeros = aleatorio(0, 32 , 8 );
+
       $ul.html('');
       mensaje.hide();
       cerrarMensaje();
       $('#pista').remove();
-      newItems = numeroFiguras(8);      
 
+      $.each(numeros, function(index, val){
+          newItems.push(itemsOrdenar[val]);
+      });
+       $.each(newItems, function(index, val){
 
-    $.each(newItems, function(index, val) {
-      $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="'+ newItems[index] + '"></li>');
-    });
+          $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="'+ newItems[index] + '"></li>');
+       });
 
-   var respuestaOK = newItems.sort(function(a, b){
-        var a1= a, b1= b;
-        if(a1== b1) return 0;
-        return a1> b1? 1: -1;
-    });
+       var respuestaOK = newItems.sort(function(a, b){
+            var a1= a, b1= b;
+            if(a1== b1) return 0;
+            return a1> b1? 1: -1;
+        });
 
        
 
@@ -97,11 +101,7 @@
     }).disableSelection();
      
       $('#btnPista').on('click', function(){
-        $('.wrapper').append('<div id="pista">'+ newItems +'</div>');
+        $('.wrapper').append('<div id="pista">'+ respuestaOK +'</div>');
       });
-
-
   }//start
-
-
 </script>

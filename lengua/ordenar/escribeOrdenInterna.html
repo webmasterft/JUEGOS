@@ -25,7 +25,7 @@
          <form action="#" id="respuestas"> </form>
 
          <div class="clear"></div>
-         <div id="reloj"><div id="t" class="badge">00:00</div></div>        
+          <div id="crono"><div id="t" class="badge">00:00</div></div>
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
@@ -40,8 +40,8 @@
            <li>Observa detenidamente cada figura</li>
             <li>Escribe su nombre según el orden alfabético</li>
           </ol>
-        </div><!-- instrucciones -->  
-      
+        </div><!-- instrucciones -->
+      <button id="btnPista" class="button pulse" >Dame pistas</button>
       </div><!-- contenedor -->
 
 
@@ -55,28 +55,31 @@
 <script type="text/javascript">
 
  $(start);
- 
-  
+
   function start(){
-      
-      var result=[],
-      formResp = $('form#respuestas'),
-      $ul = $('#sortable');
+
+      var result = [],
+          newItems = [],
+          formResp = $('form#respuestas'),
+          $ul = $('#sortable');
 
       $ul.html('');
       mensaje.hide();
       formResp.html('');
 
-      newItems = numeroFiguras(8);
       cerrarMensaje();
       $('#pista').remove();
 
+      var numeros = aleatorio(0, 32 , 8 );
 
+      $.each(numeros, function(index, val){
+          newItems.push(itemsOrdenar[val]);
+      });
 
-    $.each(newItems, function(index, val) {
-        $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="' + omitirAcentos(newItems[index].toLowerCase()) + '"></li>');
-        formResp.append('<input type="text" required="" name="' + index + '">');
-    });
+        $.each(newItems, function(index, val) {
+            $ul.append('<li class="ui-state-default" id='+ newItems[index] + '><img src="img/figuras/'+ omitirAcentos(newItems[index].toLowerCase()) + '.jpg" width="100" height="100" title="' + omitirAcentos(newItems[index].toLowerCase()) + '"></li>');
+            formResp.append('<input type="text" required="" name="' + index + '">');
+        });
 
     formResp.append('<div class="clear"></div><button type="submit" class="button pulse">Revisar</button>');
    
@@ -118,8 +121,11 @@
       }  
     });
     //INICIAR EL RELOJ//
+      $('#btnPista').on('click', function(){
+          $('.wrapper').append('<div id="pista">'+ respuestaOK +'</div>');
+      });
 
 
   }//start
   
-</script>
+    </script>

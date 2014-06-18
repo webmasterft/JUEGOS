@@ -103,15 +103,18 @@
         }
     }
 
-    for (i = 0; i < 9; i++) {
-      var num = aleatorio(0, 81);
 
-      puntos +='<div id="' + itemsPlano[i] +'" data-img="' + itemsPlano[i] +'" class="receptor p'+ coordenadas[num] + '"></div>';
-      paresOrdenados += '<li><img id="' + itemsPlano[i] +'" class="' + itemsPlano[i] +' arrastrable" src="img/figuras/' + itemsPlano[i] +'.jpg" width="35" height="35">  ( '+ coordenadas[num] + ' ) <i class="fa"></i></li>';
-      itemsX += '<li>'+ ejeX[i] + '</li>';
-      itemsY += '<li>'+ ejeY[i] + '</li>';
+     var num = aleatorio(0, 81,9);
+         //img = aleatorio(0, 18,9);
 
-    };
+      $.each(num, function(index, val){
+          puntos +='<div id="' + itemsPlano[index] +'" data-img="' + itemsPlano[index] +'" class="receptor p'+ coordenadas[val] + '"></div>';
+          paresOrdenados += '<li><img id="' + itemsPlano[index] +'" class="' + itemsPlano[index] +' arrastrable" src="img/figuras/' + itemsPlano[index] +'.jpg" width="35" height="35">  ( '+ coordenadas[val] + ' ) <i class="fa"></i></li>';
+          itemsX += '<li>'+ ejeX[index] + '</li>';
+          itemsY += '<li>'+ ejeY[index] + '</li>';
+
+      });
+
 
 
 
