@@ -310,7 +310,6 @@ body{
   background: url('../../../libs/img/reloj.png') no-repeat;
   width: 105px;
   height: 149px;
-  position:relative;
   position: absolute;
   top: 228px;
   right: 50px;
@@ -415,10 +414,15 @@ div.preguntas{
   }
 
   #content{
-    width: 800px;
-    margin: 0 auto;
-
+    width:760px;
+    margin: 0 0 0 31px;
+    div#crono{
+      right: 10px;
+      top: 20px;
+    }
   }
+
+
 
   #contPreguntas{
     padding-top: 30px;

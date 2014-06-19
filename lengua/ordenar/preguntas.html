@@ -28,9 +28,10 @@
                 <div class="clear"></div>
               <div id="successMessage">           
               </div>
-
+                <div id="crono"><div id="t" class="badge">00:00</div></div>
             </div><!-- content -->
             <div class="clear"></div>
+
         </div><!-- main -->
 
          <div id="logos">
@@ -347,6 +348,7 @@
       $("#contPreguntas > div:hidden").remove();
 
       $('#contPreguntas > div').find('div.der p').on('click', function(){
+          $reloj.timer('start');
           if($(this).hasClass('respuestaOk')){
               $(this).addClass('ok').parents('.contPregunta').find('i').addClass('fa-check-circle');
           }else{
@@ -355,6 +357,7 @@
               audio.play();
           }
           if($('.fa-check-circle').length == 5 ){
+             $reloj.timer('stop');
              mostrarMensaje('<h2>Bien Hecho!!!</h2> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
           }
       }); //menuButtons.click
