@@ -28,12 +28,7 @@
             <div id="content">
               <div class="clear"></div>
               <div id="var">
-                
-
-
-
-
-
+                <div id="cartasCont"></div>
               </div><!-- var-->
               <div id="successMessage">           
               </div>
@@ -84,22 +79,12 @@
 
 
 <script id="cartasTemplate" type="text/x-handlebars-template">
-    <div class="hover panel flip">
-        <div class="front">
-            <div class="pad">
-                <h2>Mouse Over Me!</h2>
-                <p>
-                    The effect on this box can be done using 100% CSS.<br><br>
-                    The other boxes all require some Javascript, but the animation is driven by CSS3.
-                </p>
-            </div>
-        </div>
-        <div class="back">
-            <div class="pad">
-                <h2>check you on the flip side</h2>
-            </div>
-        </div>
+    {{#each this}}
+    <div class="cartas">
+        <img class="reverso" src="img/cartas/reverso-antonimos.png"/>
+        <img class="front" data-id="{{id}}" src="img/cartas/sinonimos/{{palabra}}.png"/>
     </div>
+    {{/each}}
 </script>
 
 
@@ -111,23 +96,30 @@
     cerrarMensaje();
 
     var contenedor = $('#var'),
-        correctCards = 0,
-        cartas = '',
         menuTemplate = $('#menuTemplate'),
+        cartasTemplate = $('#cartasTemplate'),
+        cartasCont = $('#cartasCont'),
         menu = $('#menu'),
+        cartas = '',
         menuItems = [
             { 
-              texto: 'Nivel 1',
+              texto: 'Sinónimos',
               id: '1'
             },   
             { 
-              texto: 'Nivel 2',
+              texto: 'Antónimos',
               id:'2'
             },
-          ];// var menu
+            {
+                texto: 'Caligrafía',
+                id:'2'
+            }
+
+        ]// var menu
 
       template = Handlebars.compile(menuTemplate.html());
       menu.html(template(menuItems)).hide().fadeIn();
+
 
         
       // Hide the success message
@@ -136,57 +128,56 @@
   
 
     menu.find('ul > li').on('click', function(){
-      var id = $(this).data('id'),
-          cartas ="",
-          clase = "";
+      var id = $(this).data('id');
 
       if(id==1){
-        numero = 8;
-        clase = 'ocho';
-        simbolos = ['corazón' , 'pelota' , 'manzana', 'melón'];
-      }else{
-        numero = 14;
-        clase = 'catorce';
-        simbolos = ['corazón' , 'pelota' , 'manzana', 'melón' , 'pera', 'banana', 'sandia'];
+        reverso = 'sinonimos';
+        items = [
+            {id:'1' , palabra: 'calamidad'}, {id:'1' , palabra: 'catastrofe'},
+            {id:'2' , palabra: 'ascender'}, {id:'2' , palabra: 'subir'},
+            {id:'3' , palabra: 'dadivoso'}, {id:'3' , palabra: 'generoso'}
+        ]
       }
 
+      items = shuffle(items);
 
-      for(var i=0; i<2; i++){
-          simbolos = shuffle(simbolos);
-          for( var j=0; j < numero / 2 ; j++ ){
-              cartas +='<div class="cartas"><p>' + simbolos[j] + '</p></div>';
-
-          }
-      }
-
-        contenedor.removeClass().addClass(clase).html(cartas);
-
-        var cartas = $('div.cartas');
-
-        cartas.on('click', function(){
-            if($('p.mostrado').length < 2){
-                $(this).find('p').fadeIn().addClass('mostrado');
-            }
-            var textos = [];
-            $.each($('p.mostrado'), function(){
-                textos.push($(this).text());
-                console.log(textos.length);
-                if(textos.length == 2){
-                  if(textos[0]==textos[1]){
-                    $('p.mostrado').removeClass('mostrado').parent('.cartas').addClass('correcto');
-                  }else{
-                    $('p.mostrado').delay(2000).fadeOut(function(){
-                        $(this).removeClass('mostrado');
-                    });
-                  }
-                }//textos length
-                  
-            });
-        });
+      template = Handlebars.compile(cartasTemplate.html());
+      cartasCont.html(template(items)).fadeIn();
+    });
 
 
-      
-      }); //menuButtons.click
+
+    var id = [],
+        contador = 0;
+
+    $(document).on('click', 'div.cartas:not(.correcto)' , function(){
+        var img = $(this).find('img.front');
+        //if($('div.cartas.correcto').length < 2){
+            img.fadeIn().addClass('mostrado').siblings().fadeOut();
+            id.push(img.data('id'));
+
+            if(id.length == 2){
+                if(id[0]==id[1]){
+                    $('img.mostrado').removeClass('mostrado').parent('.cartas').addClass('correcto');
+                    id = [];
+                    contador = 0;
+
+                }else{
+                    $('img.mostrado').delay(1000).fadeOut().removeClass('mostrado').siblings().fadeIn();
+                    contador = 0;
+                    id = [];
+                }
+            }//textos length
+
+        //}else{
+           // console.log('no');
+        //}
+
+
+
+
+
+    });//menuButtons.click
 
 
 

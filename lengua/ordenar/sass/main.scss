@@ -388,18 +388,24 @@ div.memoria{
       }
       
       div.cartas {
-        width: 96px;
-        height: 153px;
+        width: 93px;
+        height: 150px;
         float: left;
-        background: #ccc;
         margin:5px 2px;
-        border: 1px solid #A8A5A5;
         @include border-radius(20px, 20px);
         cursor: pointer;
-        p{
-          display: none;
-        }
+        position:relative;
 
+          img.reverso{
+            position:absolute;
+            top:0;
+            left:0;
+          }//reverso
+
+          img.front{
+            @extend .reverso;
+            display:none;
+          }//front
 
       }//cartas
     }//var

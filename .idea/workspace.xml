@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" afterPath="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/memoria.html" afterPath="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JUEGOS.iws" />
@@ -32,40 +32,21 @@
       <file leaf-file-name="funciones.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="396" column="39" selection-start="11025" selection-end="11025" vertical-scroll-proportion="0.0" vertical-offset="6457" max-vertical-offset="11084">
+            <state line="359" column="14" selection-start="10218" selection-end="10223" vertical-scroll-proportion="-3.0689654" vertical-offset="5925" max-vertical-offset="11084">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="planoCartesianoArrastrar.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
+      <file leaf-file-name="memoria.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="0" selection-start="3700" selection-end="4307" vertical-scroll-proportion="-0.0" vertical-offset="1972" max-vertical-offset="3434">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preguntas.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lengua/ordenar/preguntas.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="350" column="29" selection-start="9825" selection-end="9825" vertical-scroll-proportion="0.4344978" vertical-offset="5751" max-vertical-offset="6324">
+            <state line="133" column="28" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.8503521" vertical-offset="1778" max-vertical-offset="3264">
               <folding>
-                <marker date="1403147450140" expanded="true" signature="2882:3396" placeholder="..." />
-                <marker date="1403147450140" expanded="true" signature="2943:3367" placeholder="..." />
-                <marker date="1403147450140" expanded="true" signature="2973:3043" placeholder="..." />
-                <marker date="1403147450140" expanded="true" signature="3075:3313" placeholder="..." />
+                <marker date="1403414161037" expanded="true" signature="2889:3003" placeholder="..." />
+                <marker date="1403414161037" expanded="true" signature="3128:3298" placeholder="..." />
+                <marker date="1403414161037" expanded="true" signature="3356:5545" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="escribeOrdenInterna.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="10" selection-start="3756" selection-end="3777" vertical-scroll-proportion="-14.346154" vertical-offset="1378" max-vertical-offset="2329">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -73,7 +54,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="420" column="12" selection-start="7184" selection-end="7184" vertical-scroll-proportion="-2.0833333" vertical-offset="6965" max-vertical-offset="8262">
+            <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.84615386" vertical-offset="6907" max-vertical-offset="8364">
               <folding />
             </state>
           </provider>
@@ -97,7 +78,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/index.html" />
-        <option value="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/sass/vars.scss" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss" />
         <option value="$PROJECT_DIR$/lengua/ordenar/animalesLocos.html" />
@@ -109,8 +89,9 @@
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrarLetras.html" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html" />
-        <option value="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
         <option value="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
+        <option value="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
+        <option value="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
       </list>
     </option>
   </component>
@@ -312,7 +293,12 @@
       <recent name="D:\xampp\htdocs\GitHub\JUEGOS\matematica\numerosNaturales" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.planoCartesianoArrastrar.html">
+  <component name="RunManager" selected="JavaScript Debug.memoria.html">
+    <configuration default="false" name="memoria.html" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true" temporary="true" uri="http://localhost:63342/JUEGOS/lengua/ordenar/memoria.html">
+      <RunnerSettings RunnerId="JavascriptDebugRunner" />
+      <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner />
       <method />
@@ -331,9 +317,15 @@
       <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.planoCartesianoArrastrar.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.memoria.html" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.memoria.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
@@ -396,7 +388,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -404,10 +396,10 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3983871" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39779875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17295597" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17295597" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -442,7 +434,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Preguntas 50%&#10;" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
@@ -628,11 +624,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="11.269231" vertical-offset="293" max-vertical-offset="850" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="3417" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/vars.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="0" selection-start="1484" selection-end="1484" vertical-scroll-proportion="0.68" vertical-offset="1003" max-vertical-offset="2397" />
@@ -663,13 +654,6 @@
         <state line="186" column="82" selection-start="5757" selection-end="5757" vertical-scroll-proportion="0.6467391" vertical-offset="2805" max-vertical-offset="3978" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="396" column="39" selection-start="11025" selection-end="11025" vertical-scroll-proportion="0.0" vertical-offset="6457" max-vertical-offset="11084">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="59" selection-start="1107" selection-end="1107" vertical-scroll-proportion="-2.1056337" vertical-offset="1519" max-vertical-offset="3145" />
@@ -677,54 +661,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrarLetras.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="157" column="27" selection-start="5227" selection-end="5228" vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3434">
-          <folding />
-        </state>
+        <state line="157" column="27" selection-start="5227" selection-end="5228" vertical-scroll-proportion="0.0" vertical-offset="2669" max-vertical-offset="3434" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="155" column="33" selection-start="5277" selection-end="5277" vertical-scroll-proportion="0.2693662" vertical-offset="2482" max-vertical-offset="3247">
+        <state line="155" column="33" selection-start="5277" selection-end="5277" vertical-scroll-proportion="0.2693662" vertical-offset="2482" max-vertical-offset="3247" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1414" column="28" selection-start="21525" selection-end="21525" vertical-scroll-proportion="0.9122203" vertical-offset="23508" max-vertical-offset="24140" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="10" selection-start="3756" selection-end="3777" vertical-scroll-proportion="0.6566901" vertical-offset="1378" max-vertical-offset="2329">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="3700" selection-end="4307" vertical-scroll-proportion="0.0" vertical-offset="1591" max-vertical-offset="3434">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1414" column="28" selection-start="21525" selection-end="21525" vertical-scroll-proportion="0.9122203" vertical-offset="23508" max-vertical-offset="24140">
+        <state line="116" column="0" selection-start="3700" selection-end="4307" vertical-scroll-proportion="0.22183098" vertical-offset="1846" max-vertical-offset="3434">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="420" column="12" selection-start="7184" selection-end="7184" vertical-scroll-proportion="-2.0833333" vertical-offset="6965" max-vertical-offset="8262">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="10" selection-start="3756" selection-end="3777" vertical-scroll-proportion="-14.346154" vertical-offset="1378" max-vertical-offset="2329">
+        <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.84615386" vertical-offset="6907" max-vertical-offset="8364">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/preguntas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="350" column="29" selection-start="9825" selection-end="9825" vertical-scroll-proportion="0.4344978" vertical-offset="5751" max-vertical-offset="6324">
+        <state line="357" column="11" selection-start="10090" selection-end="10090" vertical-scroll-proportion="0.64084506" vertical-offset="5705" max-vertical-offset="6324">
           <folding>
-            <marker date="1403147450140" expanded="true" signature="2882:3396" placeholder="..." />
-            <marker date="1403147450140" expanded="true" signature="2943:3367" placeholder="..." />
-            <marker date="1403147450140" expanded="true" signature="2973:3043" placeholder="..." />
-            <marker date="1403147450140" expanded="true" signature="3075:3313" placeholder="..." />
+            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="359" column="14" selection-start="10218" selection-end="10223" vertical-scroll-proportion="-3.0689654" vertical-offset="5925" max-vertical-offset="11084">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="133" column="28" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.8503521" vertical-offset="1778" max-vertical-offset="3264">
+          <folding>
+            <marker date="1403414161037" expanded="true" signature="2889:3003" placeholder="..." />
+            <marker date="1403414161037" expanded="true" signature="3128:3298" placeholder="..." />
+            <marker date="1403414161037" expanded="true" signature="3356:5545" placeholder="..." />
           </folding>
         </state>
       </provider>
