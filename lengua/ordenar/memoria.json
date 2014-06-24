@@ -1,0 +1,61 @@
+/**
+ * Created by webmasterft on 22/06/14.
+ */
+sinonimos = [
+    {id:'1' , palabra: 'calamidad'}, {id:'1' , palabra: 'catastrofe'},
+    {id:'2' , palabra: 'ascender'}, {id:'2' , palabra: 'subir'},
+    {id:'3' , palabra: 'dadivoso'}, {id:'3' , palabra: 'generoso'},
+    {id:'4' , palabra: 'rapido'}, {id:'4' , palabra: 'veloz'},
+    {id:'5' , palabra: 'mezquino'}, {id:'5' , palabra: 'tacano'},
+    {id:'6' , palabra: 'calma'}, {id:'6' , palabra: 'tranquilidad'},
+    {id:'7' , palabra: 'celebre'}, {id:'7' , palabra: 'famoso'},
+    {id:'8' , palabra: 'fortuna'}, {id:'8' , palabra: 'suerte'},
+    {id:'9' , palabra: 'pelea'}, {id:'9' , palabra: 'pleito'},
+    {id:'10' , palabra: 'delicioso'}, {id:'10' , palabra: 'sabroso'},
+    {id:'11' , palabra: 'labor'}, {id:'11' , palabra: 'trabajo'},
+    {id:'12' , palabra: 'indagacion'}, {id:'12' , palabra: 'investigacion'},
+    {id:'13' , palabra: 'cruel'}, {id:'13' , palabra: 'feroz'},
+    {id:'14' , palabra: 'chueco'}, {id:'14' , palabra: 'torcido'},
+    {id:'15' , palabra: 'sucio'}, {id:'15' , palabra: 'turbio'},
+    {id:'16' , palabra: 'engreido'}, {id:'16' , palabra: 'presumido'},
+    {id:'17' , palabra: 'corpulento'}, {id:'17' , palabra: 'robusto'},
+    {id:'18' , palabra: 'esbelto'}, {id:'18' , palabra: 'gallardo'},
+    {id:'19' , palabra: 'espiar'}, {id:'19' , palabra: 'husmear'},
+    {id:'20' , palabra: 'borrasca'}, {id:'20' , palabra: 'vendeval'},
+    {id:'21' , palabra: 'encontrar'}, {id:'21' , palabra: 'hallar'},
+    {id:'22' , palabra: 'olvidar'}, {id:'22' , palabra: 'omitir'},
+    {id:'23' , palabra: 'cosmico'}, {id:'23' , palabra: 'especial'},
+    {id:'24' , palabra: 'marcial'}, {id:'24' , palabra: 'militar'},
+    {id:'25' , palabra: 'hermoso'}, {id:'25' , palabra: 'precioso'},
+    {id:'26' , palabra: 'danino'}, {id:'26' , palabra: 'maligno'}
+]
+
+
+/*antonimos = [
+    {id:'1' , palabra: 'calamidad'}, {id:'1' , palabra: 'catastrofe'},
+    {id:'2' , palabra: 'ascender'}, {id:'2' , palabra: 'subir'},
+    {id:'3' , palabra: 'dadivoso'}, {id:'3' , palabra: 'generoso'},
+    {id:'4' , palabra: 'rapido'}, {id:'4' , palabra: 'veloz'},
+    {id:'5' , palabra: 'mezquino'}, {id:'5' , palabra: 'tacano'},
+    {id:'6' , palabra: 'calma'}, {id:'6' , palabra: 'tranquilidad'},
+    {id:'7' , palabra: 'celebre'}, {id:'7' , palabra: 'famoso'},
+    {id:'8' , palabra: 'fortuna'}, {id:'8' , palabra: 'suerte'},
+    {id:'9' , palabra: 'pelea'}, {id:'9' , palabra: 'pleito'},
+    {id:'10' , palabra: 'delicioso'}, {id:'10' , palabra: 'sabroso'},
+    {id:'11' , palabra: 'labor'}, {id:'11' , palabra: 'trabajo'},
+    {id:'12' , palabra: 'indagacion'}, {id:'12' , palabra: 'investigacion'},
+    {id:'13' , palabra: 'cruel'}, {id:'13' , palabra: 'feroz'},
+    {id:'14' , palabra: 'chueco'}, {id:'14' , palabra: 'torcido'},
+    {id:'15' , palabra: 'sucio'}, {id:'15' , palabra: 'turbio'},
+    {id:'16' , palabra: 'engreido'}, {id:'16' , palabra: 'presumido'},
+    {id:'17' , palabra: 'corpulento'}, {id:'17' , palabra: 'robusto'},
+    {id:'18' , palabra: 'esbelto'}, {id:'18' , palabra: 'gallardo'},
+    {id:'19' , palabra: 'espiar'}, {id:'19' , palabra: 'husmear'},
+    {id:'20' , palabra: 'borrasca'}, {id:'20' , palabra: 'vendeval'},
+    {id:'21' , palabra: 'encontrar'}, {id:'21' , palabra: 'hallar'},
+    {id:'22' , palabra: 'olvidar'}, {id:'22' , palabra: 'omitir'},
+    {id:'23' , palabra: 'cosmico'}, {id:'23' , palabra: 'especial'},
+    {id:'24' , palabra: 'marcial'}, {id:'24' , palabra: 'militar'},
+    {id:'25' , palabra: 'hermoso'}, {id:'25' , palabra: 'precioso'},
+    {id:'26' , palabra: 'danino'}, {id:'26' , palabra: 'maligno'}
+]*/

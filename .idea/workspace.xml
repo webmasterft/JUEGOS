@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" afterPath="$PROJECT_DIR$/lengua/ordenar/.sass-cache/85f9627b4a461130546e47032b67961e8dd94758/main.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/css/main.css" afterPath="$PROJECT_DIR$/lengua/ordenar/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" afterPath="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/js/funciones.js" afterPath="$PROJECT_DIR$/libs/js/funciones.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/memoria.html" afterPath="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,24 +27,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="funciones.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
+      <file leaf-file-name="memoria.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="359" column="14" selection-start="10218" selection-end="10223" vertical-scroll-proportion="-3.0689654" vertical-offset="5925" max-vertical-offset="11084">
-              <folding />
+            <state line="136" column="27" selection-start="4333" selection-end="4333" vertical-scroll-proportion="-5.5" vertical-offset="2169" max-vertical-offset="3230">
+              <folding>
+                <marker date="1403502962457" expanded="true" signature="2889:3003" placeholder="..." />
+                <marker date="1403502962457" expanded="true" signature="3128:3298" placeholder="..." />
+                <marker date="1403502962457" expanded="true" signature="3356:5378" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memoria.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
+      <file leaf-file-name="funciones.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="28" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.8503521" vertical-offset="1778" max-vertical-offset="3264">
+            <state line="657" column="25" selection-start="19795" selection-end="19795" vertical-scroll-proportion="0.37037036" vertical-offset="10949" max-vertical-offset="11560">
               <folding>
-                <marker date="1403414161037" expanded="true" signature="2889:3003" placeholder="..." />
-                <marker date="1403414161037" expanded="true" signature="3128:3298" placeholder="..." />
-                <marker date="1403414161037" expanded="true" signature="3356:5545" placeholder="..." />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="memoria.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="3" selection-start="3604" selection-end="3604" vertical-scroll-proportion="-39.23077" vertical-offset="0" max-vertical-offset="1122">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -54,7 +63,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.84615386" vertical-offset="6907" max-vertical-offset="8364">
+            <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.0" vertical-offset="6907" max-vertical-offset="8364">
               <folding />
             </state>
           </provider>
@@ -83,7 +92,6 @@
         <option value="$PROJECT_DIR$/lengua/ordenar/animalesLocos.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/diccionarioLudicoInterna.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html" />
-        <option value="$PROJECT_DIR$/libs/js/funciones.js" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/operacionesBasicas.html" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesiano.html" />
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html" />
@@ -91,7 +99,10 @@
         <option value="$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoEscribirCoordenadas.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/preguntas.html" />
         <option value="$PROJECT_DIR$/lengua/ordenar/sass/main.scss" />
+        <option value="$PROJECT_DIR$/lengua/ordenar/memoria.json.js" />
+        <option value="$PROJECT_DIR$/lengua/ordenar/memoria.json" />
         <option value="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
+        <option value="$PROJECT_DIR$/libs/js/funciones.js" />
       </list>
     </option>
   </component>
@@ -227,11 +238,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lengua" />
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ordenar" />
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -245,15 +256,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lengua" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ordenar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sass" />
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,12 +287,13 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="783" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lengua/ordenar/config.rb" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\xampp\htdocs\GitHub\JUEGOS\libs" />
       <recent name="D:\xampp\htdocs\GitHub\JUEGOS\matematica\numerosNaturales" />
     </key>
   </component>
@@ -388,7 +392,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -403,12 +407,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -441,18 +445,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10608">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="388" column="24" selection-start="6696" selection-end="6696" vertical-scroll-proportion="0.0" vertical-offset="6596" max-vertical-offset="7735" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="3417" />
@@ -461,7 +453,9 @@
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10608">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -478,7 +472,9 @@
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10387">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -495,7 +491,9 @@
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="353" column="23" selection-start="10125" selection-end="10139" vertical-scroll-proportion="0.0" vertical-offset="6001" max-vertical-offset="10387">
-          <folding />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -683,44 +681,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="3700" selection-end="4307" vertical-scroll-proportion="0.22183098" vertical-offset="1846" max-vertical-offset="3434">
-          <folding />
-        </state>
+        <state line="116" column="0" selection-start="3700" selection-end="4307" vertical-scroll-proportion="0.22183098" vertical-offset="1846" max-vertical-offset="3434" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.84615386" vertical-offset="6907" max-vertical-offset="8364">
+        <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.0" vertical-offset="6907" max-vertical-offset="8364">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/preguntas.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="11" selection-start="10090" selection-end="10090" vertical-scroll-proportion="0.64084506" vertical-offset="5705" max-vertical-offset="6324">
-          <folding>
-            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1403147450140" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="357" column="11" selection-start="10090" selection-end="10090" vertical-scroll-proportion="0.64084506" vertical-offset="5705" max-vertical-offset="6324" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="359" column="14" selection-start="10218" selection-end="10223" vertical-scroll-proportion="-3.0689654" vertical-offset="5925" max-vertical-offset="11084">
+        <state line="60" column="3" selection-start="3604" selection-end="3604" vertical-scroll-proportion="-39.23077" vertical-offset="0" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="28" selection-start="4236" selection-end="4236" vertical-scroll-proportion="0.8503521" vertical-offset="1778" max-vertical-offset="3264">
+        <state line="136" column="27" selection-start="4333" selection-end="4333" vertical-scroll-proportion="-5.5" vertical-offset="2169" max-vertical-offset="3230">
           <folding>
-            <marker date="1403414161037" expanded="true" signature="2889:3003" placeholder="..." />
-            <marker date="1403414161037" expanded="true" signature="3128:3298" placeholder="..." />
-            <marker date="1403414161037" expanded="true" signature="3356:5545" placeholder="..." />
+            <marker date="1403502962457" expanded="true" signature="2889:3003" placeholder="..." />
+            <marker date="1403502962457" expanded="true" signature="3128:3298" placeholder="..." />
+            <marker date="1403502962457" expanded="true" signature="3356:5378" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="657" column="25" selection-start="19795" selection-end="19795" vertical-scroll-proportion="0.37037036" vertical-offset="10949" max-vertical-offset="11560">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

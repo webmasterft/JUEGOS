@@ -645,3 +645,31 @@ function handleCardDropBalanza( event, ui ) {
     }
 
 })(jQuery);
+
+
+
+function cargarJson(url, data){
+    var datos;
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: data,
+        async: false,
+        beforeSend: function(){
+
+        },
+        success: function (data) {
+            datos = data;
+            console.log(data);
+        },//success
+
+        error:function (xhr, ajaxOptions, thrownError){
+            datos = thrownError;
+            console.log(xhr, ajaxOptions, thrownError);
+        }//error
+    });
+    return datos;
+}//cargarJson
+
+
+
