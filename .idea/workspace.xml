@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/js/funciones.js" afterPath="$PROJECT_DIR$/libs/js/funciones.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lengua/ordenar/memoria.html" afterPath="$PROJECT_DIR$/lengua/ordenar/memoria.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="327e9b0c-c963-4ed8-a3e4-399181e27078" name="Default" comment="" />
     <ignored path="JUEGOS.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,12 +26,8 @@
       <file leaf-file-name="memoria.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="27" selection-start="4333" selection-end="4333" vertical-scroll-proportion="-5.5" vertical-offset="2169" max-vertical-offset="3230">
-              <folding>
-                <marker date="1403502962457" expanded="true" signature="2889:3003" placeholder="..." />
-                <marker date="1403502962457" expanded="true" signature="3128:3298" placeholder="..." />
-                <marker date="1403502962457" expanded="true" signature="3356:5378" placeholder="..." />
-              </folding>
+            <state line="136" column="27" selection-start="4745" selection-end="4745" vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="4862">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,7 +35,7 @@
       <file leaf-file-name="funciones.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="657" column="25" selection-start="19795" selection-end="19795" vertical-scroll-proportion="0.37037036" vertical-offset="10949" max-vertical-offset="11560">
+            <state line="657" column="25" selection-start="19790" selection-end="19790" vertical-scroll-proportion="0.3131313" vertical-offset="10983" max-vertical-offset="11577">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -54,7 +46,7 @@
       <file leaf-file-name="memoria.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="3" selection-start="3604" selection-end="3604" vertical-scroll-proportion="-39.23077" vertical-offset="0" max-vertical-offset="1122">
+            <state line="60" column="3" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1122">
               <folding />
             </state>
           </provider>
@@ -63,7 +55,7 @@
       <file leaf-file-name="main.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.0" vertical-offset="6907" max-vertical-offset="8364">
+            <state line="405" column="0" selection-start="7016" selection-end="7016" vertical-scroll-proportion="0.0" vertical-offset="6885" max-vertical-offset="8500">
               <folding />
             </state>
           </provider>
@@ -392,14 +384,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21303074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39779875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -407,12 +399,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -445,6 +437,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="405" column="0" selection-start="7016" selection-end="7016" vertical-scroll-proportion="0.0" vertical-offset="6885" max-vertical-offset="8500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="25" selection-start="3766" selection-end="3766" vertical-scroll-proportion="0.0" vertical-offset="1921" max-vertical-offset="3417" />
@@ -674,9 +673,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/escribeOrdenInterna.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="10" selection-start="3756" selection-end="3777" vertical-scroll-proportion="0.6566901" vertical-offset="1378" max-vertical-offset="2329">
-          <folding />
-        </state>
+        <state line="103" column="10" selection-start="3756" selection-end="3777" vertical-scroll-proportion="0.6566901" vertical-offset="1378" max-vertical-offset="2329" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/matematica/numerosNaturales/planoCartesianoArrastrar.html">
@@ -686,7 +683,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/sass/main.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="405" column="19" selection-start="7034" selection-end="7034" vertical-scroll-proportion="0.0" vertical-offset="6907" max-vertical-offset="8364">
+        <state line="405" column="0" selection-start="7016" selection-end="7016" vertical-scroll-proportion="0.0" vertical-offset="6885" max-vertical-offset="8500">
           <folding />
         </state>
       </provider>
@@ -698,25 +695,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="3" selection-start="3604" selection-end="3604" vertical-scroll-proportion="-39.23077" vertical-offset="0" max-vertical-offset="1122">
+        <state line="60" column="3" selection-start="3604" selection-end="3604" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lengua/ordenar/memoria.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="27" selection-start="4333" selection-end="4333" vertical-scroll-proportion="-5.5" vertical-offset="2169" max-vertical-offset="3230">
-          <folding>
-            <marker date="1403502962457" expanded="true" signature="2889:3003" placeholder="..." />
-            <marker date="1403502962457" expanded="true" signature="3128:3298" placeholder="..." />
-            <marker date="1403502962457" expanded="true" signature="3356:5378" placeholder="..." />
-          </folding>
+        <state line="136" column="27" selection-start="4745" selection-end="4745" vertical-scroll-proportion="0.0" vertical-offset="2312" max-vertical-offset="4862">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/js/funciones.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="657" column="25" selection-start="19795" selection-end="19795" vertical-scroll-proportion="0.37037036" vertical-offset="10949" max-vertical-offset="11560">
+        <state line="657" column="25" selection-start="19790" selection-end="19790" vertical-scroll-proportion="0.3131313" vertical-offset="10983" max-vertical-offset="11577">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>

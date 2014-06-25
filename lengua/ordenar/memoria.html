@@ -91,16 +91,17 @@
         cartas = '',
         menuItems = [
             { 
-              texto: 'Sinónimos',
-              id: '1'
+              texto: 'Caligrafía',
+              id:'3'
+              
             },   
             { 
-              texto: 'Antónimos',
-              id:'2'
+              texto: 'Sinónimos',
+              id: '1'
             },
             {
-                texto: 'Caligrafía',
-                id:'3'
+              texto: 'Antónimos',
+              id:'2'                
             }
 
         ]// var menu
@@ -195,6 +196,7 @@
 
         case 3:
             reverso = 'caligrafia';
+            itemsAleat = aleatorio(0,3,1);
             if(itemsAleat==1){
               items = [
                 {id:'1' , palabra: 'aire-manuscrita'}, {id:'1' , palabra: 'aire'},
@@ -204,27 +206,31 @@
                 {id:'5' , palabra: 'ciclo-manuscrita'}, {id:'5' , palabra: 'ciclo'},
                 {id:'6' , palabra: 'energia-manuscrita'}, {id:'6' , palabra: 'energia'},
                 {id:'7' , palabra: 'femenino-manuscrita'}, {id:'7' , palabra: 'femenino'},
-                {id:'8' , palabra: 'genero-manuscrita'}, {id:'8' , palabra: 'genero'},
-                {id:'9' , palabra: 'ilegal-manuscrita'}, {id:'9' , palabra: 'ilegal'},
-                {id:'10' , palabra: 'incoloro-manuscrita'}, {id:'10' , palabra: 'incoloro'},
-                {id:'11' , palabra: 'insipida-manuscrita'}, {id:'11' , palabra: 'insipida'},
-                {id:'12' , palabra: 'linda-manuscrita'}, {id:'12' , palabra: 'linda'},
+                {id:'8' , palabra: 'genero-manuscrita'}, {id:'8' , palabra: 'genero'}
               ]  
-            
-            }else{  
-              items =[  
+            }else if(itemsAleat==2){    
+              items = [
                 {id:'1' , palabra: 'luz-manuscrita'}, {id:'1' , palabra: 'luz'},
                 {id:'2' , palabra: 'masculino-manuscrita'}, {id:'2' , palabra: 'masculino'},
                 {id:'3' , palabra: 'nomadas-manuscrita'}, {id:'3' , palabra: 'nomadas'},
                 {id:'4' , palabra: 'piojoso-manuscrita'}, {id:'4' , palabra: 'piojoso'},
-                {id:'5' , palabra: 'ratita-manuscrita'}, {id:'5' , palabra: 'ratita'},
-                {id:'6' , palabra: 'reciclar-manuscrita'}, {id:'6' , palabra: 'reciclar'},
-                {id:'7' , palabra: 'reducir-manuscrita'}, {id:'7' , palabra: 'reducir'},
-                {id:'8' , palabra: 'respeto-manuscrita'}, {id:'8' , palabra: 'respeto'},
-                {id:'9' , palabra: 'rural-manuscrita'}, {id:'9' , palabra: 'rural'},
-                {id:'10' , palabra: 'salado-manuscrita'}, {id:'10' , palabra: 'salado'},
-                {id:'11' , palabra: 'sol-manuscrita'}, {id:'11' , palabra: 'sol'},
-                {id:'12' , palabra: 'vivo-manuscrita'}, {id:'12' , palabra: 'vivo'},
+                {id:'5' , palabra: 'ilegal-manuscrita'}, {id:'5' , palabra: 'ilegal'},
+                {id:'6' , palabra: 'incolora-manuscrita'}, {id:'6' , palabra: 'incolora'},
+                {id:'7' , palabra: 'insipida-manuscrita'}, {id:'7' , palabra: 'insipida'},
+                {id:'8' , palabra: 'linda-manuscrita'}, {id:'8' , palabra: 'linda'}
+
+              ]  
+            
+            }else{  
+              items =[  
+                {id:'1' , palabra: 'ratita-manuscrita'}, {id:'1' , palabra: 'ratita'},
+                {id:'2' , palabra: 'reciclar-manuscrita'}, {id:'2' , palabra: 'reciclar'},
+                {id:'3' , palabra: 'reducir-manuscrita'}, {id:'3' , palabra: 'reducir'},
+                {id:'4' , palabra: 'respeto-manuscrita'}, {id:'4' , palabra: 'respeto'},
+                {id:'5' , palabra: 'rural-manuscrita'}, {id:'5' , palabra: 'rural'},
+                {id:'6' , palabra: 'salado-manuscrita'}, {id:'6' , palabra: 'salado'},
+                {id:'7' , palabra: 'sol-manuscrita'}, {id:'7' , palabra: 'sol'},
+                {id:'8' , palabra: 'vivo-manuscrita'}, {id:'8' , palabra: 'vivo'}
               ] 
             } 
         break;      
@@ -237,7 +243,7 @@
         cartas += ' <div class="cartas"><img class="reverso" src="img/cartas/reverso-'+ reverso +'.png"/><img class="front" data-id="'+ items[index].id +'" src="img/cartas/'+ reverso +'/'+ items[index].palabra +'.png"/></div>';
       });//each
 
-      cartasCont.html(cartas).fadeIn();
+      cartasCont.html(cartas).fadeIn().removeClass().addClass(reverso);
 
     });
     

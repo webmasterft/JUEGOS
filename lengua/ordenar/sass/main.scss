@@ -390,9 +390,8 @@ div.memoria{
     width: 800px;
     float: left;
     #var{
-      &.ocho{
-        width: 432px;
-        margin: 0 auto;
+      .caligrafia {
+        margin: 50px 0 0 0;
       }
       
       div.cartas {
