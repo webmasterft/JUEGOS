@@ -492,3 +492,37 @@ div.preguntas{
 #audio{
   display: none;
 }
+
+div.camino{
+  #successMessage{
+    display: none;
+  }
+  div#caminoCont {
+    margin: 0 6px;
+  }
+  .step{
+    float:left;
+    margin: 4px;
+    width: 100px;
+    height: 100px;
+  }
+  .right{
+    float: right;
+  }
+
+  #iniciar{
+    float: left;
+    margin:10px 50px;
+    cursor: pointer;
+  }
+
+  #dado{
+    float: left;
+  }
+
+  .actual{
+    border:4px solid $color-verdeBack;
+  }
+
+}//camino
+
