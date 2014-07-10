@@ -1,0 +1,363 @@
+@import "vars.scss";
+@import "normalize.scss";
+@import "normal.scss";
+@import "hover.scss";
+@import "compass/css3/";
+@import "../../../libs/css/jquery-ui.css";
+
+
+body{
+    font-size: $baseFontSize;
+    font-family: $bodyFontFamily;
+    color:$color-negro;
+    background:$color-blanco;
+    line-height: $baseLineHeight;
+}
+
+.clear{
+  clear:both;
+}
+
+
+.wrapper{
+  width: $wrapper;
+  margin: 0 auto;
+  height: 600px;
+  position:relative;
+}
+
+#home{
+  background: url(../img/home.jpg) no-repeat;
+  
+  #logos{
+    float: left;
+    margin:90px 0 0 90px;
+    img{
+      float: left;
+    }
+
+  }//img
+
+  #iniciar{
+    @include border-radius(20px, 20px);
+    background: $color-azulBoton;
+    color:$color-blanco;
+    font-size: $baseFontSize + 23;
+    font-weight: bold;
+    padding:10px;
+    border: 4px solid $color-blanco;
+    display:inline-block;
+    position:absolute;
+    top: 122px;
+    right: 64px;
+    a{
+      text-decoration: none;
+      color:#fff;
+    }
+  }//iniciar
+
+  #titulo{
+    position:absolute;
+    top: 217px;
+    left: 30px;
+  }
+
+  #avatarhome{
+    position:absolute;
+    bottom: 75px;
+    right: 28px;
+  }
+
+  #intrucciones{
+    position:absolute;
+    bottom:92px;
+    left: 136px;
+    color: $color-blanco;
+    width: 480px;
+    p{
+      font-size: $baseFontSize + 23;
+      line-height: $baseFontSize + 44;
+    }
+    ol{
+      list-style-type: decimal;
+      list-style-position: inside;
+      li{
+        padding-bottom:3px;
+      }
+    }//ol
+  }//
+
+
+
+
+}//home
+
+
+
+  #menu{
+    width: 200px;
+    padding: 60px 60px 0 50px;
+    float: left;
+    p{
+      font-size: $baseFontSize + 27;
+      line-height: $baseFontSize + 37;
+      text-align: center;
+      text-transform: uppercase;
+      color:$color-azulBoton;
+    }
+
+    ul{
+      background: $color-azulBoton;
+      @include border-radius(10px, 10px);
+      border: 5px solid $color-blanco;
+      padding: 10px 32px;
+      li{
+        color:$color-blanco;
+        font-size: $baseFontSize + 2;
+        padding:5px 0;
+        width: 100%;
+        font-weight: bold;
+        cursor:pointer;
+      }
+
+
+    }//ul
+
+  }//menu
+
+
+  .button{
+    @include border-radius(20px, 20px);
+    background: $color-azulBoton;
+    color:$color-blanco;
+    font-weight: bold;
+    padding:10px;
+    border: 4px solid $color-blanco;
+  }//iniciar
+
+  .verde{
+    background: $color-verdeBack;
+  }
+
+
+#descomposicion{
+  background: url(../img/fondo2.jpg) no-repeat;
+  #titulo{
+    position:absolute;
+    bottom:20px;
+    left:6px;
+  }
+  #avatar{
+    position: absolute;
+    bottom:0px;
+    right: 10px;
+  }
+
+  #nav{
+    position: absolute;
+    bottom:10px;
+    left: 230px;
+    button{
+      padding: 10px;
+      margin-right: 20px;
+      color:$color-blanco;
+      border:2px solid $color-blanco;
+      background:transparent;
+      text-transform: uppercase;
+    }
+  }//nav
+  
+  #logos{
+    position:absolute;
+    bottom:67px;
+    right: 164px;
+    img.edinum{
+      margin-right: 60px;
+    }
+  }//logos
+
+  form#respuestas{
+    width: 101px;
+    margin:10px auto;
+    input[type="text"]{
+      background: url(../../../libs/img/success.jpg) top center;
+      float:left;
+      display: inline-block;
+      width: 93px;
+      border: 1px solid #7E7C7C;
+      color:$color-blanco;
+      text-align: center;
+      margin:3px;
+      @include border-radius(5px, 5px);
+      padding:5px 3px;
+    }
+  }
+  
+
+
+
+}//#descomposicion
+
+ 
+
+  .stopwatch {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+  }
+  .stopwatch span {
+    font-weight: bold;
+    display: block;
+  }
+  .stopwatch a {
+    padding-right: 5px;
+    text-decoration: none;
+  }
+
+  .boton{
+    background: $color-verdefosf;
+    color: $color-txtBoton;
+    border: 4px solid $color-blanco;
+    padding: 10px;
+    font-weight: bold;
+    @include border-radius(20px, 20px);
+    margin-top: 15px;
+  }
+
+/* "You did it!" message */
+    #successMessage {
+      position: absolute;
+      left: 50%;
+      top: 150px;
+      width: 0px;
+      height: 0px;
+      z-index: 100;
+      background: url(../../../libs/img/success.jpg) top center;
+      border: 7px solid $color-blanco;
+      @include border-radius(10px, 10px);
+      @include single-box-shadow;
+      padding: 20px;
+      color:$color-blanco;
+      text-align: center;
+      display: none;
+      h2{
+        font-size: $baseFontSize + 18;
+        line-height: $baseFontSize + 20;
+        margin:40px 0 20px 0;
+      }
+
+      p{
+        font-size: $baseFontSize + 8;
+        line-height: $baseFontSize + 12;
+        margin-bottom: 10px;
+      }
+      button{
+        @extend .boton;
+      }
+
+
+    }//successMessage
+
+
+
+  div#instrucciones{
+    @extend #successMessage;
+    text-align: left;
+    position: absolute;
+    left:223px;
+    top:400px;
+    width: auto;
+    height: auto;
+    display:none;
+  }
+
+
+#crono{
+  background: url('../../../libs/img/reloj.png') no-repeat;
+  width: 105px;
+  height: 149px;
+  position: absolute;
+  top: 228px;
+  right: 50px;
+
+
+  .badge {
+    @include border-radius( 5px , 5px);
+    display: inline-block;
+    padding: 10px;
+    font-size: $baseFontSize - 2;
+    font-weight: bold;
+    line-height: $baseFontSize + 3;
+    color: $color-blanco;
+    vertical-align: baseline;
+    white-space: nowrap;
+    background: #999999;
+    text-align: center;
+    color:$color-blanco;
+    width: 44px;
+    height: 17px;
+    margin: 78px 0 0 21px;
+    border: 1px solid #808080;
+
+      &.activo{
+        background:$color-verdeBack;
+
+      }
+      &.detenido{
+        background:$color-rojo;    
+      }
+
+    }//badge
+}//reloj    
+
+
+#pista{
+    position:absolute;
+    top:10px;
+    right: 10px;
+    background:$color-blanco;
+    color:$color-negro;
+    padding:10px;
+    border: 4px solid $color-negro;
+    @include border-radius(20px, 20px);
+  }
+
+
+#btnPista{
+  position:absolute;
+  bottom:130px;
+  left: 20px;
+}
+
+
+.fa-check-circle{
+  color:$color-verdeBack;
+}
+
+.fa-exclamation-triangle{
+  color:$color-rojo;
+}
+
+
+.wrapper.mapas{
+  #menuMapas{
+    position:absolute;
+    top: 5px;
+    left: 16px;
+  }//#menuMapas
+
+  #mapa{
+    width: 700px;
+    height: 450px;
+    padding:25px 0 0 114px;    
+  }
+  .button{
+    position:absolute;
+    top: 32px;
+    left: 10px;
+  }
+}//.wrapper.mapas
+
+

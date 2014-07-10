@@ -4,6 +4,8 @@
 @import "hover.scss";
 @import "compass/css3/";
 @import "../../../libs/css/jquery-ui.css";
+@import "../../../libs/css/font-awesome.min.css";
+
 
 
 
@@ -489,7 +491,7 @@ div.preguntas{
 }//preuntas
 
 
-#audio{
+.audio{
   display: none;
 }
 
@@ -502,7 +504,7 @@ div.camino{
   }
   .step{
     float:left;
-    margin: 4px;
+    margin: 5px 4px;
     width: 100px;
     height: 100px;
   }
@@ -511,18 +513,235 @@ div.camino{
   }
 
   #iniciar{
-    float: left;
-    margin:10px 50px;
     cursor: pointer;
+    position:absolute;
+    bottom: 150px;
+    left: 181px;
   }
 
   #dado{
-    float: left;
+    position:absolute;
+    bottom: 122px;
+    left: 343px;
   }
+
+  
 
   .actual{
     border:4px solid $color-verdeBack;
   }
 
+  &.caminoPreg{
+
+    #iniciar{
+      left:127px;
+    }
+    #dado{
+      left: 260px;
+    }
+
+    #pregunta{
+      width: 250px;
+      height: 110px;
+      border: 4px solid $color-blanco;
+      background:$color-morado;
+      position: absolute;
+      bottom: 124px;
+      left: 390px;
+      @include border-radius(20px, 20px);
+      
+
+      p.identifier{
+        text-align: center;
+
+      }
+    }//pregunta
+    
+    #respuesta{
+      @extend #pregunta;
+      background:$color-celeste;
+      left: 657px;
+    }
+  }//preguntas
+
+  div#instrucciones{
+    width: 360px;
+    top:327px;
+  } 
+
+
 }//camino
 
+
+div.ortogramatron{
+  #var{
+    padding-top:10px;
+
+  }
+  #inst{
+    background: $color-azulBoton;
+    @include border-radius(10px);
+    text-align: center;
+    border: 5px solid #fff;
+    float: left;
+    display: inline-block;
+    margin: 0 10px 0 23px;
+    padding: 9px;
+    color:$color-blanco;
+    font-weight: bold;
+    font-size: $baseFontSize + 7;
+
+  }//#inst
+ 
+  #inst2{
+    width: 250px;
+    margin:10px auto;
+    p{
+      @extend #inst;
+      float:none;
+      margin:0;
+    }
+  }
+
+
+  input{
+    float:left;
+    border: 5px solid $color-azulBoton;
+    padding: 9px;
+    font-weight: bold;
+    font-size: $baseFontSize + 7;
+    width: 550px;
+    
+  }
+  
+  i{
+    color:$color-rojo;
+    padding-left: 10px;
+    cursor: pointer;
+    &:hover{
+      color:$color-verdeBack;
+    }
+  }
+  
+  #continuar{
+    display: none;
+    position:absolute;
+    bottom: 150px;
+    right: 120px;
+  }    
+
+  #successMessage h2 {
+    margin: 14px 0 20px 0;
+  }
+  
+  #palabras{
+    width: 650px;
+    margin: 0 auto;
+    height: 100%;
+    zoom: 1;
+    li{
+      @extend #inst;
+      float: left;
+      margin:5px;
+      cursor: pointer;
+      &.dropped{
+        background:$color-verdeBack;
+      }
+
+    }
+  }//palabras
+
+  #canastas{
+    margin: 40px 20px;
+    li{
+      float: left;
+      margin: 15px;
+      background: url(../img/canasta.png) no-repeat;
+      width: 150px;
+      height: 150px;
+      background-size: contain;
+    }//li
+  }//canastas
+
+  
+
+}//div.ortogramatron
+
+div.buscaPalabras{
+  &#descomposicion {
+    #logos{
+      bottom:0;
+    }
+  }
+  #menuCont{
+    padding-top:20px;
+    width: 250px;
+    float: left;
+    p.inst{
+      background: $color-azulBoton;
+      @include border-radius(10px);
+      text-align: center;
+      border: 5px solid #fff;
+      display: inline-block;
+      margin: 0 10px 0 23px;
+      padding: 9px;
+      color:$color-blanco;
+      font-weight: bold;
+      font-size: $baseFontSize + 7;
+    }//p.inst
+    ul{
+      margin-left:20px;
+      margin:10px 10px 35px 45px;
+      list-style-type: disc;
+      list-style-position: outside;
+      li{
+        padding:5px 0;
+
+      
+      }
+    }//ul  
+  }//menuCont
+
+  #var{
+    float:left;
+    margin-left: 10px;
+    width: 658px;
+    #letras{
+          font-size: $baseFontSize + 22;
+          line-height: $baseFontSize + 25;
+          text-align: center;
+    }//letras
+    .respuesta{
+      text-align: center;
+    }
+
+    input{
+      border: 5px solid $color-azulBoton;
+      padding: 3px;
+      font-weight: bold;
+      font-size: $baseFontSize + 3;
+      width: 300px;
+      margin: 5px;
+      text-transform: uppercase;
+    }
+    #comando{
+      @extend input;
+      text-align: center;
+      background:$color-blanco;
+      width: 500px;
+      margin:10px auto;
+      padding:10px;
+      text-transform: inherit;
+    }//command
+
+  }//var
+
+}//
+
+.fa-check-circle{
+  color:$color-verdeBack;
+}
+
+.fa-exclamation-triangle{
+  color:$color-rojo;
+}
