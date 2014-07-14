@@ -1,10 +1,10 @@
-// @import "vars.scss";
-// @import "normalize.scss";
-// @import "normal.scss";
-// @import "hover.scss";
-// @import "compass/css3/";
-// @import "../../../libs/css/jquery-ui.css";
-// @import "../../../libs/css/font-awesome.min.css";
+@import "vars.scss";
+@import "normalize.scss";
+@import "normal.scss";
+@import "hover.scss";
+@import "compass/css3/";
+@import "../../../libs/css/jquery-ui.css";
+@import "../../../libs/css/font-awesome.min.css";
 
 
 
@@ -318,7 +318,7 @@ body{
 
 
   .badge {
-    @include border-radius( 5px , 5px);
+    @include border-radius(5px,5px);
     display: inline-block;
     padding: 10px;
     font-size: $baseFontSize - 2;
@@ -493,6 +493,7 @@ div.preguntas{
 
 .audio{
   display: none;
+
 }
 
 div.camino{
