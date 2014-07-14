@@ -8,749 +8,713 @@
 
 
 
-
-
-body{
-    font-size: $baseFontSize;
-    font-family: $bodyFontFamily;
-    color:$color-negro;
-    background:$color-blanco;
-    line-height: $baseLineHeight;
+body {
+  font-size: 14px;
+  font-family: Arial;
+  color: #000;
+  background: #fff;
+  line-height: 1.42857;
 }
 
-.clear{
-  clear:both;
+.clear {
+  clear: both;
 }
 
-
-.wrapper{
-  width: $wrapper;
+.wrapper {
+  width: 940px;
   margin: 0 auto;
   height: 600px;
-  position:relative;
+  position: relative;
 }
 
-#home{
+#home {
   background: url(../img/home.jpg) no-repeat;
-  
-  #logos{
+  #logos {
     float: left;
-    margin:90px 0 0 90px;
-    img{
+    margin: 90px 0 0 90px;
+    img {
       float: left;
     }
-
-  }//img
-
-  #iniciar{
-    @include border-radius(20px, 20px);
-    background: $color-azulBoton;
-    color:$color-blanco;
-    font-size: $baseFontSize + 23;
+  }
+  #iniciar {
+    -webkit-border-radius: 20px 20px;
+    -moz-border-radius: 20px / 20px;
+    border-radius: 20px / 20px;
+    background: #27aae1;
+    color: #fff;
+    font-size: 37px;
     font-weight: bold;
-    padding:10px;
-    border: 4px solid $color-blanco;
-    display:inline-block;
-    position:absolute;
+    padding: 10px;
+    border: 4px solid #fff;
+    display: inline-block;
+    position: absolute;
     top: 122px;
     right: 64px;
-    a{
+    a {
       text-decoration: none;
-      color:#fff;
+      color: #fff;
     }
-  }//iniciar
-
-  #titulo{
-    position:absolute;
+  }
+  #titulo {
+    position: absolute;
     top: 217px;
     left: 30px;
   }
-
-  #avatarhome{
-    position:absolute;
+  #avatarhome {
+    position: absolute;
     bottom: 75px;
     right: 28px;
   }
-
-  #intrucciones{
-    position:absolute;
-    bottom:92px;
+  #intrucciones {
+    position: absolute;
+    bottom: 92px;
     left: 136px;
-    color: $color-blanco;
+    color: #fff;
     width: 480px;
-    p{
-      font-size: $baseFontSize + 23;
-      line-height: $baseFontSize + 44;
+    p {
+      font-size: 37px;
+      line-height: 58px;
     }
-    ol{
+    ol {
       list-style-type: decimal;
       list-style-position: inside;
-      li{
-        padding-bottom:3px;
+      li {
+        padding-bottom: 3px;
       }
-    }//ol
-  }//
-
-
-
-
-}//home
-
-
-
-  #menu{
-    width: 200px;
-    padding: 60px 60px 0 50px;
-    float: left;
-    p{
-      font-size: $baseFontSize + 27;
-      line-height: $baseFontSize + 37;
-      text-align: center;
-      text-transform: uppercase;
-      color:$color-azulBoton;
     }
-
-    ul{
-      background: $color-azulBoton;
-      @include border-radius(10px, 10px);
-      border: 5px solid $color-blanco;
-      padding: 10px 32px;
-      li{
-        color:$color-blanco;
-        font-size: $baseFontSize + 2;
-        padding:5px 0;
-        width: 100%;
-        font-weight: bold;
-        cursor:pointer;
-      }
-
-
-    }//ul
-
-  }//menu
-
-
-  .button{
-    @include border-radius(20px, 20px);
-    background: $color-azulBoton;
-    color:$color-blanco;
-    font-weight: bold;
-    padding:10px;
-    border: 4px solid $color-blanco;
-  }//iniciar
-
-  .verde{
-    background: $color-verdeBack;
   }
+}
 
+#menu {
+  width: 200px;
+  padding: 60px 60px 0 50px;
+  float: left;
+  p {
+    font-size: 41px;
+    line-height: 51px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #27aae1;
+  }
+  ul {
+    background: #27aae1;
+    -webkit-border-radius: 10px 10px;
+    -moz-border-radius: 10px / 10px;
+    border-radius: 10px / 10px;
+    border: 5px solid #fff;
+    padding: 10px 32px;
+    li {
+      color: #fff;
+      font-size: 16px;
+      padding: 5px 0;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
 
-#descomposicion{
+.button {
+  -webkit-border-radius: 20px 20px;
+  -moz-border-radius: 20px / 20px;
+  border-radius: 20px / 20px;
+  background: #27aae1;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border: 4px solid #fff;
+}
+
+.verde {
+  background: #8dc63f;
+}
+
+#descomposicion {
   background: url(../img/fondo2.jpg) no-repeat;
-  #titulo{
-    position:absolute;
-    bottom:20px;
-    left:6px;
-  }
-  #avatar{
+  #titulo {
     position: absolute;
-    bottom:0px;
+    bottom: 20px;
+    left: 6px;
+  }
+  #avatar {
+    position: absolute;
+    bottom: 0px;
     right: 10px;
   }
-
-  #nav{
+  #nav {
     position: absolute;
-    bottom:10px;
+    bottom: 10px;
     left: 230px;
-    button{
+    button {
       padding: 10px;
       margin-right: 20px;
-      color:$color-blanco;
-      border:2px solid $color-blanco;
-      background:transparent;
+      color: #fff;
+      border: 2px solid #fff;
+      background: transparent;
       text-transform: uppercase;
     }
-  }//nav
-  
-  #logos{
-    position:absolute;
-    bottom:67px;
+  }
+  #logos {
+    position: absolute;
+    bottom: 67px;
     right: 164px;
-    img.edinum{
+    img.edinum {
       margin-right: 60px;
     }
-  }//logos
-
-  form#respuestas{
+  }
+  form#respuestas {
     width: 101px;
-    margin:10px auto;
-    input[type="text"]{
+    margin: 10px auto;
+    input[type="text"], div.buscaPalabras #var [type="text"]#comando {
       background: url(../../../libs/img/success.jpg) top center;
-      float:left;
+      float: left;
       display: inline-block;
       width: 93px;
       border: 1px solid #7E7C7C;
-      color:$color-blanco;
+      color: #fff;
       text-align: center;
-      margin:3px;
-      @include border-radius(5px, 5px);
-      padding:5px 3px;
+      margin: 3px;
+      -webkit-border-radius: 5px 5px;
+      -moz-border-radius: 5px / 5px;
+      border-radius: 5px / 5px;
+      padding: 5px 3px;
     }
   }
-  
+}
 
+div.buscaPalabras #var #descomposicion form#respuestas [type="text"]#comando {
+  background: url(../../../libs/img/success.jpg) top center;
+  float: left;
+  display: inline-block;
+  width: 93px;
+  border: 1px solid #7E7C7C;
+  color: #fff;
+  text-align: center;
+  margin: 3px;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px / 5px;
+  border-radius: 5px / 5px;
+  padding: 5px 3px;
+}
 
-
-}//#descomposicion
-
-
-#sortable { 
-  list-style-type: none; 
-  margin: 0 auto; 
-  padding: 70px 0; 
-  width: 857px; 
-  
-  li { 
-    margin: 3px 3px 3px 0; 
-    padding: 1px; 
-    float: left; 
-    width: 100px; 
-    height: 100px; 
-    font-size: 4em; 
-    text-align: center; 
-    @include border-radius(5px, 5px);
+#sortable {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 70px 0;
+  width: 857px;
+  li {
+    margin: 3px 3px 3px 0;
+    padding: 1px;
+    float: left;
+    width: 100px;
+    height: 100px;
+    font-size: 4em;
+    text-align: center;
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 5px / 5px;
+    border-radius: 5px / 5px;
     cursor: pointer;
-      &.ui-sortable-helper{
-        cursor: move;
-      }
-  }//li
-}//sortable
-  
-
-  .stopwatch {
-    display: inline-block;
-    background-color: white;
-    border: 1px solid #eee;
-    padding: 5px;
-    margin: 5px;
+    &.ui-sortable-helper {
+      cursor: move;
+    }
   }
-  .stopwatch span {
+}
+
+.stopwatch {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 5px;
+  margin: 5px;
+  span {
     font-weight: bold;
     display: block;
   }
-  .stopwatch a {
+  a {
     padding-right: 5px;
     text-decoration: none;
   }
+}
 
-  .boton{
-    background: $color-verdefosf;
-    color: $color-txtBoton;
-    border: 4px solid $color-blanco;
-    padding: 10px;
-    font-weight: bold;
-    @include border-radius(20px, 20px);
-    margin-top: 15px;
+.boton, #successMessage button, div#instrucciones button {
+  background: #d1df56;
+  color: #58595b;
+  border: 4px solid #fff;
+  padding: 10px;
+  font-weight: bold;
+  -webkit-border-radius: 20px 20px;
+  -moz-border-radius: 20px / 20px;
+  border-radius: 20px / 20px;
+  margin-top: 15px;
+}
+
+#successMessage, div#instrucciones {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  width: 0px;
+  height: 0px;
+  z-index: 100;
+  background: url(../../../libs/img/success.jpg) top center;
+  border: 7px solid #fff;
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px / 10px;
+  border-radius: 10px / 10px;
+  -webkit-box-shadow: 0px 0px 5px #333;
+  -moz-box-shadow: 0px 0px 5px #333;
+  box-shadow: 0px 0px 5px #333;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+#successMessage h2, div#instrucciones h2 {
+  font-size: 32px;
+  line-height: 34px;
+  margin: 40px 0 20px 0;
+}
+
+#successMessage p, div#instrucciones p {
+  font-size: 22px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.lengua {
+  #successMessage, div#instrucciones {
+    background: #e66325;
   }
-
-/* "You did it!" message */
-    #successMessage {
-      position: absolute;
-      left: 50%;
-      top: 150px;
-      width: 0px;
-      height: 0px;
-      z-index: 100;
-      background: url(../../../libs/img/success.jpg) top center;
-      border: 7px solid $color-blanco;
-      @include border-radius(10px, 10px);
-      @include single-box-shadow;
-      padding: 20px;
-      color:$color-blanco;
-      text-align: center;
-
-      h2{
-        font-size: $baseFontSize + 18;
-        line-height: $baseFontSize + 20;
-        margin:40px 0 20px 0;
-      }
-
-      p{
-        font-size: $baseFontSize + 8;
-        line-height: $baseFontSize + 12;
-        margin-bottom: 10px;
-      }
-      button{
-        @extend .boton;
-      }
-
-
-    }//successMessage
-
-  .lengua{
-    #successMessage{
-      background:$color-naranjaSuccess;
-      button{
-        background:$color-verdefosf;
-        color:$color-txtBoton;
-      }
-    }//#successMessage
-  }//lengua
-
-  div#instrucciones{
-    @extend #successMessage;
-    text-align: left;
-    position: absolute;
-    left:223px;
-    top:400px;
-    width: auto;
-    height: auto;
-    display:none;
+  #successMessage button, div#instrucciones button {
+    background: #d1df56;
+    color: #58595b;
   }
+}
 
+div#instrucciones {
+  text-align: left;
+  position: absolute;
+  left: 223px;
+  top: 400px;
+  width: auto;
+  height: auto;
+  display: none;
+}
 
-#crono{
-  background: url('../../../libs/img/reloj.png') no-repeat;
+#crono {
+  background: url("../../../libs/img/reloj.png") no-repeat;
   width: 105px;
   height: 149px;
   position: absolute;
   top: 228px;
   right: 50px;
-
-
   .badge {
-    @include border-radius(5px,5px);
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 5px / 5px;
+    border-radius: 5px / 5px;
     display: inline-block;
     padding: 10px;
-    font-size: $baseFontSize - 2;
+    font-size: 12px;
     font-weight: bold;
-    line-height: $baseFontSize + 3;
-    color: $color-blanco;
+    line-height: 17px;
+    color: #fff;
     vertical-align: baseline;
     white-space: nowrap;
     background: #999999;
     text-align: center;
-    color:$color-blanco;
+    color: #fff;
     width: 44px;
     height: 17px;
     margin: 78px 0 0 21px;
     border: 1px solid #808080;
-
-      &.activo{
-        background:$color-verdeBack;
-
-      }
-      &.detenido{
-        background:$color-rojo;    
-      }
-
-    }//badge
-}//reloj    
-
-
-#pista{
-    position:absolute;
-    top:10px;
-    right: 10px;
-    background:$color-blanco;
-    color:$color-negro;
-    padding:10px;
-    border: 4px solid $color-negro;
-    @include border-radius(20px, 20px);
+    &.activo {
+      background: #8dc63f;
+    }
+    &.detenido {
+      background: #e1431f;
+    }
   }
+}
 
+#pista {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  border: 4px solid #000;
+  -webkit-border-radius: 20px 20px;
+  -moz-border-radius: 20px / 20px;
+  border-radius: 20px / 20px;
+}
 
-#btnPista{
-  position:absolute;
-  bottom:130px;
+#btnPista {
+  position: absolute;
+  bottom: 130px;
   left: 20px;
 }
 
-div.animalesLocos{
-
-}
-
-
-
-div.memoria{
-
-  #menu {
-    width: 100px;
-    padding: 60px 25px 0 15px;
-    p{
-      font-size: $baseFontSize + 21;
-    }
-    ul{
-      width: 95%;
-      padding:10px 5px;
-      li{
-        padding:5px;
-      }//li
-    }//ul
-  }//#menu
-  
-  #content{
-    width: 800px;
-    float: left;
-    #var{
-      .caligrafia {
-        margin: 50px 0 0 0;
+div {
+  &.memoria {
+    #menu {
+      width: 100px;
+      padding: 60px 25px 0 15px;
+      p {
+        font-size: 35px;
       }
-      
-      div.cartas {
-        width: 93px;
-        height: 150px;
-        float: left;
-        margin:2px;
-        @include border-radius(20px, 20px);
-        cursor: pointer;
-        position:relative;
-
-          img.reverso{
-            position:absolute;
-            top:0;
-            left:0;
-          }//reverso
-
-          img.front{
-            @extend .reverso;
-            display:none;
-          }//front
-
-      }//cartas
-    }//var
-  }//content
-}//memoria
-
-
-div.preguntas{
-  #menu {
-    width: 150px;
-    padding: 60px 20px;
-  }
-
-  #content{
-    width:760px;
-    margin: 0 0 0 31px;
-    div#crono{
-      right: 10px;
-      top: 20px;
-    }
-  }
-
-
-
-  #contPreguntas{
-    padding-top: 30px;
-    & > div{
-      width: 100%;
-      height:50px;
-      padding:10px;
-      display: none;
-     &:nth-child(odd){
-        background:rgba(0, 158, 25, 0.33);
-      }
-
-      div.izq{
-        width:40%;
-        float: left;
-      }
-      
-      div.der{
-        width:50%;
-        float: left;
-      }//der
-
-      p{
-        float: left;
-        margin-right: 30px;
-        cursor: pointer;
-        padding:5px;
-        &.ok{
-          background: $color-amarillo;
+      ul {
+        width: 95%;
+        padding: 10px 5px;
+        li {
+          padding: 5px;
         }
-      }//p
-      i{
-        width: 10%;
-        float: right;
-        font-size:$baseFontSize + 14;
-
-          @extend .animation;
-          &.fa-check-circle{
-            color:$color-rojo;
+      }
+    }
+    #content {
+      width: 800px;
+      float: left;
+      #var {
+        .caligrafia {
+          margin: 50px 0 0 0;
+        }
+        div.cartas {
+          width: 93px;
+          height: 150px;
+          float: left;
+          margin: 2px;
+          -webkit-border-radius: 20px 20px;
+          -moz-border-radius: 20px / 20px;
+          border-radius: 20px / 20px;
+          cursor: pointer;
+          position: relative;
+          img {
+            &.reverso {
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            &.front {
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: none;
+            }
           }
-          &.fa-exclamation-triangle{
-            color:$color-rojo;
+        }
+      }
+    }
+  }
+  &.preguntas {
+    #menu {
+      width: 150px;
+      padding: 60px 20px;
+    }
+    #content {
+      width: 760px;
+      margin: 0 0 0 31px;
+      div#crono {
+        right: 10px;
+        top: 20px;
+      }
+    }
+    #contPreguntas {
+      padding-top: 30px;
+      > div {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        display: none;
+        &:nth-child(odd) {
+          background: rgba(0, 158, 25, 0.33);
+        }
+        div {
+          &.izq {
+            width: 40%;
+            float: left;
           }
-      }//i
-
-
-
-    }//div
-
-  }//#contentpreguntas
-}//preuntas
-
-
-.audio{
-  display: none;
-
+          &.der {
+            width: 50%;
+            float: left;
+          }
+        }
+        p {
+          float: left;
+          margin-right: 30px;
+          cursor: pointer;
+          padding: 5px;
+          &.ok {
+            background: #ff0;
+          }
+        }
+        i {
+          width: 10%;
+          float: right;
+          font-size: 28px;
+          &.fa-check-circle, &.fa-exclamation-triangle {
+            color: #e1431f;
+          }
+        }
+      }
+    }
+  }
 }
 
-div.camino{
-  #successMessage{
-    display: none;
-  }
-  div#caminoCont {
-    margin: 0 6px;
-  }
-  .step{
-    float:left;
-    margin: 5px 4px;
-    width: 100px;
-    height: 100px;
-  }
-  .right{
-    float: right;
-  }
+#audio {
+  display: none;
+}
 
-  #iniciar{
-    cursor: pointer;
-    position:absolute;
-    bottom: 150px;
-    left: 181px;
-  }
-
-  #dado{
-    position:absolute;
-    bottom: 122px;
-    left: 343px;
-  }
-
-  
-
-  .actual{
-    border:4px solid $color-verdeBack;
-  }
-
-  &.caminoPreg{
-
-    #iniciar{
-      left:127px;
+div {
+  &.camino {
+    #successMessage {
+      display: none;
     }
-    #dado{
-      left: 260px;
-    }
-
-    #pregunta{
-      width: 250px;
-      height: 110px;
-      border: 4px solid $color-blanco;
-      background:$color-morado;
-      position: absolute;
-      bottom: 124px;
-      left: 390px;
-      @include border-radius(20px, 20px);
-      
-
-      p.identifier{
-        text-align: center;
-
+    div {
+      &#instrucciones {
+        display: none;
       }
-    }//pregunta
-    
-    #respuesta{
-      @extend #pregunta;
-      background:$color-celeste;
-      left: 657px;
+      &#caminoCont {
+        margin: 0 6px;
+      }
     }
-  }//preguntas
-
-  div#instrucciones{
-    width: 360px;
-    top:327px;
-  } 
-
-
-}//camino
-
-
-div.ortogramatron{
-  #var{
-    padding-top:10px;
-  }
-  
-  #menu {
-    width: 130px;
-    position:absolute;
-    top:20px;
-    left: 20px;
-  }
-
-  #inst{
-    background: $color-azulBoton;
-    @include border-radius(10px);
-    text-align: center;
-    border: 5px solid #fff;
-    float: left;
-    display: inline-block;
-    margin: 0 10px 0 23px;
-    padding: 9px;
-    color:$color-blanco;
-    font-weight: bold;
-    font-size: $baseFontSize + 7;
-
-  }//#inst
- 
-  #inst2{
-    width: 250px;
-    margin:10px auto;
-    p{
-      @extend #inst;
-      float:none;
-      margin:0;
-    }
-  }
-
-
-  input{
-    float:left;
-    border: 5px solid $color-azulBoton;
-    padding: 9px;
-    font-weight: bold;
-    font-size: $baseFontSize + 7;
-    width: 550px;
-    
-  }
-  
-  i{
-    color:$color-rojo;
-    padding-left: 10px;
-    cursor: pointer;
-    &:hover{
-      color:$color-verdeBack;
-    }
-  }
-  
-  #continuar{
-    display: none;
-    position:absolute;
-    bottom: 150px;
-    right: 120px;
-  }    
-
-  #successMessage h2 {
-    margin: 14px 0 20px 0;
-  }
-  
-  #palabras{
-    width: 650px;
-    margin: 0 auto;
-    height: 100%;
-    zoom: 1;
-    li{
-      @extend #inst;
+    .step {
       float: left;
-      margin:5px;
+      margin: 5px 4px;
+      width: 100px;
+      height: 100px;
+    }
+    .right {
+      float: right;
+    }
+    #iniciar {
       cursor: pointer;
-      &.dropped{
-        background:$color-verdeBack;
-      }
-
+      position: absolute;
+      bottom: 150px;
+      left: 181px;
     }
-  }//palabras
-
-  #canastas{
-    margin: 40px 20px;
-    li{
-      float: left;
-      margin: 15px;
-      background: url(../img/canasta.png) no-repeat;
-      width: 150px;
-      height: 150px;
-      background-size: contain;
-    }//li
-  }//canastas
-
-  
-
-}//div.ortogramatron
-
-div.buscaPalabras{
-  &#descomposicion {
-    #logos{
-      bottom:0;
+    #dado {
+      position: absolute;
+      bottom: 122px;
+      left: 343px;
+    }
+    .actual {
+      border: 4px solid #8dc63f;
+    }
+    &.caminoPreg {
+      #iniciar {
+        left: 127px;
+      }
+      #dado {
+        left: 260px;
+      }
+      #pregunta, #respuesta {
+        width: 250px;
+        height: 110px;
+        border: 4px solid #fff;
+        background: #b8519a;
+        position: absolute;
+        bottom: 124px;
+        left: 390px;
+        -webkit-border-radius: 20px 20px;
+        -moz-border-radius: 20px / 20px;
+        border-radius: 20px / 20px;
+      }
+      #pregunta p.identifier {
+        text-align: center;
+      }
+      #respuesta {
+        p.identifier {
+          text-align: center;
+        }
+        background: #3c66ac;
+        left: 657px;
+      }
+    }
+    div#instrucciones {
+      width: 360px;
+      top: 327px;
     }
   }
-  #menuCont{
-    padding-top:20px;
-    width: 250px;
-    float: left;
-    p.inst{
-      background: $color-azulBoton;
-      @include border-radius(10px);
+  &.ortogramatron {
+    #var {
+      padding-top: 10px;
+    }
+    #inst, #inst2 p, #palabras li {
+      background: #27aae1;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      border-radius: 10px;
       text-align: center;
       border: 5px solid #fff;
+      float: left;
       display: inline-block;
       margin: 0 10px 0 23px;
       padding: 9px;
-      color:$color-blanco;
+      color: #fff;
       font-weight: bold;
-      font-size: $baseFontSize + 7;
-    }//p.inst
-    ul{
-      margin-left:20px;
-      margin:10px 10px 35px 45px;
-      list-style-type: disc;
-      list-style-position: outside;
-      li{
-        padding:5px 0;
-
-      
+      font-size: 21px;
+    }
+    #inst2 {
+      width: 250px;
+      margin: 6px auto;
+      p {
+        float: none;
+        margin: 0;
       }
-    }//ul  
-  }//menuCont
-
-  #var{
-    float:left;
-    margin-left: 10px;
-    width: 658px;
-    #letras{
-          font-size: $baseFontSize + 22;
-          line-height: $baseFontSize + 25;
-          text-align: center;
-    }//letras
-    .respuesta{
-      text-align: center;
     }
-
-    input{
-      border: 5px solid $color-azulBoton;
-      padding: 3px;
+    input, div.buscaPalabras #var #comando {
+      float: left;
+      border: 5px solid #27aae1;
+      padding: 9px;
       font-weight: bold;
-      font-size: $baseFontSize + 3;
-      width: 300px;
-      margin: 5px;
-      text-transform: uppercase;
+      font-size: 21px;
+      width: 550px;
     }
-    #comando{
-      @extend input;
-      text-align: center;
-      background:$color-blanco;
-      width: 500px;
-      margin:10px auto;
-      padding:10px;
-      text-transform: inherit;
-    }//command
-
-  }//var
-
-}//
-
-.fa-check-circle{
-  color:$color-verdeBack;
+  }
+  &.buscaPalabras #var div.ortogramatron #comando {
+    float: left;
+    border: 5px solid #27aae1;
+    padding: 9px;
+    font-weight: bold;
+    font-size: 21px;
+    width: 550px;
+  }
+  &.ortogramatron {
+    i {
+      color: #e1431f;
+      padding-left: 10px;
+      cursor: pointer;
+      &:hover {
+        color: #8dc63f;
+      }
+    }
+    #continuar {
+      display: none;
+      position: absolute;
+      bottom: 150px;
+      right: 120px;
+    }
+    #successMessage h2, div#instrucciones h2 {
+      margin: 14px 0 20px 0;
+    }
+    #palabras {
+      width: 650px;
+      margin: 0 auto;
+      height: 100%;
+      zoom: 1;
+      li {
+        float: left;
+        margin: 5px;
+        cursor: pointer;
+        &.dropped {
+          background: #8dc63f;
+        }
+      }
+    }
+    #canastas {
+      margin: 40px 20px;
+      li {
+        float: left;
+        margin: 5px 13px;
+      }
+    }
+  }
+  &.buscaPalabras {
+    &#descomposicion #logos {
+      bottom: 0;
+    }
+    #menuCont {
+      padding-top: 20px;
+      width: 250px;
+      float: left;
+      p.inst {
+        background: #27aae1;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        border-radius: 10px;
+        text-align: center;
+        border: 5px solid #fff;
+        display: inline-block;
+        margin: 0 10px 0 23px;
+        padding: 9px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 21px;
+      }
+      ul {
+        margin-left: 20px;
+        margin: 10px 10px 35px 45px;
+        list-style-type: disc;
+        list-style-position: outside;
+        li {
+          padding: 5px 0;
+        }
+      }
+    }
+    #var {
+      float: left;
+      margin-left: 10px;
+      width: 658px;
+      #letras {
+        font-size: 36px;
+        line-height: 39px;
+        text-align: center;
+      }
+      .respuesta {
+        text-align: center;
+      }
+      input {
+        border: 5px solid #27aae1;
+        padding: 3px;
+        font-weight: bold;
+        font-size: 17px;
+        width: 300px;
+        margin: 5px;
+        text-transform: uppercase;
+      }
+      #comando {
+        border: 5px solid #27aae1;
+        padding: 3px;
+        font-weight: bold;
+        font-size: 17px;
+        width: 300px;
+        margin: 5px;
+        text-transform: uppercase;
+        text-align: center;
+        background: #fff;
+        width: 500px;
+        margin: 10px auto;
+        padding: 10px;
+        text-transform: inherit;
+      }
+    }
+  }
 }
 
-.fa-exclamation-triangle{
-  color:$color-rojo;
+.fa-check-circle {
+  color: #8dc63f;
 }
+
+.fa-exclamation-triangle {
+  color: #e1431f;
+}
+
+div.ortogramatron{
+  #menu{
+      width: 130px;
+      top:84px;
+      left:24px;
+      position:absolute;
+      float: none;
+      padding:0;
+
+  }//menu
+
+  div#panel1 {
+    display: none;
+  }
+}//ortogramatron 
 
