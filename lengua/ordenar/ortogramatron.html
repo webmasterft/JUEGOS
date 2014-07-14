@@ -19,8 +19,13 @@
       <div class="wrapper ortogramatron" id="descomposicion">
         
         <div id="main">
+            
+            
             <div id="content">
               <div class="clear"></div>
+              <div id="menu">
+               
+                </div>
               <div id="var">
                 
                 <div id="panel1">
@@ -61,7 +66,7 @@
 
       </div><!-- contenedor -->
     <script src="../../libs/js/jquery-1.11.0.min.js"></script>
-    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
     <script src="../../libs/js/funciones.js"></script> 
     <script src="../../libs/js/jquery.swfobject.1-1-1.min.js"></script> 
     
@@ -70,13 +75,40 @@
     </body>
 </html>
 
+<script id="menuTemplate" type="text/x-handlebars-template">
+    <ul> 
+        {{#each this}}
+            <li class="pulse" data-id="{{id}}">{{texto}}</li>
+        {{/each}}
+    </ul>    
+  </script>
+
+
 <script type="text/javascript">
    $(start);
   
   function start(){
     cerrarMensaje();
     var palabras = '',
-        frase = '';
+        frase = '',
+        menuTemplate = $('#menuTemplate'),
+         menu = $('#menu');
+
+         menuItems = [
+            { 
+              texto: 'Nivel 1',
+              id:'1'
+              
+            },   
+            { 
+              texto: 'Nivel 2',
+              id: '2'
+            },
+
+        ]// var menu
+
+      template = Handlebars.compile(menuTemplate.html());
+      menu.html(template(menuItems)).hide().fadeIn();
     
     $('i.fa-power-off').on('click', function(){
       frase = $.trim($('input#frase').val());
