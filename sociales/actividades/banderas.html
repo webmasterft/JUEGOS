@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <div class="wrapper banderas" id="descomposicion">
+        
+        <div id="main">
+
+            <div id="content">
+              <div class="clear"></div>
+              <div id="var">
+                <div id="cartasCont"></div>
+              </div><!-- var-->
+              <div id="successMessage">           
+              </div>
+
+            </div><!-- content -->
+        </div><!-- main -->
+
+         <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
+        </div><!--logos -->
+
+         <div id="instrucciones">
+            <ol>
+            <li>Elige la actividad que deseas realizar</li>
+            <li>Realiza la actividad</li>
+            <li>Haz clic sostenido para arrastrar las tarjetas hasta el recuadro de descomposición y representar el número planteado.</li>
+            <li>Si su respuesta es correcta haz clic el el botón ESCRIBE EL NÚMERO</li>
+            <li>Si su respuesta es correcta haz clic el el botón GRAFICA EL NÚMERO</li>
+            </ol>
+         </div>
+        
+
+         <div id="nav">
+            <button id="instrucciones" class="pulse">Instrucciones</button>
+            <button id="regresar" class="pulse">Regresar</button>
+         </div><!--nav-->
+         <img id="titulo" src="img/banderas.png" width="202" height="94">
+         <img id="avatar" src="img/muneco2.png" width="110" height="137">
+
+      </div><!-- contenedor -->
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
+
+    
+    </body>
+</html>
+
+<script type="text/javascript">
+
+  $(start);
+  
+  function start(){
+    cerrarMensaje();
+
+    var contenedor = $('#var'),
+        cartasTemplate = $('#cartasTemplate'),
+        cartasCont = $('#cartasCont'),
+        cartas = [],
+        itemsAleat = aleatorio(0,3,1);
+        if(itemsAleat==0){        
+          items = [
+              {id:'1' , palabra: 'alemania-bandera'}, {id:'1' , palabra: 'alemania'},
+              {id:'2' , palabra: 'argentina-bandera'}, {id:'2' , palabra: 'argentina'},
+              {id:'3' , palabra: 'australia-bandera'}, {id:'3' , palabra: 'australia'},
+              {id:'4' , palabra: 'belgica-bandera'}, {id:'4' , palabra: 'belgica'},
+              {id:'5' , palabra: 'bolivia-bandera'}, {id:'5' , palabra: 'bolivia'},
+              {id:'6' , palabra: 'brasil-bandera'}, {id:'6' , palabra: 'brasil'},
+              {id:'7' , palabra: 'canada-bandera'}, {id:'7' , palabra: 'canada'},
+              {id:'8' , palabra: 'chile-bandera'}, {id:'8' , palabra: 'chile'},
+              {id:'9' , palabra: 'venezuela-bandera'}, {id:'9' , palabra: 'venezuela'},
+              {id:'10' , palabra: 'china-bandera'}, {id:'10' , palabra: 'china'},
+              {id:'11' , palabra: 'colombia-bandera'}, {id:'11' , palabra: 'colombia'},
+              {id:'12' , palabra: 'corea-bandera'}, {id:'12' , palabra: 'corea'}
+          ];    
+        }else if(itemsAleat==1){  
+          items =[
+              {id:'13' , palabra: 'costaRica-bandera'}, {id:'13' , palabra: 'costaRica'},
+              {id:'14' , palabra: 'cuba-bandera'}, {id:'14' , palabra: 'cuba'},
+              {id:'15' , palabra: 'ecuador-bandera'}, {id:'15' , palabra: 'ecuador'},
+              {id:'16' , palabra: 'egipto-bandera'}, {id:'16' , palabra: 'egipto'},
+              {id:'17' , palabra: 'espana-bandera'}, {id:'17' , palabra: 'espana'},
+              {id:'18' , palabra: 'usa-bandera'}, {id:'18' , palabra: 'usa'},
+              {id:'19' , palabra: 'finlandia-bandera'}, {id:'19' , palabra: 'finlandia'},
+              {id:'20' , palabra: 'francia-bandera'}, {id:'20' , palabra: 'francia'},
+              {id:'21' , palabra: 'ghana-bandera'}, {id:'21' , palabra: 'ghana'},
+              {id:'22' , palabra: 'guatemala-bandera'}, {id:'22' , palabra: 'guatemala'},
+              {id:'23' , palabra: 'holanda-bandera'}, {id:'23' , palabra: 'holanda'}
+          ];    
+        }else{            
+          items=[  
+              {id:'24' , palabra: 'india-bandera'}, {id:'24' , palabra: 'india'},
+              {id:'25' , palabra: 'israel-bandera'}, {id:'25' , palabra: 'israel'},
+              {id:'26' , palabra: 'italia-bandera'}, {id:'26' , palabra: 'italia'},
+              {id:'27' , palabra: 'mexico-bandera'}, {id:'27' , palabra: 'mexico'},
+              {id:'28' , palabra: 'panama-bandera'}, {id:'28' , palabra: 'panama'},
+              {id:'29' , palabra: 'paraguay-bandera'}, {id:'29' , palabra: 'paraguay'},
+              {id:'30' , palabra: 'peru-bandera'}, {id:'30' , palabra: 'peru'},
+              {id:'31' , palabra: 'uk-bandera'}, {id:'31' , palabra: 'uk'},
+              {id:'32' , palabra: 'rusia-bandera'}, {id:'32' , palabra: 'rusia'},
+              {id:'33' , palabra: 'turquia-bandera'}, {id:'33' , palabra: 'turquia'},
+              {id:'34' , palabra: 'uruguay-bandera'}, {id:'34' , palabra: 'uruguay'}
+          ];
+        }     
+      
+        items = shuffle(items);
+
+      $.each(items, function(index, val) {
+          cartas += ' <div class="cartas"><img class="reverso" src="img/reverso.png"/><img class="front" data-id="'+ items[index].id +'" src="img/banderas/'+ items[index].palabra +'.png"/></div>';
+      });//each
+
+      cartasCont.html(cartas).fadeIn();
+
+    var id = [],
+        contador = 0;
+
+    $(document).on('click', 'div.cartas:not(.correcto)' , function(){
+        var img = $(this).find('img.front');
+
+        if($('div.cartas.correcto').length ==23){
+          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Jugar otra vez</button>');
+        }  
+            img.fadeIn().addClass('mostrado').siblings().fadeOut();
+            id.push(img.data('id'));
+
+            if(id.length == 2){
+                if(id[0]==id[1]){
+                    $('img.mostrado').removeClass('mostrado').parent('.cartas').addClass('correcto');
+                    id = [];
+                    contador = 0;
+
+                }else{
+                    $('img.mostrado').delay(1000).fadeOut().removeClass('mostrado').siblings().fadeIn();
+                    contador = 0;
+                    id = [];
+                }
+            }//textos length
+    });//menuButtons.click
+  }//start
+</script>
