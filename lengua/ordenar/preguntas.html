@@ -55,8 +55,8 @@
          <img id="avatar" src="img/muneco2.png" width="170" height="187">
 
           <audio id="audio" controls>
-              <source src="audio/horse.ogg" type="audio/ogg">
-              <source src="audio/horse.mp3" type="audio/mpeg">
+              <source src="audio/mal.ogg" type="audio/ogg">
+              <source src="audio/mal.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
           </audio>
 
@@ -110,10 +110,10 @@
           },
           {
             pregunta : '¿Entre qué letras está la “h”? ',
-            respuesta1 : 'g-i',
+            respuesta1 : 'f-i',
             respuesta2 : 'j-k',
             respuesta3 : 'i-j',
-            respuestaOk : 'f-i'
+            respuestaOk : 'g-i'
             
           },
 
@@ -144,17 +144,17 @@
           { 
             pregunta : '¿Qué letra está después de “j”?',
             respuesta1 : 'h',
-            respuesta2 : 'k',
+            respuesta2 : 'i',
             respuesta3 : 'g',
-            respuestaOk : 'i'
+            respuestaOk : 'k'
           },
 
           {
             pregunta : '¿Qué niña va al final de la lista?',
             respuesta1 : 'Karla Romero',
             respuesta2 : 'Juliana Rosenfeld',
-            respuesta3 : 'María Rodríguez',
-            respuestaOk : 'Camila Rosero'
+            respuesta3 : 'Camila Rosero',
+            respuestaOk : 'María Rodríguez'
           },
 
         {
@@ -309,9 +309,6 @@
             respuestaOk : 'j-l'
         },
 
-
-
-
         {
             pregunta : '¿Qué nombre va primero?',
             respuesta1 : 'Benito',
@@ -340,12 +337,21 @@
       var temp = [];
 
       temp = aleatorio(0, items.length,5);
+      console.log(temp);
 
       $.each(temp, function(index){
         $('#contPreguntas > div').eq(temp[index]).show();
       });
 
       $("#contPreguntas > div:hidden").remove();
+
+     
+
+      $.each($('div.der'), function(index, val) {
+         $(this).html(shuffle($(this).find('p')));
+      });
+
+
 
       $('#contPreguntas > div').find('div.der p').on('click', function(){
           $reloj.timer('start');
