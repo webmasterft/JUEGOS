@@ -183,11 +183,19 @@
 
         contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>');
       
+        var temp = respuestaOK
         for (var i = 0; i < 3; i++) {
-          $('#pesos').append('<div class="peso arrastrable">'+ aleatorio(100,999,1) + '</div>');
+          temp+=5;
+          $('#pesos').append('<div class="peso arrastrable">'+ temp + '</div>');
         }
         
         $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK +'</div>');
+        
+
+        $.each($('#pesos'), function(index, val) {
+           $(this).html(shuffle($(this).find('.peso')));
+        });
+
 
 
       $(".arrastrable").draggable({
