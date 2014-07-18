@@ -215,7 +215,7 @@ function toLetters(n)
     this.secsNum           = 0;
     this.minsNum           = 0;
     this.hrsNum            = 0;
-    this.secsStr           = "0 sec";
+    this.secsStr           = "0 seg.";
     this.minsStr           = "";
     this.hrsStr            = "";
     this.timerId           = null;
@@ -275,8 +275,8 @@ function toLetters(n)
     else this.$el.html(this.minsStr + ":" + this.secsStr);*/
     var displayStr;
     if(this.hrsNum == 0) {
-      if(this.secsNum < 60 && this.minsNum == 0) displayStr = this.secsStr + ' sec';
-      else displayStr = this.minsStr + ":" + this.secsStr + ' min';
+      if(this.secsNum < 60 && this.minsNum == 0) displayStr = this.secsStr + ' seg.';
+      else displayStr = this.minsStr + ":" + this.secsStr + ' min.';
     } else {
       displayStr = this.hrsStr + ':' + this.minsStr + ':' + this.secsStr;
     }
@@ -446,7 +446,7 @@ function handleCardDrop( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == tempNum.length ) {
-    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
+    mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
   }//if correct
 
 }//handleCardDrop
@@ -462,9 +462,9 @@ function escribir(){
                 respuestaOK = toLetters(numbers);
                     
             if(respuesta == respuestaOK){
-              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora grafica el número</button>');
+              mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2><button class="button pulse" onclick="grafica()">Ahora grafica el número</button>');
             }else{
-                mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
+                mostrarMensaje('<h2>¡¡¡Intenta otra vez!!!</h2><button class="button pulse" onclick="escribir()">Jugar otra vez</button>');
                 contenedor.append('<div id="pista">'+ respuestaOK +'</div>')
             }    
       });// click '#btnSubmit'      
@@ -558,9 +558,9 @@ function grafica(){
             numbersTemp = parseInt(numbers);
             console.log(cuenta);
             if(cuenta===numbersTemp){
-              mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Ahora repite las actividades</button>');
+              mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2><button class="button pulse" onclick="start()">Ahora repite las actividades</button>');
             }else{
-              mostrarMensaje('<h2>Intenta otra vez!!!</h2><button class="button pulse" onclick="grafica()">Jugar otra vez</button>');
+              mostrarMensaje('<h2>¡¡¡Intenta otra vez!!!</h2><button class="button pulse" onclick="grafica()">Jugar otra vez</button>');
             }
       });//click '#btnSubmit'      
 }//grafica
@@ -624,7 +624,7 @@ function handleCardDropBalanza( event, ui ) {
   // and reset the cards for another go
 
   if ( correctCards == tempNum.length ) {
-    mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
+    mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2><button class="button pulse" onclick="escribir()">Ahora escribe el número</button>');
   }//if correct
 
 }//handleCardDrop
