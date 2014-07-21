@@ -56,12 +56,15 @@
 
          <div id="instrucciones">
             <ol>
-            <li>Haz click en las coordenas del plano que corresponda a los pares indicados.</li>
-            <li>Continúa con las demás coordenadas.</li>
-            <li>Al final podrás repetir el juego.</li>
+            <li>Observa los pares ordenados, analiza el plano cartesiano y arrastra la imagen hasta el punto de intersección correspondiente.</li>
+            <li>Continúa ubicando las demás imágenes y hazlo en el menor tiempo posible.</li>
+            <li>Al final podrás repetir el juego con otro orden.</li>
             </ol>
          </div>
-        
+ 
+
+
+       
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
@@ -94,24 +97,26 @@
         itemsPlano = ['conejo','mono','perro','raton','pie','manos','gato','mano','toro', 'zanahoria','banana','hueso','queso','zapato','guantes','estambre','reloj','capa'],
         itemsX = itemsY = [],
         coordenadas = respuestas = [],
+        coorInfo = [],
         contAux = contador = 0;
         ejeY = ejeY.reverse();
 
     for(var i=1; i<=9; i++){
         for(var j=1; j<=9; j++){
           coordenadas.push(i + '-' + j);
+          coorInfo.push(i+';'+j);
         }
     }
 
 
      var num = aleatorio(0, 81,9);
-         //img = aleatorio(0, 18,9);
 
       $.each(num, function(index, val){
           puntos +='<div id="' + itemsPlano[index] +'" data-img="' + itemsPlano[index] +'" class="receptor p'+ coordenadas[val] + '"></div>';
-          paresOrdenados += '<li><img id="' + itemsPlano[index] +'" class="' + itemsPlano[index] +' arrastrable" src="img/figuras/' + itemsPlano[index] +'.jpg" width="35" height="35">  ( '+ coordenadas[val] + ' ) <i class="fa"></i></li>';
+          paresOrdenados += '<li><img id="' + itemsPlano[index] +'" class="' + itemsPlano[index] +' arrastrable" src="img/figuras/' + itemsPlano[index] +'.jpg" width="35" height="35">  ( '+ coorInfo[val] + ' ) <i class="fa"></i></li>';
           itemsX += '<li>'+ ejeX[index] + '</li>';
           itemsY += '<li>'+ ejeY[index] + '</li>';
+
 
       });
 
@@ -136,6 +141,7 @@
       //defino los elementos que se pueden arrastrar
       $(".arrastrable").draggable({
           cursor: 'move',
+          revert: true,
           drag: function(){
               $reloj.timer('start');
           }
@@ -151,46 +157,23 @@
                   var elem = $(this),
                       correctos = $('.fa-check-circle');
                   if (imgArrastrada.attr('id') == elem.data("img")) {
-                      imgArrastrada.siblings('i').addClass('fa-check-circle')
+                      imgArrastrada.siblings('i').addClass('fa-check-circle');
                       imgArrastrada.draggable({
                           disabled: true,
-                          revert: false,
-                          containment: 'parent',
+                          revert: true
+                          //containment: 'parent',
                       }).detach().css({top: 0,left: 0}).appendTo(this);
                       if(correctos.length == 8){
                           $reloj.timer('stop');
-                          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+                          mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
                       }
-
-
-                  } else {
+                  }else {
                       imgArrastrada.draggable({
                           revert: true
                       });
                   }
-
-
-
           }
       });
-
-
-
-
-
-
-
-
-
-
   }//start
-
-
-
-
-  
-
-  
-
 
 </script>

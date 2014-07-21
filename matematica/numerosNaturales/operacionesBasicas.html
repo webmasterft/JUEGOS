@@ -47,12 +47,14 @@
 
          <div id="instrucciones">
             <ol>
-            <li>Elige la actividad que deseas realizar</li>
-            <li>Realiza la actividad</li>
-            <li>Haz clic sostenido en la respuesta que crees que es la correcta, y arrástralo hasta el plato vacío.</li>
-            <li>Si su respuesta es correcta, podrás repetir la actividad</li>
+            <li>Elige la operación que deseas realizar.</li>
+            <li>Calcula la operación si puedes mentalmente o recurre a papel y lápiz. Luego, determina cuál es la pesa que tiene la respuesta correcta, haz clic sostenido y arrástrala hasta la balanza.</li>
+            <li>Si la respuesta es correcta podrás realizar otra operación.</li>
             </ol>
          </div>
+
+
+
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
@@ -92,7 +94,9 @@
         menuTemplate = $('#menuTemplate'),
         menu = $('#menu'),
         min = 0,
-        max = 0,     
+        max = 0, 
+        respuestaOK = 0,
+        temp = 0;   
         menuItems = [
             { 
               texto: 'Sumar',
@@ -138,12 +142,14 @@
             var number1 = aleatorio(100,999,1),
                 number2 = aleatorio(100,999,1),
                 operacion = "+";
+                signo = '+';
           break;
 
           case 2:
             var number1 = aleatorio(100,999,1),
                 number2 = aleatorio(100,999,1),
                 operacion = "-";
+                signo = '-';
                 
                 if(number1 < number2){
                   var numberTemp = number1;
@@ -157,6 +163,7 @@
             var number1 = aleatorio(100,999,1),
                 number2 = aleatorio(10,99,1),
                 operacion = "*";
+                signo = 'x'
                  
           break;
 
@@ -164,32 +171,36 @@
             var number1 = aleatorio(1000,9999,1,1),
                 number2 = aleatorio(1,9,1,1),
                 operacion = "*";
+                signo= 'x';
           break;
 
           case 5:
             var number1 = aleatorio(1000,9999,1,1),
                 number2 = aleatorio(1,9,1,1),
                 operacion = "/";
+                signo = '&divide;';
           break;  
   
         }//swtich
         
         if(id > 3){
-          respuestaOK = eval(number1 + operacion + number2).toFixed(2);
+          respuestaOK = parseFloat(eval(number1 + operacion + number2));
+          //respuestaOK = parseFloat(respuestaOK).toFixed(2);
         
         }else{
           respuestaOK = eval(number1 + operacion + number2);
         }
 
-        contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  operacion + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>');
+        contenedor.html('<div id="balanza"></div><div id="operacion"> <p>' + number1 + '<br/>' +  signo + ' ' +  number2  +'</p></div><div id="pesos"></div><div id="contCorrecto" class="contCorrecto"></div>');
       
-        var temp = respuestaOK
+        temp = respuestaOK;
+        
         for (var i = 0; i < 3; i++) {
           temp+=5;
-          $('#pesos').append('<div class="peso arrastrable">'+ temp + '</div>');
+          $('#pesos').append('<div class="peso arrastrable">'+ temp.toFixed(2) + '</div>');
         }
         
-        $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK +'</div>');
+        $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK.toFixed(2) +'</div>');
         
 
         $.each($('#pesos'), function(index, val) {

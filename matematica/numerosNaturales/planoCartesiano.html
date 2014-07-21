@@ -55,12 +55,15 @@
 
          <div id="instrucciones">
             <ol>
-            <li>Haz click en las coordenas del plano que corresponda a los pares indicados.</li>
-            <li>Continúa con las demás coordenadas.</li>
-            <li>Al final podrás repetir el juego.</li>
+            <li>Haz click en las coordenas del plano, según corresponda el punto de intersección que indican los pares ordenados.</li>
+            <li>Continúa con las demás coordenadas y hazlo en el menor tiempo posible.</li>
+            <li>Al final podrás repetir el juego con otro orden.</li>
             </ol>
          </div>
-        
+ 
+
+
+       
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
@@ -105,7 +108,7 @@
     }
 
     for(i=0;i<9;i++){
-      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> - <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
+      paresOrdenados += '<li data-pares="'+ ejeX[i] + '-' + ejeY[i] + '">( <img src="img/figuras/' + ejeX[i] +'.jpg" witdh="35" height="35"> ; <img src="img/figuras/' + ejeY[i] + '.jpg" witdh="35" height="35"> ) </li>'
     }
 
     plano.html(puntos);
@@ -153,7 +156,7 @@
               left: "-=7px"
             }).addClass('ordenadoOk').html(contador);
             if(contador == 9){
-              mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+              mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
               $reloj.timer('stop');
             }//if contador  
 

@@ -56,12 +56,15 @@
 
          <div id="instrucciones">
             <ol>
-            <li>Haz click en las coordenas del plano que corresponda a los pares indicados.</li>
-            <li>Continúa con las demás coordenadas.</li>
-            <li>Al final podrás repetir el juego.</li>
+            <li>Observa las letras ubicadas en el plano cartesiano y escribe en la tabla el par ordenado al que corresponde. </li>
+            <li>Continúa digitando los otros pares ordenados y hazlo en el menor tiempo posible.</li>
+            <li>Al final podrás repetir el juego con otro orden.</li>
             </ol>
          </div>
-        
+     
+
+
+   
 
          <div id="nav">
             <button id="instrucciones" class="pulse">Instrucciones</button>
@@ -94,12 +97,14 @@
         itemsPlano = ['A','B','C','D','E','F','G','H','I'],
         itemsX = itemsY = [],
         coordenadas = respuestas = [],
+        coorInfo = [];
         contAux = contador = 0;
         ejeY = ejeY.reverse();
 
     for(var i=1; i<=9; i++){
         for(var j=1; j<=9; j++){
           coordenadas.push(i + '-' + j);
+          coorInfo.push(i + ';' + j);
         }
     }
 
@@ -107,8 +112,8 @@
       //img = aleatorio(0, 18,9);
 
       $.each(num, function(index, val){
-          puntos +='<div class="p'+ coordenadas[val] + '">'+ itemsPlano[index] +'</div>';
-          paresOrdenados += '<li data-id=' + itemsPlano[index] +'>' + itemsPlano[index] +'  ( <input type="text" name="'+ itemsPlano[index] +'" placeholder="x-y" maxlength="3" size="3">) <i class="fa"></i></li>';
+          puntos +='<div data-resp="'+  coorInfo[val] +'"  class="p'+ coordenadas[val] + '" >'+ itemsPlano[index] +'</div>';
+          paresOrdenados += '<li data-id=' + itemsPlano[index] +'>' + itemsPlano[index] +'  ( <input type="text" name="'+ itemsPlano[index] +'" placeholder="x;y" maxlength="3" size="3">) <i class="fa"></i></li>';
       });
 
 
@@ -143,7 +148,7 @@
 
         punto = plano.find('div:contains('+ name +')');
 
-        if(respuesta == punto.attr('class').slice(1) && respuesta != ' '){
+        if(respuesta == punto.data('resp') && respuesta != ' '){
           punto.addClass('ordenadoOk');
           $(this).prop('disabled', true).css({ opacity: 0.7})
           .siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
@@ -154,32 +159,10 @@
 
         
         if(ordenadoOk.length == 9){
-          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+          mostrarMensaje('<h2>¡¡¡Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
           $reloj.timer('stop');
         }
       }//keyup
     });
-
-    
-
-    $('#verificar').on('click', function(){
-        if(ordenadoOk.length == 9){
-          mostrarMensaje('<h2>Bien Hecho!!!</h2> <p>Lo hiciste en ' + $reloj.text() + '</p> <button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
-          $reloj.timer('stop');
-        }else{
-          mostrarMensaje('<h2>Sigue jugando que el tiempo corre!!!</h2> <button class="button pulse" onclick="cerrarMensaje();">Juega otra vez</button>');
-        }
-      });
-
-
   }//start
-
-
-
-
-  
-
-  
-
-
 </script>
