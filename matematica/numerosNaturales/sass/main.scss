@@ -3,7 +3,7 @@
 @import "normal.scss";
 @import "hover.scss";
 @import "compass/css3";
-//@import "../../../libs/css/jquery-ui.css";
+
 
 
 
@@ -630,6 +630,35 @@ body{
   // }
   
   
+
+  div#cuenta {
+    position: absolute;
+    bottom: 153px;
+    left: 50px;
+    width: 220px;
+    p{
+      margin-bottom: 5px;
+      padding:2px 10px;
+      span{
+        font-weight: bold;
+      }
+    }
+
+      #correctas{
+          background:$color-verdeBack;
+          color:$color-blanco;    
+        }
+
+        #incorrectas{
+          background:$color-rojo;
+          color:$color-blanco;    
+        }
+
+        #respuesta{
+          background:$color-verdefosf;
+          color:$color-negro;    
+        }
+  }
 
 #crono{
   background: url('../../../libs/img/reloj.png') no-repeat;

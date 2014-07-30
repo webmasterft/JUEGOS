@@ -25,19 +25,19 @@
             </div>
             
 
-            <div id="content">
-              <!--<div id="numero"></div>-->
-              <div class="clear"></div>
-              <div id="var">
+              <div id="content">
+                
                   
-
-
-              
-              </div><!-- var-->
-              <div id="successMessage">           
+                  <div id="var"></div><!-- var-->
+                  <div id="cuenta">
+                    <p id="correctas"> Correctas : <span>0</span></p>
+                    <p id="incorrectas">Incorrectas: <span>0</span></p>
+                    <p id="respuesta" style="display:none;">La respuesta correcta es: <span></span></p>
+                  </div>
+                             
               </div>
               <div id="crono"><div id="t" class="badge">00:00</div></div>
-            </div><!-- content -->
+            
         </div><!-- main -->
 
          <div id="logos">
@@ -96,7 +96,9 @@
         min = 0,
         max = 0, 
         respuestaOK = 0,
-        temp = 0;   
+        temp = 0,
+        correctas = 0,
+        incorrectas = 0,   
         menuItems = [
             { 
               texto: 'Sumar',
@@ -132,11 +134,10 @@
 
     menu.find('ul > li').on('click', function(){
       var id = $(this).data('id');
-      cerrarMensaje();
-      $reloj.timer('stop');
+      
       crono.fadeIn();
       $reloj.timer('start');
-
+      $('#respuesta').hide();
       switch (id){
           case 1:
             var number1 = aleatorio(100,999,1),
@@ -154,7 +155,6 @@
                 if(number1 < number2){
                   var numberTemp = number1;
                   number1 = number2;
-                  number2 = numberTemp;
                 } 
                
           break;
@@ -185,7 +185,7 @@
         
         if(id > 3){
           respuestaOK = parseFloat(eval(number1 + operacion + number2));
-          //respuestaOK = parseFloat(respuestaOK).toFixed(2);
+          
         
         }else{
           respuestaOK = eval(number1 + operacion + number2);
@@ -197,10 +197,10 @@
         
         for (var i = 0; i < 3; i++) {
           temp+=5;
-          $('#pesos').append('<div class="peso arrastrable">'+ temp.toFixed(2) + '</div>');
+          $('#pesos').append('<div class="peso arrastrable">'+ temp.toFixed(2).replace(/\.00$/, '')+ '</div>');
         }
         
-        $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK.toFixed(2) +'</div>');
+        $('#pesos').append('<div class="peso correcto arrastrable">'+ respuestaOK.toFixed(2).replace(/\.00$/, '')+'</div>');
         
 
         $.each($('#pesos'), function(index, val) {
@@ -208,28 +208,39 @@
         });
 
 
-
+      
+      
       $(".arrastrable").draggable({
-          cursor: 'move',
-          revert: true
+        drag: function( event, ui ) {
+            var elemento = $(this);
+        },
+        cursor:'move',
+        snap: ".contCorrecto",
+        snapMode:'inner'
+        //revert: true
       });
+      
       $(".arrastrable").data("soltado", false);
       
       //defino elementos donde se puede soltar
       $(".contCorrecto").droppable({
         drop: function( event, ui ) {
-          if (!ui.draggable.data("soltado")){
-            ui.draggable.data("soltado", true);
-            ui.draggable.draggable( 'option', 'revert', false );
+          var elemento = ui.draggable;
+            elemento.draggable( "disable" ).siblings().remove();
             $reloj.timer('stop');
-            mostrarMensaje('<h2>Bien Hecho!!!</h2><p>Lo hiciste en ' + $reloj.text() + '</p><button class="button pulse" onclick="start()">Haz clic aquí para empezar de nuevo</button>');
+            if(elemento.hasClass('correcto')){
+              $('#correctas span').html(++correctas);
+             
+
+            }else{
+              $('#incorrectas span').html(++incorrectas);  
+               $('#respuesta span').html(respuestaOK.toFixed(2).replace(/\.00$/, '')).parent().fadeIn();
+            }
           }
-        }
-        
       });
       
       
-      $("#contCorrecto").droppable("option", "accept", ".correcto");
+     
       
 
         
