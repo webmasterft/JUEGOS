@@ -25,17 +25,20 @@
               <div class="clear"></div>
               <div id="var">
                 
-                <div id="panel1">
-                  <p id="inst">Escribe la oración:</p>
-                  <input type="text" name="frase" id="frase">
-                  <i class="fa fa-power-off text-danger fa-4x p-l-15"></i>
-                  
-                  <div id="maquinaCont">
-                    <img src="img/maquina.jpg" width="423" height="400">
-                  </div>
-                  <button class="button pulse" id="continuar">Continuar</button>
-                </div>
                 
+                  <div id="panel1">
+                    <p id="inst">Escribe la oración:</p>
+                    <input type="text" name="frase" id="frase">
+                  </div>
+                  <div id="maquinaCont">
+                    <img src="img/maquina.jpg" width="350" height="350">
+                  </div>
+                  
+                  <div id="panel2">
+                    
+
+                  </div>
+
               </div><!-- var-->
               <div id="successMessage">           
               </div>
@@ -114,8 +117,8 @@
     menu.find('ul li').on('click', function(){
       id = $(this).data('id');
       $('#panel1').fadeIn();
+      $('#maquinaCont').fadeIn();
       folderImg = id;
-      console.log(folderImg);
       if(id==1){
         canastas = 9;
       }else{
@@ -126,15 +129,14 @@
 
 
 
-    $('i.fa-power-off').on('click', function(){
-      
+    $('#maquinaCont').on('click', function(){
       frase = $.trim($('input#frase').val());
       if(frase!=''){
         frase = frase.split(' '); 
         frase = shuffle(frase);
         if(frase.length > 1 && frase.length < 13){
-          $('#maquinaCont').find('img').hide();
-          $('#maquinaCont').flash({ swf:'img/maquina.swf', width:423, height:400});
+          $(this).find('img').hide();
+          $(this).flash({ swf:'img/maquina.swf', width:350, height:350});
           $('#continuar').fadeIn();
         }else{
            mostrarMensaje('<h2>Debes escribir de 2 a 12 palabras</h2><p>Has escrito '+ frase.length +' palabras</p><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
@@ -142,7 +144,47 @@
       }else{
         mostrarMensaje('<h2>Escribe hasta 12 palabras para empezar el juego</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
       }
+
+
+     
+      var palabras1 = '',
+          palabras = '';
+      
+      palabras1 +='<div id="inst2"><p>Coloca las palabras en su sitio:</p></div><ul id="palabras">';  
+      palabras +='<ul id="palabras">';    
+
+      $.each(frase, function(index) {
+        palabras += '<li class="arrastrable">' + frase[index] +'</li>';
+      });
+
+      palabras +='<div class="clear"></div></ul><ul id="canastas">';
+      for(var i=1; i<=canastas;i++){
+        palabras += '<li class="receptor"><img src="img/canastas/'+ id +'/'+ i +'.png" width="130" height="80"></li>';
+      }     
+      $('#panel1').html(palabras1).css('width', '392').find('#inst2').css('width', '345');
+      $('#panel2').html(palabras);    
+
+    //defino los elementos que se pueden arrastrar
+    $(".arrastrable").draggable({
+      cursor: 'move',
+      drag: function(){
+        $(this).removeClass('dropped');
+      }
+              //revert: true
     });
+
+    //defino elementos donde se puede soltar
+    $(".receptor").droppable({
+      drop: function( event, ui ){
+        var arrastrado = ui.draggable;
+        var elem = $(this);
+        arrastrado.addClass('dropped');
+      }
+    });
+
+
+
+    });//maquina cont
 
     
 
@@ -157,7 +199,7 @@
 
       palabras +='<div class="clear"></div></ul><ul id="canastas">';
       for(var i=1; i<=canastas;i++){
-        palabras += '<li class="receptor"><img src="img/canastas/'+ id +'/'+ i +'.png" width="150" height="100"></li>';
+        palabras += '<li class="receptor"><img src="img/canastas/'+ id +'/'+ i +'.png" width="115" height="64"></li>';
       }     
       
       $('#var').html(palabras);    
