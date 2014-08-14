@@ -1,0 +1,886 @@
+/*general*/
+body, html{
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.logo_digiaulas{
+    width: 327px;
+    height: 101px;
+    display: block;
+    position: absolute;
+}
+
+.btn-area{
+    position: absolute;
+    right: 40px;
+    width: 220px;
+    height: 280px;
+    top: 5px;
+    text-align: center;
+}
+.inicio_md{
+    display: inline-block;
+    margin-bottom: 4px;
+    background: #27A6DD;
+    padding: 5px 10px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+    transition:  all .4s ease-in-out;
+}
+.counter{
+    width: 420px;
+    display: block;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    z-index: 210;
+    margin-left: -210px;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 6px solid #ffffff;
+    background: #ED5A29;
+    font-size: 9px;
+}
+
+.counter.blue{
+    background: #1C75B8;
+}
+.counter.c_p2{
+    top: 30px;
+    right: 10px;
+    left: auto;
+    bottom: auto;
+}
+
+.counter .cnt{
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.counter .cnt div{
+    font-size: 40px;
+}
+.counter .cnt:last-child{
+    border-left: 6px solid #ffffff;;
+}
+.inactive{
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 10;
+    position: absolute;
+}
+
+.logo_digiaulas.logo_digiaulas_s2{
+    width: 200px;
+    height: 62px;
+}
+
+.list-ent{
+    display: block;
+    background: #27A6DD;
+    color: #ffffff;
+    padding: 10px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    width: auto;
+    position: relative;
+}
+
+.margin-b-20{
+    margin-bottom: 20px;
+}
+.margin-b-10{
+    margin-bottom: 10px;
+}
+
+.container, .container_section{
+    width: 940px;
+    height: 600px;
+}
+.container{
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+.section_3{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 2820px;
+    height: 600px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.item_section{
+    display: inline-block;
+    position: relative;
+    float: left;
+}
+.bg_tp1{
+    background: url("../images/bg_t1.jpg");
+}
+
+.bg_tp2{
+    background: url("../images/bg_t2.jpg");
+}
+
+.bg_presidentes{
+    background: url("../images/bg_presidentes.jpg");
+}
+
+.logo_p1{
+    top: 70px;
+    left: 95px;
+}
+
+.logo_p2{
+    bottom: 0px;
+    right: 140px;
+}
+.logo_p2 img{
+    width: 100%;
+}
+
+.tit{
+    width: 320px;
+    height: 154px;
+    display: block;
+    position: absolute;
+}
+.tit_p1{
+    top: 220px;
+    left: 20px;
+}
+
+.tit_p2{
+    bottom: 10px;
+    left: 20px;
+}
+
+.tit.tit_s2{
+    width: 200px;
+    height: 96px;
+    display: block;
+    position: absolute;
+    z-index: 30;
+}
+.tit.tit_s2 img{
+    width: 100%;
+}
+
+.inicio_bt{
+    display: block;
+    position: absolute;
+    background: #27A6DD;
+    padding: 20px 30px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+    transition:  all .4s ease-in-out;
+}
+
+.inicio_bt_2{
+    display: block;
+    position: absolute;
+    background: #27A6DD;
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+    transition:  all .4s ease-in-out;
+}
+
+
+.inicio_bt:hover, .inicio_bt_2:hover{
+    background: #3B51A3;
+    -moz-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    -webkit-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    -o-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    -ms-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    transform: scale(1.2) rotate(0deg) translateX(-3px);
+}
+
+.bt_prs{
+    right: 60px;
+    top: 100px;
+}
+.bt_prs2{
+    right: 60px;
+    top: 60px;
+}
+.bt_prs3{
+    right: 60px;
+    top: 150px;
+}
+.introduction_t1{
+    display: block;
+    position: absolute;
+    width: 555px;
+    height: 155px;
+}
+.introduction_t1 h1{
+    font-size: 35px;
+    font-weight: normal;
+    margin: 5px 0;
+}
+.introduction_t1 ol{
+    font-size: 14px;
+}
+.introduction_t1 ol li{
+    padding: 6px 0px;
+}
+
+.introduction_t1.it1{
+    bottom: 70px;
+    left: 140px;
+}
+
+.text-white{
+    color: #ffffff;
+}
+.reloj{
+    background: url("../images/reloj.png") center no-repeat;
+    width: 105px;
+    height: 149px;
+    position: absolute;
+    z-index: 5;
+}
+
+.center{text-align: center}
+.left{text-align: left}
+.rp1{
+    right: 250px;
+    top: 10px;
+}
+.rp2{
+    right: 50px;
+    top: 10px;
+}
+.reloj_data{
+    margin: 87px auto 0;
+    width: 55px;
+    border: 0px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/*presidents drag stiles*/
+#presidentsName{
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 220px;
+    height: 460px;
+}
+#presidentsName .ui-draggable{
+    display: inline-block;
+    float: left;
+    width: 94px;
+    height: 150px;
+    margin: 2px 5px;
+}
+
+#presidentsName .ui-draggable.correct img{
+    position: absolute;
+    margin-top: 160px;
+}
+
+
+#presidentsPhoto{
+    display: block;
+    position: absolute;
+    top: 165px;
+    left: 40px;
+}
+
+#presidentsPhoto .ui-droppable{
+    display: inline-block;
+    float: left;
+    width: 94px;
+    height: 310px;
+    margin: 2px 5px;
+    background: url("../images/presidentes/area.png") bottom no-repeat;
+}
+
+#presidentsPhoto .ui-droppable.hovered{
+    opacity: .5;
+}
+
+#successMessage, #instrucciones{
+    display: block;
+    background: #3B51A3;
+    color: #ffffff;
+    padding-right: 20px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
+    width: 380px;
+    height: 250px;
+    text-align: center;
+    margin-top: -125px;
+    margin-left: -190px;
+    position: absolute;
+    z-index: 350;
+    left: 50%;
+    top: 50%;
+}
+#successMessage h2, #instrucciones h2{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 15px 0px;
+}
+#successMessage button, #instrucciones button{
+    background: none transparent;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    width: 80%;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.footer_btn{
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    left: 230px;
+}
+.footer_btn a{
+    padding: 4px 10px;
+    margin:  0 5px;
+    display: inline-block;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+.footer_btn a:hover{
+    background: rgba(256,256,256,.4);
+}
+/*end presidents drag stiles*/
+
+
+/*entornos styles*/
+    #entornos{
+        display: block;
+        position: absolute;
+        width: 500px;
+        height: 415px;
+        background: #ffffff url("../images/entornos/fondo.jpg") top center no-repeat;
+        top: 40px;
+        left: 50px;
+    }
+    #entornosElement{
+        display: block;
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        width: 330px;
+        height: 413px;
+    }
+    .itm1{
+        height: 50px;
+    }
+    .itm2{
+        height: 110px;
+    }
+    .itm3{
+        height: 140px;
+    }
+    .itm1 .container-ent div{
+        display: inline-block;
+        width: 33%;
+        padding: 9px 5px;
+        box-sizing: border-box;
+        -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+        transition:  all .4s ease-in-out;
+    }
+    .itm1 .container-ent div:hover{
+        -moz-transform: scale(1.2) rotate(0deg);
+        -webkit-transform: scale(1.2) rotate(0deg);
+        -o-transform: scale(1.2) rotate(0deg);
+        -ms-transform: scale(1.2) rotate(0deg);
+        transform: scale(1.2) rotate(0deg);
+    }
+    .itm2 .container-ent div.ui-draggable{
+        display: inline-block;
+        width: 33%;
+        padding: 9px 5px;
+        box-sizing: border-box;
+        line-height: 100px;
+        height: 100px;
+        overflow: hidden;
+        cursor: move;
+    }
+
+
+    .itm3 .container-ent div.ui-draggable{
+        display: inline-block;
+        width: 49%;
+        padding: 9px 5px;
+        box-sizing: border-box;
+        line-height:30px;
+        height: 70px;
+        overflow: hidden;
+        cursor: move;
+        text-align: center;
+    }
+
+    .itm3 .container-ent div.ui-draggable img{
+        height: 100%;
+        width: auto;
+    }
+
+
+    .itm2 .container-ent div.ui-draggable:hover, .itm3 .container-ent div.ui-draggable:hover{
+        border: 4px solid #ffffff;
+        border-radius: 8px;
+    }
+    .itm2 .container-ent div.ui-draggable.ui-state-disabled:hover, .itm3 .container-ent div.ui-draggable.ui-state-disabled:hover{
+        border: 0px solid #ffffff;
+        border-radius: 0px;
+        cursor: default;
+    }
+    .itm2 .container-ent div.ui-draggable img{
+        width: 100%;
+    }
+    .itm1 .container-ent div img{
+        width: 100%;
+        cursor: pointer;
+    }
+    .entornoName{
+        display: inline-block;
+        background: #27A6DD;
+        color: #ffffff;
+        padding: 2px 5px;
+        border: 4px solid #ffffff;
+        border-radius: 5px;
+        width: auto;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .suelos_img{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    #dropEntorno{
+        display: block;
+        width: 100%;
+        height: 100%;position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 10;
+    }
+    #entornos.ui-droppable.hovered{
+        box-sizing: border-box;
+        opacity: .5;
+    }
+
+.itm2 .container-ent div.ui-draggable.correct, .itm3 .container-ent div.ui-draggable.correct{
+    overflow: inherit;
+}
+.itm2 .container-ent div.ui-draggable.correct img{
+    height: 160px;
+    width: auto;
+    float: right;
+    margin-top: -100px;
+}
+
+.itm3 .container-ent div.ui-draggable.correct img{
+    height: 140px;
+    width: auto;
+    float: left;
+    margin-left: 20px;
+    margin-top: -80px;
+}
+
+/*end entornos styles*/
+
+
+/*gotas*/
+#gotas{
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 10px;
+    width: 880px;
+    height: 475px;
+    overflow: hidden;
+    background: url("../images/gotas_bg.jpg") center no-repeat;
+}
+#gotas_content{
+    width: 700px;
+    margin:auto;
+    height: 475px;
+}
+.gota {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    width:49px;
+    height:80px;
+    background:url("../images/gotas.png");
+    opacity: .5;
+    cursor: pointer;
+}
+.gota:hover {
+    opacity: 1!important;
+}
+/*end gotas*/
+
+
+/*clasificacion*/
+#clasificacion{
+    display: block;
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    left: 100px;
+    top: 40px;
+}
+#clasificacion img{
+    max-height: 220px;
+}
+.clasificacion_tit{
+    display: block;
+    position: absolute;
+    top: 310px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    left: 50px;
+    width: 840px;
+}
+.titulosClasificacion{
+    display: block;
+    position: absolute;
+    top: 370px;
+    text-align: center;
+    font-size: 24px;
+    color: #ffffff;
+    left: 50px;
+    width: 840px;
+}
+.titulosClasificacion div{
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 5px 10px;
+    background: #ED5A29;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: all .4s ease-in-out; /* For Safari 3.1 to 6.0 */
+    transition:  all .4s ease-in-out;
+}
+.titulosClasificacion div:hover{
+    -moz-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    -webkit-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    -o-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    -ms-transform: scale(1.2) rotate(0deg) translateX(-3px);
+    transform: scale(1.2) rotate(0deg) translateX(-3px);
+    background: #CE3F19;
+}
+/*end clasificacion*/
+
+
+/*ciclos*/
+#ciclosName{
+    display: block;
+    width: 340px;
+    height: 327px;
+    position: absolute;
+    right: 40px;
+    top: 20px;
+    background: #ED5A29;
+    border-radius: 10px;
+    border: 4px solid #ffffff;
+    padding-top: 130px;
+    text-align: center;
+}
+
+.ciclostt{
+    display: block;
+    width: 340px;
+    height: 60px;
+    position: absolute;
+    right: 40px;
+    top: 45px;
+    color: #ffffff;
+    font-size: 25px;
+    text-align: center;
+    z-index: 10;
+    font-weight: bold;
+}
+#ciclosName div{
+    display: inline-block;
+    width: 112px;
+    height: 130px;
+    z-index: 15!important;
+}
+
+#ciclosName div img{
+    max-width: 110px;
+    height: 100%;
+    width: auto;
+}
+
+#ciclosPhoto{
+    display: block;
+    width: 490px;
+    height: 440px;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    z-index: 10;
+}
+
+#ciclosPhoto div{
+    display: block;
+    position: absolute;
+    width: 247px;
+    height: 146px;
+
+}
+
+.container_ciclos{
+    width: 490px;
+    height: 490px;
+    position: absolute;
+    z-index: 1;
+    left: 40px;
+    top: 12px;
+    background: url("../images/ciclo.png") center no-repeat;
+    pointer-events:none;
+}
+
+#ciclosPhoto div.hovered{
+    opacity: .4;
+}
+
+
+#ciclosName div.ui-draggable:hover{
+    border: 4px solid #ffffff;
+    border-radius: 8px;
+    cursor: move;
+    box-sizing: border-box;
+}
+
+#ciclosName div.ui-draggable.correct:hover{
+    border: 0px;
+    cursor: default;
+}
+
+#ciclosName div.ui-draggable.correct img{
+    max-width: 100%;
+}
+
+.rotar_1{
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg); /* IE 9 */
+    -webkit-transform:rotate(0deg); /* Opera, Chrome, and Safari */
+}
+.rotar_2{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); /* IE 9 */
+    -webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
+}
+.rotar_3{
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); /* IE 9 */
+    -webkit-transform:rotate(180deg); /* Opera, Chrome, and Safari */
+}
+.rotar_4{
+    transform:rotate(270deg);
+    -ms-transform:rotate(270deg); /* IE 9 */
+    -webkit-transform:rotate(270deg); /* Opera, Chrome, and Safari */
+}
+
+.ciclo_1{
+    top: -12px;
+    left: 150px;
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg); /* IE 9 */
+    -webkit-transform:rotate(0deg); /* Opera, Chrome, and Safari */
+}
+
+.ciclo_2{
+    top: 170px;
+    left: 285px;
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg); /* IE 9 */
+    -webkit-transform:rotate(90deg); /* Opera, Chrome, and Safari */
+}
+
+.ciclo_3{
+    top: 310px;
+    left: 105px;
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); /* IE 9 */
+    -webkit-transform:rotate(180deg); /* Opera, Chrome, and Safari */
+}
+
+.ciclo_4{
+    top: 135px;
+    left: -45px;
+    transform:rotate(270deg);
+    -ms-transform:rotate(270deg); /* IE 9 */
+    -webkit-transform:rotate(270deg); /* Opera, Chrome, and Safari */
+}
+
+/*olimpiadas*/
+
+#jugador1, #jugador2{
+    display: block;
+    width: 350px;
+    height: 220px;
+    top: 70px;
+    position: absolute;
+}
+#jr1{
+    left: 83px;
+}
+#jr2{
+    left: 453px;
+}
+#jr1, #jr2{
+    display: block;
+    position: absolute;
+    top: 20px;
+    width: 190px;
+    height: 25px;
+    padding: 0 20px!important;
+    border-radius: 10px;
+    border: 2px solid #006838;
+    font-size: 16px;
+}
+#jugador1{
+    left: 40px;
+}
+#jugador2{
+    left: 410px;
+}
+
+.audio_item input{
+    display: inline-block;
+    position: relative;
+    top: -14px;
+    left: 10px;
+    width: 190px;
+    height: 25px;
+    padding: 0 20px!important;
+    border-radius: 10px;
+    border: 2px solid #A72300;
+}
+
+.olimpiadas_btn{
+    display: block;
+    position: absolute;
+    padding: 4px 10px;
+    background: #8E278B;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 11px;
+    top: 290px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.bt_o1{
+    left: 130px;
+}
+.bt_o2{
+    left: 500px;
+}
+
+.sn_status{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    left: 15px;
+    top: -5px;
+}
+
+.ol_result{
+    display: block;
+    position: absolute;
+    top: 340px;
+    width: 170px;
+    height: 80px;
+    background: #27A6DD;
+    border: 4px solid #ffffff;
+    border-radius: 6px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 11px;
+    padding-top: 10px;
+    line-height: 8px;
+}
+.ol_result .in_sep{
+    margin-top: 5px;
+    display: inline-block;
+    height: 52px;
+}
+.aciertos_ol, .fallos_ol{
+    width: 78px;
+    height: 52px;
+}
+.sep_ol{
+    height: 52px;
+    width: 4px;
+    background: #ffffff;
+}
+.aciertos_count{
+    display: block;
+    width: 78px;
+    height: 45px;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 49px;
+}
+
+.ac_ol_1{
+    left: 100px;
+}
+.ac_ol_2{
+    left: 470px;
+}
+
+.olimpiadas_level_info{
+    display: block;
+    padding: 3px 20px;
+    background: #27A6DD;
+    border: 4px solid #ffffff;
+    font-size: 24px;
+    top: 140px;
+    right: 30px;
+    position: absolute;
+    border-radius: 8px;
+    color: #ffffff;
+    font-weight: bold;
+}

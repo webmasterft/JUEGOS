@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <div class="wrapper memoria" id="descomposicion">
+        
+        <div id="main">
+
+            <div id="menu">
+               
+            </div>
+            
+
+            <div id="content">
+              <div class="clear"></div>
+              <div id="var">
+                <div id="cartasCont"></div>
+              </div><!-- var-->
+              <div id="successMessage">           
+              </div>
+
+            </div><!-- content -->
+        </div><!-- main -->
+
+         <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
+        </div><!--logos -->
+
+         <div id="instrucciones">
+            <ol>
+              <li>Caligrafía: Encuentra la palabra en imprenta y su pareja en manuscrita.</li>
+              <li>Sinónimos: Encuentra la palabra y su sinónimo correspondiente.</li>
+              <li>Antónimos: Encuentra la palabra y su antónimo correspondiente.</li>
+            </ol>
+         </div>
+        
+
+         <div id="nav">
+            <button id="instrucciones" class="pulse">Instrucciones</button>
+            <button id="regresar" class="pulse">Regresar</button>
+         </div><!--nav-->
+         <img id="titulo" src="img/memoria.png" width="202" height="94">
+         <img id="avatar" src="img/muneco2.png" width="110" height="137">
+
+      </div><!-- contenedor -->
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
+
+    
+    </body>
+</html>
+<script id="menuTemplate" type="text/x-handlebars-template">
+    <p>nivel:</p>
+    <ul> 
+        {{#each this}}
+            <li class="pulse" data-id="{{id}}">{{texto}}</li>
+        {{/each}}
+    </ul>    
+  </script>
+
+<script type="text/javascript">
+
+  $(start);
+  
+  function start(){
+    cerrarMensaje();
+
+    var contenedor = $('#var'),
+        menuTemplate = $('#menuTemplate'),
+        cartasTemplate = $('#cartasTemplate'),
+        cartasCont = $('#cartasCont'),
+        menu = $('#menu'),
+        cartas = '',
+        menuItems = [
+            { 
+              texto: 'Caligrafía',
+              id:'3'
+              
+            },   
+            { 
+              texto: 'Sinónimos',
+              id: '1'
+            },
+            {
+              texto: 'Antónimos',
+              id:'2'                
+            }
+
+        ]// var menu
+
+      template = Handlebars.compile(menuTemplate.html());
+      menu.html(template(menuItems)).hide().fadeIn();
+
+
+        
+      // Hide the success message
+      
+     
+  
+
+    menu.find('ul > li').on('click', function(){
+      var id = $(this).data('id'),
+          cartas = [];
+          itemsAleat = aleatorio(0,2,1);
+      
+      switch(id){
+        case 1:
+            reverso = 'sinonimos';
+            if(itemsAleat==1){
+              items = [
+                {id:'1' , palabra: 'calamidad'}, {id:'1' , palabra: 'catastrofe'},
+                {id:'2' , palabra: 'ascender'}, {id:'2' , palabra: 'subir'},
+                {id:'3' , palabra: 'dadivoso'}, {id:'3' , palabra: 'generoso'},
+                {id:'4' , palabra: 'rapido'}, {id:'4' , palabra: 'veloz'},
+                {id:'5' , palabra: 'mezquino'}, {id:'5' , palabra: 'tacano'},
+                {id:'6' , palabra: 'calma'}, {id:'6' , palabra: 'tranquilidad'},
+                {id:'7' , palabra: 'celebre'}, {id:'7' , palabra: 'famoso'},
+                {id:'8' , palabra: 'fortuna'}, {id:'8' , palabra: 'suerte'},
+                {id:'9' , palabra: 'pelea'}, {id:'9' , palabra: 'pleito'},
+                {id:'10' , palabra: 'delicioso'}, {id:'10' , palabra: 'sabroso'},
+                {id:'11' , palabra: 'labor'}, {id:'11' , palabra: 'trabajo'},
+                {id:'12' , palabra: 'indagacion'}, {id:'12' , palabra: 'investigacion'},
+              ]  
+            
+            }else{  
+              items =[  
+                {id:'1' , palabra: 'cruel'}, {id:'1' , palabra: 'feroz'},
+                {id:'2' , palabra: 'chueco'}, {id:'2' , palabra: 'torcido'},
+                {id:'3' , palabra: 'sucio'}, {id:'3' , palabra: 'turbio'},
+                {id:'4' , palabra: 'engreido'}, {id:'4' , palabra: 'presumido'},
+                {id:'5' , palabra: 'corpulento'}, {id:'5' , palabra: 'robusto'},
+                {id:'6' , palabra: 'esbelto'}, {id:'6' , palabra: 'gallardo'},
+                {id:'7' , palabra: 'espiar'}, {id:'7' , palabra: 'husmear'},
+                {id:'8' , palabra: 'borrasca'}, {id:'8' , palabra: 'vendaval'},
+                {id:'9' , palabra: 'encontrar'}, {id:'9' , palabra: 'hallar'},
+                {id:'10' , palabra: 'olvidar'}, {id:'10' , palabra: 'omitir'},
+                {id:'11' , palabra: 'cosmico'}, {id:'11' , palabra: 'espacial'},
+                {id:'12' , palabra: 'marcial'}, {id:'12' , palabra: 'militar'},
+              ] 
+            } 
+        break;      
+
+        case 2:
+            reverso = 'antonimos';
+            if(itemsAleat==1){
+              items = [
+                {id:'1' , palabra: 'lento'}, {id:'1' , palabra: 'rapido'},
+                {id:'2' , palabra: 'hermoso'}, {id:'2' , palabra: 'horrible'},
+                {id:'3' , palabra: 'caliente'}, {id:'3' , palabra: 'frio'},
+                {id:'4' , palabra: 'blanco'}, {id:'4' , palabra: 'negro'},
+                {id:'5' , palabra: 'guerra'}, {id:'5' , palabra: 'paz'},
+                {id:'6' , palabra: 'abajo'}, {id:'6' , palabra: 'arriba'},
+                {id:'7' , palabra: 'dulce'}, {id:'7' , palabra: 'salado'},
+                {id:'8' , palabra: 'cerca'}, {id:'8' , palabra: 'lejos'},
+                {id:'9' , palabra: 'encontrar'}, {id:'9' , palabra: 'perder'},
+                {id:'10' , palabra: 'entrar'}, {id:'10' , palabra: 'salir'},
+                {id:'11' , palabra: 'derecho'}, {id:'11' , palabra: 'izquierdo'},
+                {id:'12' , palabra: 'brillante'}, {id:'12' , palabra: 'opaco'},
+              ]  
+            
+            }else{  
+              items =[  
+                {id:'1' , palabra: 'miseria'}, {id:'1' , palabra: 'opulencia'},
+                {id:'2' , palabra: 'esclavitud'}, {id:'2' , palabra: 'libertad'},
+                {id:'3' , palabra: 'infortunio'}, {id:'3' , palabra: 'suerte'},
+                {id:'4' , palabra: 'humilde'}, {id:'4' , palabra: 'soberbio'},
+                {id:'5' , palabra: 'especial'}, {id:'5' , palabra: 'ordinario'},
+                {id:'6' , palabra: 'inodoro'}, {id:'6' , palabra: 'oloroso'},
+                {id:'7' , palabra: 'olvidar'}, {id:'7' , palabra: 'recordar'},
+                {id:'8' , palabra: 'pobreza'}, {id:'8' , palabra: 'riqueza'},
+                {id:'9' , palabra: 'benigno'}, {id:'9' , palabra: 'maligno'},
+                {id:'10' , palabra: 'bondad'}, {id:'10' , palabra: 'maldad'},
+                {id:'11' , palabra: 'claro'}, {id:'11' , palabra: 'oscuro'},
+                {id:'12' , palabra: 'complejo'}, {id:'12' , palabra: 'sencillo'},
+              ] 
+            } 
+        break;      
+
+        case 3:
+            reverso = 'caligrafia';
+            itemsAleat = aleatorio(0,3,1);
+            if(itemsAleat==1){
+              items = [
+                {id:'1' , palabra: 'aire-manuscrita'}, {id:'1' , palabra: 'aire'},
+                {id:'2' , palabra: 'bella-manuscrita'}, {id:'2' , palabra: 'bella'},
+                {id:'3' , palabra: 'calor-manuscrita'}, {id:'3' , palabra: 'calor'},
+                {id:'4' , palabra: 'chistosos-manuscrita'}, {id:'4' , palabra: 'chistosos'},
+                {id:'5' , palabra: 'ciclo-manuscrita'}, {id:'5' , palabra: 'ciclo'},
+                {id:'6' , palabra: 'energia-manuscrita'}, {id:'6' , palabra: 'energia'},
+                {id:'7' , palabra: 'femenino-manuscrita'}, {id:'7' , palabra: 'femenino'},
+                {id:'8' , palabra: 'genero-manuscrita'}, {id:'8' , palabra: 'genero'}
+              ]  
+            }else if(itemsAleat==2){    
+              items = [
+                {id:'1' , palabra: 'luz-manuscrita'}, {id:'1' , palabra: 'luz'},
+                {id:'2' , palabra: 'masculino-manuscrita'}, {id:'2' , palabra: 'masculino'},
+                {id:'3' , palabra: 'nomadas-manuscrita'}, {id:'3' , palabra: 'nomadas'},
+                {id:'4' , palabra: 'piojoso-manuscrita'}, {id:'4' , palabra: 'piojoso'},
+                {id:'5' , palabra: 'ilegal-manuscrita'}, {id:'5' , palabra: 'ilegal'},
+                {id:'6' , palabra: 'incolora-manuscrita'}, {id:'6' , palabra: 'incolora'},
+                {id:'7' , palabra: 'insipida-manuscrita'}, {id:'7' , palabra: 'insipida'},
+                {id:'8' , palabra: 'linda-manuscrita'}, {id:'8' , palabra: 'linda'}
+
+              ]  
+            
+            }else{  
+              items =[  
+                {id:'1' , palabra: 'ratita-manuscrita'}, {id:'1' , palabra: 'ratita'},
+                {id:'2' , palabra: 'reciclar-manuscrita'}, {id:'2' , palabra: 'reciclar'},
+                {id:'3' , palabra: 'reducir-manuscrita'}, {id:'3' , palabra: 'reducir'},
+                {id:'4' , palabra: 'respeto-manuscrita'}, {id:'4' , palabra: 'respeto'},
+                {id:'5' , palabra: 'rural-manuscrita'}, {id:'5' , palabra: 'rural'},
+                {id:'6' , palabra: 'salado-manuscrita'}, {id:'6' , palabra: 'salado'},
+                {id:'7' , palabra: 'sol-manuscrita'}, {id:'7' , palabra: 'sol'},
+                {id:'8' , palabra: 'vivo-manuscrita'}, {id:'8' , palabra: 'vivo'}
+              ] 
+            } 
+        break;      
+
+      
+      }//switch
+      
+      items = shuffle(items);
+      $.each(items, function(index, val) {
+        cartas += ' <div class="cartas"><img class="reverso" src="img/cartas/reverso-'+ reverso +'.png"/><img class="front" data-id="'+ items[index].id +'" src="img/cartas/'+ reverso +'/'+ items[index].palabra +'.png"/></div>';
+      });//each
+
+      cartasCont.html(cartas).fadeIn().removeClass().addClass(reverso);
+
+    });
+    
+    var id = [],
+        contador = 0;
+
+    $(document).on('click', 'div.cartas:not(.correcto)' , function(){
+        var img = $(this).find('img.front');
+        //if($('div.cartas.correcto').length < 2){
+            img.fadeIn().addClass('mostrado').siblings().fadeOut();
+            id.push(img.data('id'));
+
+            if(id.length == 2){
+                if(id[0]==id[1]){
+                    $('img.mostrado').removeClass('mostrado').parent('.cartas').addClass('correcto');
+                    id = [];
+                    contador = 0;
+
+                }else{
+                    $('img.mostrado').delay(1000).fadeOut().removeClass('mostrado').siblings().fadeIn();
+                    contador = 0;
+                    id = [];
+                }
+            }//textos length
+
+        //}else{
+           // console.log('no');
+        //}
+
+
+
+
+
+    });//menuButtons.click
+
+
+
+  }//start
+
+</script>

@@ -10,68 +10,41 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
-        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper lengua animalesLocos" id="descomposicion" >
+      <div class="wrapper animalesLocos" id="home">
 
-          <div id="cambiar">
-              <button data-id="extremidades" class="button pulse">Cambiar extremidades</button>
-              <button data-id="tronco" class="button pulse">Cambiar tronco</button>
-              <button data-id="cabeza" class="button pulse">Cambiar cabeza</button>
-          </div>
+        <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="90" height="85">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="300" height="91">
+        </div><!--logos -->
 
-          <img id="extremidades" src="img/animalesLocos/extremidades/1.jpg" width="298" height="500" />
-          <img id="tronco" src="img/animalesLocos/tronco/1.jpg" width="298" height="500"/>
-          <img id="cabeza" src="img/animalesLocos/cabeza/1.jpg" width="298" height="500" />
+        <div class="clear"></div>
 
-
-         <img id="titulo" src="img/escribeOrden.png" width="202" height="94">
-         <img id="avatar" src="img/muneco2.png" width="120" height="126">
-
-      <!--<div id="successMessage"></div>-->
-        <div id="instrucciones">
+        <button id="iniciar" class="pulse">
+            <a href="animalesLocosInterna.html" target="_self">
+                Iniciar
+            </a>
+        </button>
+        <img id="titulo" src="img/animalesLocos.png" width="310" height="149">
+        <img id="avatarhome" src="img/muneco2.png" width="170" height="187">
+        <div id="intrucciones">
+          <p>Instrucciones</p>
           <ol>
-           <li>Crea un nuevo animal combinando cada una de sus partes.</li>
-            <li>Con imaginación, dale un nombre y describe sus características.</li>
+            <li>Observa con atención las imágenes.</li>
+            <li>Pulsa los botones de la parte superior para cambiar las extremidades, el tronco o la cabeza de los animales.</li>
+            <li>Forma el animal fantástico que tú elijas y realiza cualquiera de estas actividades:
+                <ul>
+                    <li>Describe verbalmente al animal, elabora una descripción literaria del animal, inventa una adivinanza acerca de este animal, escribe un cuento acerca de este animal, redacta una descripción científica del animal</li>
+                </ul>
+            </li>    
           </ol>
-        </div><!-- instrucciones -->
-      
+        </div><!-- Instrucciones-->
+        
       </div><!-- contenedor -->
-
-
-    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
-    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
-    <script src="../../libs/js/funciones.js"></script>
-    
     </body>
 </html>
-
-<script type="text/javascript">
-
-$(function(){
-
-    $('button').on('click', function(){
-        numero = aleatorio(1,10,1);
-
-
-        id = $(this).data('id');
-
-        if(id=='extremidades'){
-            console.log('sss');
-            $('img#'+ id).attr('src','img/animalesLocos/extremidades/'+ numero +'.jpg');
-        }else if(id=='tronco'){
-            $('img#'+ id).attr('src','img/animalesLocos/tronco/'+ numero +'.jpg');
-        }else{
-            $('img#'+ id).attr('src','img/animalesLocos/cabeza/'+ numero +'.jpg');
-        }
-
-    });
-
-
-});
-  
-</script>

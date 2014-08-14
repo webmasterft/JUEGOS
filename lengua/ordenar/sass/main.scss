@@ -403,6 +403,16 @@ div {
         }
       }
     }
+
+    &#home #intrucciones {
+      position: absolute;
+      bottom: 95px;
+    }
+    div#instrucciones {
+      top: 241px;
+      width: 362px;
+    }
+
   }
   &.preguntas {
     #menu {
@@ -733,3 +743,59 @@ div.ortogramatron{
     width: 500px;
   }
 }//ortogramatron 
+
+.animalesLocos{
+  .animales{
+    width: 723px;
+    margin:0 auto;
+  }
+
+  &#home #intrucciones {
+    position: absolute;
+    bottom: 52px;
+    left: 136px;
+    color: #fff;
+    width: 607px;
+  }
+
+  #intrucciones {
+    position: absolute;
+    left: 129px;
+    top: 346px;
+    color: #fff;
+    width: 500px;
+  }
+
+  #cambiar{
+    padding: 10px 0;
+    @extend .animales;
+      button.button.pulse {
+      margin: 0 40px;
+    }
+  }
+}
+
+.buscaPalabrasIndex{
+  .panelLeft{
+    width: 295px;
+    float:left;
+    p.inst{
+      font-size: 24px !important;
+      line-height: 21px !important;
+
+    }
+  }
+
+  .panelRight{
+    @extend .panelLeft;
+  }
+ 
+  &#home #intrucciones {
+    position: absolute;
+    bottom: 77px;
+    left: 136px;
+    color: #fff;
+    width: 591px;
+  }
+
+}

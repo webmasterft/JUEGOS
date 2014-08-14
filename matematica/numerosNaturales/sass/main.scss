@@ -72,7 +72,7 @@ body{
 
   #intrucciones{
     position:absolute;
-    bottom:58px;
+    bottom:87px;
     left: 136px;
     color: $color-blanco;
     width: 480px;
@@ -616,12 +616,15 @@ body{
     float: left;
   }
   .contCorrecto{
-    width: 249px;
+    width: 208px;
     height: 97px;
-    position:absolute;
-    top:185px;
+    position: absolute;
+    top: 201px;
     text-align: center;
-    margin: 10px;
+    /* margin: 10px; */
+    left: 336px;
+
+   
   }
   
   // #contCorrecto{
@@ -716,7 +719,8 @@ body{
 
 /* Plano Cartesiano*/
 #descomposicion.cartesiano1{
-
+    
+    
     #menu{
       border:5px solid $color-azulBorde;
       padding:0;
@@ -1322,14 +1326,16 @@ body{
     li{
       width: 20px;
       height: 20px;
-      margin: 0 21px 0 0;
+      margin: 0 20px 0 0;
       line-height: 20px;
       background: $color-rojo;
       font-size: $baseFontSize;
       color:$color-blanco;
       text-align:center;
       @include border-radius( 50% , 50%);
-      
+      &:last-child{
+        margin-left: 5px;
+      }
 
     }
   }//
@@ -1442,3 +1448,10 @@ div.cartesianoArrastraLetras{
       }
       
 }//.cartesianoArrastraLetras
+
+#home.wrapper.descomposicion{
+ #intrucciones{
+      width: 600px;
+      font-size: 12px;
+  }
+}  

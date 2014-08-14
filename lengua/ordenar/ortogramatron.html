@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,228 +10,42 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
-        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 9]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-      <div class="wrapper ortogramatron" id="descomposicion">
-        
-        <div id="main">
-            <div id="content">
-            <div id="menu"></div>
-              <div class="clear"></div>
-              <div id="var">
-                
-                
-                  <div id="panel1">
-                    <p id="inst">Escribe la oración:</p>
-                    <input type="text" name="frase" id="frase">
-                  </div>
-                  <div id="maquinaCont">
-                    <img src="img/maquina.jpg" width="350" height="350">
-                  </div>
-                  
-                  <div id="panel2">
-                    
+      <div class="wrapper" id="home">
 
-                  </div>
-
-              </div><!-- var-->
-              <div id="successMessage">           
-              </div>
-
-            </div><!-- content -->
-        </div><!-- main -->
-
-         <div id="logos">
-          <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
-          <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
+        <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="90" height="85">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="300" height="91">
         </div><!--logos -->
-         <div id="instrucciones">
+
+        <div class="clear"></div>
+
+        <button id="iniciar" class="pulse">
+            <a href="ortogramatronInterna.html" target="_self">
+                Iniciar
+            </a>
+        </button>
+        <img id="titulo" src="img/ortogramatron.png" width="310" height="149">
+        <img id="avatarhome" src="img/muneco2.png" width="170" height="187">
+        <div id="intrucciones">
+          <p>Instrucciones</p>
             <ol>
             <li>Escribe la oración en el campo de texto.</li>
             <li>Activa la Máquina.</li>
             <li>Arrastra cada palabra a la cesta correcta .</li>
             </ol>
-         </div>
-         <div id="nav">
-            <button id="instrucciones" class="pulse">Instrucciones</button>
-            <button id="regresar" class="pulse">Regresar</button>
-         </div><!--nav-->
-         <img id="titulo" src="img/ortogramatron.png" width="202" height="94">
-         <img id="avatar" src="img/muneco2.png" width="110" height="137">
-
+          
+        </div><!-- Instrucciones-->
+        
       </div><!-- contenedor -->
-    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
-    <script src="../../libs/js/jquery-ui.1.10.4.min.js"></script>
-    <script src="../../libs/js/handlebars.min.js"></script>
-    <script src="../../libs/js/funciones.js"></script> 
-    <script src="../../libs/js/jquery.swfobject.1-1-1.min.js"></script> 
-    
-
-    
     </body>
+
+
+
+
 </html>
-<script id="menuTemplate" type="text/x-handlebars-template">
-    <ul> 
-        {{#each this}}
-            <li class="pulse" data-id="{{id}}">{{texto}}</li>
-        {{/each}}
-    </ul>    
-  </script>
-
-
-<script type="text/javascript">
-   $(start);
-  
-  function start(){
-    cerrarMensaje();
-    var palabras = '',
-        frase = '',
-        menuTemplate = $('#menuTemplate'),
-        menu = $('#menu');
-
-         menuItems = [
-            { 
-              texto: 'Nivel 1',
-              id:'1'
-              
-            },   
-            { 
-              texto: 'Nivel 2',
-              id: '2'
-            },
-
-        ]// var menu
-
-      template = Handlebars.compile(menuTemplate.html());
-      menu.html(template(menuItems)).hide().fadeIn();
-    
-    var id = '',
-        folderImg = '',
-        canastas = '';
-    
-    menu.find('ul li').on('click', function(){
-      id = $(this).data('id');
-      $('#panel1').fadeIn();
-      $('#maquinaCont').fadeIn();
-      folderImg = id;
-      if(id==1){
-        canastas = 9;
-      }else{
-        canastas = 8;
-      }
-      menu.remove();
-    }); 
-
-
-
-    $('#maquinaCont').on('click', function(){
-      frase = $.trim($('input#frase').val());
-      if(frase!=''){
-        frase = frase.split(' '); 
-        frase = shuffle(frase);
-        if(frase.length > 1 && frase.length < 13){
-          $(this).find('img').hide();
-          $(this).flash({ swf:'img/maquina.swf', width:350, height:350});
-          $('#continuar').fadeIn();
-        }else{
-           mostrarMensaje('<h2>Debes escribir de 2 a 12 palabras</h2><p>Has escrito '+ frase.length +' palabras</p><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
-        }
-      }else{
-        mostrarMensaje('<h2>Escribe hasta 12 palabras para empezar el juego</h2><button class="button pulse" onclick="cerrarMensaje()">Cerrar</button>');
-      }
-
-
-     
-      var palabras1 = '',
-          palabras = '';
-      
-      palabras1 +='<div id="inst2"><p>Coloca las palabras en su sitio:</p></div><ul id="palabras">';  
-      palabras +='<ul id="palabras">';    
-
-      $.each(frase, function(index) {
-        palabras += '<li class="arrastrable">' + frase[index] +'</li>';
-      });
-
-      palabras +='<div class="clear"></div></ul><ul id="canastas">';
-      for(var i=1; i<=canastas;i++){
-        palabras += '<li class="receptor"><img src="img/canastas/'+ id +'/'+ i +'.png" width="130" height="80"></li>';
-      }     
-      $('#panel1').html(palabras1).css('width', '392').find('#inst2').css('width', '345');
-      $('#panel2').html(palabras);    
-
-    //defino los elementos que se pueden arrastrar
-    $(".arrastrable").draggable({
-      cursor: 'move',
-      drag: function(){
-        $(this).removeClass('dropped');
-      }
-              //revert: true
-    });
-
-    //defino elementos donde se puede soltar
-    $(".receptor").droppable({
-      drop: function( event, ui ){
-        var arrastrado = ui.draggable;
-        var elem = $(this);
-        arrastrado.addClass('dropped');
-      }
-    });
-
-
-
-    });//maquina cont
-
-    
-
-    $('#continuar').on('click', function(){
-      $('#panel1').remove();
-
-      palabras +='<div id="inst2"><p>Escribe otra oración:</p></div><ul id="palabras">';     
-      
-      $.each(frase, function(index) {
-        palabras += '<li class="arrastrable">' + frase[index] +'</li>';
-      });
-
-      palabras +='<div class="clear"></div></ul><ul id="canastas">';
-      for(var i=1; i<=canastas;i++){
-        palabras += '<li class="receptor"><img src="img/canastas/'+ id +'/'+ i +'.png" width="115" height="64"></li>';
-      }     
-      
-      $('#var').html(palabras);    
-    
-//defino los elementos que se pueden arrastrar
-      $(".arrastrable").draggable({
-          cursor: 'move',
-          drag: function(){
-            $(this).removeClass('dropped');
-          }
-          //revert: true
-      });
-
-      //defino elementos donde se puede soltar
-      $(".receptor").droppable({
-          drop: function( event, ui ){
-              var arrastrado = ui.draggable;
-              var elem = $(this);
-              arrastrado.addClass('dropped');
-          }
-      });
-
-      
-
-
-
-    });//#continuar
-    
-    
-      
-    
-
-
-  }
-
-</script>

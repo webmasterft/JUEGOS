@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="../../libs/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 9]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+      <div class="wrapper buscaPalabras" id="descomposicion">
+        
+        <div id="main">
+
+
+
+
+
+
+            <div id="content">
+              <div id="menuCont">
+                <p class="inst button pulse" data-id="1">Nivel 1</p>        
+                <ul>
+                  <li>No puedes repetir letras en cada palabra.</li>
+                  <li>Sí puedes usar tildes.</li>
+                  <li>Usa sólo mayúsculas.</li>
+                </ul>
+
+                <p class="inst button pulse" data-id="2">Nivel 2</p>
+                <ul>
+                  <li>No puedes repetir letras en cada palabra.</li>
+                  <li>Sí puedes usar tildes.</li>
+                  <li>Usa sólo mayúsculas.</li>
+                  <li>Las letras que están agrupadas no se pueden separar.</li>
+                </ul>
+              </div>
+              
+              <div id="var">
+
+
+
+              </div><!-- var-->
+              <div class="clear"></div>
+              <div id="successMessage">           
+              </div>
+
+            </div><!-- content -->
+        </div><!-- main -->
+
+         <div id="logos">
+          <!--<img class="edinum" src="img/edinun.png" width="50" height="47">-->
+          <img class="digiaulas" src="img/digiaulas.png" width="158" height="48">
+        </div><!--logos -->
+         <div id="instrucciones">
+            <ol>
+            <li>Lee detenidamente las reglas para cada nivel</li>
+            <li>Escribe tu respuesta en el recuadro.</li>
+            </ol>
+         </div>
+        
+
+         <div id="nav">
+            <button id="instrucciones" class="pulse">Instrucciones</button>
+            <button id="regresar" class="pulse">Regresar</button>
+         </div><!--nav-->
+         <img id="titulo" src="img/buscaPalabras.png" width="202" height="94">
+         <img id="avatar" src="img/muneco2.png" width="110" height="137">
+
+      </div><!-- contenedor -->
+    <script src="../../libs/js/jquery-1.11.0.min.js"></script>
+    <script src="../../libs/js/handlebars.min.js"></script>
+    <script src="../../libs/js/funciones.js"></script> 
+
+    
+    </body>
+</html>
+
+<script type="text/javascript">
+
+  $(start);
+  
+  function start(){
+    cerrarMensaje();
+
+    var contenedor = $('#var');
+    contenedor.html('');
+
+    $('.inst').on('click', function(){
+      contenedor.html('');
+      var id = $(this).data('id'),
+          letrasHtml = '',
+          respuesta = '',
+          itemsAleat = aleatorio(0,5,1);
+          console.log(itemsAleat);
+
+        if(id==1){
+              items = [
+                {
+                    inputs: 6,
+                    comando : 'Utilizando estas letras, escribe 6 palabras.',
+                    letras:['T','S', 'A','M', 'E'] , 
+                    palabras: ['META', 'MESA' , 'ME', 'SETA' ,'ESA' , 'TE', 'TÉ' , 'TAME','AS', 'ES' , 'SE' , 'TAS' , 'MATE', 'TEMA' ,'MÁS','MAS', 'ESTA', 'MATES','TEMAS', 'MES' , 'TÉS']
+                },
+
+               {
+                    inputs: 6,
+                    comando : 'Utilizando estas letras, escribe 6 palabras.',
+                    letras:['O','R', 'L','M', 'A'] , 
+                    palabras: ['LORA' ,'AMOR','ROM','LA','ORA','MAR','MORA','ROL','ARO','MAL','OLA','MOLAR','MORAL','ORAL']
+                },
+
+                {
+                    inputs: 8,
+                    comando : 'Utilizando estas letras, escribe 8 palabras.',
+                    letras:['A','P', 'D','E', 'S', 'I'] , 
+                    palabras: ['PIDA' ,'PISA','PASE','PIE','PESA','DE','DÉ','PIDE','SI','ASÍ','ESA','ISA', 'DI','DÍA', 'PEDÍ', 'PEDÍA','SEDA', 'SED','PÍA','DA','ES','PI','PIS','SIDA']
+                },                
+
+               {
+                    inputs: 8,
+                    comando : 'Utilizando estas letras, escribe 8 palabras de 3 letras, mínimo.',
+                    letras:['U','L', 'A','F', 'M', 'E'] , 
+                    palabras: ['MULA','MUELA','ULA','LAME','FUMA','FUME','MAL','MUA','FEA','EMA','MEA','FLEMA','LEMA']
+                },
+
+                {
+                    inputs: 8,
+                    comando : 'Utilizando estas letras, escribe 8 palabras de 4 letras, mínimo.',
+                    letras:['I','R', 'O','S', 'N', 'A'] , 
+                    palabras: ['ROSA','RISA','ARO','ISA','NO','SÍ','SI','ROSI','ANO','IRA','IRAS','ANÍS','SORA','SANO','SARI','ASNO','ASIR','RASO']
+                },
+
+                {
+                    inputs: 5,
+                    comando : 'Utilizando estas letras, escribe 5 palabras de 3 letras, mínimo.',
+                    letras:['L','D', 'O','T', 'I', 'E', 'S'] , 
+                    palabras: ['TÍO','LOTE','TILDE','DOTE','TILO','DOS','LOS','TOS','SOL','SILO','LES','TOSE','DILO','LISTO','SITO']
+                }
+              ]  
+        }else{
+              items = [
+                {
+                    inputs: 8,
+                    comando : 'Utilizando estas letras, escribe 8 palabras.',
+                    letras:['CH','A', 'O','L', 'Z','H'] , 
+                    palabras: ['CHOZA','CHOLA','CHAL','LOZA','HACHA','HOLA','HOZ','LOA','CHALO','ALÓ','HALÓ','LOZA','HAZ','LOCHA']
+                },
+
+               {
+                    inputs: 8,
+                    comando : 'Utilizando estas letras, escribe 8 palabras de 5 letras, mínimo.',
+                    letras:['C','I', 'L','D', 'O','E','U','A'] , 
+                    palabras: ['DULCE','CIELO','CALDO','LICUADO','DÓCIL','CELDA','CELIA','LEÍDO','LUCIO','LUCÍA','LICEO','OCLUIDA','LÚCIDA','LUCIDA','LÚDICO','ÁCIDO','LAICO','CÁLIDO','CÁLIDA','IDEAL','IDEADO','IDEADA']
+                },
+
+                {
+                    inputs: 5,
+                    comando : 'Utilizando estas letras, escribe 5 palabras de 4 letras, mínimo.',
+                    letras:['GR','A', 'PL','M', 'U', 'S','O'] , 
+                    palabras: ['PLUMA','GRAMO','MAGRO','SOPLA','MUGROSA','GRASO','MUSO','AGRO','PLUS','PLOMA','GRUMO','GRUMOS','GRUMOSA','GRAMOS','MAGROS','PLUMAS']
+                },                
+
+               {
+                    inputs: 4,
+                    comando : 'Utilizando estas letras, escribe 4 palabras de 4 letras, mínimo.',
+                    letras:['FR','E', 'U','O', 'S', 'A'] , 
+                    palabras: ['FRESA','SUFRE','FRESO','AFRO','SUFRO','AFROS','FRASE','SUFRA']
+                },
+
+                {
+                    inputs: 8,
+                    comando : 'Utilizando estas letras, escribe 8 palabras de 3 letras, mínimo.',
+                    letras:['I','R', 'O','S', 'N', 'A'] , 
+                    palabras: ['HACHA','HADA','HALO','DICHA','HILO','HOLA','CHOLA','CHAL','CHALO','IDO','IDA','CHIDO' ,'LACHO','DÍA','DIO','DILO']
+                }
+
+              ]  
+        } //IF ID MENU   
+              
+              var objeto =  items[itemsAleat];
+
+              letrasHtml += '<p id="comando">'+ objeto.comando +'</p><p id="letras">';
+              $.each(objeto.letras, function(index, val) {
+                letrasHtml += val;
+                if(index + 1 < objeto.letras.length){
+                 letrasHtml += ' - ' ;
+                }
+              });
+              letrasHtml += '</p>';
+              
+              for(var i=0; i < objeto.inputs; i ++){
+                letrasHtml += '<div class="respuesta"><input type="text"><i class="fa fa-2x"></i></div>';
+              }
+   
+              contenedor.append(letrasHtml);
+      
+              $('.respuesta').find('input').on('change keyup', function(event) {
+                  if(event.type === "keyup"){
+                    respuesta = $(this).val().toUpperCase();
+                    if($.inArray(respuesta, objeto.palabras) != -1){
+                      $(this).siblings('i').removeClass('fa-exclamation-triangle').addClass('fa-check-circle');
+                    }else{
+                      $(this).siblings('i').removeClass('fa-check-circle').addClass('fa-exclamation-triangle');
+                    }
+
+                    if($('.fa-check-circle').length == objeto.inputs){
+                      mostrarMensaje('<h2>Bien Hecho!!!</h2><button class="button pulse" onclick="cerrarMensaje(); start();">Juega otra vez</button>');
+                    }
+                  }//keyup
+            });
+      });//click menu
+      
+  }//start
+
+</script>

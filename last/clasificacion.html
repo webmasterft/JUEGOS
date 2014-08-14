@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/countdown.min.js"></script>
+    <title></title>
+</head>
+<body>
+<!--[if lt IE 9]>
+<p class="browsehappy">Está usando un navegador <strong>obsoleto</strong>, Por favor <a href="http://browsehappy.com/">actualice su navegador</a> para mejorar su experiencia</p>
+<![endif]-->
+<div class="container">
+    <div class="section_3 sliderContent">
+        <div class="container_section bg_tp1 item_section">
+            <div class="logo_digiaulas logo_p1">
+                <img src="images/logo_digiaulas.png">
+            </div>
+            <div class="tit_p1 tit">
+                <img src="images/clasificacion_logo.png">
+            </div>
+            <a class="inicio_bt bt_prs" onclick="getSlide('item_section', 2); initClasificacion()">Iniciar</a>
+            <div class="introduction_t1 text-white it1">
+                <h1>INSTRUCCIONES:</h1>
+                <ol>
+                    <li>Selecciona la respuesta correcta </li>
+                    <li>Llega hasta el final y obtendrás el número total de aciertos</li>
+                    <li>Repita la actividad</li>
+                </ol>
+            </div>
+        </div>
+        <div class="container_section bg_tp2 item_section" id="content">
+            <div class="tit_p2 tit tit_s2">
+                <img src="images/clasificacion_logo.png">
+            </div>
+            <div class="logo_digiaulas logo_p2 logo_digiaulas_s2">
+                <img src="images/logo_digiaulas.png">
+            </div>
+
+            <div id="successMessage" style="display: none">
+                <h2>Bien Hecho!!!!!</h2>
+                <p>Has acertado <span id="time_result">00</span> respuestas</p>
+                <button onclick="initGameCl()">
+                    Has clic aquí
+                    para empezar de nuevo
+                </button>
+            </div>
+
+
+
+            <div class="counter blue c_p2">
+                <div class="cnt">NÚMERO DE ACIERTOS<br/>
+                    <div id="score1">0</div>
+                </div>
+                <div class="cnt">NÚMERO DE ERRORES<br/>
+                    <div id="score2">0</div>
+                </div>
+            </div>
+
+            <div id="instrucciones" class="presidentesInstrucciones" style="display: none">
+                <h2>INSTRUCCIONES</h2>
+                <ol class="left">
+                    <li>Selecciona la respuesta correcta </li>
+                    <li>Llega hasta el final y obtendrás el número total de aciertos</li>
+                    <li>Repita la actividad</li>
+                </ol>
+                <button onclick="hideItem('presidentesInstrucciones')">
+                    cerrar
+                </button>
+            </div>
+
+            <div id="clasificacion" class="center"></div>
+            <div class="clasificacion_tit">¿Esta especie de animal  a qué clasificación pertenece?</div>
+
+            <div class="titulosClasificacion">
+                <div data-id="1" onclick="testSelected(1);">Anfibios</div>
+                <div data-id="2" onclick="testSelected(2);">Artrópodos</div>
+                <div data-id="3" onclick="testSelected(3);">Aves</div>
+                <div data-id="4" onclick="testSelected(4);">Equinodermo</div>
+                <div data-id="5" onclick="testSelected(5);">Gusano</div>
+                <div data-id="6" onclick="testSelected(6);">Mamíferos</div>
+                <div data-id="7" onclick="testSelected(7);">Molusco</div>
+                <div data-id="8" onclick="testSelected(8);">Peces</div>
+                <div data-id="9" onclick="testSelected(9);">Reptiles</div>
+            </div>
+
+            <div class="footer_btn">
+                <a class="btn_" href="javascript:void(0)" onclick="showItem('presidentesInstrucciones')">INSTRUCCIONES</a>
+                <a class="btn_" href="javascript:void(0)" onclick="initGameCl();getSlide('item_section', 1);">REGRESAR</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<audio id="player" style="display: none">
+    <source src="audio/error.ogg" type="audio/ogg">
+    <source src="audio/error.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+</script>
+</body>
+</html>
